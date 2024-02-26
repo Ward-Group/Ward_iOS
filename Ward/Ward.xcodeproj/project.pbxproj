@@ -13,6 +13,7 @@
 		B68324FB2B76756100D6EBAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68324FA2B76756100D6EBAD /* Assets.xcassets */; };
 		B68324FE2B76756100D6EBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68324FD2B76756100D6EBAD /* Preview Assets.xcassets */; };
 		E50DDE922B7C70620008EEB5 /* ReleaseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DDE912B7C70620008EEB5 /* ReleaseMenuView.swift */; };
+		E57A32692B8C59D9000A9DE4 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57A32682B8C59D9000A9DE4 /* Extension+Color.swift */; };
 		E5BE8BF92B8310DB00A4D030 /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE8BF82B8310DB00A4D030 /* HomeMenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 		B68324FD2B76756100D6EBAD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BE6A3A85DFC92D8125AFD042 /* Pods_Ward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50DDE912B7C70620008EEB5 /* ReleaseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseMenuView.swift; sourceTree = "<group>"; };
+		E57A32682B8C59D9000A9DE4 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		E5BE8BF82B8310DB00A4D030 /* HomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				E50DDE912B7C70620008EEB5 /* ReleaseMenuView.swift */,
 				E5BE8BF82B8310DB00A4D030 /* HomeMenuView.swift */,
 				B68324FA2B76756100D6EBAD /* Assets.xcassets */,
+				E57A32672B8C59AF000A9DE4 /* Extension+ */,
 				B68324FC2B76756100D6EBAD /* Preview Content */,
 			);
 			path = Ward;
@@ -95,6 +98,14 @@
 				B68324FD2B76756100D6EBAD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E57A32672B8C59AF000A9DE4 /* Extension+ */ = {
+			isa = PBXGroup;
+			children = (
+				E57A32682B8C59D9000A9DE4 /* Extension+Color.swift */,
+			);
+			path = "Extension+";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +224,7 @@
 			files = (
 				B68324F92B76756000D6EBAD /* ContentView.swift in Sources */,
 				B68324F72B76756000D6EBAD /* WardApp.swift in Sources */,
+				E57A32692B8C59D9000A9DE4 /* Extension+Color.swift in Sources */,
 				E5BE8BF92B8310DB00A4D030 /* HomeMenuView.swift in Sources */,
 				E50DDE922B7C70620008EEB5 /* ReleaseMenuView.swift in Sources */,
 			);
