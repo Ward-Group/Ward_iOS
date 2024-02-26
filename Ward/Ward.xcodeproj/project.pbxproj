@@ -14,6 +14,7 @@
 		B68324FE2B76756100D6EBAD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68324FD2B76756100D6EBAD /* Preview Assets.xcassets */; };
 		E50DDE922B7C70620008EEB5 /* ReleaseMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50DDE912B7C70620008EEB5 /* ReleaseMenuView.swift */; };
 		E57A32692B8C59D9000A9DE4 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57A32682B8C59D9000A9DE4 /* Extension+Color.swift */; };
+		E57A326B2B8C5F30000A9DE4 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57A326A2B8C5F30000A9DE4 /* MyPageView.swift */; };
 		E5BE8BF92B8310DB00A4D030 /* HomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BE8BF82B8310DB00A4D030 /* HomeMenuView.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		BE6A3A85DFC92D8125AFD042 /* Pods_Ward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50DDE912B7C70620008EEB5 /* ReleaseMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseMenuView.swift; sourceTree = "<group>"; };
 		E57A32682B8C59D9000A9DE4 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
+		E57A326A2B8C5F30000A9DE4 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		E5BE8BF82B8310DB00A4D030 /* HomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				B68324F82B76756000D6EBAD /* ContentView.swift */,
 				E50DDE912B7C70620008EEB5 /* ReleaseMenuView.swift */,
 				E5BE8BF82B8310DB00A4D030 /* HomeMenuView.swift */,
+				E57A326A2B8C5F30000A9DE4 /* MyPageView.swift */,
 				B68324FA2B76756100D6EBAD /* Assets.xcassets */,
 				E57A32672B8C59AF000A9DE4 /* Extension+ */,
 				B68324FC2B76756100D6EBAD /* Preview Content */,
@@ -227,6 +230,7 @@
 				E57A32692B8C59D9000A9DE4 /* Extension+Color.swift in Sources */,
 				E5BE8BF92B8310DB00A4D030 /* HomeMenuView.swift in Sources */,
 				E50DDE922B7C70620008EEB5 /* ReleaseMenuView.swift in Sources */,
+				E57A326B2B8C5F30000A9DE4 /* MyPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
