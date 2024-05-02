@@ -7,18 +7,65 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA27C32D2BE381A5009D2E93 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA27C32C2BE381A5009D2E93 /* swiftgen.yml */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
 		BA365BBA2BE23D5A00C332DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB92BE23D5A00C332DF /* ContentView.swift */; };
 		BA365BBC2BE23D6800C332DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBB2BE23D6800C332DF /* Assets.xcassets */; };
 		BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */; };
+		BA3AD0262BE391CD00083347 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */; };
+		BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD0252BE391CD00083347 /* Fonts+Generated.swift */; };
+		BA3AD02D2BE3958E00083347 /* GmarketSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD02A2BE3958D00083347 /* GmarketSansLight.otf */; };
+		BA3AD02E2BE3958E00083347 /* GmarketSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD02B2BE3958D00083347 /* GmarketSansMedium.otf */; };
+		BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD02C2BE3958E00083347 /* GmarketSansBold.otf */; };
+		BA3AD03A2BE3988F00083347 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0312BE3988F00083347 /* Pretendard-Regular.otf */; };
+		BA3AD03B2BE3988F00083347 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0322BE3988F00083347 /* Pretendard-ExtraLight.otf */; };
+		BA3AD03C2BE3988F00083347 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0332BE3988F00083347 /* Pretendard-SemiBold.otf */; };
+		BA3AD03D2BE3988F00083347 /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0342BE3988F00083347 /* Pretendard-ExtraBold.otf */; };
+		BA3AD03E2BE3988F00083347 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0352BE3988F00083347 /* Pretendard-Bold.otf */; };
+		BA3AD03F2BE3988F00083347 /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0362BE3988F00083347 /* Pretendard-Light.otf */; };
+		BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */; };
+		BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */; };
+		BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */; };
+		BA3AD0452BE3992C00083347 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BA3AD0442BE3992C00083347 /* ComposableArchitecture */; };
+		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		BA27C3492BE3840B009D2E93 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		BA27C32C2BE381A5009D2E93 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BA365BB42BE23D5A00C332DF /* WardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA365BB72BE23D5A00C332DF /* WardAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardAppApp.swift; sourceTree = "<group>"; };
 		BA365BB92BE23D5A00C332DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA365BBB2BE23D6800C332DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
+		BA3AD0252BE391CD00083347 /* Fonts+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fonts+Generated.swift"; sourceTree = "<group>"; };
+		BA3AD0292BE393F700083347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BA3AD02A2BE3958D00083347 /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
+		BA3AD02B2BE3958D00083347 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
+		BA3AD02C2BE3958E00083347 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
+		BA3AD0312BE3988F00083347 /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		BA3AD0322BE3988F00083347 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		BA3AD0332BE3988F00083347 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		BA3AD0342BE3988F00083347 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		BA3AD0352BE3988F00083347 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		BA3AD0362BE3988F00083347 /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,15 +73,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3AD0452BE3992C00083347 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BA3AD02C2BE3958E00083347 /* GmarketSansBold.otf */,
+				BA3AD02A2BE3958D00083347 /* GmarketSansLight.otf */,
+				BA3AD02B2BE3958D00083347 /* GmarketSansMedium.otf */,
+				BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */,
+				BA3AD0352BE3988F00083347 /* Pretendard-Bold.otf */,
+				BA3AD0342BE3988F00083347 /* Pretendard-ExtraBold.otf */,
+				BA3AD0322BE3988F00083347 /* Pretendard-ExtraLight.otf */,
+				BA3AD0362BE3988F00083347 /* Pretendard-Light.otf */,
+				BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */,
+				BA3AD0312BE3988F00083347 /* Pretendard-Regular.otf */,
+				BA3AD0332BE3988F00083347 /* Pretendard-SemiBold.otf */,
+				BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		BA365BAB2BE23D5A00C332DF = {
 			isa = PBXGroup;
 			children = (
+				BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */,
 				BA365BB62BE23D5A00C332DF /* WardApp */,
 				BA365BB52BE23D5A00C332DF /* Products */,
 			);
@@ -51,9 +119,11 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA3AD0292BE393F700083347 /* Info.plist */,
+				BA3AD0282BE3921300083347 /* Resources */,
 				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
 				BA365BB92BE23D5A00C332DF /* ContentView.swift */,
-				BA365BBB2BE23D6800C332DF /* Assets.xcassets */,
+				BA27C32C2BE381A5009D2E93 /* swiftgen.yml */,
 				BA365BBD2BE23D6800C332DF /* Preview Content */,
 			);
 			path = WardApp;
@@ -67,6 +137,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		BA3AD0282BE3921300083347 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BA291BFF2BE26B6200E8C041 /* Fonts */,
+				BA3AD0252BE391CD00083347 /* Fonts+Generated.swift */,
+				BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */,
+				BA365BBB2BE23D6800C332DF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +158,18 @@
 				BA365BB02BE23D5A00C332DF /* Sources */,
 				BA365BB12BE23D5A00C332DF /* Frameworks */,
 				BA365BB22BE23D5A00C332DF /* Resources */,
+				BA27C3282BE3652A009D2E93 /* SwiftLint */,
+				BA27C3492BE3840B009D2E93 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BAF258642BE24BF2008B38A4 /* PBXTargetDependency */,
 			);
 			name = WardApp;
+			packageProductDependencies = (
+				BA3AD0442BE3992C00083347 /* ComposableArchitecture */,
+			);
 			productName = WardApp;
 			productReference = BA365BB42BE23D5A00C332DF /* WardApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +198,10 @@
 				Base,
 			);
 			mainGroup = BA365BAB2BE23D5A00C332DF;
+			packageReferences = (
+				BA27C3232BE36509009D2E93 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				BA3AD0432BE3992C00083347 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = BA365BB52BE23D5A00C332DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,24 +216,69 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3AD03F2BE3988F00083347 /* Pretendard-Light.otf in Resources */,
+				BA3AD03B2BE3988F00083347 /* Pretendard-ExtraLight.otf in Resources */,
+				BA3AD03E2BE3988F00083347 /* Pretendard-Bold.otf in Resources */,
+				BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */,
+				BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */,
+				BA27C32D2BE381A5009D2E93 /* swiftgen.yml in Resources */,
+				BA3AD02D2BE3958E00083347 /* GmarketSansLight.otf in Resources */,
+				BA3AD02E2BE3958E00083347 /* GmarketSansMedium.otf in Resources */,
 				BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */,
+				BA3AD03D2BE3988F00083347 /* Pretendard-ExtraBold.otf in Resources */,
+				BA3AD03A2BE3988F00083347 /* Pretendard-Regular.otf in Resources */,
+				BA3AD03C2BE3988F00083347 /* Pretendard-SemiBold.otf in Resources */,
+				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
+				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
+				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
 				BA365BBC2BE23D6800C332DF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BA27C3282BE3652A009D2E93 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA365BB02BE23D5A00C332DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
+				BA3AD0262BE391CD00083347 /* XCAssets+Generated.swift in Sources */,
 				BA365BBA2BE23D5A00C332DF /* ContentView.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BAF258642BE24BF2008B38A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
@@ -182,7 +318,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -245,7 +381,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -267,6 +403,7 @@
 		BA365BC32BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -274,12 +411,15 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WardApp/Preview Content\"";
 				DEVELOPMENT_TEAM = ARSZYU7AJ8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WardApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,15 +427,20 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peppermint100.WardApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		BA365BC42BE23D6800C332DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,12 +448,15 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WardApp/Preview Content\"";
 				DEVELOPMENT_TEAM = ARSZYU7AJ8;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WardApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +464,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.peppermint100.WardApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,6 +496,46 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BA27C3232BE36509009D2E93 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.52.0;
+			};
+		};
+		BA3AD0432BE3992C00083347 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.10.2;
+			};
+		};
+		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BA3AD0442BE3992C00083347 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA3AD0432BE3992C00083347 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA365BAC2BE23D5A00C332DF /* Project object */;
 }

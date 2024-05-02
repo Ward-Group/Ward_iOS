@@ -1,0 +1,21 @@
+ xcassets:
+   inputs:
+     - Resources/Assets.xcassets
+   outputs:
+     - templateName: swift5
+       params:
+         publicAccess: true
+         forceProvidesNamespaces: true
+         enumName: WardAssets
+       output: Resources/XCAssets+Generated.swift
+       
+ fonts:
+   inputs:
+     - Resources/Fonts
+   outputs:
+     - templateName: swift5
+       params:
+         publicAccess: true
+         forceProvidesNamespaces: true
+         enumName: WardFonts
+       output: Resources/Fonts+Generated.swift
