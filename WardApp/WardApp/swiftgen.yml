@@ -1,6 +1,8 @@
  xcassets:
    inputs:
      - Resources/Assets.xcassets
+     - Resources/Color.xcassets
+     - Resources/Image.xcassets
    outputs:
      - templateName: swift5
        params:
@@ -19,3 +21,15 @@
          forceProvidesNamespaces: true
          enumName: WardFonts
        output: Resources/Fonts+Generated.swift
+       
+ strings:
+   inputs:
+     - Resources/ko.lproj
+   filter: .+\.strings$
+   outputs:
+     - templateName: structured-swift5
+       params:
+         publicAccess: true
+         forceProvidesNamespaces: true
+         enumName: WardStrings
+       output: Resources/Strings+Generated.swift

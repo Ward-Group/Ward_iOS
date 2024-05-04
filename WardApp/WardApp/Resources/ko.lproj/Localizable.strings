@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  WardApp
+
+  Created by peppermint100 on 5/4/24.
+  
+*/
+
+"Login With Kakao" = "카카오로 계속하기";
+"Login With Apple" = "Apple로 계속하기";
+"Yet Member" = "아직 회원이 아니신가요?";
