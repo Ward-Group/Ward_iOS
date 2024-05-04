@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BA27C32D2BE381A5009D2E93 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA27C32C2BE381A5009D2E93 /* swiftgen.yml */; };
+		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
-		BA365BBA2BE23D5A00C332DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB92BE23D5A00C332DF /* ContentView.swift */; };
 		BA365BBC2BE23D6800C332DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBB2BE23D6800C332DF /* Assets.xcassets */; };
 		BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */; };
 		BA3AD0262BE391CD00083347 /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */; };
@@ -28,6 +28,12 @@
 		BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */; };
 		BA3AD0452BE3992C00083347 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BA3AD0442BE3992C00083347 /* ComposableArchitecture */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
+		BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582F62BE6196D0072B308 /* LoginView.swift */; };
+		BAD582F92BE61C890072B308 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582F82BE61C890072B308 /* LoginButton.swift */; };
+		BAD582FB2BE61CD40072B308 /* LoginPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582FA2BE61CD40072B308 /* LoginPlatform.swift */; };
+		BAD582FD2BE620C60072B308 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD582FC2BE620C60072B308 /* Image.xcassets */; };
+		BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD582FE2BE620D70072B308 /* Color.xcassets */; };
+		BAD583022BE623890072B308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAD583042BE623890072B308 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,9 +51,9 @@
 
 /* Begin PBXFileReference section */
 		BA27C32C2BE381A5009D2E93 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA365BB42BE23D5A00C332DF /* WardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA365BB72BE23D5A00C332DF /* WardAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardAppApp.swift; sourceTree = "<group>"; };
-		BA365BB92BE23D5A00C332DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BA365BBB2BE23D6800C332DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
@@ -66,6 +72,12 @@
 		BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BAD582F62BE6196D0072B308 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BAD582F82BE61C890072B308 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		BAD582FA2BE61CD40072B308 /* LoginPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPlatform.swift; sourceTree = "<group>"; };
+		BAD582FC2BE620C60072B308 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
+		BAD582FE2BE620D70072B308 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		BAD583052BE623B70072B308 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +131,10 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
+				BAD582F42BE619370072B308 /* User */,
 				BA3AD0292BE393F700083347 /* Info.plist */,
 				BA3AD0282BE3921300083347 /* Resources */,
 				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
-				BA365BB92BE23D5A00C332DF /* ContentView.swift */,
 				BA27C32C2BE381A5009D2E93 /* swiftgen.yml */,
 				BA365BBD2BE23D6800C332DF /* Preview Content */,
 			);
@@ -143,9 +155,31 @@
 				BA291BFF2BE26B6200E8C041 /* Fonts */,
 				BA3AD0252BE391CD00083347 /* Fonts+Generated.swift */,
 				BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */,
+				BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */,
 				BA365BBB2BE23D6800C332DF /* Assets.xcassets */,
+				BAD582FC2BE620C60072B308 /* Image.xcassets */,
+				BAD582FE2BE620D70072B308 /* Color.xcassets */,
+				BAD583042BE623890072B308 /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BAD582F42BE619370072B308 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				BAD582F52BE6193C0072B308 /* Login */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		BAD582F52BE6193C0072B308 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BAD582F62BE6196D0072B308 /* LoginView.swift */,
+				BAD582F82BE61C890072B308 /* LoginButton.swift */,
+				BAD582FA2BE61CD40072B308 /* LoginPlatform.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +230,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = BA365BAB2BE23D5A00C332DF;
 			packageReferences = (
@@ -226,12 +261,15 @@
 				BA3AD02E2BE3958E00083347 /* GmarketSansMedium.otf in Resources */,
 				BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */,
 				BA3AD03D2BE3988F00083347 /* Pretendard-ExtraBold.otf in Resources */,
+				BAD582FD2BE620C60072B308 /* Image.xcassets in Resources */,
 				BA3AD03A2BE3988F00083347 /* Pretendard-Regular.otf in Resources */,
 				BA3AD03C2BE3988F00083347 /* Pretendard-SemiBold.otf in Resources */,
 				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
 				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
 				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
+				BAD583022BE623890072B308 /* Localizable.strings in Resources */,
 				BA365BBC2BE23D6800C332DF /* Assets.xcassets in Resources */,
+				BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,8 +303,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
+				BAD582F92BE61C890072B308 /* LoginButton.swift in Sources */,
 				BA3AD0262BE391CD00083347 /* XCAssets+Generated.swift in Sources */,
-				BA365BBA2BE23D5A00C332DF /* ContentView.swift in Sources */,
+				BAD582FB2BE61CD40072B308 /* LoginPlatform.swift in Sources */,
+				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
+				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,12 +321,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		BAD583042BE623890072B308 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BAD583052BE623B70072B308 /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -349,6 +402,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

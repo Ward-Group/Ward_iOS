@@ -23,19 +23,10 @@ public typealias AssetImageTypeAlias = ImageAsset.Image
 // MARK: - Asset Catalogs
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
-public enum WardAssets {
-  public enum Assets {
-  }
-  public enum Color {
-    public static let accentColor = ColorAsset(name: "AccentColor")
-    public static let backgroundColor = ColorAsset(name: "BackgroundColor")
-    public static let footnoteText = ColorAsset(name: "FootnoteText")
-  }
-  public enum Image {
-    public static let appleLoginLogo = ImageAsset(name: "AppleLoginLogo")
-    public static let kakaoLoginLogo = ImageAsset(name: "KakaoLoginLogo")
-    public static let wardLogo = ImageAsset(name: "WardLogo")
-  }
+public enum WardImage {
+  public static let footnoteLabel = ColorAsset(name: "FootnoteLabel")
+  public static let kakaoLoginButton = ImageAsset(name: "KakaoLoginButton")
+  public static let wardLogo = ImageAsset(name: "WardLogo")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
