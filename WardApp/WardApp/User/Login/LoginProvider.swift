@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-enum LoginPlatform {
+enum LoginProvider {
     case apple, kakao
 }
 
-extension LoginPlatform {
+extension LoginProvider {
     
     var buttonText: String {
         switch self {

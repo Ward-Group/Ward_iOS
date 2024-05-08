@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BA27C32D2BE381A5009D2E93 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA27C32C2BE381A5009D2E93 /* swiftgen.yml */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
+		BA302E672BE9EA4600B57174 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E662BE9EA4600B57174 /* LoginFeature.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
 		BA365BBC2BE23D6800C332DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBB2BE23D6800C332DF /* Assets.xcassets */; };
 		BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */; };
@@ -27,10 +28,16 @@
 		BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */; };
 		BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */; };
 		BA3AD0452BE3992C00083347 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = BA3AD0442BE3992C00083347 /* ComposableArchitecture */; };
+		BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */; };
+		BA8586602BEA119700B0A4DB /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = BA85865F2BEA119700B0A4DB /* KakaoSDK */; };
+		BA8586622BEA119700B0A4DB /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BA8586612BEA119700B0A4DB /* KakaoSDKAuth */; };
+		BA8586642BEA119700B0A4DB /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = BA8586632BEA119700B0A4DB /* KakaoSDKCert */; };
+		BA8586662BEA119700B0A4DB /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = BA8586652BEA119700B0A4DB /* KakaoSDKCertCore */; };
+		BA8586682BEA119700B0A4DB /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = BA8586672BEA119700B0A4DB /* KakaoSDKCommon */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 		BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582F62BE6196D0072B308 /* LoginView.swift */; };
 		BAD582F92BE61C890072B308 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582F82BE61C890072B308 /* LoginButton.swift */; };
-		BAD582FB2BE61CD40072B308 /* LoginPlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582FA2BE61CD40072B308 /* LoginPlatform.swift */; };
+		BAD582FB2BE61CD40072B308 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582FA2BE61CD40072B308 /* LoginProvider.swift */; };
 		BAD582FD2BE620C60072B308 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD582FC2BE620C60072B308 /* Image.xcassets */; };
 		BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD582FE2BE620D70072B308 /* Color.xcassets */; };
 		BAD583022BE623890072B308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAD583042BE623890072B308 /* Localizable.strings */; };
@@ -52,13 +59,15 @@
 /* Begin PBXFileReference section */
 		BA27C32C2BE381A5009D2E93 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
+		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
+		BA302E662BE9EA4600B57174 /* LoginFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFeature.swift; sourceTree = "<group>"; };
 		BA365BB42BE23D5A00C332DF /* WardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA365BB72BE23D5A00C332DF /* WardAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardAppApp.swift; sourceTree = "<group>"; };
 		BA365BBB2BE23D6800C332DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BA3AD0242BE391CC00083347 /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BA3AD0252BE391CD00083347 /* Fonts+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Fonts+Generated.swift"; sourceTree = "<group>"; };
-		BA3AD0292BE393F700083347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		BA3AD0292BE393F700083347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA3AD02A2BE3958D00083347 /* GmarketSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansLight.otf; sourceTree = "<group>"; };
 		BA3AD02B2BE3958D00083347 /* GmarketSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansMedium.otf; sourceTree = "<group>"; };
 		BA3AD02C2BE3958E00083347 /* GmarketSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GmarketSansBold.otf; sourceTree = "<group>"; };
@@ -71,10 +80,12 @@
 		BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModifier.swift; sourceTree = "<group>"; };
+		BA8586692BEA146200B0A4DB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BAD582F62BE6196D0072B308 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BAD582F82BE61C890072B308 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
-		BAD582FA2BE61CD40072B308 /* LoginPlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPlatform.swift; sourceTree = "<group>"; };
+		BAD582FA2BE61CD40072B308 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		BAD582FC2BE620C60072B308 /* Image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Image.xcassets; sourceTree = "<group>"; };
 		BAD582FE2BE620D70072B308 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BAD583052BE623B70072B308 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -86,6 +97,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA3AD0452BE3992C00083347 /* ComposableArchitecture in Frameworks */,
+				BA8586602BEA119700B0A4DB /* KakaoSDK in Frameworks */,
+				BA8586662BEA119700B0A4DB /* KakaoSDKCertCore in Frameworks */,
+				BA8586622BEA119700B0A4DB /* KakaoSDKAuth in Frameworks */,
+				BA8586682BEA119700B0A4DB /* KakaoSDKCommon in Frameworks */,
+				BA8586642BEA119700B0A4DB /* KakaoSDKCert in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +127,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BA302E632BE9EA0400B57174 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		BA365BAB2BE23D5A00C332DF = {
 			isa = PBXGroup;
 			children = (
@@ -131,11 +155,14 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA8586502BEA0CE800B0A4DB /* Global */,
+				BA302E632BE9EA0400B57174 /* App */,
 				BAD582F42BE619370072B308 /* User */,
-				BA3AD0292BE393F700083347 /* Info.plist */,
 				BA3AD0282BE3921300083347 /* Resources */,
-				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
 				BA27C32C2BE381A5009D2E93 /* swiftgen.yml */,
+				BA3AD0292BE393F700083347 /* Info.plist */,
+				BA302E5D2BE6789A00B57174 /* WardApp.entitlements */,
+				BA8586692BEA146200B0A4DB /* Config.xcconfig */,
 				BA365BBD2BE23D6800C332DF /* Preview Content */,
 			);
 			path = WardApp;
@@ -164,6 +191,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BA8586502BEA0CE800B0A4DB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
 		BAD582F42BE619370072B308 /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +212,8 @@
 			children = (
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
 				BAD582F82BE61C890072B308 /* LoginButton.swift */,
-				BAD582FA2BE61CD40072B308 /* LoginPlatform.swift */,
+				BAD582FA2BE61CD40072B308 /* LoginProvider.swift */,
+				BA302E662BE9EA4600B57174 /* LoginFeature.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -203,6 +239,11 @@
 			name = WardApp;
 			packageProductDependencies = (
 				BA3AD0442BE3992C00083347 /* ComposableArchitecture */,
+				BA85865F2BEA119700B0A4DB /* KakaoSDK */,
+				BA8586612BEA119700B0A4DB /* KakaoSDKAuth */,
+				BA8586632BEA119700B0A4DB /* KakaoSDKCert */,
+				BA8586652BEA119700B0A4DB /* KakaoSDKCertCore */,
+				BA8586672BEA119700B0A4DB /* KakaoSDKCommon */,
 			);
 			productName = WardApp;
 			productReference = BA365BB42BE23D5A00C332DF /* WardApp.app */;
@@ -236,6 +277,7 @@
 			packageReferences = (
 				BA27C3232BE36509009D2E93 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				BA3AD0432BE3992C00083347 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
 			);
 			productRefGroup = BA365BB52BE23D5A00C332DF /* Products */;
 			projectDirPath = "";
@@ -304,8 +346,10 @@
 			files = (
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BAD582F92BE61C890072B308 /* LoginButton.swift in Sources */,
+				BA302E672BE9EA4600B57174 /* LoginFeature.swift in Sources */,
+				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BA3AD0262BE391CD00083347 /* XCAssets+Generated.swift in Sources */,
-				BAD582FB2BE61CD40072B308 /* LoginPlatform.swift in Sources */,
+				BAD582FB2BE61CD40072B308 /* LoginProvider.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
@@ -335,6 +379,7 @@
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA8586692BEA146200B0A4DB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -399,6 +444,7 @@
 		};
 		BA365BC12BE23D6800C332DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA8586692BEA146200B0A4DB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -460,6 +506,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WardApp/WardApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WardApp/Preview Content\"";
@@ -497,6 +545,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WardApp/WardApp.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WardApp/Preview Content\"";
@@ -568,6 +618,14 @@
 				minimumVersion = 1.10.2;
 			};
 		};
+		BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.22.1;
+			};
+		};
 		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
@@ -583,6 +641,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BA3AD0432BE3992C00083347 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		BA85865F2BEA119700B0A4DB /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		BA8586612BEA119700B0A4DB /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		BA8586632BEA119700B0A4DB /* KakaoSDKCert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCert;
+		};
+		BA8586652BEA119700B0A4DB /* KakaoSDKCertCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCertCore;
+		};
+		BA8586672BEA119700B0A4DB /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BA85865E2BEA119700B0A4DB /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
 		};
 		BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
