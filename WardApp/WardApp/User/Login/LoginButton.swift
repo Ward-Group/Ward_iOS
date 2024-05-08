@@ -9,30 +9,25 @@ import SwiftUI
 
 struct LoginButton: View {
     
-    var loginPlatform: LoginPlatform
-
+    var loginPlatform: LoginProvider
+    
     var body: some View {
-        Button {
-            
-        } label: {
-            ZStack {
-                buttonBackground
-                HStack {
-                    loginPlatform.buttonImage
-                    Text(loginPlatform.buttonText)
-                        .foregroundStyle(.white)
-                        .font(WardFonts.Pretendard.medium.swiftUIFont(size: 16))
-                }
+        ZStack {
+            buttonBackground
+            HStack {
+                loginPlatform.buttonImage
+                Text(loginPlatform.buttonText)
+                    .foregroundStyle(.white)
+                    .font(WardFonts.Pretendard.medium.swiftUIFont(size: 16))
             }
-            .cornerRadius(16)
-            .frame(width: 325, height: 60)
         }
+        .loginButtonStyle()
     }
 }
 
 #Preview {
     LoginButton(loginPlatform: .apple)
-        .frame(width: 325, height: 60)
+        .loginButtonStyle()
 }
 
 private extension LoginButton {

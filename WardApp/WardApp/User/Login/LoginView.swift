@@ -6,33 +6,33 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+import AuthenticationServices
 
 struct LoginView: View {
+    
+    let store: StoreOf<LoginFeature>
+    
     var body: some View {
         NavigationStack {
-            ZStack {
-                background
-                GeometryReader { geometry in
-                    VStack {
-                        Spacer()
+            GeometryReader { geometry in
+                ZStack {
+                    background
+                    VStack(alignment: .center) {
                         Spacer()
                         Spacer()
                         WardAssets.Image.wardLogo.swiftUIImage
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: geometry.size.width, height: 54)
+                            .scaledToFit()
+                            .frame(width: geometry.size.width * 0.7)
                         Spacer()
                         Spacer()
                         Spacer()
                         Spacer()
-                        LoginButton(loginPlatform: .kakao)
+                        kakaoLoginButton
                             .padding()
-                        LoginButton(loginPlatform: .apple)
+                        appleLoginButton
                         Spacer()
-                        Text(WardStrings.yetMember)
-                            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
-                            .foregroundStyle(WardAssets.Color.footnoteText.swiftUIColor)
-                            .padding()
                     }
                     .toolbar(.hidden)
                 }
@@ -47,8 +47,32 @@ private extension LoginView {
         WardAssets.Color.backgroundColor.swiftUIColor
             .ignoresSafeArea(edges: .top)
     }
+    
+    var kakaoLoginButton: some View {
+        LoginButton(loginPlatform: .kakao)
+            .onTapGesture {
+                store.send(.kakaoLoginButtonTapped)
+            }
+    }
+    
+    var appleLoginButton: some View {
+        SignInWithAppleButton(
+            onRequest: { request in store.send(.appleLoginOnRequest(request))},
+            onCompletion: { result in store.send(.appleLoginOnComplete(result))}
+        )
+        .loginButtonStyle()
+        .overlay {
+            LoginButton(loginPlatform: .apple)
+                .allowsHitTesting(false)
+        }
+        
+    }
 }
 
 #Preview {
-    LoginView()
+    LoginView(
+        store: Store(initialState: LoginFeature.State()) {
+            LoginFeature()
+        }
+    )
 }
