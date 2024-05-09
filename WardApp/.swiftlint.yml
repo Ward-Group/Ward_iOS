@@ -1,6 +1,14 @@
 disabled_rules:
   - trailing_whitespace
   - force_cast
+  - identifier_name
 
 excluded:
   - WardApp/Resources
+
+line_length:
+  warning: 150
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
