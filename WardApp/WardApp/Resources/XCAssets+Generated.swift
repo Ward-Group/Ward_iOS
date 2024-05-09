@@ -29,7 +29,11 @@ public enum WardAssets {
   public enum Color {
     public static let accentColor = ColorAsset(name: "AccentColor")
     public static let backgroundColor = ColorAsset(name: "BackgroundColor")
+    public static let cardBackgroundGray = ColorAsset(name: "CardBackgroundGray")
+    public static let checkBoxGray = ColorAsset(name: "CheckBoxGray")
     public static let footnoteText = ColorAsset(name: "FootnoteText")
+    public static let headerTextBlack = ColorAsset(name: "HeaderTextBlack")
+    public static let placeholderGray = ColorAsset(name: "PlaceholderGray")
   }
   public enum Image {
     public static let appleLoginLogo = ImageAsset(name: "AppleLoginLogo")
