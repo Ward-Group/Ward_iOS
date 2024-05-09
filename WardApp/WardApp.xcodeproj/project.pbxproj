@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA27C32D2BE381A5009D2E93 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA27C32C2BE381A5009D2E93 /* swiftgen.yml */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA302E672BE9EA4600B57174 /* LoginFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E662BE9EA4600B57174 /* LoginFeature.swift */; };
@@ -35,6 +36,8 @@
 		BA8586662BEA119700B0A4DB /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = BA8586652BEA119700B0A4DB /* KakaoSDKCertCore */; };
 		BA8586682BEA119700B0A4DB /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = BA8586672BEA119700B0A4DB /* KakaoSDKCommon */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
+		BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD016782BEB78670039ACDE /* SignUpView.swift */; };
+		BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */; };
 		BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582F62BE6196D0072B308 /* LoginView.swift */; };
 		BAD582F92BE61C890072B308 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582F82BE61C890072B308 /* LoginButton.swift */; };
 		BAD582FB2BE61CD40072B308 /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD582FA2BE61CD40072B308 /* LoginProvider.swift */; };
@@ -57,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA27C32C2BE381A5009D2E93 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 		BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModifier.swift; sourceTree = "<group>"; };
 		BA8586692BEA146200B0A4DB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BAD016782BEB78670039ACDE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleCheckboxStyle.swift; sourceTree = "<group>"; };
 		BAD582F62BE6196D0072B308 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BAD582F82BE61C890072B308 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		BAD582FA2BE61CD40072B308 /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				BAD582FC2BE620C60072B308 /* Image.xcassets */,
 				BAD582FE2BE620D70072B308 /* Color.xcassets */,
 				BAD583042BE623890072B308 /* Localizable.strings */,
+				BA22326E2BEB90B4001F2395 /* Symbols.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -195,13 +202,23 @@
 			isa = PBXGroup;
 			children = (
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
+				BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		BAD016752BEB781E0039ACDE /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				BAD016782BEB78670039ACDE /* SignUpView.swift */,
+			);
+			path = SignUp;
 			sourceTree = "<group>";
 		};
 		BAD582F42BE619370072B308 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				BAD016752BEB781E0039ACDE /* SignUp */,
 				BAD582F52BE6193C0072B308 /* Login */,
 			);
 			path = User;
@@ -349,8 +366,11 @@
 				BA302E672BE9EA4600B57174 /* LoginFeature.swift in Sources */,
 				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BA3AD0262BE391CD00083347 /* XCAssets+Generated.swift in Sources */,
+				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BAD582FB2BE61CD40072B308 /* LoginProvider.swift in Sources */,
+				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
+				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 			);
