@@ -135,14 +135,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		BA302E632BE9EA0400B57174 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		BA365BAB2BE23D5A00C332DF = {
 			isa = PBXGroup;
 			children = (
@@ -166,13 +158,15 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
-				BA8586502BEA0CE800B0A4DB /* Global */,
-				BA302E632BE9EA0400B57174 /* App */,
-				BAD582F42BE619370072B308 /* User */,
+				BA7866492BF3BA6E007BF0C4 /* Data */,
+				BA7866482BF3BA68007BF0C4 /* Domain */,
+				BA78664A2BF3BA72007BF0C4 /* Presentation */,
+				BA78664C2BF3BA8A007BF0C4 /* Support */,
 				BA3AD0282BE3921300083347 /* Resources */,
-				BA3AD0292BE393F700083347 /* Info.plist */,
+				BA78664D2BF3BA8E007BF0C4 /* Config */,
+				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
 				BA302E5D2BE6789A00B57174 /* WardApp.entitlements */,
-				BA8586692BEA146200B0A4DB /* Config.xcconfig */,
+				BA3AD0292BE393F700083347 /* Info.plist */,
 				BA365BBD2BE23D6800C332DF /* Preview Content */,
 			);
 			path = WardApp;
@@ -201,13 +195,92 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		BA8586502BEA0CE800B0A4DB /* Global */ = {
+		BA7866482BF3BA68007BF0C4 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				BA7866552BF3BC89007BF0C4 /* Entities */,
+				BA7866542BF3BC81007BF0C4 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		BA7866492BF3BA6E007BF0C4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BA78664F2BF3BB37007BF0C4 /* API */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				BAD582F52BE6193C0072B308 /* Login */,
+				BAD016752BEB781E0039ACDE /* SignUp */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
 				BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */,
 			);
-			path = Global;
+			path = Support;
+			sourceTree = "<group>";
+		};
+		BA78664D2BF3BA8E007BF0C4 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BA8586692BEA146200B0A4DB /* Config.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		BA78664F2BF3BB37007BF0C4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		BA7866542BF3BC81007BF0C4 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				BA7866582BF3BCB1007BF0C4 /* Release */,
+				BA7866572BF3BCA0007BF0C4 /* Item */,
+				BA7866562BF3BC9A007BF0C4 /* Auth */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		BA7866552BF3BC89007BF0C4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		BA7866562BF3BC9A007BF0C4 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		BA7866572BF3BCA0007BF0C4 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		BA7866582BF3BCB1007BF0C4 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Release;
 			sourceTree = "<group>";
 		};
 		BAD016752BEB781E0039ACDE /* SignUp */ = {
@@ -216,15 +289,6 @@
 				BAD016782BEB78670039ACDE /* SignUpView.swift */,
 			);
 			path = SignUp;
-			sourceTree = "<group>";
-		};
-		BAD582F42BE619370072B308 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				BAD016752BEB781E0039ACDE /* SignUp */,
-				BAD582F52BE6193C0072B308 /* Login */,
-			);
-			path = User;
 			sourceTree = "<group>";
 		};
 		BAD582F52BE6193C0072B308 /* Login */ = {
@@ -406,7 +470,7 @@
 /* Begin PBXTargetDependency section */
 		BAF258642BE24BF2008B38A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */;
+			productRef = BAF258632BE24BF2008B38A4 /* plugin:SwiftLintPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -649,7 +713,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
 			requirement = {
@@ -660,9 +724,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */ = {
+		BAF258632BE24BF2008B38A4 /* plugin:SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint.git" */;
 			productName = "plugin:SwiftLintPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
