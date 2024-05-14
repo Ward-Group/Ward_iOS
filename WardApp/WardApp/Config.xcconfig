@@ -1,0 +1,12 @@
+//
+//  Config.xcconfig
+//  WardApp
+//
+//  Created by peppermint100 on 5/7/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+KAKAO_NATIVE_APP_KEY = 864b7bf558a064a71df39e78aab4264e
+WARD_SERVICE_ENDPOINT = https://www.wardservice.shop
