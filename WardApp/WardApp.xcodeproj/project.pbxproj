@@ -25,6 +25,11 @@
 		BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */; };
 		BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */; };
 		BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */; };
+		BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866592BF3BF73007BF0C4 /* APIService.swift */; };
+		BA78665C2BF3BF81007BF0C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665B2BF3BF81007BF0C4 /* User.swift */; };
+		BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */; };
+		BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */; };
+		BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */; };
 		BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
@@ -73,6 +78,11 @@
 		BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		BA7866592BF3BF73007BF0C4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		BA78665B2BF3BF81007BF0C4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseUseCase.swift; sourceTree = "<group>"; };
+		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
+		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModifier.swift; sourceTree = "<group>"; };
 		BA8586692BEA146200B0A4DB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -241,6 +251,7 @@
 		BA78664F2BF3BB37007BF0C4 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				BA7866592BF3BF73007BF0C4 /* APIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -258,6 +269,7 @@
 		BA7866552BF3BC89007BF0C4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BA78665B2BF3BF81007BF0C4 /* User.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -265,6 +277,7 @@
 		BA7866562BF3BC9A007BF0C4 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -272,6 +285,7 @@
 		BA7866572BF3BCA0007BF0C4 /* Item */ = {
 			isa = PBXGroup;
 			children = (
+				BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */,
 			);
 			path = Item;
 			sourceTree = "<group>";
@@ -279,6 +293,7 @@
 		BA7866582BF3BCB1007BF0C4 /* Release */ = {
 			isa = PBXGroup;
 			children = (
+				BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -454,14 +469,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
+				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
+				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
+				BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */,
+				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
+				BA78665C2BF3BF81007BF0C4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +490,7 @@
 /* Begin PBXTargetDependency section */
 		BAF258642BE24BF2008B38A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = BAF258632BE24BF2008B38A4 /* plugin:SwiftLintPlugin */;
+			productRef = BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -713,7 +733,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint.git" */ = {
+		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
 			requirement = {
@@ -724,9 +744,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BAF258632BE24BF2008B38A4 /* plugin:SwiftLintPlugin */ = {
+		BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint.git" */;
+			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
