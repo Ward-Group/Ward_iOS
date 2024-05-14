@@ -15,10 +15,6 @@ struct ToggleCheckboxStyle: ToggleStyle {
         } label: {
             Symbols.checkmarkSquare
                 .symbolVariant(.fill)
-                .foregroundStyle(
-                    configuration.isOn ?
-                    WardAssets.Color.accentColor.swiftUIColor :
-                        WardAssets.Color.checkBoxGray.swiftUIColor)
                 .font(.system(size: 24))
         }
     }
