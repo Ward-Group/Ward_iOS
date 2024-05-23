@@ -39,3 +39,15 @@ struct HeaderNavBarView: View {
         .background(WardAssets.Color.backgroundColor.swiftUIColor)
     }
 }
+
+struct HeaderNavBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        VStack(spacing: 0) {
+            HeaderNavBarView(showSearching: true, showNotification: true)
+            ScrollView {
+                Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+}
