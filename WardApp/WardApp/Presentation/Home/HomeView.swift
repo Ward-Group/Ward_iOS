@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        bannerTitle()
+        bannerTimeCircle()
     }
 }
 
@@ -23,6 +23,20 @@ extension HomeView {
                 .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
                 .foregroundStyle(WardAssets.Color.placeholderGray.swiftUIColor)
         })
+    }
+    
+    private func bannerTime() -> some View {
+        return HStack(alignment: .center, content: {
+            
+        })
+    }
+    
+    private func bannerTimeCircle() -> some View {
+        return ZStack(alignment: .center, content: {
+            Circle()
+            Text("0")
+        })
+        .frame(width: 41, height: 41)
     }
 }
 
