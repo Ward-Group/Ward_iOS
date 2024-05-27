@@ -6,32 +6,40 @@
 //
 
 import SwiftUI
+import AuthenticationServices
 
 struct LoginView: View {
     
     var body: some View {
-        NavigationStack {
-            GeometryReader { geometry in
-                ZStack {
-                    background
-                    VStack(alignment: .center) {
-                        WardAssets.Image.wardLogo.swiftUIImage
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: geometry.size.width * 0.7)
-                    }
-                    .toolbar(.hidden)
-                }
-            }
+        VStack {
+            appleLoginButton
         }
     }
 }
 
-private extension LoginView {
-    
-    var background: some View {
-        WardAssets.Color.backgroundColor.swiftUIColor
-            .ignoresSafeArea(edges: .top)
+// TODO: Color Guide, 폰트 설정 세팅되면 색상, 폰트 설정 변경
+extension LoginView {
+    var appleLoginButton: some View {
+        ZStack {
+            Color.black
+            HStack {
+                WardAssets.Image.appleLoginLogo.swiftUIImage
+                    .foregroundStyle(.black)
+                Text(WardStrings.loginWithApple)
+                    .foregroundStyle(Color.white)
+            }
+        }
+        .frame(width: 325, height: 60)
+        .cornerRadius(16)
+        .overlay {
+            SignInWithAppleButton(
+                onRequest: {
+                    request in
+                },
+                onCompletion: { result in
+                })
+            .blendMode(.overlay)
+        }
     }
 }
 

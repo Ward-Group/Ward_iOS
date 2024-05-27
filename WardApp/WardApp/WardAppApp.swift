@@ -12,7 +12,7 @@ struct WardAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HeaderNavTestView()
+            LoginView()
         }
     }
 }
