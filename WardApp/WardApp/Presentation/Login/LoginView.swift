@@ -8,6 +8,9 @@
 import SwiftUI
 import Combine
 import AuthenticationServices
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 struct LoginView: View {
     
@@ -26,16 +29,26 @@ struct LoginView: View {
     }
     
     var body: some View {
-        VStack {
-            appleLoginButton
+        ZStack {
+            Color.white
+                .ignoresSafeArea()
+            VStack {
+                appleLoginButton
+                kakaoLoginButton
+            }
         }
     }
+}
+
+#Preview {
+    let vm: LoginViewModel = LoginAssemblerImpl().resolve()
+    return LoginView(vm: vm)
 }
 
 // TODO: Color Guide, 폰트 설정 세팅되면 색상, 폰트 설정 변경
 // MARK: Apple Login
 extension LoginView {
-    var appleLoginButton: some View {
+    private var appleLoginButton: some View {
         ZStack {
             Color.black
             HStack {
@@ -80,7 +93,67 @@ extension LoginView {
     }
 }
 
-#Preview {
-    let vm: LoginViewModel = LoginAssemblerImpl().resolve()
-    return LoginView(vm: vm)
+// TODO: 컬러 가이드 세팅되면 컬러, 폰트 적용
+// MARK: Kakao Login
+extension LoginView {
+    
+    private var kakaoLoginButton: some View {
+        ZStack {
+            Color.black
+            Button(action: {
+                authenticateWithKakaoTalk()
+            }, label: {
+                HStack {
+                    WardAssets.Image.kakaoLoginLogo.swiftUIImage
+                        .foregroundStyle(.black)
+                    Text(WardStrings.loginWithKakao)
+                        .foregroundStyle(Color.white)
+                }
+            })
+        }
+        .frame(width: 325, height: 60)
+        .cornerRadius(16)
+    }
+    
+    private func authenticateWithKakaoTalk() {
+        if UserApi.isKakaoTalkLoginAvailable() {
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print("카카오 로그인 실패 \(error)")
+                    return
+                }
+                self.loginWithKakaoTalk()
+            }
+        } else {
+            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+                if let error = error {
+                    print("카카오 로그인 실패 \(error)")
+                    return
+                }
+                self.loginWithKakaoTalk()
+            }
+        }
+    }
+    
+    private func loginWithKakaoTalk() {
+        UserApi.shared.me() { userMaybe, error in
+            if let error = error {
+                print("카카오 유저 정보 가져오기 실패 \(error)")
+                return
+            }
+            
+            guard
+                let user = userMaybe,
+                let id = user.id else {
+                print("유저 정보 존재하지 않음")
+                return
+            }
+            
+            let account = user.kakaoAccount
+            let profile = account?.profile
+            
+            let newUser = UserFromLoginProvider(loginProvider: .kakao, providerId: String(id), name: profile?.nickname, email: account?.email)
+            userTrigger.send(newUser)
+        }
+    }
 }

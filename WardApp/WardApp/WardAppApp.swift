@@ -6,15 +6,28 @@
 //
 
 import SwiftUI
+import KakaoSDKCommon
+import KakaoSDKAuth
 
 @main
 struct WardAppApp: App {
+    
+    init() {
+        let appKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_APP_KEY") as! String
+        print(appKey)
+        KakaoSDK.initSDK(appKey: appKey)
+    }
     
     let loginAssembler = LoginAssemblerImpl()
     
     var body: some Scene {
         WindowGroup {
             LoginView(vm: loginAssembler.resolve())
+                .onOpenURL { url in
+                    if AuthApi.isKakaoTalkLoginUrl(url) {
+                        _ = AuthController.handleOpenUrl(url: url)
+                    }
+                }
         }
     }
 }
