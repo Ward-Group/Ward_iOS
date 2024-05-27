@@ -40,6 +40,9 @@
 		BAD582FD2BE620C60072B308 /* Image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD582FC2BE620C60072B308 /* Image.xcassets */; };
 		BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD582FE2BE620D70072B308 /* Color.xcassets */; };
 		BAD583022BE623890072B308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAD583042BE623890072B308 /* Localizable.strings */; };
+		EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967712BF8D8140087062B /* HeaderNavBarView.swift */; };
+		EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967742BF8DADD0087062B /* ViewModel.swift */; };
+		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -84,7 +87,6 @@
 		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
 		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModifier.swift; sourceTree = "<group>"; };
-		BA8586692BEA146200B0A4DB /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BACB69CC2BF33E1700C3E29A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -95,6 +97,9 @@
 		BAD582FE2BE620D70072B308 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BAD583052BE623B70072B308 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CEE8A9E10765B9C3648B9E18 /* Pods-WardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WardApp.release.xcconfig"; path = "Target Support Files/Pods-WardApp/Pods-WardApp.release.xcconfig"; sourceTree = "<group>"; };
+		EA3967712BF8D8140087062B /* HeaderNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavBarView.swift; sourceTree = "<group>"; };
+		EA3967742BF8DADD0087062B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,12 +173,11 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
-				BA7866492BF3BA6E007BF0C4 /* Data */,
 				BA7866482BF3BA68007BF0C4 /* Domain */,
+				BA7866492BF3BA6E007BF0C4 /* Data */,
 				BA78664A2BF3BA72007BF0C4 /* Presentation */,
 				BA78664C2BF3BA8A007BF0C4 /* Support */,
 				BA3AD0282BE3921300083347 /* Resources */,
-				BA78664D2BF3BA8E007BF0C4 /* Config */,
 				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
 				BA302E5D2BE6789A00B57174 /* WardApp.entitlements */,
 				BA3AD0292BE393F700083347 /* Info.plist */,
@@ -225,6 +229,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				EA2421BA2BF4D9480070D1C9 /* Navigation */,
 				BAD582F52BE6193C0072B308 /* Login */,
 				BAD016752BEB781E0039ACDE /* SignUp */,
 			);
@@ -234,18 +239,11 @@
 		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				EA3967732BF8DAC70087062B /* Architecture */,
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
 				BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		BA78664D2BF3BA8E007BF0C4 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				BA8586692BEA146200B0A4DB /* Config.xcconfig */,
-			);
-			path = Config;
 			sourceTree = "<group>";
 		};
 		BA78664F2BF3BB37007BF0C4 /* API */ = {
@@ -312,6 +310,23 @@
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		EA2421BA2BF4D9480070D1C9 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				EA3967712BF8D8140087062B /* HeaderNavBarView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		EA3967732BF8DAC70087062B /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				EA3967742BF8DADD0087062B /* ViewModel.swift */,
+				EA3967762BF8DBE50087062B /* CancelBag.swift */,
+			);
+			path = Architecture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,10 +489,13 @@
 				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
+				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
+				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
 				BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */,
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
+				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
@@ -508,7 +526,6 @@
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA8586692BEA146200B0A4DB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -573,7 +590,6 @@
 		};
 		BA365BC12BE23D6800C332DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA8586692BEA146200B0A4DB /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
