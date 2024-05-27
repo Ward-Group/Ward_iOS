@@ -363,6 +363,7 @@
 				BA365BB22BE23D5A00C332DF /* Resources */,
 				BA27C3282BE3652A009D2E93 /* SwiftLint */,
 				BA27C3492BE3840B009D2E93 /* Embed Frameworks */,
+				AE69F8A98FDDC61F9F876A87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -459,6 +460,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AE69F8A98FDDC61F9F876A87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WardApp/Pods-WardApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WardApp/Pods-WardApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WardApp/Pods-WardApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BA27C3282BE3652A009D2E93 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -532,7 +550,7 @@
 /* Begin PBXTargetDependency section */
 		BAF258642BE24BF2008B38A4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			productRef = BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */;
+			productRef = BAF258632BE24BF2008B38A4 /* plugin:SwiftLintPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -781,7 +799,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+		BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
 			requirement = {
@@ -792,9 +810,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BAF258632BE24BF2008B38A4 /* SwiftLintPlugin */ = {
+		BAF258632BE24BF2008B38A4 /* plugin:SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			package = BAF2585E2BE24BBD008B38A4 /* XCRemoteSwiftPackageReference "SwiftLint.git" */;
 			productName = "plugin:SwiftLintPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */

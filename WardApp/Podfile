@@ -8,5 +8,8 @@ target 'WardApp' do
   # Pods for WardApp
   pod 'SwiftLint'
   pod 'SwiftGen'
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
 
 end
