@@ -44,6 +44,7 @@ public enum WardAssets {
     public static let mainRed = ColorAsset(name: "MainRed")
     public static let newTestColor = ColorAsset(name: "NewTestColor")
     public static let placeholderGray = ColorAsset(name: "PlaceholderGray")
+    public static let white0 = ColorAsset(name: "White0")
     public static let white1 = ColorAsset(name: "White1")
     public static let white2 = ColorAsset(name: "White2")
     public static let white3 = ColorAsset(name: "White3")
