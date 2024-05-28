@@ -48,6 +48,9 @@
 		EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967712BF8D8140087062B /* HeaderNavBarView.swift */; };
 		EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967742BF8DADD0087062B /* ViewModel.swift */; };
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
+		EA3967822BF909D30087062B /* HeaderNavTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967812BF909D30087062B /* HeaderNavTestView.swift */; };
+		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
+		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -110,6 +113,8 @@
 		EA3967712BF8D8140087062B /* HeaderNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavBarView.swift; sourceTree = "<group>"; };
 		EA3967742BF8DADD0087062B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		EA3967842BF915E20087062B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EA3967872BF91BE10087062B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				EA2421BA2BF4D9480070D1C9 /* Navigation */,
+				EA3967832BF915CA0087062B /* Home */,
 				BAD582F52BE6193C0072B308 /* Login */,
 				BAD016752BEB781E0039ACDE /* SignUp */,
 			);
@@ -268,6 +274,7 @@
 			children = (
 				BA0416712C043777003CFFAC /* Extension */,
 				EA3967732BF8DAC70087062B /* Architecture */,
+				EA3967862BF91BCB0087062B /* Extensions */,
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
 				BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */,
 			);
@@ -358,6 +365,22 @@
 				EA3967762BF8DBE50087062B /* CancelBag.swift */,
 			);
 			path = Architecture;
+			sourceTree = "<group>";
+		};
+		EA3967832BF915CA0087062B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EA3967842BF915E20087062B /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EA3967862BF91BCB0087062B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EA3967872BF91BE10087062B /* Font.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +570,7 @@
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
 				BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */,
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
+				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
@@ -554,6 +578,7 @@
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
+				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

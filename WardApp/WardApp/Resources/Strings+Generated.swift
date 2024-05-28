@@ -20,8 +20,12 @@ public enum WardStrings {
   public static let agreementTermsOfService = WardStrings.tr("Localizable", "Agreement Terms Of Service", fallback: "약관 동의")
   /// 회원가입 완료
   public static let confirmSignUp = WardStrings.tr("Localizable", "Confirm Sign Up", fallback: "회원가입 완료")
+  /// 마감 임박
+  public static let deadlineImminent = WardStrings.tr("Localizable", "Deadline Imminent", fallback: "마감 임박")
   /// 중복 불가
   public static let duplicationNotAllowed = WardStrings.tr("Localizable", "Duplication Not Allowed", fallback: "중복 불가")
+  /// 얼마 안남은 행운을 즐겨 보세요
+  public static let enjoyTheLittleLuckYouHaveLeft = WardStrings.tr("Localizable", "Enjoy the little luck you have left", fallback: "얼마 안남은 행운을 즐겨 보세요")
   /// 이벤트, 발매 알림
   public static let eventReleaseNotification = WardStrings.tr("Localizable", "Event, Release Notification", fallback: "이벤트, 발매 알림")
   /// 추가 정보 입력
