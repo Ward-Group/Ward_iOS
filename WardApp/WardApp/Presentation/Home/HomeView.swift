@@ -9,14 +9,14 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        bannerTimeCircle()
+        bannerTitle
     }
 }
 
 extension HomeView {
-    private func bannerTitle() -> some View {
+    private var bannerTitle: some View {
         return VStack(alignment: .leading, content: {
-            Text(WardStrings.deadlineImminent).titleStyle()
+            Text(WardStrings.deadlineImminent).titleStyle
             Spacer()
                 .frame(height: 9)
             Text(WardStrings.enjoyTheLittleLuckYouHaveLeft)
@@ -25,13 +25,13 @@ extension HomeView {
         })
     }
     
-    private func bannerTime() -> some View {
+    private var bannerTime: some View {
         return HStack(alignment: .center, content: {
             
         })
     }
     
-    private func bannerTimeCircle() -> some View {
+    private var bannerTimeCircle: some View {
         return ZStack(alignment: .center, content: {
             Circle()
             Text("0")
