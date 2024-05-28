@@ -48,7 +48,6 @@
 		EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967712BF8D8140087062B /* HeaderNavBarView.swift */; };
 		EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967742BF8DADD0087062B /* ViewModel.swift */; };
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
-		EA3967822BF909D30087062B /* HeaderNavTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967812BF909D30087062B /* HeaderNavTestView.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
 		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
 /* End PBXBuildFile section */
@@ -144,14 +143,6 @@
 				19550401F0099975FA323F7F /* Pods_WardApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BA0416712C043777003CFFAC /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BA0416722C043782003CFFAC /* Publisher.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		BA0416752C044FD6003CFFAC /* Config */ = {
@@ -272,7 +263,6 @@
 		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				BA0416712C043777003CFFAC /* Extension */,
 				EA3967732BF8DAC70087062B /* Architecture */,
 				EA3967862BF91BCB0087062B /* Extensions */,
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
@@ -378,6 +368,7 @@
 		EA3967862BF91BCB0087062B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416722C043782003CFFAC /* Publisher.swift */,
 				EA3967872BF91BE10087062B /* Font.swift */,
 			);
 			path = Extensions;
