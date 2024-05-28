@@ -20,6 +20,10 @@ public typealias Font = FontConvertible.Font
 
 // swiftlint:disable identifier_name line_length type_body_length
 public enum WardFonts {
+  public enum DSDigital {
+    public static let boldItalic = FontConvertible(name: "DS-Digital-BoldItalic", family: "DS-Digital", path: "DS-DIGIT.TTF")
+    public static let all: [FontConvertible] = [boldItalic]
+  }
   public enum GmarketSans {
     public static let bold = FontConvertible(name: "GmarketSansBold", family: "Gmarket Sans", path: "GmarketSansBold.otf")
     public static let light = FontConvertible(name: "GmarketSansLight", family: "Gmarket Sans", path: "GmarketSansLight.otf")
@@ -38,7 +42,7 @@ public enum WardFonts {
     public static let thin = FontConvertible(name: "Pretendard-Thin", family: "Pretendard", path: "Pretendard-Thin.otf")
     public static let all: [FontConvertible] = [black, bold, extraBold, extraLight, light, medium, regular, semiBold, thin]
   }
-  public static let allCustomFonts: [FontConvertible] = [GmarketSans.all, Pretendard.all].flatMap { $0 }
+  public static let allCustomFonts: [FontConvertible] = [DSDigital.all, GmarketSans.all, Pretendard.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }

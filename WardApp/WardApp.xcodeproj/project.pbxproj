@@ -12,7 +12,6 @@
 		BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166B2C04285D003CFFAC /* LoginViewModel.swift */; };
 		BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166D2C042F55003CFFAC /* LoginAssembler.swift */; };
 		BA0416732C043782003CFFAC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416722C043782003CFFAC /* Publisher.swift */; };
-		BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0416762C044FD6003CFFAC /* Config.xcconfig */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -48,9 +47,11 @@
 		EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967712BF8D8140087062B /* HeaderNavBarView.swift */; };
 		EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967742BF8DADD0087062B /* ViewModel.swift */; };
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
-		EA3967822BF909D30087062B /* HeaderNavTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967812BF909D30087062B /* HeaderNavTestView.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
 		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
+		EA6B5BAF2C05C289008BD9B2 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EA6B5BAE2C05C289008BD9B2 /* Config.xcconfig */; };
+		EA6B5BB32C05C984008BD9B2 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B5BB22C05C984008BD9B2 /* BannerView.swift */; };
+		EA6B5BB52C05CAF9008BD9B2 /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -73,7 +74,6 @@
 		BA04166B2C04285D003CFFAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BA04166D2C042F55003CFFAC /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		BA0416722C043782003CFFAC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
-		BA0416762C044FD6003CFFAC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -115,6 +115,9 @@
 		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		EA3967842BF915E20087062B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA3967872BF91BE10087062B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		EA6B5BAE2C05C289008BD9B2 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		EA6B5BB22C05C984008BD9B2 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +160,7 @@
 		BA0416752C044FD6003CFFAC /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				BA0416762C044FD6003CFFAC /* Config.xcconfig */,
+				EA6B5BAE2C05C289008BD9B2 /* Config.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */,
 				BA3AD02C2BE3958E00083347 /* GmarketSansBold.otf */,
 				BA3AD02A2BE3958D00083347 /* GmarketSansLight.otf */,
 				BA3AD02B2BE3958D00083347 /* GmarketSansMedium.otf */,
@@ -370,6 +374,7 @@
 		EA3967832BF915CA0087062B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EA6B5BB12C05C97A008BD9B2 /* Banner */,
 				EA3967842BF915E20087062B /* HomeView.swift */,
 			);
 			path = Home;
@@ -381,6 +386,14 @@
 				EA3967872BF91BE10087062B /* Font.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA6B5BB12C05C97A008BD9B2 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				EA6B5BB22C05C984008BD9B2 /* BannerView.swift */,
+			);
+			path = Banner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +466,7 @@
 				BA3AD03E2BE3988F00083347 /* Pretendard-Bold.otf in Resources */,
 				BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */,
 				BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */,
+				EA6B5BB52C05CAF9008BD9B2 /* DS-DIGIT.TTF in Resources */,
 				BA3AD02D2BE3958E00083347 /* GmarketSansLight.otf in Resources */,
 				BA3AD02E2BE3958E00083347 /* GmarketSansMedium.otf in Resources */,
 				BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */,
@@ -462,8 +476,8 @@
 				BA3AD03C2BE3988F00083347 /* Pretendard-SemiBold.otf in Resources */,
 				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
 				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
-				BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */,
 				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
+				EA6B5BAF2C05C289008BD9B2 /* Config.xcconfig in Resources */,
 				BAD583022BE623890072B308 /* Localizable.strings in Resources */,
 				BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */,
 				BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */,
@@ -576,6 +590,7 @@
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
+				EA6B5BB32C05C984008BD9B2 /* BannerView.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
@@ -605,7 +620,6 @@
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA0416762C044FD6003CFFAC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -670,7 +684,6 @@
 		};
 		BA365BC12BE23D6800C332DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA0416762C044FD6003CFFAC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
