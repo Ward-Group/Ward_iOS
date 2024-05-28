@@ -11,5 +11,6 @@ target 'WardApp' do
   pod 'KakaoSDKCommon'
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
+  pod 'Alamofire'
 
 end
