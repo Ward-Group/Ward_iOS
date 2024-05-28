@@ -27,6 +27,7 @@ public enum WardAssets {
   public enum Color {
     public static let accentColor = ColorAsset(name: "AccentColor")
     public static let backgroundColor = ColorAsset(name: "BackgroundColor")
+    public static let black0 = ColorAsset(name: "Black0")
     public static let black1 = ColorAsset(name: "Black1")
     public static let black2 = ColorAsset(name: "Black2")
     public static let black3 = ColorAsset(name: "Black3")

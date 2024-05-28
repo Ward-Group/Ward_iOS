@@ -35,7 +35,7 @@ extension View {
         return ModifiedContent(content: self, modifier: TitleFont(size: 24))
     }
     
-    var pretendardRegularWhite: some View {
+    var fontPretendardRegularWhite: some View {
         return ModifiedContent(content: self, modifier: PretendardRegularWhite(size: 16))
     }
 }
