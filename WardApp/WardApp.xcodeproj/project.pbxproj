@@ -52,7 +52,6 @@
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
 		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
-		EA6B5BB32C05C984008BD9B2 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6B5BB22C05C984008BD9B2 /* BannerView.swift */; };
 		EA6B5BB52C05CAF9008BD9B2 /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */; };
 /* End PBXBuildFile section */
 
@@ -120,7 +119,6 @@
 		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		EA3967842BF915E20087062B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA3967872BF91BE10087062B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
-		EA6B5BB22C05C984008BD9B2 /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,7 +378,6 @@
 		EA3967832BF915CA0087062B /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				EA6B5BB12C05C97A008BD9B2 /* Banner */,
 				EA3967842BF915E20087062B /* HomeView.swift */,
 			);
 			path = Home;
@@ -392,14 +389,6 @@
 				EA3967872BF91BE10087062B /* Font.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		EA6B5BB12C05C97A008BD9B2 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				EA6B5BB22C05C984008BD9B2 /* BannerView.swift */,
-			);
-			path = Banner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -598,7 +587,6 @@
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
-				EA6B5BB32C05C984008BD9B2 /* BannerView.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
