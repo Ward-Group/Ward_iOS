@@ -12,6 +12,7 @@
 		BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166B2C04285D003CFFAC /* LoginViewModel.swift */; };
 		BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166D2C042F55003CFFAC /* LoginAssembler.swift */; };
 		BA0416732C043782003CFFAC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416722C043782003CFFAC /* Publisher.swift */; };
+		BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0416762C044FD6003CFFAC /* Config.xcconfig */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -72,6 +73,7 @@
 		BA04166B2C04285D003CFFAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BA04166D2C042F55003CFFAC /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		BA0416722C043782003CFFAC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
+		BA0416762C044FD6003CFFAC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -152,6 +154,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		BA0416752C044FD6003CFFAC /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416762C044FD6003CFFAC /* Config.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +209,7 @@
 				BA78664A2BF3BA72007BF0C4 /* Presentation */,
 				BA78664C2BF3BA8A007BF0C4 /* Support */,
 				BA3AD0282BE3921300083347 /* Resources */,
+				BA0416752C044FD6003CFFAC /* Config */,
 				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
 				BA302E5D2BE6789A00B57174 /* WardApp.entitlements */,
 				BA3AD0292BE393F700083347 /* Info.plist */,
@@ -386,6 +397,7 @@
 				BA365BB22BE23D5A00C332DF /* Resources */,
 				BA27C3282BE3652A009D2E93 /* SwiftLint */,
 				BA27C3492BE3840B009D2E93 /* Embed Frameworks */,
+				AE69F8A98FDDC61F9F876A87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -450,6 +462,7 @@
 				BA3AD03C2BE3988F00083347 /* Pretendard-SemiBold.otf in Resources */,
 				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
 				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
+				BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */,
 				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
 				BAD583022BE623890072B308 /* Localizable.strings in Resources */,
 				BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */,
@@ -480,6 +493,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AE69F8A98FDDC61F9F876A87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WardApp/Pods-WardApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WardApp/Pods-WardApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WardApp/Pods-WardApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BA27C3282BE3652A009D2E93 /* SwiftLint */ = {
@@ -575,6 +605,7 @@
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0416762C044FD6003CFFAC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -639,6 +670,7 @@
 		};
 		BA365BC12BE23D6800C332DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA0416762C044FD6003CFFAC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
