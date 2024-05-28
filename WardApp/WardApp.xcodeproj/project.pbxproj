@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3B72DD971C6104B7FCA2B62B /* Pods_WardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19550401F0099975FA323F7F /* Pods_WardApp.framework */; };
+		BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416602C0420EB003CFFAC /* LoginProvider.swift */; };
+		BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166B2C04285D003CFFAC /* LoginViewModel.swift */; };
+		BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166D2C042F55003CFFAC /* LoginAssembler.swift */; };
+		BA0416732C043782003CFFAC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416722C043782003CFFAC /* Publisher.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -26,7 +30,7 @@
 		BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */; };
 		BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */; };
 		BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866592BF3BF73007BF0C4 /* APIService.swift */; };
-		BA78665C2BF3BF81007BF0C4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665B2BF3BF81007BF0C4 /* User.swift */; };
+		BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */; };
 		BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */; };
 		BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */; };
 		BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */; };
@@ -64,6 +68,10 @@
 /* Begin PBXFileReference section */
 		037BC26265E16ED12724B363 /* Pods-WardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WardApp.debug.xcconfig"; path = "Target Support Files/Pods-WardApp/Pods-WardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		19550401F0099975FA323F7F /* Pods_WardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA0416602C0420EB003CFFAC /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
+		BA04166B2C04285D003CFFAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BA04166D2C042F55003CFFAC /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
+		BA0416722C043782003CFFAC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -85,7 +93,7 @@
 		BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
 		BA7866592BF3BF73007BF0C4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		BA78665B2BF3BF81007BF0C4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFromLoginProvider.swift; sourceTree = "<group>"; };
 		BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseUseCase.swift; sourceTree = "<group>"; };
 		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
 		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
@@ -134,6 +142,14 @@
 				19550401F0099975FA323F7F /* Pods_WardApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA0416712C043777003CFFAC /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416722C043782003CFFAC /* Publisher.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
@@ -245,6 +261,7 @@
 		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416712C043777003CFFAC /* Extension */,
 				EA3967732BF8DAC70087062B /* Architecture */,
 				EA3967862BF91BCB0087062B /* Extensions */,
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
@@ -274,7 +291,8 @@
 		BA7866552BF3BC89007BF0C4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				BA78665B2BF3BF81007BF0C4 /* User.swift */,
+				BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */,
+				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -314,7 +332,9 @@
 		BAD582F52BE6193C0072B308 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				BA04166D2C042F55003CFFAC /* LoginAssembler.swift */,
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
+				BA04166B2C04285D003CFFAC /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -508,9 +528,11 @@
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
+				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
+				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
@@ -520,10 +542,12 @@
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
+				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
+				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
-				BA78665C2BF3BF81007BF0C4 /* User.swift in Sources */,
+				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

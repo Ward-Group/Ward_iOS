@@ -10,9 +10,11 @@ import SwiftUI
 @main
 struct WardAppApp: App {
     
+    let loginAssembler = LoginAssemblerImpl()
+    
     var body: some Scene {
         WindowGroup {
-            
+            LoginView(vm: loginAssembler.resolve())
         }
     }
 }
