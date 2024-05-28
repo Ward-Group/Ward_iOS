@@ -37,8 +37,8 @@ struct LoginView: View {
                     logo
                         .padding(.top, geo.size.height * 0.15)
                         .padding(.bottom, geo.size.height * 0.5)
-                    appleLoginButton
                     kakaoLoginButton
+                    appleLoginButton
                         .padding(.top, 5)
                 }
             }
