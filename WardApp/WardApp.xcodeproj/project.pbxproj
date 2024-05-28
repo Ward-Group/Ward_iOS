@@ -13,6 +13,8 @@
 		BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166D2C042F55003CFFAC /* LoginAssembler.swift */; };
 		BA0416732C043782003CFFAC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416722C043782003CFFAC /* Publisher.swift */; };
 		BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0416762C044FD6003CFFAC /* Config.xcconfig */; };
+		BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167B2C05D9D5003CFFAC /* Endpoint.swift */; };
+		BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -48,7 +50,6 @@
 		EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967712BF8D8140087062B /* HeaderNavBarView.swift */; };
 		EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967742BF8DADD0087062B /* ViewModel.swift */; };
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
-		EA3967822BF909D30087062B /* HeaderNavTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967812BF909D30087062B /* HeaderNavTestView.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
 		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,8 @@
 		BA04166D2C042F55003CFFAC /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		BA0416722C043782003CFFAC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		BA0416762C044FD6003CFFAC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		BA04167B2C05D9D5003CFFAC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				BA7866592BF3BF73007BF0C4 /* APIService.swift */,
+				BA04167B2C05D9D5003CFFAC /* Endpoint.swift */,
+				BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -566,6 +571,7 @@
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
+				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
 				BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */,
@@ -573,6 +579,7 @@
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
+				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
