@@ -34,6 +34,7 @@ public enum WardAssets {
     public static let black5 = ColorAsset(name: "Black5")
     public static let black6 = ColorAsset(name: "Black6")
     public static let black7 = ColorAsset(name: "Black7")
+    public static let blue1 = ColorAsset(name: "Blue1")
     public static let cardBackgroundGray = ColorAsset(name: "CardBackgroundGray")
     public static let checkBoxGray = ColorAsset(name: "CheckBoxGray")
     public static let darkGray = ColorAsset(name: "DarkGray")
