@@ -9,10 +9,15 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: true) {
-            BannerView()
-            .frame(maxWidth: .infinity)
-        }
+//        VStack(spacing: 0) {
+//            HeaderNavBarView(showSearching: true, showNotification: true)
+//            ScrollView(showsIndicators: true, content: {
+                VStack {
+                    BannerView()
+                }
+//            })
+//            .frame(maxWidth: .infinity, maxHeight: .infinity)
+//        }
     }
 }
 
