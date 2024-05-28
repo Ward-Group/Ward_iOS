@@ -29,12 +29,18 @@ struct LoginView: View {
     }
     
     var body: some View {
-        ZStack {
-            Color.white
-                .ignoresSafeArea()
-            VStack {
-                appleLoginButton
-                kakaoLoginButton
+        GeometryReader { geo in
+            ZStack {
+                Color.white
+                    .ignoresSafeArea()
+                VStack {
+                    logo
+                        .padding(.top, geo.size.height * 0.15)
+                        .padding(.bottom, geo.size.height * 0.5)
+                    appleLoginButton
+                    kakaoLoginButton
+                        .padding(.top, 5)
+                }
             }
         }
     }
@@ -45,27 +51,37 @@ struct LoginView: View {
     return LoginView(vm: vm)
 }
 
-// TODO: Color Guide, 폰트 설정 세팅되면 색상, 폰트 설정 변경
+extension LoginView {
+    
+    private var logo: some View {
+        WardAssets.Image.wardLogo.swiftUIImage
+            .resizable()
+            .frame(width: 244, height: 54)
+    }
+}
+
 // MARK: Apple Login
 extension LoginView {
     private var appleLoginButton: some View {
-        ZStack {
-            Color.black
-            HStack {
-                WardAssets.Image.appleLoginLogo.swiftUIImage
-                    .foregroundStyle(.black)
-                Text(WardStrings.loginWithApple)
-                    .foregroundStyle(Color.white)
-            }
-        }
+        SignInWithAppleButton(
+            onRequest: appleLoginOnRequest,
+            onCompletion: appleLoginOnCompletion
+        )
         .frame(width: 325, height: 60)
         .cornerRadius(16)
         .overlay {
-            SignInWithAppleButton(
-                onRequest: appleLoginOnRequest,
-                onCompletion: appleLoginOnCompletion
-            )
-            .blendMode(.overlay)
+            ZStack {
+                Color.mainBlue
+                HStack {
+                    WardAssets.Image.appleLoginLogo.swiftUIImage
+                        .foregroundStyle(Color.black0)
+                    Text(WardStrings.loginWithApple)
+                        .fontPretendardRegularWhite
+                }
+            }
+            .frame(width: 325, height: 60)
+            .cornerRadius(16)
+            .allowsHitTesting(false)
         }
     }
     
@@ -95,21 +111,19 @@ extension LoginView {
     }
 }
 
-// TODO: 컬러 가이드 세팅되면 컬러, 폰트 적용
 // MARK: Kakao Login
 extension LoginView {
     
     private var kakaoLoginButton: some View {
         ZStack {
-            Color.black
+            Color.mainBlue
             Button(action: {
                 authenticateWithKakaoTalk()
             }, label: {
                 HStack {
                     WardAssets.Image.kakaoLoginLogo.swiftUIImage
-                        .foregroundStyle(.black)
                     Text(WardStrings.loginWithKakao)
-                        .foregroundStyle(Color.white)
+                        .fontPretendardRegularWhite
                 }
             })
         }
@@ -119,7 +133,7 @@ extension LoginView {
     
     private func authenticateWithKakaoTalk() {
         if UserApi.isKakaoTalkLoginAvailable() {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+            UserApi.shared.loginWithKakaoTalk { _, error in
                 if let error = error {
                     print("카카오 로그인 실패 \(error)")
                     return
@@ -127,7 +141,7 @@ extension LoginView {
                 self.loginWithKakaoTalk()
             }
         } else {
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            UserApi.shared.loginWithKakaoAccount { _, error in
                 if let error = error {
                     print("카카오 로그인 실패 \(error)")
                     return
@@ -138,7 +152,7 @@ extension LoginView {
     }
     
     private func loginWithKakaoTalk() {
-        UserApi.shared.me() { userMaybe, error in
+        UserApi.shared.me { userMaybe, error in
             if let error = error {
                 print("카카오 유저 정보 가져오기 실패 \(error)")
                 return
