@@ -15,6 +15,8 @@
 		BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0416762C044FD6003CFFAC /* Config.xcconfig */; };
 		BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167B2C05D9D5003CFFAC /* Endpoint.swift */; };
 		BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */; };
+		BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */; };
+		BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -77,6 +79,8 @@
 		BA0416762C044FD6003CFFAC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA04167B2C05D9D5003CFFAC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardSegementedControl.swift; sourceTree = "<group>"; };
+		BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardSegmentedControlTab.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -163,6 +167,15 @@
 				BA0416762C044FD6003CFFAC /* Config.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		BA04167F2C06B1D5003CFFAC /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */,
+				BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */,
+			);
+			path = SegmentedControl;
 			sourceTree = "<group>";
 		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
@@ -275,6 +288,7 @@
 		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				BA04167F2C06B1D5003CFFAC /* SegmentedControl */,
 				BA0416712C043777003CFFAC /* Extension */,
 				EA3967732BF8DAC70087062B /* Architecture */,
 				EA3967862BF91BCB0087062B /* Extensions */,
@@ -565,6 +579,8 @@
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
+				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
+				BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */,
 				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
