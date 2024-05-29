@@ -3,16 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3B72DD971C6104B7FCA2B62B /* Pods_WardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19550401F0099975FA323F7F /* Pods_WardApp.framework */; };
+		A0D2D7992C05F4EE00A4CBAF /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */; };
 		BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416602C0420EB003CFFAC /* LoginProvider.swift */; };
 		BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166B2C04285D003CFFAC /* LoginViewModel.swift */; };
 		BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166D2C042F55003CFFAC /* LoginAssembler.swift */; };
 		BA0416732C043782003CFFAC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416722C043782003CFFAC /* Publisher.swift */; };
-		BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BA0416762C044FD6003CFFAC /* Config.xcconfig */; };
 		BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167B2C05D9D5003CFFAC /* Endpoint.swift */; };
 		BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
@@ -52,6 +52,7 @@
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
 		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
+		EA6B5BB52C05CAF9008BD9B2 /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,11 +71,11 @@
 /* Begin PBXFileReference section */
 		037BC26265E16ED12724B363 /* Pods-WardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WardApp.debug.xcconfig"; path = "Target Support Files/Pods-WardApp/Pods-WardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		19550401F0099975FA323F7F /* Pods_WardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA0416602C0420EB003CFFAC /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		BA04166B2C04285D003CFFAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BA04166D2C042F55003CFFAC /* LoginAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembler.swift; sourceTree = "<group>"; };
 		BA0416722C043782003CFFAC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
-		BA0416762C044FD6003CFFAC /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BA04167B2C05D9D5003CFFAC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
@@ -118,6 +119,7 @@
 		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		EA3967842BF915E20087062B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA3967872BF91BE10087062B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,7 +162,7 @@
 		BA0416752C044FD6003CFFAC /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				BA0416762C044FD6003CFFAC /* Config.xcconfig */,
+				A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */,
 				BA3AD02C2BE3958E00083347 /* GmarketSansBold.otf */,
 				BA3AD02A2BE3958D00083347 /* GmarketSansLight.otf */,
 				BA3AD02B2BE3958D00083347 /* GmarketSansMedium.otf */,
@@ -430,7 +433,7 @@
 				};
 			};
 			buildConfigurationList = BA365BAF2BE23D5A00C332DF /* Build configuration list for PBXProject "WardApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -458,6 +461,7 @@
 				BA3AD03E2BE3988F00083347 /* Pretendard-Bold.otf in Resources */,
 				BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */,
 				BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */,
+				EA6B5BB52C05CAF9008BD9B2 /* DS-DIGIT.TTF in Resources */,
 				BA3AD02D2BE3958E00083347 /* GmarketSansLight.otf in Resources */,
 				BA3AD02E2BE3958E00083347 /* GmarketSansMedium.otf in Resources */,
 				BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */,
@@ -467,10 +471,10 @@
 				BA3AD03C2BE3988F00083347 /* Pretendard-SemiBold.otf in Resources */,
 				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
 				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
-				BA0416772C044FD6003CFFAC /* Config.xcconfig in Resources */,
 				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
 				BAD583022BE623890072B308 /* Localizable.strings in Resources */,
 				BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */,
+				A0D2D7992C05F4EE00A4CBAF /* Config.xcconfig in Resources */,
 				BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,7 +616,6 @@
 /* Begin XCBuildConfiguration section */
 		BA365BC02BE23D6800C332DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA0416762C044FD6003CFFAC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -677,7 +680,6 @@
 		};
 		BA365BC12BE23D6800C332DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA0416762C044FD6003CFFAC /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -757,7 +759,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,7 +803,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

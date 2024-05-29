@@ -9,34 +9,46 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        bannerTitle
+        VStack(spacing: 0) {
+            HeaderNavBarView(showSearching: true, showNotification: true)
+            GeometryReader { geo in
+                ScrollView(.vertical, showsIndicators: true, content: {
+                    LazyVStack(spacing: 0) {
+                        VStack(spacing: 12, content: {
+                            bannerTitle
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                LazyHStack(alignment: .top, spacing: 10) {
+                                    ForEach(0..<10) { _ in
+                                        RoundedRectangle(cornerRadius: 20)
+                                            .fill(Color.blue1)
+                                            .frame(width: geo.size.width - 32, height: (geo.size.width - 32) * 0.58)
+                                    }
+                                }
+                                .scrollTargetLayout()
+                            }
+                            .contentMargins(.horizontal, 16)
+                            .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
+                        })
+                    }
+                })
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
     }
 }
 
 extension HomeView {
     private var bannerTitle: some View {
-        return VStack(alignment: .leading, content: {
+        VStack(alignment: .leading, spacing: 9, content: {
             Text(WardStrings.deadlineImminent).titleStyle
-            Spacer()
-                .frame(height: 9)
+                .lineLimit(1)
             Text(WardStrings.enjoyTheLittleLuckYouHaveLeft)
+                .lineLimit(1)
                 .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
-                .foregroundStyle(WardAssets.Color.placeholderGray.swiftUIColor)
+                .foregroundStyle(Color.placeholderGray)
         })
-    }
-    
-    private var bannerTime: some View {
-        return HStack(alignment: .center, content: {
-            
-        })
-    }
-    
-    private var bannerTimeCircle: some View {
-        return ZStack(alignment: .center, content: {
-            Circle()
-            Text("0")
-        })
-        .frame(width: 41, height: 41)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 16)
     }
 }
 
