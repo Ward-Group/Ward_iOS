@@ -54,8 +54,9 @@ public enum WardAssets {
     public static let appleLoginLogo = ImageAsset(name: "AppleLoginLogo")
     public static let homeBanner = ImageAsset(name: "HomeBanner")
     public enum Icon {
-      public static let notification = ImageAsset(name: "notification")
-      public static let searching = ImageAsset(name: "searching")
+      public static let chevronRight = ImageAsset(name: "ChevronRight")
+      public static let notification = ImageAsset(name: "Notification")
+      public static let searching = ImageAsset(name: "Searching")
     }
     public static let kakaoLoginLogo = ImageAsset(name: "KakaoLoginLogo")
     public static let wardLogo = ImageAsset(name: "WardLogo")
