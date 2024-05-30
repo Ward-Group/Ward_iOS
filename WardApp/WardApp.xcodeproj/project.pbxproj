@@ -17,6 +17,9 @@
 		BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */; };
 		BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */; };
 		BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */; };
+		BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416902C06C840003CFFAC /* InterestedItem.swift */; };
+		BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */; };
+		BA0416962C0810EF003CFFAC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416952C0810EF003CFFAC /* Int.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -81,6 +84,9 @@
 		BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardSegementedControl.swift; sourceTree = "<group>"; };
 		BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardSegmentedControlTab.swift; sourceTree = "<group>"; };
+		BA0416902C06C840003CFFAC /* InterestedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedItem.swift; sourceTree = "<group>"; };
+		BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedItemRowView.swift; sourceTree = "<group>"; };
+		BA0416952C0810EF003CFFAC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -153,14 +159,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA0416712C043777003CFFAC /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BA0416722C043782003CFFAC /* Publisher.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		BA0416752C044FD6003CFFAC /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +174,14 @@
 				BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */,
 			);
 			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		BA0416922C06C875003CFFAC /* Interested */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */,
+			);
+			path = Interested;
 			sourceTree = "<group>";
 		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
@@ -277,6 +283,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416922C06C875003CFFAC /* Interested */,
 				EA2421BA2BF4D9480070D1C9 /* Navigation */,
 				EA3967832BF915CA0087062B /* Home */,
 				BAD582F52BE6193C0072B308 /* Login */,
@@ -289,7 +296,6 @@
 			isa = PBXGroup;
 			children = (
 				BA04167F2C06B1D5003CFFAC /* SegmentedControl */,
-				BA0416712C043777003CFFAC /* Extension */,
 				EA3967732BF8DAC70087062B /* Architecture */,
 				EA3967862BF91BCB0087062B /* Extensions */,
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
@@ -323,6 +329,7 @@
 			children = (
 				BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */,
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
+				BA0416902C06C840003CFFAC /* InterestedItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -397,7 +404,9 @@
 		EA3967862BF91BCB0087062B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416722C043782003CFFAC /* Publisher.swift */,
 				EA3967872BF91BE10087062B /* Font.swift */,
+				BA0416952C0810EF003CFFAC /* Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -576,6 +585,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
+				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
@@ -599,7 +609,9 @@
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
+				BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
+				BA0416962C0810EF003CFFAC /* Int.swift in Sources */,
 				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 			);
