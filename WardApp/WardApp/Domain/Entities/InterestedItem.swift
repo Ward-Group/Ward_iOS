@@ -7,10 +7,14 @@
 
 import Foundation
 
-struct InterestedItem {
+struct InterestedItem: Identifiable {
     let brand: String
     let name: String
     let price: Int
     let isLiked: Bool
     let code: String
+    
+    var id: String {
+        code
+    }
 }
