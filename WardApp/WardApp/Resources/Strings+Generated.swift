@@ -32,6 +32,8 @@ public enum WardStrings {
   public static let extraInformation = WardStrings.tr("Localizable", "Extra Information", fallback: "추가 정보 입력")
   /// 선택 항목에 대한 동의 포함
   public static let includeOptionalTermsOfService = WardStrings.tr("Localizable", "Include Optional Terms Of Service", fallback: "선택 항목에 대한 동의 포함")
+  /// 원
+  public static let koreanCurrencyWon = WardStrings.tr("Localizable", "Korean Currency Won", fallback: "원")
   /// Apple로 계속하기
   public static let loginWithApple = WardStrings.tr("Localizable", "Login With Apple", fallback: "Apple로 계속하기")
   /// Localizable.strings
