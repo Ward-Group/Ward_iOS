@@ -9,16 +9,14 @@ import SwiftUI
 
 struct WardSegementedControl: View {
     
-    @Binding var tabs: [WardSegmentedControlTab]
+    var tabs: [WardSegmentedControlTab]
+    @Binding var selectedTab: WardSegmentedControlTab
     
-    @State var selectedTab: WardSegmentedControlTab?
     @State var tabIndicatorOffset: CGFloat = 0
     
-    init(tabs: Binding<[WardSegmentedControlTab]>) {
-        self._tabs = tabs
-        if let firstTab = tabs.wrappedValue.first {
-            _selectedTab = State(initialValue: firstTab)
-        }
+    init(tabs: [WardSegmentedControlTab], currentTab: Binding<WardSegmentedControlTab>) {
+        self.tabs = tabs
+        self._selectedTab = currentTab
     }
     
     var body: some View {
@@ -59,5 +57,5 @@ struct WardSegementedControl: View {
 #Preview {
     let merchant = WardSegmentedControlTab(id: "merchant", title: "관심 상품")
     let brand = WardSegmentedControlTab(id: "brandm", title: "관심 브랜드")
-    return WardSegementedControl(tabs: .constant([merchant, brand]))
+    return WardSegementedControl(tabs: [merchant, brand], currentTab: .constant(merchant))
 }
