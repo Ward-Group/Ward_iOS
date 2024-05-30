@@ -20,6 +20,10 @@
 		BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416902C06C840003CFFAC /* InterestedItem.swift */; };
 		BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */; };
 		BA0416962C0810EF003CFFAC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416952C0810EF003CFFAC /* Int.swift */; };
+		BA0416982C0814CB003CFFAC /* InterestedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416972C0814CB003CFFAC /* InterestedView.swift */; };
+		BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416992C084322003CFFAC /* InterestedViewModel.swift */; };
+		BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */; };
+		BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04169D2C0855F6003CFFAC /* FilterOption.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -87,6 +91,10 @@
 		BA0416902C06C840003CFFAC /* InterestedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedItem.swift; sourceTree = "<group>"; };
 		BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedItemRowView.swift; sourceTree = "<group>"; };
 		BA0416952C0810EF003CFFAC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		BA0416972C0814CB003CFFAC /* InterestedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedView.swift; sourceTree = "<group>"; };
+		BA0416992C084322003CFFAC /* InterestedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedViewModel.swift; sourceTree = "<group>"; };
+		BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedAssembler.swift; sourceTree = "<group>"; };
+		BA04169D2C0855F6003CFFAC /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -180,6 +188,9 @@
 			isa = PBXGroup;
 			children = (
 				BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */,
+				BA0416972C0814CB003CFFAC /* InterestedView.swift */,
+				BA0416992C084322003CFFAC /* InterestedViewModel.swift */,
+				BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */,
 			);
 			path = Interested;
 			sourceTree = "<group>";
@@ -372,6 +383,7 @@
 				BA04166D2C042F55003CFFAC /* LoginAssembler.swift */,
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
 				BA04166B2C04285D003CFFAC /* LoginViewModel.swift */,
+				BA04169D2C0855F6003CFFAC /* FilterOption.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -586,7 +598,9 @@
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
+				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
+				BA0416982C0814CB003CFFAC /* InterestedView.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
@@ -605,7 +619,9 @@
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
+				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
+				BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
