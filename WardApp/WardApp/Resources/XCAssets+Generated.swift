@@ -34,11 +34,14 @@ public enum WardAssets {
     public static let black5 = ColorAsset(name: "Black5")
     public static let black6 = ColorAsset(name: "Black6")
     public static let black7 = ColorAsset(name: "Black7")
+    public static let black8 = ColorAsset(name: "Black8")
     public static let blue1 = ColorAsset(name: "Blue1")
     public static let cardBackgroundGray = ColorAsset(name: "CardBackgroundGray")
     public static let checkBoxGray = ColorAsset(name: "CheckBoxGray")
     public static let darkGray = ColorAsset(name: "DarkGray")
     public static let footnoteText = ColorAsset(name: "FootnoteText")
+    public static let gray2 = ColorAsset(name: "Gray2")
+    public static let gray3 = ColorAsset(name: "Gray3")
     public static let headerTextBlack = ColorAsset(name: "HeaderTextBlack")
     public static let mainBlue = ColorAsset(name: "MainBlue")
     public static let mainGray = ColorAsset(name: "MainGray")
@@ -53,6 +56,7 @@ public enum WardAssets {
   public enum Image {
     public static let appleLoginLogo = ImageAsset(name: "AppleLoginLogo")
     public enum Icon {
+      public static let arrowDown = ImageAsset(name: "arrowDown")
       public static let likeNo = ImageAsset(name: "likeNo")
       public static let likeYes = ImageAsset(name: "likeYes")
       public static let likeYesBorderless = ImageAsset(name: "likeYesBorderless")

@@ -32,3 +32,13 @@
 
 // MARK: 관심 상품
 "Korean Currency Won" = "원";
+"Interested Item" = "관심 상품";
+"Interested Brand" = "관심 브랜드";
+"Sorted By PickedAt" = "담은 순";
+"Sorted By PickedAt Reversed" = "오래된 순";
+"Total" = "전체";
+"Counting Unit Korean" = "개";
+"Interested Items Does Not Exists" = "관심 있는 상품이 없습니다. \n 상품을 추가해보세요.";
+"Redirect To Release Menu" = "발매 메뉴 바로가기";
+
+
