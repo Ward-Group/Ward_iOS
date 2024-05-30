@@ -15,14 +15,26 @@ struct InterestedItemRowView: View {
         ZStack {
             Color.background
             
-            HStack {
-                imagePlaceHolder
-                VStack(alignment: .leading) {
-                    brandAndLike
-                    Spacer()
-                    itemName
-                    Spacer()
-                    codeAndPrice
+            GeometryReader { geo in
+                let itemImageSize = geo.size.width * 0.22
+                let likeImageSize = geo.size.width * 0.06
+                
+                HStack {
+                    imagePlaceHolder
+                        .frame(width: itemImageSize, height: itemImageSize)
+                    
+                    VStack(alignment: .leading) {
+                        HStack {
+                            brand
+                            Spacer()
+                            like
+                                .frame(width: likeImageSize, height: likeImageSize)
+                        }
+                        Spacer()
+                        itemName
+                        Spacer()
+                        codeAndPrice
+                    }
                 }
             }
         }
@@ -33,22 +45,20 @@ extension InterestedItemRowView {
     
     // TODO: API 연동시 이미지로 대체
     private var imagePlaceHolder: some View {
-        RoundedRectangle(cornerRadius: 16)
-            .frame(width: 85, height: 85)
+        RoundedRectangle(cornerRadius: 8)
             .foregroundStyle(Color.black1)
             .padding(.trailing, 5)
     }
     
-    private var brandAndLike: some View {
-        HStack {
-            Text(item.brand)
-                .font(WardFonts.Pretendard.bold.swiftUIFont(size: 12))
-                .lineLimit(1)
-            Spacer()
-            WardAssets.Image.Icon.likeYesBorderless.swiftUIImage
-                .resizable()
-                .frame(width: 24, height: 24)
-        }
+    private var brand: some View {
+        Text(item.brand)
+            .font(WardFonts.Pretendard.bold.swiftUIFont(size: 12))
+            .lineLimit(1)
+    }
+    
+    private var like: some View {
+        WardAssets.Image.Icon.likeYesBorderless.swiftUIImage
+            .resizable()
     }
     
     private var itemName: some View {
