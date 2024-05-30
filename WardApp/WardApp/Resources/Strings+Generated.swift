@@ -20,8 +20,8 @@ public enum WardStrings {
   public static let agreementTermsOfService = WardStrings.tr("Localizable", "Agreement Terms Of Service", fallback: "약관 동의")
   /// 회원가입 완료
   public static let confirmSignUp = WardStrings.tr("Localizable", "Confirm Sign Up", fallback: "회원가입 완료")
-  /// 마감 임박
-  public static let deadlineImminent = WardStrings.tr("Localizable", "Deadline Imminent", fallback: "마감 임박")
+  /// 오늘 마감
+  public static let dueToday = WardStrings.tr("Localizable", "Due Today", fallback: "오늘 마감")
   /// 중복 불가
   public static let duplicationNotAllowed = WardStrings.tr("Localizable", "Duplication Not Allowed", fallback: "중복 불가")
   /// 얼마 안남은 행운을 즐겨 보세요
@@ -45,8 +45,12 @@ public enum WardStrings {
   public static let olderThanAgeOf14 = WardStrings.tr("Localizable", "Older Than Age Of 14", fallback: "만 14세 이상입니다.")
   /// 선택
   public static let `optional` = WardStrings.tr("Localizable", "Optional", fallback: "선택")
+  /// 발매 상품
+  public static let releasedProduct = WardStrings.tr("Localizable", "Released Product", fallback: "발매 상품")
   /// 필수
   public static let `required` = WardStrings.tr("Localizable", "Required", fallback: "필수")
+  /// 더보기
+  public static let showMore = WardStrings.tr("Localizable", "Show More", fallback: "더보기")
   /// 서비스 이용약관
   public static let termsOfService = WardStrings.tr("Localizable", "Terms Of Service", fallback: "서비스 이용약관")
   /// 사용할 닉네임을 입력해주세요.
