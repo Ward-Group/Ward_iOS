@@ -46,7 +46,6 @@
 		BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */; };
 		BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */; };
 		BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */; };
-		BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
 		BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BACB69CC2BF33E1700C3E29A /* swiftgen.yml */; };
@@ -130,7 +129,6 @@
 		BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseUseCase.swift; sourceTree = "<group>"; };
 		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
 		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
-		BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleModifier.swift; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BACB69CC2BF33E1700C3E29A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
@@ -187,12 +185,6 @@
 			sourceTree = "<group>";
 		};
 		BA0416752C044FD6003CFFAC /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				EA8C9FA22C098F1600F02E3A /* Config.xcconfig */,
-			);
-			path = Config;
-			sourceTree = "<group>";
 		};
 		BA04167F2C06B1D5003CFFAC /* SegmentedControl */ = {
 			isa = PBXGroup;
@@ -331,7 +323,6 @@
 				BA04167F2C06B1D5003CFFAC /* SegmentedControl */,
 				EA3967732BF8DAC70087062B /* Architecture */,
 				EA3967862BF91BCB0087062B /* Extensions */,
-				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
 				BAD0167A2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift */,
 			);
 			path = Support;
@@ -443,6 +434,7 @@
 		EA3967862BF91BCB0087062B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416722C043782003CFFAC /* Publisher.swift */,
 				EA3967872BF91BE10087062B /* Font.swift */,
 				BA0416952C0810EF003CFFAC /* Int.swift */,
 				A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */,
