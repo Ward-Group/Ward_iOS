@@ -9,14 +9,7 @@ import SwiftUI
 
 struct CategoryTabView: View {
     
-    // TODO: 카테고리 데이터 임시 모델
-    struct CategoryData: Identifiable {
-        let id = UUID()
-        let title: String
-        var isSelect: Bool
-    }
-    
-    let list: [CategoryData]
+    let list: [CategoryTabViewModel]
     
     var body: some View {
         return ScrollView(.horizontal, showsIndicators: false) {
@@ -41,9 +34,9 @@ struct CategoryTabView: View {
 }
 
 #Preview {
-    CategoryTabView(list: [CategoryTabView.CategoryData(title: "오늘 마감", isSelect: true),
-                       CategoryTabView.CategoryData(title: "발매 중", isSelect: false),
-                       CategoryTabView.CategoryData(title: "관심 상품", isSelect: false),
-                       CategoryTabView.CategoryData(title: "발매 확장", isSelect: false),
-                       CategoryTabView.CategoryData(title: "오늘 등록", isSelect: false)])
+    CategoryTabView(list: [CategoryTabViewModel(title: "오늘 마감", isSelect: true),
+                       CategoryTabViewModel(title: "발매 중", isSelect: false),
+                       CategoryTabViewModel(title: "관심 상품", isSelect: false),
+                       CategoryTabViewModel(title: "발매 확장", isSelect: false),
+                        CategoryTabViewModel(title: "오늘 등록", isSelect: false)])
 }
