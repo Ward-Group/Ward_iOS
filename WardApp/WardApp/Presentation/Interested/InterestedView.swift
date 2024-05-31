@@ -13,15 +13,15 @@ struct InterestedView: View {
     @ObservedObject var input: InterestedViewModel.Input
     @ObservedObject var output: InterestedViewModel.Output
     
-    private var currentTab = PassthroughSubject<WardSegmentedControlTab, Never>()
-    private var currentFilterOption = PassthroughSubject<FilterOption, Never>()
+    private var currentTabTrigger = PassthroughSubject<WardSegmentedControlTab, Never>()
+    private var currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
     
     private let cancelBag = CancelBag()
     
     init(vm: InterestedViewModel) {
         let input = InterestedViewModel.Input(
-            currentTab: currentTab.eraseToAnyPublisher(),
-            currentFilterOption: currentFilterOption.eraseToAnyPublisher()
+            currentTabTrigger: currentTabTrigger.eraseToAnyPublisher(),
+            currentFilterOptionTrigger: currentFilterOptionTrigger.eraseToAnyPublisher()
         )
         
         output = vm.transform(input, cancelBag: cancelBag)
@@ -71,7 +71,7 @@ extension InterestedView {
         Menu {
             ForEach(output.filterOptions, id: \.id) { option in
                 Button(action: {
-                    currentFilterOption.send(option)
+                    currentFilterOptionTrigger.send(option)
                 }, label: {
                     Text(option.title)
                         .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))

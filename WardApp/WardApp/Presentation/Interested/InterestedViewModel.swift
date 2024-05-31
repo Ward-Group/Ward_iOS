@@ -10,12 +10,12 @@ import Combine
 class InterestedViewModel: ViewModel {
     
     final class Input: ObservableObject {
-        var currentTab: AnyPublisher<WardSegmentedControlTab, Never>
-        var currentFilterOption: AnyPublisher<FilterOption, Never>
+        var currentTabTrigger: AnyPublisher<WardSegmentedControlTab, Never>
+        var currentFilterOptionTrigger: AnyPublisher<FilterOption, Never>
         
-        init(currentTab: AnyPublisher<WardSegmentedControlTab, Never>, currentFilterOption: AnyPublisher<FilterOption, Never>) {
-            self.currentTab = currentTab
-            self.currentFilterOption = currentFilterOption
+        init(currentTabTrigger: AnyPublisher<WardSegmentedControlTab, Never>, currentFilterOptionTrigger: AnyPublisher<FilterOption, Never>) {
+            self.currentTabTrigger = currentTabTrigger
+            self.currentFilterOptionTrigger = currentFilterOptionTrigger
         }
     }
     
@@ -40,11 +40,11 @@ class InterestedViewModel: ViewModel {
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         output.items = getItems()
         
-        input.currentTab
+        input.currentTabTrigger
             .assign(to: \.currentTab, on: output)
             .store(in: cancelBag)
         
-        input.currentFilterOption
+        input.currentFilterOptionTrigger
             .assign(to: \.currentFilterOption, on: output)
             .store(in: cancelBag)
         
