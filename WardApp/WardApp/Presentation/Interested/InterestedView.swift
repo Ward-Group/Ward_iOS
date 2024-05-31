@@ -112,7 +112,7 @@ extension InterestedView {
     private var emptyItem: some View {
         VStack {
             Spacer()
-            Text(WardStrings.interestedItemsDoesNotExists)
+            Text(WardStrings.interestedItemsDoNotExist)
                 .multilineTextAlignment(.center)
                 .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                 .foregroundStyle(Color.gray3)
