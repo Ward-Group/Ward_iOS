@@ -77,7 +77,8 @@ extension LoginView {
                     WardAssets.Image.appleLoginLogo.swiftUIImage
                         .foregroundStyle(Color.black0)
                     Text(WardStrings.loginWithApple)
-                        .fontPretendardRegularWhite
+                        .font(WardFonts.Pretendard.regular.swiftUIFont(size: 16))
+                        .foregroundStyle(WardAssets.Color.white0.swiftUIColor)
                 }
             }
             .cornerRadius(16)
@@ -123,7 +124,8 @@ extension LoginView {
                 HStack {
                     WardAssets.Image.kakaoLoginLogo.swiftUIImage
                     Text(WardStrings.loginWithKakao)
-                        .fontPretendardRegularWhite
+                        .font(WardFonts.Pretendard.regular.swiftUIFont(size: 16))
+                        .foregroundStyle(WardAssets.Color.white0.swiftUIColor)
                 }
             })
         }
