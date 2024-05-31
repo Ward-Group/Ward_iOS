@@ -22,8 +22,7 @@ struct TitleFont: ViewModifier {
 }
 
 extension View {
-    // TODO: [디자인 요청] weight으로 폰트를 구분해야 하는지..
     var titleStyle: some View {
-        return ModifiedContent(content: self, modifier: TitleFont(size: 24))
+        ModifiedContent(content: self, modifier: TitleFont(size: 24))
     }
 }

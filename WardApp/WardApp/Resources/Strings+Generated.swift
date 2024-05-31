@@ -24,6 +24,8 @@ public enum WardStrings {
   public static let countingUnitKorean = WardStrings.tr("Localizable", "Counting Unit Korean", fallback: "개")
   /// 마감 임박
   public static let deadlineImminent = WardStrings.tr("Localizable", "Deadline Imminent", fallback: "마감 임박")
+  /// 오늘 마감
+  public static let dueToday = WardStrings.tr("Localizable", "Due Today", fallback: "오늘 마감")
   /// 중복 불가
   public static let duplicationNotAllowed = WardStrings.tr("Localizable", "Duplication Not Allowed", fallback: "중복 불가")
   /// 얼마 안남은 행운을 즐겨 보세요
@@ -64,6 +66,12 @@ public enum WardStrings {
   public static let sortedByPickedAt = WardStrings.tr("Localizable", "Sorted By PickedAt", fallback: "담은 순")
   /// 오래된 순
   public static let sortedByPickedAtReversed = WardStrings.tr("Localizable", "Sorted By PickedAt Reversed", fallback: "오래된 순")
+  /// 발매 상품
+  public static let releasedProduct = WardStrings.tr("Localizable", "Released Product", fallback: "발매 상품")
+  /// 필수
+  public static let `required` = WardStrings.tr("Localizable", "Required", fallback: "필수")
+  /// 더보기
+  public static let showMore = WardStrings.tr("Localizable", "Show More", fallback: "더보기")
   /// 서비스 이용약관
   public static let termsOfService = WardStrings.tr("Localizable", "Terms Of Service", fallback: "서비스 이용약관")
   /// 전체

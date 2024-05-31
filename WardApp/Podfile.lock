@@ -15,7 +15,6 @@ PODS:
   - SwiftLint (0.54.0)
 
 DEPENDENCIES:
-  - Alamofire
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
@@ -39,6 +38,6 @@ SPEC CHECKSUMS:
   SwiftGen: 4993cbf71cbc4886f775e26f8d5c3a1188ec9f99
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
 
-PODFILE CHECKSUM: 0575571e8fdfe5212aaa33b99783e8ba835111ff
+PODFILE CHECKSUM: fd67bad77470c6766c85f6bd1b62ab2f2cb9f46b
 
 COCOAPODS: 1.14.3

@@ -27,7 +27,7 @@
 "Confirm Sign Up" = "회원가입 완료";
 
 // MARK: 홈 화면
-"Deadline Imminent" = "마감 임박";
+"Due Today" = "오늘 마감";
 "Enjoy the little luck you have left" = "얼마 안남은 행운을 즐겨 보세요";
 
 // MARK: 관심 상품
@@ -42,3 +42,5 @@
 "Redirect To Release Menu" = "발매 메뉴 바로가기";
 
 
+"Show More" = "더보기";
+"Released Product" = "발매 상품";

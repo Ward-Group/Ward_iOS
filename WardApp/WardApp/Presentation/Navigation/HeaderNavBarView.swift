@@ -35,8 +35,9 @@ struct HeaderNavBarView: View {
                 })
             }
         }
-        .padding(16)
+        .padding(.horizontal, 16)
         .background(WardAssets.Color.backgroundColor.swiftUIColor)
+        .frame(height: 54)
     }
 }
 
