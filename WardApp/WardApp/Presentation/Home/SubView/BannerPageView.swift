@@ -7,16 +7,20 @@
 
 import SwiftUI
 
+struct BannerPageModel: Identifiable {
+    var id: UUID
+    var image: Image
+    
+    init(product: ExpiringProduct) {
+        self.id = product.id
+        self.image = product.image
+    }
+}
+
 struct BannerPageView: View {
     
-    // TODO: 배너 이미지 임시 모델
-    struct ImageModel: Identifiable {
-        let id = UUID()
-        let image: Image = WardAssets.Image.homeBanner.swiftUIImage
-    }
-    
     let geo: GeometryProxy
-    let list: [ImageModel]
+    var list: [BannerPageModel]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
