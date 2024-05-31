@@ -16,6 +16,15 @@
 		BA0416732C043782003CFFAC /* Publisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416722C043782003CFFAC /* Publisher.swift */; };
 		BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167B2C05D9D5003CFFAC /* Endpoint.swift */; };
 		BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */; };
+		BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */; };
+		BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */; };
+		BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416902C06C840003CFFAC /* InterestedItem.swift */; };
+		BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */; };
+		BA0416962C0810EF003CFFAC /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416952C0810EF003CFFAC /* Int.swift */; };
+		BA0416982C0814CB003CFFAC /* InterestedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416972C0814CB003CFFAC /* InterestedView.swift */; };
+		BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416992C084322003CFFAC /* InterestedViewModel.swift */; };
+		BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */; };
+		BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04169D2C0855F6003CFFAC /* FilterOption.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -83,6 +92,15 @@
 		BA0416722C043782003CFFAC /* Publisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publisher.swift; sourceTree = "<group>"; };
 		BA04167B2C05D9D5003CFFAC /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardSegementedControl.swift; sourceTree = "<group>"; };
+		BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardSegmentedControlTab.swift; sourceTree = "<group>"; };
+		BA0416902C06C840003CFFAC /* InterestedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedItem.swift; sourceTree = "<group>"; };
+		BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedItemRowView.swift; sourceTree = "<group>"; };
+		BA0416952C0810EF003CFFAC /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		BA0416972C0814CB003CFFAC /* InterestedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedView.swift; sourceTree = "<group>"; };
+		BA0416992C084322003CFFAC /* InterestedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedViewModel.swift; sourceTree = "<group>"; };
+		BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedAssembler.swift; sourceTree = "<group>"; };
+		BA04169D2C0855F6003CFFAC /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -159,20 +177,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA0416712C043777003CFFAC /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				BA0416722C043782003CFFAC /* Publisher.swift */,
-			);
-			path = Extension;
-			sourceTree = "<group>";
-		};
 		BA0416752C044FD6003CFFAC /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */,
+				BA0416762C044FD6003CFFAC /* Config.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		BA04167F2C06B1D5003CFFAC /* SegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */,
+				BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */,
+			);
+			path = SegmentedControl;
+			sourceTree = "<group>";
+		};
+		BA0416922C06C875003CFFAC /* Interested */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416932C06C884003CFFAC /* InterestedItemRowView.swift */,
+				BA0416972C0814CB003CFFAC /* InterestedView.swift */,
+				BA0416992C084322003CFFAC /* InterestedViewModel.swift */,
+				BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */,
+			);
+			path = Interested;
 			sourceTree = "<group>";
 		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
@@ -275,6 +305,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416922C06C875003CFFAC /* Interested */,
 				EA2421BA2BF4D9480070D1C9 /* Navigation */,
 				EA3967832BF915CA0087062B /* Home */,
 				BAD582F52BE6193C0072B308 /* Login */,
@@ -286,7 +317,7 @@
 		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				BA0416712C043777003CFFAC /* Extension */,
+				BA04167F2C06B1D5003CFFAC /* SegmentedControl */,
 				EA3967732BF8DAC70087062B /* Architecture */,
 				EA3967862BF91BCB0087062B /* Extensions */,
 				BA8586512BEA0CFC00B0A4DB /* StyleModifier.swift */,
@@ -320,6 +351,7 @@
 			children = (
 				BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */,
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
+				BA0416902C06C840003CFFAC /* InterestedItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -362,6 +394,7 @@
 				BA04166D2C042F55003CFFAC /* LoginAssembler.swift */,
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
 				BA04166B2C04285D003CFFAC /* LoginViewModel.swift */,
+				BA04169D2C0855F6003CFFAC /* FilterOption.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -395,7 +428,9 @@
 		EA3967862BF91BCB0087062B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416722C043782003CFFAC /* Publisher.swift */,
 				EA3967872BF91BE10087062B /* Font.swift */,
+				BA0416952C0810EF003CFFAC /* Int.swift */,
 				A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */,
 			);
 			path = Extensions;
@@ -586,9 +621,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
+				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
+				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
+				BA0416982C0814CB003CFFAC /* InterestedView.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
+				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
+				BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */,
 				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
@@ -606,12 +646,16 @@
 				EA81E0C82C0848F60076DA29 /* HomeHeaderView.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
+				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
 				A0EAC1AF2C077D3200EAEB84 /* OSLog+Extension.swift in Sources */,
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
+				BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
+				BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
+				BA0416962C0810EF003CFFAC /* Int.swift in Sources */,
 				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 			);
