@@ -14,7 +14,6 @@ struct WardAppApp: App {
     
     init() {
         let appKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_APP_KEY") as! String
-        print(appKey)
         KakaoSDK.initSDK(appKey: appKey)
     }
     

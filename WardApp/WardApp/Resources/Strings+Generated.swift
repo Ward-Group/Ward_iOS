@@ -26,6 +26,7 @@ public enum WardStrings {
   public static let countingUnitKorean = WardStrings.tr("Localizable", "Counting Unit Korean", fallback: "개")
   /// 일 전
   public static let daysBefore = WardStrings.tr("Localizable", "Days Before", fallback: "일 전")
+
   /// 오늘 마감
   public static let dueToday = WardStrings.tr("Localizable", "Due Today", fallback: "오늘 마감")
   /// 중복 불가
