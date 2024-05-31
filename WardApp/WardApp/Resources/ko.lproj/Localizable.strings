@@ -6,6 +6,7 @@
   
 */
 
+// MARK: 로그인, 회원가입
 "Login With Kakao" = "카카오로 계속하기";
 "Login With Apple" = "Apple로 계속하기";
 "Yet Member" = "아직 회원이 아니신가요?";
@@ -26,6 +27,20 @@
 "Confirm Sign Up" = "회원가입 완료";
 
 // MARK: 홈 화면
-"Deadline Imminent" = "마감 임박";
+"Due Today" = "오늘 마감";
 "Enjoy the little luck you have left" = "얼마 안남은 행운을 즐겨 보세요";
 
+// MARK: 관심 상품
+"Korean Currency Won" = "원";
+"Interested Item" = "관심 상품";
+"Interested Brand" = "관심 브랜드";
+"Sorted By PickedAt" = "담은 순";
+"Sorted By PickedAt Reversed" = "오래된 순";
+"Total" = "전체";
+"Counting Unit Korean" = "개";
+"Interested Items Does Not Exists" = "관심 있는 상품이 없습니다. \n 상품을 추가해보세요.";
+"Redirect To Release Menu" = "발매 메뉴 바로가기";
+
+
+"Show More" = "더보기";
+"Released Product" = "발매 상품";
