@@ -29,6 +29,9 @@
 // MARK: 홈 화면
 "Due Today" = "오늘 마감";
 "Enjoy the little luck you have left" = "얼마 안남은 행운을 즐겨 보세요";
+"Currently Available" = "발매 중";
+"Confirmed Release" = "발매 확정";
+"Registered Today" = "오늘 등록";
 
 // MARK: 관심 상품
 "Korean Currency Won" = "원";
@@ -44,3 +47,4 @@
 
 "Show More" = "더보기";
 "Released Product" = "발매 상품";
+
