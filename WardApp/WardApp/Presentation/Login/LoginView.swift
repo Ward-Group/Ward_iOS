@@ -38,7 +38,9 @@ struct LoginView: View {
                         .padding(.top, geo.size.height * 0.15)
                         .padding(.bottom, geo.size.height * 0.5)
                     kakaoLoginButton
+                        .frame(width: geo.size.width * 0.86, height: geo.size.height * 0.08)
                     appleLoginButton
+                        .frame(width: geo.size.width * 0.86, height: geo.size.height * 0.08)
                         .padding(.top, 5)
                 }
             }
@@ -67,7 +69,6 @@ extension LoginView {
             onRequest: appleLoginOnRequest,
             onCompletion: appleLoginOnCompletion
         )
-        .frame(width: 325, height: 60)
         .cornerRadius(16)
         .overlay {
             ZStack {
@@ -79,7 +80,6 @@ extension LoginView {
                         .fontPretendardRegularWhite
                 }
             }
-            .frame(width: 325, height: 60)
             .cornerRadius(16)
             .allowsHitTesting(false)
         }
@@ -127,7 +127,6 @@ extension LoginView {
                 }
             })
         }
-        .frame(width: 325, height: 60)
         .cornerRadius(16)
     }
     
