@@ -24,11 +24,13 @@ struct HomeViewModel {
 extension HomeViewModel: ViewModel {
     struct Input {
         let loadTrigger: Driver<Void>
+        let notificationButtonTrigger: Driver<Void>
     }
     
     final class Output: ObservableObject {
         @Published var bannerPageList: [BannerPageModel] = []
         @Published var releaseCategoryList: [CategoryTabModel] = []
+        @Published var showNotificationSheet = false
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
@@ -56,6 +58,12 @@ extension HomeViewModel: ViewModel {
                 indexOfSelectedReleaseTab = 0
                 releaseCategoryTabs.send(getReleaseCategoryTabs(indexOfSelectedReleaseTab))
             })
+            .store(in: cancelBag)
+        
+        input.notificationButtonTrigger
+            .sink {
+                output.showNotificationSheet.toggle()
+            }
             .store(in: cancelBag)
         
         return output

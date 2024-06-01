@@ -14,17 +14,28 @@ struct HomeView: View {
     private let viewModel: HomeViewModel
     private let cancelBag = CancelBag()
     private let loadTrigger = PassthroughSubject<Void, Never>()
-        
+    private let notificationButtonTrigger = PassthroughSubject<Void, Never>()
+    
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
-        let input = HomeViewModel.Input(loadTrigger: loadTrigger.asDriver())
+        let input = HomeViewModel.Input(
+            loadTrigger: loadTrigger.asDriver(),
+            notificationButtonTrigger: notificationButtonTrigger.asDriver()
+        )
         self.output = viewModel.transform(input, cancelBag: cancelBag)
         loadTrigger.send(())
     }
     
     var body: some View {
         VStack(spacing: 0) {
-            HeaderNavBarView(showSearching: true, showNotification: true)
+            HeaderNavBarView()
+                .overlay(alignment: .trailing) {
+                    HStack {
+                        searchButton
+                        notificationButton
+                    }
+                    .padding(.trailing)
+                }
             GeometryReader { geo in
                 ScrollView(.vertical, showsIndicators: true, content: {
                     LazyVStack(spacing: 0) {
@@ -44,6 +55,30 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
+        .fullScreenCover(isPresented: $output.showNotificationSheet) {
+            NotificationView(vm: NotificationAssemblerImpl().resolve())
+        }
+    }
+}
+
+extension HomeView {
+    
+    private var searchButton: some View {
+        Button(action: {}, label: {
+            WardAssets.Image.Icon.searching.swiftUIImage
+                .resizable()
+                .frame(width: 24, height: 24)
+        })
+    }
+    
+    private var notificationButton: some View {
+        Button(action: {
+            notificationButtonTrigger.send()
+        }, label: {
+            WardAssets.Image.Icon.notification.swiftUIImage
+                .resizable()
+                .frame(width: 24, height: 24)
+        })
     }
 }
 
