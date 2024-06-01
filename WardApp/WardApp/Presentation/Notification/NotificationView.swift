@@ -13,6 +13,8 @@ struct NotificationView: View {
     @ObservedObject var input: NotificationViewModel.Input
     @ObservedObject var output: NotificationViewModel.Output
     
+    @Environment(\.dismiss) private var dismiss
+    
     private var currentTabTrigger = PassthroughSubject<WardSegmentedControlTab, Never>()
     
     private let cancelBag = CancelBag()
@@ -30,7 +32,10 @@ struct NotificationView: View {
             Color.background
             GeometryReader { geo in
                 VStack {
-                    HeaderNavBarView(showSearching: false, showNotification: false)
+                    HeaderNavBarView()
+                        .onTapGesture {
+                            dismiss()
+                        }
                     WardSegementedControl(tabs: output.tabs, currentTab: $output.currentTab)
                         .frame(width: geo.size.width, height: 45)
                     
