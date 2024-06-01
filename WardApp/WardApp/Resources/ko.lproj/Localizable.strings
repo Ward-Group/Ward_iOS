@@ -41,10 +41,22 @@
 "Sorted By PickedAt Reversed" = "오래된 순";
 "Total" = "전체";
 "Counting Unit Korean" = "개";
-"Interested Items Does Not Exists" = "관심 있는 상품이 없습니다. \n 상품을 추가해보세요.";
+"Interested Items Do Not Exist" = "관심 있는 상품이 없습니다. \n 상품을 추가해보세요.";
 "Redirect To Release Menu" = "발매 메뉴 바로가기";
 
 
 "Show More" = "더보기";
 "Released Product" = "발매 상품";
+
+// MARK: 알림 화면
+"all" = "전체";
+"Interested" = "관심";
+"new" = "NEW";
+"Minutes Before" = "분 전";
+"Hours Before" = "시간 전";
+"Days Before" = "일 전";
+"Weeks Before" = "주 전";
+"Months Before" = "달 전";
+"Years Before" = "년 전";
+"Notifications Do Not Exist" = "관심 상품과 연관된 알림이 없습니다.\n 관심 상품을 추가해보세요.";
 

@@ -19,10 +19,11 @@ struct WardAppApp: App {
     
     let loginAssembler = LoginAssemblerImpl()
     let interestedAssembler = InterestedAssemblerImpl()
+    let notificationAssembler = NotificationAssemblerImpl()
     
     var body: some Scene {
         WindowGroup {
-            InterestedView(vm: interestedAssembler.resolve())
+            NotificationView(vm: notificationAssembler.resolve())
 //            LoginView(vm: loginAssembler.resolve())
 //                .onOpenURL { url in
 //                    if AuthApi.isKakaoTalkLoginUrl(url) {

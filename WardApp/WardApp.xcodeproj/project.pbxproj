@@ -24,6 +24,9 @@
 		BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416992C084322003CFFAC /* InterestedViewModel.swift */; };
 		BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */; };
 		BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04169D2C0855F6003CFFAC /* FilterOption.swift */; };
+		BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A52C09643A003CFFAC /* NotificationView.swift */; };
+		BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A72C096444003CFFAC /* NotificationViewModel.swift */; };
+		BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A92C096490003CFFAC /* NotificationAssembler.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -47,6 +50,10 @@
 		BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */; };
 		BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
+		BAA7C0BC2C0993FE0042FE04 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */; };
+		BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */; };
+		BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */; };
+		BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0C12C09C00C0042FE04 /* Date.swift */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
 		BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BACB69CC2BF33E1700C3E29A /* swiftgen.yml */; };
 		BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD016782BEB78670039ACDE /* SignUpView.swift */; };
@@ -104,6 +111,9 @@
 		BA0416992C084322003CFFAC /* InterestedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedViewModel.swift; sourceTree = "<group>"; };
 		BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedAssembler.swift; sourceTree = "<group>"; };
 		BA04169D2C0855F6003CFFAC /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
+		BA0416A52C09643A003CFFAC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		BA0416A72C096444003CFFAC /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		BA0416A92C096490003CFFAC /* NotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAssembler.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -130,6 +140,10 @@
 		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
 		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemRowView.swift; sourceTree = "<group>"; };
+		BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
+		BAA7C0C12C09C00C0042FE04 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BACB69CC2BF33E1700C3E29A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BAD016782BEB78670039ACDE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -206,6 +220,33 @@
 			path = Interested;
 			sourceTree = "<group>";
 		};
+		BA04169F2C09639F003CFFAC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		BA0416A22C09641B003CFFAC /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				BA0416A52C09643A003CFFAC /* NotificationView.swift */,
+				BA0416A72C096444003CFFAC /* NotificationViewModel.swift */,
+				BA0416A92C096490003CFFAC /* NotificationAssembler.swift */,
+				BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		BA0A1B992C097ADB00A8EBCB /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +276,7 @@
 				BA365BB52BE23D5A00C332DF /* Products */,
 				979B80AABA665702942CD85C /* Pods */,
 				A7F5A7C1663BDB434118381A /* Frameworks */,
-				EA8C9FA12C098EC200F02E3A /* Recovered References */,
+				BA04169F2C09639F003CFFAC /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,12 +291,12 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA0A1B992C097ADB00A8EBCB /* Config */,
 				BA7866482BF3BA68007BF0C4 /* Domain */,
 				BA7866492BF3BA6E007BF0C4 /* Data */,
 				BA78664A2BF3BA72007BF0C4 /* Presentation */,
 				BA78664C2BF3BA8A007BF0C4 /* Support */,
 				BA3AD0282BE3921300083347 /* Resources */,
-				BA0416752C044FD6003CFFAC /* Config */,
 				BA365BB72BE23D5A00C332DF /* WardAppApp.swift */,
 				BA302E5D2BE6789A00B57174 /* WardApp.entitlements */,
 				BA3AD0292BE393F700083347 /* Info.plist */,
@@ -307,6 +348,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA0416A22C09641B003CFFAC /* Notification */,
 				BA0416922C06C875003CFFAC /* Interested */,
 				EA2421BA2BF4D9480070D1C9 /* Navigation */,
 				EA3967832BF915CA0087062B /* Home */,
@@ -354,6 +396,7 @@
 				BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */,
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
 				BA0416902C06C840003CFFAC /* InterestedItem.swift */,
+				BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -438,6 +481,7 @@
 				EA3967872BF91BE10087062B /* Font.swift */,
 				BA0416952C0810EF003CFFAC /* Int.swift */,
 				A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */,
+				BAA7C0C12C09C00C0042FE04 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,9 +593,9 @@
 				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
 				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
 				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
+				BAA7C0BC2C0993FE0042FE04 /* Config.xcconfig in Resources */,
 				BAD583022BE623890072B308 /* Localizable.strings in Resources */,
 				BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */,
-				EA8C9FA32C098F1600F02E3A /* Config.xcconfig in Resources */,
 				BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,10 +687,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
+				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
 				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
 				BA0416982C0814CB003CFFAC /* InterestedView.swift in Sources */,
+				BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
@@ -660,19 +706,23 @@
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */,
 				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
+				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
 				EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */,
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
 				EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
+				BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */,
 				BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */,
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
+				BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */,
 				EA81E0C82C0848F60076DA29 /* HomeHeaderView.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
 				A0EAC1AF2C077D3200EAEB84 /* OSLog+Extension.swift in Sources */,
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
+				BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */,
 				BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,

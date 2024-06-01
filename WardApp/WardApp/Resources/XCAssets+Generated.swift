@@ -67,6 +67,8 @@ public enum WardAssets {
       public static let likeNo = ImageAsset(name: "likeNo")
       public static let likeYes = ImageAsset(name: "likeYes")
       public static let likeYesBorderless = ImageAsset(name: "likeYesBorderless")
+      public static let notification = ImageAsset(name: "notification")
+      public static let searching = ImageAsset(name: "searching")
     }
     public static let kakaoLoginLogo = ImageAsset(name: "KakaoLoginLogo")
     public static let wardLogo = ImageAsset(name: "WardLogo")
