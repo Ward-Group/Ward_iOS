@@ -31,20 +31,14 @@ struct HomeView: View {
                         // --- 오늘 마감 --- //
                         HomeHeaderView(title: WardStrings.dueToday, subTitle: WardStrings.enjoyTheLittleLuckYouHaveLeft)
                             .padding([.bottom], 12)
-                        // TODO: 배너 이미지 API 연결
-                        BannerPageView(geo: geo, list: [.init(), .init(), .init(), .init(), .init()])
+                        BannerPageView(geo: geo, list: output.bannerPageList)
                             .padding([.bottom], 36)
                         // -- 발매 상품 -- //
                         HomeHeaderView(title: WardStrings.releasedProduct, moreButtonAction: {
                             Log.todo("발매 상품 더보기 버튼 액션")
                         })
                         .padding([.bottom], 14)
-                        // TODO: 카테고리 API 연결
-                        CategoryTabView(list: [CategoryTabViewModel(title: "오늘 마감", isSelect: true),
-                                               CategoryTabViewModel(title: "발매 중", isSelect: false),
-                                               CategoryTabViewModel(title: "관심 상품", isSelect: false),
-                                               CategoryTabViewModel(title: "발매 확장", isSelect: false),
-                                               CategoryTabViewModel(title: "오늘 등록", isSelect: false)])
+                        CategoryTabView(list: output.releaseCategoryList)
                     }
                 })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

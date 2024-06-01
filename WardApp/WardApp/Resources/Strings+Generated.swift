@@ -22,11 +22,15 @@ public enum WardStrings {
   public static let all = WardStrings.tr("Localizable", "all", fallback: "전체")
   /// 회원가입 완료
   public static let confirmSignUp = WardStrings.tr("Localizable", "Confirm Sign Up", fallback: "회원가입 완료")
+  /// 발매 확정
+  public static let confirmedRelease = WardStrings.tr("Localizable", "Confirmed Release", fallback: "발매 확정")
   /// 개
   public static let countingUnitKorean = WardStrings.tr("Localizable", "Counting Unit Korean", fallback: "개")
   /// 일 전
   public static let daysBefore = WardStrings.tr("Localizable", "Days Before", fallback: "일 전")
 
+  /// 발매 중
+  public static let currentlyAvailable = WardStrings.tr("Localizable", "Currently Available", fallback: "발매 중")
   /// 오늘 마감
   public static let dueToday = WardStrings.tr("Localizable", "Due Today", fallback: "오늘 마감")
   /// 중복 불가
@@ -76,6 +80,8 @@ public enum WardStrings {
   public static let `optional` = WardStrings.tr("Localizable", "Optional", fallback: "선택")
   /// 발매 메뉴 바로가기
   public static let redirectToReleaseMenu = WardStrings.tr("Localizable", "Redirect To Release Menu", fallback: "발매 메뉴 바로가기")
+  /// 오늘 등록
+  public static let registeredToday = WardStrings.tr("Localizable", "Registered Today", fallback: "오늘 등록")
   /// 발매 상품
   public static let releasedProduct = WardStrings.tr("Localizable", "Released Product", fallback: "발매 상품")
   /// 필수
