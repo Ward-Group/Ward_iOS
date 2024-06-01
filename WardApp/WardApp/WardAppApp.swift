@@ -17,13 +17,11 @@ struct WardAppApp: App {
         KakaoSDK.initSDK(appKey: appKey)
     }
     
-    let loginAssembler = LoginAssemblerImpl()
-    let interestedAssembler = InterestedAssemblerImpl()
-    let notificationAssembler = NotificationAssemblerImpl()
+    @State private var initialTab = 0
     
     var body: some Scene {
         WindowGroup {
-            NotificationView(vm: notificationAssembler.resolve())
+            AppTabView(selection: $initialTab)
 //            LoginView(vm: loginAssembler.resolve())
 //                .onOpenURL { url in
 //                    if AuthApi.isKakaoTalkLoginUrl(url) {
