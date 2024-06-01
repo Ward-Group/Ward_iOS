@@ -61,8 +61,6 @@ public enum WardAssets {
     public static let homeBanner = ImageAsset(name: "HomeBanner")
     public enum Icon {
       public static let chevronRight = ImageAsset(name: "ChevronRight")
-      public static let notification = ImageAsset(name: "Notification")
-      public static let searching = ImageAsset(name: "Searching")
       public static let arrowDown = ImageAsset(name: "arrowDown")
       public static let likeNo = ImageAsset(name: "likeNo")
       public static let likeYes = ImageAsset(name: "likeYes")
@@ -71,6 +69,13 @@ public enum WardAssets {
       public static let searching = ImageAsset(name: "searching")
     }
     public static let kakaoLoginLogo = ImageAsset(name: "KakaoLoginLogo")
+    public enum Tab {
+      public static let category = ImageAsset(name: "category")
+      public static let home = ImageAsset(name: "home")
+      public static let interested = ImageAsset(name: "interested")
+      public static let mypage = ImageAsset(name: "mypage")
+      public static let release = ImageAsset(name: "release")
+    }
     public static let wardLogo = ImageAsset(name: "WardLogo")
   }
 }
