@@ -17,7 +17,7 @@ struct WardAppApp: App {
         KakaoSDK.initSDK(appKey: appKey)
     }
     
-    @State private var initialTab = 0
+    @State private var initialTab = 2
     
     var body: some Scene {
         WindowGroup {
