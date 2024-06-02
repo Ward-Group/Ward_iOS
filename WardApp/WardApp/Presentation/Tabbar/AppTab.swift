@@ -46,7 +46,7 @@ extension AppTab {
         case .home:
             HomeView(viewModel: HomeViewModel())
         case .interested:
-            InterestedView(vm: InterestedAssemblerImpl().resolve())
+            InterestedRouterView()
         case .mypage:
             Text("마이페이지")
         }

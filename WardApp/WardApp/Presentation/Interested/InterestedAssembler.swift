@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol InterestedAssembler {
     func resolve() -> InterestedView
     func resolve() -> InterestedViewModel
+    func resolve() -> InterestedRouter
 }
 
 class InterestedAssemblerImpl: InterestedAssembler {
@@ -26,3 +28,10 @@ extension InterestedAssembler {
         return InterestedViewModel()
     }
 }
+
+extension InterestedAssembler {
+    func resolve() -> InterestedRouter {
+        return InterestedRouter()
+    }
+}
+
