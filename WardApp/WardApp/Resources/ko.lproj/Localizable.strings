@@ -60,3 +60,9 @@
 "Years Before" = "년 전";
 "Notifications Do Not Exist" = "관심 상품과 연관된 알림이 없습니다.\n 관심 상품을 추가해보세요.";
 
+// MARK: 탭 바
+"Home Tabbar" = "홈";
+"Category Tabbar" = "카테고리";
+"Release Tabbar" = "발매";
+"Interested Tabbar" = "관심";
+"My Page Tabbar" = "마이";

@@ -27,6 +27,11 @@
 		BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A52C09643A003CFFAC /* NotificationView.swift */; };
 		BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A72C096444003CFFAC /* NotificationViewModel.swift */; };
 		BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A92C096490003CFFAC /* NotificationAssembler.swift */; };
+		BA12A6E12C0ABB9D00338EC0 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E02C0ABB9D00338EC0 /* AppTabView.swift */; };
+		BA12A6E32C0AC5C500338EC0 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */; };
+		BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */; };
+		BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */; };
+		BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -71,7 +76,6 @@
 		EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81E0C02C0802A60076DA29 /* BannerPageView.swift */; };
 		EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81E0C32C0804310076DA29 /* CategoryTabView.swift */; };
 		EA81E0C82C0848F60076DA29 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81E0C72C0848F60076DA29 /* HomeHeaderView.swift */; };
-		EA8C9FA32C098F1600F02E3A /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EA8C9FA22C098F1600F02E3A /* Config.xcconfig */; };
 		EA8C9FA62C099AF900F02E3A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C9FA52C099AF900F02E3A /* HomeViewModel.swift */; };
 		EA8C9FA82C099B2700F02E3A /* CategoryTabModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C9FA72C099B2700F02E3A /* CategoryTabModel.swift */; };
 		EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8C9FAA2C099F8C00F02E3A /* Driver.swift */; };
@@ -114,6 +118,11 @@
 		BA0416A52C09643A003CFFAC /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		BA0416A72C096444003CFFAC /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		BA0416A92C096490003CFFAC /* NotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAssembler.swift; sourceTree = "<group>"; };
+		BA12A6E02C0ABB9D00338EC0 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
+		BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouter.swift; sourceTree = "<group>"; };
+		BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouterView.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -162,7 +171,6 @@
 		EA81E0C02C0802A60076DA29 /* BannerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPageView.swift; sourceTree = "<group>"; };
 		EA81E0C32C0804310076DA29 /* CategoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabView.swift; sourceTree = "<group>"; };
 		EA81E0C72C0848F60076DA29 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
-		EA8C9FA22C098F1600F02E3A /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		EA8C9FA52C099AF900F02E3A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EA8C9FA72C099B2700F02E3A /* CategoryTabModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabModel.swift; sourceTree = "<group>"; };
 		EA8C9FAA2C099F8C00F02E3A /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
@@ -198,8 +206,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA0416752C044FD6003CFFAC /* Config */ = {
-		};
 		BA04167F2C06B1D5003CFFAC /* SegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +222,8 @@
 				BA0416972C0814CB003CFFAC /* InterestedView.swift */,
 				BA0416992C084322003CFFAC /* InterestedViewModel.swift */,
 				BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */,
+				BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */,
+				BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */,
 			);
 			path = Interested;
 			sourceTree = "<group>";
@@ -245,6 +253,16 @@
 				BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		BA12A6DF2C0ABB8900338EC0 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				BA12A6E02C0ABB9D00338EC0 /* AppTabView.swift */,
+				BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */,
+				BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */,
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
@@ -348,6 +366,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA12A6DF2C0ABB8900338EC0 /* Tabbar */,
 				BA0416A22C09641B003CFFAC /* Notification */,
 				BA0416922C06C875003CFFAC /* Interested */,
 				EA2421BA2BF4D9480070D1C9 /* Navigation */,
@@ -459,7 +478,6 @@
 				EA8C9FAC2C09A57000F02E3A /* Observable.swift */,
 				EA3967742BF8DADD0087062B /* ViewModel.swift */,
 				EA3967762BF8DBE50087062B /* CancelBag.swift */,
-				BA0416722C043782003CFFAC /* Publisher.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -493,14 +511,6 @@
 				EA81E0C02C0802A60076DA29 /* BannerPageView.swift */,
 			);
 			path = SubView;
-			sourceTree = "<group>";
-		};
-		EA8C9FA12C098EC200F02E3A /* Recovered References */ = {
-			isa = PBXGroup;
-			children = (
-				A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */,
-			);
-			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		EA8C9FA92C099BBD00F02E3A /* CategoryTab */ = {
@@ -687,6 +697,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
+				BA12A6E32C0AC5C500338EC0 /* TabbarItem.swift in Sources */,
 				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
 				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
@@ -696,8 +707,8 @@
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
+				BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */,
 				BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */,
-				BA8586522BEA0CFC00B0A4DB /* StyleModifier.swift in Sources */,
 				EA8C9FAD2C09A57000F02E3A /* Observable.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
@@ -705,6 +716,7 @@
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */,
+				BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */,
 				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
 				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
 				EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */,
@@ -717,9 +729,11 @@
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */,
 				EA81E0C82C0848F60076DA29 /* HomeHeaderView.swift in Sources */,
+				BA12A6E12C0ABB9D00338EC0 /* AppTabView.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
+				BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */,
 				A0EAC1AF2C077D3200EAEB84 /* OSLog+Extension.swift in Sources */,
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
 				BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */,
