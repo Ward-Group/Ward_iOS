@@ -7,7 +7,7 @@
 
 import Combine
 
-class InterestedViewModel: ViewModel {
+struct InterestedViewModel: ViewModel {
     
     final class Input: ObservableObject {
         var currentTabTrigger: AnyPublisher<WardSegmentedControlTab, Never>
@@ -35,9 +35,8 @@ class InterestedViewModel: ViewModel {
         @Published var items: [InterestedItem] = []
     }
     
-    let output = Output()
-    
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
+        let output = Output()
         output.items = getItems()
         
         input.currentTabTrigger

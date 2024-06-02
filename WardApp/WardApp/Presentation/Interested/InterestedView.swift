@@ -13,6 +13,8 @@ struct InterestedView: View {
     @ObservedObject var input: InterestedViewModel.Input
     @ObservedObject var output: InterestedViewModel.Output
     
+    @EnvironmentObject private var router: InterestedRouter
+    
     private var currentTabTrigger = PassthroughSubject<WardSegmentedControlTab, Never>()
     private var currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
     
@@ -23,7 +25,6 @@ struct InterestedView: View {
             currentTabTrigger: currentTabTrigger.eraseToAnyPublisher(),
             currentFilterOptionTrigger: currentFilterOptionTrigger.eraseToAnyPublisher()
         )
-        
         output = vm.transform(input, cancelBag: cancelBag)
         self.input = input
     }
@@ -101,7 +102,9 @@ extension InterestedView {
                 InterestedItemRowView(item: item.wrappedValue)
                     .padding()
                     .frame(maxWidth: .infinity, minHeight: 85)
-                
+                    .onTapGesture {
+                        router.push(.detail(item: item.wrappedValue))
+                    }
                 Divider()
                     .padding(.top, 15)
                     .padding(.horizontal)
@@ -138,5 +141,7 @@ extension InterestedView {
 }
 
 #Preview {
-    InterestedView(vm: InterestedAssemblerImpl().resolve())
+    let router = InterestedAssemblerImpl()
+    return InterestedView(vm: router.resolve())
+        .environmentObject(InterestedRouter())
 }

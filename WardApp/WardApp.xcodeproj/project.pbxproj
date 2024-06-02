@@ -30,6 +30,8 @@
 		BA12A6E12C0ABB9D00338EC0 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E02C0ABB9D00338EC0 /* AppTabView.swift */; };
 		BA12A6E32C0AC5C500338EC0 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */; };
 		BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */; };
+		BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */; };
+		BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
@@ -119,6 +121,8 @@
 		BA12A6E02C0ABB9D00338EC0 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
 		BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
 		BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
+		BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouter.swift; sourceTree = "<group>"; };
+		BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouterView.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
@@ -218,6 +222,8 @@
 				BA0416972C0814CB003CFFAC /* InterestedView.swift */,
 				BA0416992C084322003CFFAC /* InterestedViewModel.swift */,
 				BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */,
+				BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */,
+				BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */,
 			);
 			path = Interested;
 			sourceTree = "<group>";
@@ -710,6 +716,7 @@
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */,
+				BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */,
 				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
 				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
 				EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */,
@@ -726,6 +733,7 @@
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
+				BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */,
 				A0EAC1AF2C077D3200EAEB84 /* OSLog+Extension.swift in Sources */,
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
 				BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */,
