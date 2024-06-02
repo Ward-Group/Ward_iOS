@@ -11,6 +11,8 @@ struct HeaderNavBarView: View {
     @State var showSearching: Bool
     @State var showNotification: Bool
     
+    @StateObject private var router = HeaderNavBarRouter()
+    
     var body: some View {
         HStack {
             WardAssets.Image.wardLogo.swiftUIImage
@@ -28,16 +30,22 @@ struct HeaderNavBarView: View {
             if showNotification {
                 Spacer()
                     .frame(width: 8)
-                Button(action: {}, label: {
+                Button(action: {
+                    router.present(fullScreenSheet: .notification)
+                }, label: {
                     WardAssets.Image.Icon.notification.swiftUIImage
                         .resizable()
                         .frame(width: 24, height: 24)
                 })
             }
         }
+        .fullScreenCover(item: $router.fullScreenSheet) { fullScreenSheet in
+            router.build(fullScreenSheet: fullScreenSheet)
+        }
         .padding(.horizontal, 16)
         .background(WardAssets.Color.backgroundColor.swiftUIColor)
         .frame(height: 54)
+        
     }
 }
 
