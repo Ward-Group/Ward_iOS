@@ -11,13 +11,13 @@ import Combine
 struct HomeView: View {
     @ObservedObject var output: HomeViewModel.Output
     
-    @State var router: HomeRouter
+    @EnvironmentObject var router: HomeRouter
+    
     private let viewModel: HomeViewModel
     private let cancelBag = CancelBag()
     private let loadTrigger = PassthroughSubject<Void, Never>()
         
-    init(router: HomeRouter, viewModel: HomeViewModel) {
-        self.router = router
+    init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
         let input = HomeViewModel.Input(loadTrigger: loadTrigger.asDriver())
         self.output = viewModel.transform(input, cancelBag: cancelBag)
@@ -80,5 +80,6 @@ extension HomeView {
 }
 
 #Preview {
-    HomeView(router: HomeRouter(), viewModel: HomeViewModel())
+    HomeView(viewModel: HomeViewModel())
+        .environmentObject(HomeRouter())
 }

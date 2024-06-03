@@ -34,7 +34,7 @@ class HomeRouter: ObservableObject {
     // MARK: - ViewBuilder
     @ViewBuilder
     func homeView() -> some View {
-        HomeView(router: self, viewModel: HomeViewModel())
+        HomeView(viewModel: HomeViewModel())
     }
     
     @ViewBuilder
@@ -60,5 +60,7 @@ struct HomeRouterView: View {
                     router.build(naviType)
                 }
         }
+        .environmentObject(router)
+        
     }
 }
