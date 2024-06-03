@@ -1,5 +1,5 @@
 //
-//  HomeHeaderView.swift
+//  HomeHeaderTitleView.swift
 //  WardApp
 //
 //  Created by suni on 5/30/24.
@@ -7,10 +7,18 @@
 
 import SwiftUI
 
-struct HomeHeaderView: View {
-    var title: String
-    var subTitle: String?
-    var moreButtonAction: (() -> Void)?
+struct HomeHeaderTitleView: View {
+    private var title: String
+    private var subTitle: String?
+    private var moreButtonAction: (() -> Void)?
+    
+    init(title: String,
+         subTitle: String? = nil,
+         moreButtonAction: (() -> Void)? = nil) {
+        self.title = title
+        self.subTitle = subTitle
+        self.moreButtonAction = moreButtonAction
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 9, content: {
@@ -37,8 +45,7 @@ struct HomeHeaderView: View {
     }
 }
 
-extension HomeHeaderView {
-    
+extension HomeHeaderTitleView {
     private var moreButton: some View {
             HStack(spacing: 0) {
                 Text(WardStrings.showMore)
@@ -50,7 +57,7 @@ extension HomeHeaderView {
 }
 
 #Preview {
-    HomeHeaderView(title: "실시간 Top 10", subTitle: "오늘 19:00 기준", moreButtonAction: {
+    HomeHeaderTitleView(title: "실시간 Top 10", subTitle: "오늘 19:00 기준", moreButtonAction: {
         print("HomeHeaderView 더보기 버튼 액션")
     })
 }

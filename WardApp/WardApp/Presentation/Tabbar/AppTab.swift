@@ -44,7 +44,7 @@ extension AppTab {
         case .release:
             Text("발매")
         case .home:
-            HomeView(viewModel: HomeViewModel())
+            HomeRouterView()
         case .interested:
             InterestedRouterView()
         case .mypage:
