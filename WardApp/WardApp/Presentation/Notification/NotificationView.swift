@@ -19,7 +19,7 @@ struct NotificationView: View {
     
     init(vm: NotificationViewModel) {
         let input = NotificationViewModel.Input(
-            currentTabTrigger: currentTabTrigger
+            currentTabTrigger: currentTabTrigger.asDriver()
         )
         self.output = vm.transform(input, cancelBag: cancelBag)
         self.input = input

@@ -17,9 +17,9 @@ struct LoginViewModel: ViewModel {
     }
     
     final class Input: ObservableObject {
-        let userTrigger: PassthroughSubject<UserFromLoginProvider, Never>
+        let userTrigger: Driver<UserFromLoginProvider>
         
-        init(userTrigger: PassthroughSubject<UserFromLoginProvider, Never>) {
+        init(userTrigger: Driver<UserFromLoginProvider>) {
             self.userTrigger = userTrigger
         }
     }

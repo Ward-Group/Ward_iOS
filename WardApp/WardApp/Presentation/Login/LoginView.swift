@@ -22,7 +22,7 @@ struct LoginView: View {
     
     init(vm: LoginViewModel) {
         let input = LoginViewModel.Input(
-            userTrigger: userTrigger
+            userTrigger: userTrigger.asDriver()
         )
         output = vm.transform(input, cancelBag: cancelBag)
         self.input = input
