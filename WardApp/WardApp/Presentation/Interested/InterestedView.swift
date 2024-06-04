@@ -78,7 +78,7 @@ extension InterestedView {
                         .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     
                     if option == output.currentFilterOption {
-                        WardAssets.Image.Icon.arrowDown.swiftUIImage
+                        WardAssets.Image.Icon.chevronDown.swiftUIImage
                             .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     }
                 })
@@ -90,7 +90,7 @@ extension InterestedView {
                     .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     .foregroundStyle(Color.black8)
                 
-                WardAssets.Image.Icon.arrowDown.swiftUIImage
+                WardAssets.Image.Icon.chevronDown.swiftUIImage
                     .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
             })
         }

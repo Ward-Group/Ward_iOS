@@ -67,6 +67,8 @@
 "Interested Tabbar" = "관심";
 "My Page Tabbar" = "마이";
 
+// MARK: 공지사항
+"Notice Board" = "공지사항";
 
 // MARK: 검색 화면
 "Type Product Code Names" = "제품명, 브랜드명, 제품 코드 등 입력";
@@ -78,4 +80,3 @@
 "Brand" = "브랜드";
 "Retailer" = "발매처";
 "Hits" = "조회수";
-
