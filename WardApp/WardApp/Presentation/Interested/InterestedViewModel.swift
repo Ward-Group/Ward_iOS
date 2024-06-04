@@ -10,10 +10,10 @@ import Combine
 struct InterestedViewModel: ViewModel {
     
     final class Input: ObservableObject {
-        var currentTabTrigger: AnyPublisher<WardSegmentedControlTab, Never>
-        var currentFilterOptionTrigger: AnyPublisher<FilterOption, Never>
+        var currentTabTrigger: Driver<WardSegmentedControlTab>
+        var currentFilterOptionTrigger: Driver<FilterOption>
         
-        init(currentTabTrigger: AnyPublisher<WardSegmentedControlTab, Never>, currentFilterOptionTrigger: AnyPublisher<FilterOption, Never>) {
+        init(currentTabTrigger: Driver<WardSegmentedControlTab>, currentFilterOptionTrigger: Driver<FilterOption>) {
             self.currentTabTrigger = currentTabTrigger
             self.currentFilterOptionTrigger = currentFilterOptionTrigger
         }
