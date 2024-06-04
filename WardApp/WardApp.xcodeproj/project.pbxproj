@@ -50,6 +50,11 @@
 		BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */; };
 		BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */; };
 		BA3AD0422BE3988F00083347 /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */; };
+		BA4B16842C0EC8B900E1C1F5 /* NoticeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B16832C0EC8B900E1C1F5 /* NoticeBoardView.swift */; };
+		BA4B16862C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B16852C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift */; };
+		BA4B16882C0EC8C800E1C1F5 /* NoticeBoardAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B16872C0EC8C800E1C1F5 /* NoticeBoardAssembler.swift */; };
+		BA4B168A2C0ECA9600E1C1F5 /* NoticeBoardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B16892C0ECA9600E1C1F5 /* NoticeBoardItem.swift */; };
+		BA4B168C2C0ECDC900E1C1F5 /* InlineNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4B168B2C0ECDC900E1C1F5 /* InlineNavBarView.swift */; };
 		BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866592BF3BF73007BF0C4 /* APIService.swift */; };
 		BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */; };
 		BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */; };
@@ -146,6 +151,11 @@
 		BA3AD0372BE3988F00083347 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		BA3AD0382BE3988F00083347 /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
 		BA3AD0392BE3988F00083347 /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		BA4B16832C0EC8B900E1C1F5 /* NoticeBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardView.swift; sourceTree = "<group>"; };
+		BA4B16852C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardViewModel.swift; sourceTree = "<group>"; };
+		BA4B16872C0EC8C800E1C1F5 /* NoticeBoardAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardAssembler.swift; sourceTree = "<group>"; };
+		BA4B16892C0ECA9600E1C1F5 /* NoticeBoardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeBoardItem.swift; sourceTree = "<group>"; };
+		BA4B168B2C0ECDC900E1C1F5 /* InlineNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineNavBarView.swift; sourceTree = "<group>"; };
 		BA7866592BF3BF73007BF0C4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		BA78665B2BF3BF81007BF0C4 /* UserFromLoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFromLoginProvider.swift; sourceTree = "<group>"; };
 		BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseUseCase.swift; sourceTree = "<group>"; };
@@ -350,6 +360,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BA4B16822C0EC8B000E1C1F5 /* NoticeBoard */ = {
+			isa = PBXGroup;
+			children = (
+				BA4B16832C0EC8B900E1C1F5 /* NoticeBoardView.swift */,
+				BA4B16852C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift */,
+				BA4B16872C0EC8C800E1C1F5 /* NoticeBoardAssembler.swift */,
+			);
+			path = NoticeBoard;
+			sourceTree = "<group>";
+		};
 		BA7866482BF3BA68007BF0C4 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +390,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA4B16822C0EC8B000E1C1F5 /* NoticeBoard */,
 				BA12A6DF2C0ABB8900338EC0 /* Tabbar */,
 				BA0416A22C09641B003CFFAC /* Notification */,
 				BA0416922C06C875003CFFAC /* Interested */,
@@ -420,6 +441,7 @@
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
 				BA0416902C06C840003CFFAC /* InterestedItem.swift */,
 				BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */,
+				BA4B16892C0ECA9600E1C1F5 /* NoticeBoardItem.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -472,6 +494,7 @@
 			children = (
 				EA3967712BF8D8140087062B /* HeaderNavBarView.swift */,
 				BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */,
+				BA4B168B2C0ECDC900E1C1F5 /* InlineNavBarView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -703,7 +726,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */,
+				BA4B168A2C0ECA9600E1C1F5 /* NoticeBoardItem.swift in Sources */,
 				BA12A6E32C0AC5C500338EC0 /* TabbarItem.swift in Sources */,
+				BA4B16842C0EC8B900E1C1F5 /* NoticeBoardView.swift in Sources */,
 				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
 				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
@@ -731,11 +756,13 @@
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
 				BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */,
 				BA78665A2BF3BF73007BF0C4 /* APIService.swift in Sources */,
+				BA4B168C2C0ECDC900E1C1F5 /* InlineNavBarView.swift in Sources */,
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */,
 				EA81E0C82C0848F60076DA29 /* HomeHeaderTitleView.swift in Sources */,
 				BA12A6E12C0ABB9D00338EC0 /* AppTabView.swift in Sources */,
+				BA4B16882C0EC8C800E1C1F5 /* NoticeBoardAssembler.swift in Sources */,
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
@@ -752,6 +779,7 @@
 				EA8C9FA62C099AF900F02E3A /* HomeViewModel.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,
 				BA0416962C0810EF003CFFAC /* Int.swift in Sources */,
+				BA4B16862C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift in Sources */,
 				BA78665C2BF3BF81007BF0C4 /* UserFromLoginProvider.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 				EA8C9FA82C099B2700F02E3A /* CategoryTabModel.swift in Sources */,
