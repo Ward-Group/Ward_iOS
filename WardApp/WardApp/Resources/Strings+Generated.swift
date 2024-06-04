@@ -78,6 +78,8 @@ public enum WardStrings {
   public static let new = WardStrings.tr("Localizable", "new", fallback: "NEW")
   /// 닉네임
   public static let nickname = WardStrings.tr("Localizable", "Nickname", fallback: "닉네임")
+  /// 공지사항
+  public static let noticeBoard = WardStrings.tr("Localizable", "Notice Board", fallback: "공지사항")
   /// 관심 상품과 연관된 알림이 없습니다.
   ///  관심 상품을 추가해보세요.
   public static let notificationsDoNotExist = WardStrings.tr("Localizable", "Notifications Do Not Exist", fallback: "관심 상품과 연관된 알림이 없습니다.\n 관심 상품을 추가해보세요.")

@@ -60,13 +60,13 @@ public enum WardAssets {
     public static let appleLoginLogo = ImageAsset(name: "AppleLoginLogo")
     public static let homeBanner = ImageAsset(name: "HomeBanner")
     public enum Icon {
+      public static let chevronDown = ImageAsset(name: "ChevronDown")
       public static let chevronRight = ImageAsset(name: "ChevronRight")
-      public static let notification = ImageAsset(name: "Notification")
-      public static let searching = ImageAsset(name: "Searching")
-      public static let arrowDown = ImageAsset(name: "arrowDown")
       public static let likeNo = ImageAsset(name: "likeNo")
       public static let likeYes = ImageAsset(name: "likeYes")
       public static let likeYesBorderless = ImageAsset(name: "likeYesBorderless")
+      public static let notification = ImageAsset(name: "notification")
+      public static let searching = ImageAsset(name: "searching")
     }
     public static let kakaoLoginLogo = ImageAsset(name: "KakaoLoginLogo")
     public enum Tab {

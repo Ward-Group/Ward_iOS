@@ -66,3 +66,6 @@
 "Release Tabbar" = "발매";
 "Interested Tabbar" = "관심";
 "My Page Tabbar" = "마이";
+
+// MARK: 공지사항
+"Notice Board" = "공지사항";
