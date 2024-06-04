@@ -48,7 +48,9 @@ extension AppTab {
         case .interested:
             InterestedRouterView()
         case .mypage:
-            Text("마이페이지")
+            // TODO: SearchView는 이곳에서 삭제하고 HomeView SearchButton과 연결 필요
+            let view: SearchView = SearchViewAssemblerImpl().resolve()
+            view
         }
     }
 }

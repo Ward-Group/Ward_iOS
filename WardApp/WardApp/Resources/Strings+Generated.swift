@@ -20,6 +20,8 @@ public enum WardStrings {
   public static let agreementTermsOfService = WardStrings.tr("Localizable", "Agreement Terms Of Service", fallback: "약관 동의")
   /// 전체
   public static let all = WardStrings.tr("Localizable", "all", fallback: "전체")
+  /// 브랜드
+  public static let brand = WardStrings.tr("Localizable", "Brand", fallback: "브랜드")
   /// 카테고리
   public static let categoryTabbar = WardStrings.tr("Localizable", "Category Tabbar", fallback: "카테고리")
   /// 회원가입 완료
@@ -42,6 +44,10 @@ public enum WardStrings {
   public static let eventReleaseNotification = WardStrings.tr("Localizable", "Event, Release Notification", fallback: "이벤트, 발매 알림")
   /// 추가 정보 입력
   public static let extraInformation = WardStrings.tr("Localizable", "Extra Information", fallback: "추가 정보 입력")
+  /// 통합 검색
+  public static let generalSearch = WardStrings.tr("Localizable", "General Search", fallback: "통합 검색")
+  /// 조회수
+  public static let hits = WardStrings.tr("Localizable", "Hits", fallback: "조회수")
   /// 홈
   public static let homeTabbar = WardStrings.tr("Localizable", "Home Tabbar", fallback: "홈")
   /// 시간 전
@@ -59,6 +65,8 @@ public enum WardStrings {
   public static let interestedItemsDoNotExist = WardStrings.tr("Localizable", "Interested Items Do Not Exist", fallback: "관심 있는 상품이 없습니다. \n 상품을 추가해보세요.")
   /// 관심
   public static let interestedTabbar = WardStrings.tr("Localizable", "Interested Tabbar", fallback: "관심")
+  /// 상품
+  public static let items = WardStrings.tr("Localizable", "Items", fallback: "상품")
   /// 원
   public static let koreanCurrencyWon = WardStrings.tr("Localizable", "Korean Currency Won", fallback: "원")
   /// Apple로 계속하기
@@ -85,16 +93,24 @@ public enum WardStrings {
   public static let olderThanAgeOf14 = WardStrings.tr("Localizable", "Older Than Age Of 14", fallback: "만 14세 이상입니다.")
   /// 선택
   public static let `optional` = WardStrings.tr("Localizable", "Optional", fallback: "선택")
+  /// 최근 검색어
+  public static let recentSearchTermHistory = WardStrings.tr("Localizable", "Recent Search Term History", fallback: "최근 검색어")
   /// 발매 메뉴 바로가기
   public static let redirectToReleaseMenu = WardStrings.tr("Localizable", "Redirect To Release Menu", fallback: "발매 메뉴 바로가기")
   /// 오늘 등록
   public static let registeredToday = WardStrings.tr("Localizable", "Registered Today", fallback: "오늘 등록")
+  /// 발매 정보
+  public static let releaseInfo = WardStrings.tr("Localizable", "Release Info", fallback: "발매 정보")
   /// 발매
   public static let releaseTabbar = WardStrings.tr("Localizable", "Release Tabbar", fallback: "발매")
   /// 발매 상품
   public static let releasedProduct = WardStrings.tr("Localizable", "Released Product", fallback: "발매 상품")
+  /// 모두 삭제
+  public static let removeAll = WardStrings.tr("Localizable", "Remove All", fallback: "모두 삭제")
   /// 필수
   public static let `required` = WardStrings.tr("Localizable", "Required", fallback: "필수")
+  /// 발매처
+  public static let retailer = WardStrings.tr("Localizable", "Retailer", fallback: "발매처")
   /// 더보기
   public static let showMore = WardStrings.tr("Localizable", "Show More", fallback: "더보기")
   /// 담은 순
@@ -107,6 +123,8 @@ public enum WardStrings {
   public static let total = WardStrings.tr("Localizable", "Total", fallback: "전체")
   /// 사용할 닉네임을 입력해주세요.
   public static let typeNickname = WardStrings.tr("Localizable", "Type Nickname", fallback: "사용할 닉네임을 입력해주세요.")
+  /// 제품명, 브랜드명, 제품 코드 등 입력
+  public static let typeProductCodeNames = WardStrings.tr("Localizable", "Type Product Code Names", fallback: "제품명, 브랜드명, 제품 코드 등 입력")
   /// 주 전
   public static let weeksBefore = WardStrings.tr("Localizable", "Weeks Before", fallback: "주 전")
   /// 년 전
