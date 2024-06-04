@@ -48,7 +48,7 @@ extension AppTab {
         case .interested:
             InterestedRouterView()
         case .mypage:
-            Text("마이페이지")
+            NoticeBoardAssemblerImpl().resolve()
         }
     }
 }
