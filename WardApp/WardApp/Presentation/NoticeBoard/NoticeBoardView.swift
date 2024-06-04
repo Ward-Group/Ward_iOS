@@ -54,7 +54,8 @@ extension NoticeBoardView {
                     .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
                     .foregroundStyle(Color.black0)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
+                    .padding(.horizontal)
+                    .padding(.bottom)
             } label: {
                 HStack {
                     VStack(alignment: .leading, spacing: 10) {
@@ -67,16 +68,10 @@ extension NoticeBoardView {
                             .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                             .foregroundStyle(Color.white3)
                     }
-                    
-                    Spacer()
-                    
-                    WardAssets.Image.Icon.chevronDown.swiftUIImage
-                        .rotationEffect(Angle(degrees: item.wrappedValue.isCollapsed ? 180 : 0))
                 }
-                /// DisclosureGroup의 기본 버튼을 안보이게 하게 위해 accentColor를 .clear로 주고 뒤에 버튼에 있기 때문에 leading padding만 적용했습니다.
-                .padding(.leading)
+                .padding()
             }
-            .accentColor(.clear)
+            .disclosureGroupStyle(DarkChevronDisclosureGroupStyle(button: WardAssets.Image.Icon.chevronDown.swiftUIImage))
             Divider()
         }
     }
