@@ -64,9 +64,13 @@ public enum WardAssets {
       public static let notification = ImageAsset(name: "Notification")
       public static let searching = ImageAsset(name: "Searching")
       public static let arrowDown = ImageAsset(name: "arrowDown")
+      public static let arrowLeft = ImageAsset(name: "arrowLeft")
       public static let likeNo = ImageAsset(name: "likeNo")
       public static let likeYes = ImageAsset(name: "likeYes")
       public static let likeYesBorderless = ImageAsset(name: "likeYesBorderless")
+      public static let notification = ImageAsset(name: "notification")
+      public static let searching = ImageAsset(name: "searching")
+      public static let xMark = ImageAsset(name: "xMark")
     }
     public static let kakaoLoginLogo = ImageAsset(name: "KakaoLoginLogo")
     public enum Tab {
