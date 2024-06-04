@@ -66,3 +66,16 @@
 "Release Tabbar" = "발매";
 "Interested Tabbar" = "관심";
 "My Page Tabbar" = "마이";
+
+
+// MARK: 검색 화면
+"Type Product Code Names" = "제품명, 브랜드명, 제품 코드 등 입력";
+"Recent Search Term History" = "최근 검색어";
+"Remove All" = "모두 삭제";
+"General Search" = "통합 검색";
+"Items" = "상품";
+"Release Info" = "발매 정보";
+"Brand" = "브랜드";
+"Retailer" = "발매처";
+"Hits" = "조회수";
+
