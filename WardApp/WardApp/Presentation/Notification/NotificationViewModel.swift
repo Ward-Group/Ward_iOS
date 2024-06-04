@@ -11,9 +11,9 @@ import Combine
 struct NotificationViewModel: ViewModel {
     
     final class Input: ObservableObject {
-        let currentTabTrigger: PassthroughSubject<WardSegmentedControlTab, Never>
+        let currentTabTrigger: Driver<WardSegmentedControlTab>
         
-        init(currentTabTrigger: PassthroughSubject<WardSegmentedControlTab, Never>) {
+        init(currentTabTrigger: Driver<WardSegmentedControlTab>) {
             self.currentTabTrigger = currentTabTrigger
         }
     }

@@ -22,8 +22,8 @@ struct InterestedView: View {
     
     init(vm: InterestedViewModel) {
         let input = InterestedViewModel.Input(
-            currentTabTrigger: currentTabTrigger.eraseToAnyPublisher(),
-            currentFilterOptionTrigger: currentFilterOptionTrigger.eraseToAnyPublisher()
+            currentTabTrigger: currentTabTrigger.asDriver(),
+            currentFilterOptionTrigger: currentFilterOptionTrigger.asDriver()
         )
         output = vm.transform(input, cancelBag: cancelBag)
         self.input = input
