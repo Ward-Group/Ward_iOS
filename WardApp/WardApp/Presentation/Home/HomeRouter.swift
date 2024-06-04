@@ -40,7 +40,9 @@ class HomeRouter: ObservableObject {
     @ViewBuilder
     func build(_ navi: NaviType) -> some View {
         switch navi {
-        case .notification: NotificationAssemblerImpl().resolve()
+        case .notification: 
+            let view: NotificationView = NotificationAssemblerImpl().resolve()
+            view
         }
     }
 
