@@ -20,7 +20,7 @@ class UserRepository {
     }
     
     func getLoginProvider() -> LoginProvider {
-        guard 
+        guard
             let providerString = UserDefaults.standard.string(forKey: UserDefaultsKey.loginProvider),
             let provider = LoginProvider(rawValue: providerString)
         else {
@@ -28,6 +28,13 @@ class UserRepository {
         }
         
         return provider
+    }
+    
+    func getProviderId() -> String {
+        guard let providerId = UserDefaults.standard.string(forKey: UserDefaultsKey.loginProviderId) else {
+            return ""
+        }
+        return providerId
     }
     
     func getAccessToken() -> String {
@@ -45,7 +52,7 @@ class UserRepository {
     }
     
     func updateLoginProvider(_ provider: LoginProvider) {
-        UserDefaults.setValue(provider, forKey: UserDefaultsKey.loginProvider)
+        UserDefaults.standard.setValue(provider.rawValue, forKey: UserDefaultsKey.loginProvider)
     }
     
     func updateAcceesToken(_ token: String) {
@@ -58,5 +65,9 @@ class UserRepository {
     
     func updateEmail(_ email: String) {
         UserDefaults.standard.setValue(email, forKey: UserDefaultsKey.email)
+    }
+        
+    func updateLoginProvicerId(_ providerId: String) {
+        UserDefaults.standard.setValue(providerId, forKey: UserDefaultsKey.loginProviderId)
     }
 }
