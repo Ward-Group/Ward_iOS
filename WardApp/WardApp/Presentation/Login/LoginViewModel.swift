@@ -8,13 +8,12 @@
 import Foundation
 import Combine
 
-struct LoginViewModel: ViewModel {
-    
-    private let authUsecase: AuthUseCase
-    
-    init(authUsecase: AuthUseCase) {
-        self.authUsecase = authUsecase
-    }
+struct LoginViewModel {
+    let authUsecase: AuthUseCase
+    let router: LoginRouter
+}
+
+extension LoginViewModel: ViewModel {
     
     final class Input: ObservableObject {
         let userTrigger: Driver<UserFromLoginProvider>
@@ -25,18 +24,37 @@ struct LoginViewModel: ViewModel {
     }
     
     final class Output: ObservableObject {
+        @Published var alert = false
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output()
-        
-        input.userTrigger
-            .handleEvents(receiveOutput: { user in
-                self.authUsecase.login(user: user)
-            })
-            .sink()
-            .store(in: cancelBag)
-        
         return output
+    }
+}
+
+extension LoginViewModel {
+    
+    private func handleLoginResponse(response: AnyPublisher<LoginResponse, AuthError>, output: Output) {
+    }
+    
+    private func handleLoginCompletion(completion: Subscribers.Completion<Never>, output: Output) {
+        switch completion {
+        case .finished:
+            break
+        case .failure(let error):
+            self.handleError(error: error)
+        }
+    }
+    
+    private func handleError(error: Error) {
+        switch error as? AuthError {
+        case .needSignUp:
+            router.push(.signUp)
+            return
+        default:
+            router.push(.signUp)
+            return
+        }
     }
 }
