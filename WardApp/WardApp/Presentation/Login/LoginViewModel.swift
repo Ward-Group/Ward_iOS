@@ -25,20 +25,39 @@ extension LoginViewModel: ViewModel {
     
     final class Output: ObservableObject {
         @Published var alert = false
+        let dismissTrigger = PassthroughSubject<Void, Never>()
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output()
+        input.userTrigger
+            .sink { user in
+                handleLogin(user: user, output: output, cancelBag: cancelBag)
+            }
+            .store(in: cancelBag)
         return output
     }
 }
 
 extension LoginViewModel {
     
-    private func handleLoginResponse(response: AnyPublisher<LoginResponse, AuthError>, output: Output) {
+    private func handleLogin(user: UserFromLoginProvider, output: Output, cancelBag: CancelBag) {
+        authUsecase.login(provider: user.loginProvider, providerId: user.providerId, email: user.email)
+            .sink { completion in
+                handleLoginCompletion(completion: completion, output: output)
+            } receiveValue: { response in
+                handleLoginResponse(response: response, user: user, output: output)
+            }
+            .store(in: cancelBag)
     }
     
-    private func handleLoginCompletion(completion: Subscribers.Completion<Never>, output: Output) {
+    private func handleLoginResponse(response: LoginResponse, user: UserFromLoginProvider, output: Output) {
+        authUsecase.updateToken(accessToken: response.accessToken, refreshToken: response.refreshToken)
+        authUsecase.updateLoginDto(dto: LoginDto(provider: user.loginProvider, providerId: user.providerId, email: user.email))
+        output.dismissTrigger.send()
+    }
+    
+    private func handleLoginCompletion(completion: Subscribers.Completion<AuthError>, output: Output) {
         switch completion {
         case .finished:
             break

@@ -14,6 +14,7 @@ import KakaoSDKUser
 
 struct LoginView: View {
     
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject var router: LoginRouter
     @ObservedObject var input: LoginViewModel.Input
     @ObservedObject var output: LoginViewModel.Output
@@ -51,6 +52,9 @@ struct LoginView: View {
             .navigationDestination(for: LoginRouter.Page.self) { page in
                 router.build(page)
             }
+            .onReceive(output.dismissTrigger, perform: { _ in
+                dismiss()
+            })
         }
     }
 }

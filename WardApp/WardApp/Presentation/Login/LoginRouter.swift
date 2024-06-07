@@ -26,4 +26,8 @@ class LoginRouter: ObservableObject {
     func push(_ page: Page) {
         path.append(page)
     }
+    
+    func pop() {
+        path.removeLast()
+    }
 }
