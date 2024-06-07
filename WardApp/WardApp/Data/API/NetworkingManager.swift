@@ -10,12 +10,15 @@ import Alamofire
 
 enum APIError: Error {
     case networkingError(error: Error)
+    case failToDecode
+    case unknown
 }
 
-class AlamofireNetworkingManager {
-    
-    static let shared = AlamofireNetworkingManager()
-    private init() {}
+public enum MyNetworkError: Error {
+    case networkError(error: Error)
+}
+
+class NetworkingManager {
     
     func run<T: Decodable>(_ endpoint: Endpoint, type: T.Type) -> AnyPublisher<T, APIError> {
         let headersArray = endpoint.headers.map {
@@ -24,27 +27,21 @@ class AlamofireNetworkingManager {
         
         let headers = HTTPHeaders(headersArray)
         
-        return AF.request(endpoint.url,
-                   method: endpoint.method,
-                   parameters: endpoint.parameters,
-                   encoding: endpoint.encoding,
-                   headers: headers)
-        .publishDecodable(type: T.self)
-        .value()
-        .mapError { error in
-            print(error.localizedDescription)
-            return APIError.networkingError(error: error)
+        return Future<T, APIError> { promise in
+            AF.request(endpoint.url,
+                       method: endpoint.method,
+                       parameters: endpoint.parameters,
+                       encoding: endpoint.encoding,
+                       headers: headers)
+            .responseDecodable(of: T.self) { response in
+                switch response.result {
+                case .success(let value):
+                    promise(.success(value))
+                case .failure(let error):
+                    promise(.failure(.networkingError(error: error)))
+                }
+            }
         }
-        .receive(on: DispatchQueue.main)
         .eraseToAnyPublisher()
-    }
-    
-    func handleCompletion(completion: Subscribers.Completion<APIError>) {
-        switch completion {
-        case .finished:
-            break
-        case .failure(let error):
-            print(error.localizedDescription)
-        }
     }
 }
