@@ -6,13 +6,27 @@
 //
 
 import Foundation
+import Combine
 
-class AuthUseCase {
+struct AuthUseCase {
+    let repository: AuthRepository
     
-    init() {
+    func login() -> AnyPublisher<LoginResponse, AuthError> {
+        let dto = loadLoginDto()
+        Log.debug("\(dto.provider) - \(dto.providerId) - \(String(describing: dto.email)) 으로 로그인합니다.")
+        return repository.login(dto: dto)
     }
     
-    func login(user: UserFromLoginProvider) {
-        print("\(user)로 로그인합니다.")
+    private func loadLoginDto() -> LoginDto {
+        let provider = UserRepository.shared.getLoginProvider()
+        let providerId = UserRepository.shared.getAccessToken()
+        let email = UserRepository.shared.getEmail()
+        
+        return LoginDto(provider: provider, providerId: providerId, email: email)
+    }
+    
+    func updateToken(accessToken: String, refreshToken: String) {
+        UserRepository.shared.updateAcceesToken(accessToken)
+        UserRepository.shared.updateRefreshToken(refreshToken)
     }
 }

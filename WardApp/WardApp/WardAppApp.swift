@@ -13,21 +13,26 @@ import KakaoSDKAuth
 struct WardAppApp: App {
     
     init() {
-        let appKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_APP_KEY") as! String
-        KakaoSDK.initSDK(appKey: appKey)
+        initializeKakaoSDK()
     }
-    
-    @State private var initialTab = 2
     
     var body: some Scene {
         WindowGroup {
-            AppTabView(selection: $initialTab)
-//            LoginView(vm: loginAssembler.resolve())
-//                .onOpenURL { url in
-//                    if AuthApi.isKakaoTalkLoginUrl(url) {
-//                        _ = AuthController.handleOpenUrl(url: url)
-//                    }
-//                }
+            MainViewAssembler().view()
+            //            LoginView(vm: loginAssembler.resolve())
+            //                .onOpenURL { url in
+            //                    if AuthApi.isKakaoTalkLoginUrl(url) {
+            //                        _ = AuthController.handleOpenUrl(url: url)
+            //                    }
+            //                }
         }
+    }
+}
+
+extension WardAppApp {
+    
+    func initializeKakaoSDK() {
+        let appKey = Bundle.main.object(forInfoDictionaryKey: "KAKAO_NATIVE_APP_KEY") as! String
+        KakaoSDK.initSDK(appKey: appKey)
     }
 }
