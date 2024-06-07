@@ -63,6 +63,5 @@ struct HomeRouterView: View {
                 }
         }
         .environmentObject(router)
-        
     }
 }
