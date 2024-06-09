@@ -28,4 +28,11 @@ extension Endpoint {
       components.queryItems = self.query.map { URLQueryItem(name: $0, value: $1) }
       return components.url!
     }
+    
+    var baseURL: String {
+        guard let host = Bundle.main.object(forInfoDictionaryKey: "WARD_SERVICE_HOST") as? String else {
+            return ""
+        }
+        return host
+    }
 }
