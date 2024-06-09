@@ -9,14 +9,14 @@ import Foundation
 import Combine
 
 enum AuthError: Error {
-    case needSignUp, invalidInput, unknown, emptyData
+    case needSignUp, invalidInput, unknown, emptyData, userAlreadyExists, duplicatedNickname
 }
 
 struct AuthRepository {
     
-    func login(dto: LoginDto) -> AnyPublisher<LoginResponse, AuthError> {
-        return NetworkingManager().run(AuthEndpoint.login(dto), type: WardBaseResponse<LoginResponse>.self)
-            .tryMap { response -> LoginResponse in
+    func login(dto: LoginDto) -> AnyPublisher<AuthResponse, AuthError> {
+        return NetworkingManager.shared.run(AuthEndpoint.login(dto), type: WardBaseResponse<AuthResponse>.self)
+            .tryMap { response -> AuthResponse in
                 Log.debug(#file, response)
                 let code = response.code
                 switch code {
@@ -30,6 +30,34 @@ struct AuthRepository {
                     throw AuthError.needSignUp
                 case 5000:
                     throw AuthError.invalidInput
+                default:
+                    throw AuthError.unknown
+                }
+            }
+            .mapError { _ -> AuthError in
+                return .unknown
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func signUp(dto: SignUpDto) -> AnyPublisher<AuthResponse, AuthError> {
+        return NetworkingManager.shared.run(AuthEndpoint.signUp(dto), type: WardBaseResponse<AuthResponse>.self)
+            .tryMap { response in
+                Log.debug(#file, response)
+                let code = response.code
+                switch code {
+                case 200:
+                    if let data = response.data {
+                        return data
+                    } else {
+                        throw AuthError.emptyData
+                    }
+                case 5000, 5202:
+                    throw AuthError.invalidInput
+                case 5210, 5211:
+                    throw AuthError.userAlreadyExists
+                case 5206:
+                    throw AuthError.duplicatedNickname
                 default:
                     throw AuthError.unknown
                 }

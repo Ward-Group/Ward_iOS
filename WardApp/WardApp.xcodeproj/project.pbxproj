@@ -67,7 +67,7 @@
 		BA8AC5242C10253E00D019A6 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */; };
 		BA8AC52A2C102E5D00D019A6 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */; };
 		BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */; };
-		BA8AC52E2C102F7E00D019A6 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52D2C102F7E00D019A6 /* LoginResponse.swift */; };
+		BA8AC52E2C102F7E00D019A6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 		BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */; };
 		BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */; };
@@ -84,6 +84,7 @@
 		BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */; };
 		BAAFB2C92C15824700E722F3 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2C82C15824700E722F3 /* KeychainManager.swift */; };
 		BAAFB2CB2C1582D500E722F3 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */; };
+		BAAFB2CD2C158B1700E722F3 /* SignUpDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */; };
 		BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */; };
 		BAB92BB52C0FD8A4004B876B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAB92BB42C0FD8A4004B876B /* Config.xcconfig */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
@@ -190,7 +191,7 @@
 		BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBaseResponse.swift; sourceTree = "<group>"; };
-		BA8AC52D2C102F7E00D019A6 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemRowView.swift; sourceTree = "<group>"; };
 		BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
@@ -207,6 +208,7 @@
 		BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		BAAFB2C82C15824700E722F3 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDto.swift; sourceTree = "<group>"; };
 		BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkChevronDisclosureGroupStyle.swift; sourceTree = "<group>"; };
 		BAB92BB42C0FD8A4004B876B /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
@@ -542,9 +544,10 @@
 			isa = PBXGroup;
 			children = (
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
-				BA8AC52D2C102F7E00D019A6 /* LoginResponse.swift */,
+				BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */,
 				BA62C09E2C10A7BB007E692A /* LoginDto.swift */,
 				BAFDE6F72C131794006EE648 /* UserFromLoginProvider.swift */,
+				BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -854,7 +857,7 @@
 				BA4B16842C0EC8B900E1C1F5 /* NoticeBoardView.swift in Sources */,
 				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
-				BA8AC52E2C102F7E00D019A6 /* LoginResponse.swift in Sources */,
+				BA8AC52E2C102F7E00D019A6 /* AuthResponse.swift in Sources */,
 				BA62C0A52C10B61A007E692A /* MainRouter.swift in Sources */,
 				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
@@ -873,6 +876,7 @@
 				EA8C9FAD2C09A57000F02E3A /* Observable.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
+				BAAFB2CD2C158B1700E722F3 /* SignUpDto.swift in Sources */,
 				BAA9ED812C0D9817002DBD82 /* SearchResultItem.swift in Sources */,
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */,

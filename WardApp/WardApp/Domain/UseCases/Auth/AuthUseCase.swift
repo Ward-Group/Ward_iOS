@@ -10,14 +10,17 @@ import Combine
 
 struct AuthUseCase {
     let repository: AuthRepository
+}
+
+extension AuthUseCase {
     
-    func login() -> AnyPublisher<LoginResponse, AuthError> {
+    func login() -> AnyPublisher<AuthResponse, AuthError> {
         let dto = loadLoginDto()
         Log.debug("\(dto.provider) - \(dto.providerId) - \(String(describing: dto.email)) 으로 로그인합니다.")
         return repository.login(dto: dto)
     }
     
-    func login(provider: LoginProvider, providerId: String, email: String) -> AnyPublisher<LoginResponse, AuthError> {
+    func login(provider: LoginProvider, providerId: String, email: String) -> AnyPublisher<AuthResponse, AuthError> {
         let dto = LoginDto(provider: provider, providerId: providerId, email: email)
         Log.debug("\(dto.provider) - \(dto.providerId) - \(String(describing: dto.email)) 으로 로그인합니다.")
         updateLoginDto(dto: dto)
@@ -41,5 +44,16 @@ struct AuthUseCase {
         UserRepository.shared.updateEmail(dto.email)
         UserRepository.shared.updateLoginProvider(dto.provider)
         UserRepository.shared.updateLoginProvicerId(dto.providerId)
+    }
+}
+
+extension AuthUseCase {
+    func signUp(name: String, nickname: String, appPushNotification: Bool) -> AnyPublisher<AuthResponse, AuthError> {
+        let loginDto = loadLoginDto()
+        let signUpDto = SignUpDto(
+            provider: loginDto.provider, providerId: loginDto.providerId, name: name,
+            email: loginDto.email, nickname: nickname, appPushNotification: appPushNotification)
+        
+        return repository.signUp(dto: signUpDto)
     }
 }

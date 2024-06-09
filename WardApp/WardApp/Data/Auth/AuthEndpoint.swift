@@ -9,7 +9,7 @@ import Alamofire
 
 enum AuthEndpoint {
     case login(LoginDto)
-    case signUp
+    case signUp(SignUpDto)
 }
 
 extension AuthEndpoint: Endpoint {
@@ -38,8 +38,15 @@ extension AuthEndpoint: Endpoint {
                 "providerId": dto.providerId,
                 "email": dto.email
             ]
-        case .signUp:
-            return [:]
+        case .signUp(let dto):
+            return [
+                "provider": dto.provider,
+                "providerId": dto.providerId,
+                "name": dto.name,
+                "email": dto.email,
+                "nickname": dto.nickname,
+                "appPushNotification": dto.appPushNotification,
+            ]
         }
     }
     

@@ -19,6 +19,9 @@ public enum MyNetworkError: Error {
 }
 
 class NetworkingManager {
+
+    static let shared = NetworkingManager()
+    private init() {}
     
     func run<T: Decodable>(_ endpoint: Endpoint, type: T.Type) -> AnyPublisher<T, APIError> {
         let headersArray = endpoint.headers.map {
