@@ -51,7 +51,7 @@ extension LoginViewModel {
             .store(in: cancelBag)
     }
     
-    private func handleLoginResponse(response: LoginResponse, user: UserFromLoginProvider, output: Output) {
+    private func handleLoginResponse(response: AuthResponse, user: UserFromLoginProvider, output: Output) {
         authUsecase.updateToken(accessToken: response.accessToken, refreshToken: response.refreshToken)
         authUsecase.updateLoginDto(dto: LoginDto(provider: user.loginProvider, providerId: user.providerId, email: user.email))
         output.dismissTrigger.send()
