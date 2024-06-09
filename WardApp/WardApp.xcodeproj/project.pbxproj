@@ -61,11 +61,9 @@
 		BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */; };
 		BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
-		BAA7C0BC2C0993FE0042FE04 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */; };
 		BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */; };
 		BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */; };
 		BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0C12C09C00C0042FE04 /* Date.swift */; };
-		BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */; };
 		BAA9ED6C2C0D50D8002DBD82 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED6B2C0D50D8002DBD82 /* SearchView.swift */; };
 		BAA9ED6E2C0D50E1002DBD82 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED6D2C0D50E1002DBD82 /* SearchViewModel.swift */; };
 		BAA9ED702C0D5112002DBD82 /* SearchViewAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED6F2C0D5112002DBD82 /* SearchViewAssembler.swift */; };
@@ -76,6 +74,8 @@
 		BAA9ED852C0DA9B2002DBD82 /* SearchResultItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED842C0DA9B2002DBD82 /* SearchResultItemRowView.swift */; };
 		BAA9ED872C0DAE7A002DBD82 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */; };
 		BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */; };
+		BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */; };
+		BAB92BB52C0FD8A4004B876B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAB92BB42C0FD8A4004B876B /* Config.xcconfig */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
 		BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BACB69CC2BF33E1700C3E29A /* swiftgen.yml */; };
 		BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD016782BEB78670039ACDE /* SignUpView.swift */; };
@@ -173,11 +173,9 @@
 		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
 		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemRowView.swift; sourceTree = "<group>"; };
 		BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
 		BAA7C0C12C09C00C0042FE04 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkChevronDisclosureGroupStyle.swift; sourceTree = "<group>"; };
 		BAA9ED6B2C0D50D8002DBD82 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		BAA9ED6D2C0D50E1002DBD82 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		BAA9ED6F2C0D5112002DBD82 /* SearchViewAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewAssembler.swift; sourceTree = "<group>"; };
@@ -188,6 +186,8 @@
 		BAA9ED842C0DA9B2002DBD82 /* SearchResultItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultItemRowView.swift; sourceTree = "<group>"; };
 		BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
+		BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkChevronDisclosureGroupStyle.swift; sourceTree = "<group>"; };
+		BAB92BB42C0FD8A4004B876B /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BACB69CC2BF33E1700C3E29A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BAD016782BEB78670039ACDE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -283,14 +283,6 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
-		BA0A1B992C097ADB00A8EBCB /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				BAA7C0BB2C0993FE0042FE04 /* Config.xcconfig */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
 		BA12A6DF2C0ABB8900338EC0 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,7 +337,7 @@
 		BA365BB62BE23D5A00C332DF /* WardApp */ = {
 			isa = PBXGroup;
 			children = (
-				BA0A1B992C097ADB00A8EBCB /* Config */,
+				BAB92BB32C0FD8A4004B876B /* Config */,
 				BA7866482BF3BA68007BF0C4 /* Domain */,
 				BA7866492BF3BA6E007BF0C4 /* Data */,
 				BA78664A2BF3BA72007BF0C4 /* Presentation */,
@@ -499,12 +491,6 @@
 			path = Release;
 			sourceTree = "<group>";
 		};
-		BAB92BB02C0EEBFB004B876B /* DisclosureGroup */ = {
-			isa = PBXGroup;
-			children = (
-				BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */,
-			);
-			path = DisclosureGroup;
 		BAA9ED682C0D50C2002DBD82 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,6 +524,22 @@
 				BAA9ED7E2C0D869C002DBD82 /* SearchUsecase.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		BAB92BB02C0EEBFB004B876B /* DisclosureGroup */ = {
+			isa = PBXGroup;
+			children = (
+				BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */,
+			);
+			path = DisclosureGroup;
+			sourceTree = "<group>";
+		};
+		BAB92BB32C0FD8A4004B876B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BAB92BB42C0FD8A4004B876B /* Config.xcconfig */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		BAD016752BEB781E0039ACDE /* SignUp */ = {
@@ -703,7 +705,7 @@
 				BA3AD0412BE3988F00083347 /* Pretendard-Medium.otf in Resources */,
 				BA3AD02F2BE3958E00083347 /* GmarketSansBold.otf in Resources */,
 				BA3AD0402BE3988F00083347 /* Pretendard-Black.otf in Resources */,
-				BAA7C0BC2C0993FE0042FE04 /* Config.xcconfig in Resources */,
+				BAB92BB52C0FD8A4004B876B /* Config.xcconfig in Resources */,
 				BAD583022BE623890072B308 /* Localizable.strings in Resources */,
 				BAD582FF2BE620D70072B308 /* Color.xcassets in Resources */,
 				BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */,
@@ -833,7 +835,7 @@
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */,
-				EA81E0C82C0848F60076DA29 /* HomeHeaderView.swift in Sources */,
+				EA81E0C82C0848F60076DA29 /* HomeHeaderTitleView.swift in Sources */,
 				BAA9ED872C0DAE7A002DBD82 /* UIApplication.swift in Sources */,
 				EA81E0C82C0848F60076DA29 /* HomeHeaderTitleView.swift in Sources */,
 				BA12A6E12C0ABB9D00338EC0 /* AppTabView.swift in Sources */,
