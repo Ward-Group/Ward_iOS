@@ -68,11 +68,11 @@ extension MainViewModel {
             break
         case .failure(let error):
             switch error {
-            case .needSignUp:
+            case .needSignUp, .unknown:
                 router.present(fullScreenSheet: .login)
-            case .invalidInput, .unknown:
+            case .invalidInput, .emptyData:
                 // TODO: 이 후에 각자 에러 처리 해줄 것
-                router.present(fullScreenSheet: .login)
+                break
             }
         }
     }

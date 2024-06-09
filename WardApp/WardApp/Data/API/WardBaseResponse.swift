@@ -10,5 +10,5 @@ import Foundation
 struct WardBaseResponse<T: Codable>: Codable {
     let message: String
     let code: Int
-    let data: T
+    let data: T?
 }

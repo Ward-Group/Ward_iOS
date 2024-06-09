@@ -68,12 +68,11 @@ extension LoginViewModel {
     
     private func handleError(error: Error) {
         switch error as? AuthError {
-        case .needSignUp:
+        case .needSignUp, .unknown:
             router.push(.signUp)
             return
         default:
-            router.push(.signUp)
-            return
+            break
         }
     }
 }

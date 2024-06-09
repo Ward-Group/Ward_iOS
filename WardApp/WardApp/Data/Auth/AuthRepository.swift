@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 enum AuthError: Error {
-    case needSignUp, invalidInput, unknown
+    case needSignUp, invalidInput, unknown, emptyData
 }
 
 struct AuthRepository {
@@ -17,11 +17,16 @@ struct AuthRepository {
     func login(dto: LoginDto) -> AnyPublisher<LoginResponse, AuthError> {
         return NetworkingManager().run(AuthEndpoint.login(dto), type: WardBaseResponse<LoginResponse>.self)
             .tryMap { response -> LoginResponse in
+                Log.debug(#file, response)
                 let code = response.code
                 switch code {
                 case 200:
-                    return response.data
-                case 5208:
+                    if let data = response.data {
+                        return data
+                    } else {
+                        throw AuthError.emptyData
+                    }
+                case 5203, 5208:
                     throw AuthError.needSignUp
                 case 5000:
                     throw AuthError.invalidInput
