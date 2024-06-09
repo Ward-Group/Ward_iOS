@@ -38,16 +38,18 @@ class UserRepository {
     }
     
     func getAccessToken() -> String {
-        guard let token = UserDefaults.standard.string(forKey: UserDefaultsKey.accessToken) else {
+        guard let token = KeychainManager.shared.read(key: KeychainKey.accessToken) else {
             return ""
         }
+        
         return token
     }
     
     func getRefreshToken() -> String {
-        guard let token = UserDefaults.standard.string(forKey: UserDefaultsKey.refreshToken) else {
+        guard let token = KeychainManager.shared.read(key: KeychainKey.refreshToken) else {
             return ""
         }
+        
         return token
     }
     
@@ -56,11 +58,11 @@ class UserRepository {
     }
     
     func updateAcceesToken(_ token: String) {
-        UserDefaults.standard.setValue(token, forKey: UserDefaultsKey.accessToken)
+        _ = KeychainManager.shared.save(key: KeychainKey.accessToken, value: token)
     }
     
     func updateRefreshToken(_ token: String) {
-        UserDefaults.standard.setValue(token, forKey: UserDefaultsKey.refreshToken)
+        _ = KeychainManager.shared.save(key: KeychainKey.refreshToken, value: token)
     }
     
     func updateEmail(_ email: String) {

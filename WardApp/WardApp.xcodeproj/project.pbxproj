@@ -82,6 +82,8 @@
 		BAA9ED852C0DA9B2002DBD82 /* SearchResultItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED842C0DA9B2002DBD82 /* SearchResultItemRowView.swift */; };
 		BAA9ED872C0DAE7A002DBD82 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */; };
 		BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */; };
+		BAAFB2C92C15824700E722F3 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2C82C15824700E722F3 /* KeychainManager.swift */; };
+		BAAFB2CB2C1582D500E722F3 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */; };
 		BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */; };
 		BAB92BB52C0FD8A4004B876B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAB92BB42C0FD8A4004B876B /* Config.xcconfig */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
@@ -203,6 +205,8 @@
 		BAA9ED842C0DA9B2002DBD82 /* SearchResultItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultItemRowView.swift; sourceTree = "<group>"; };
 		BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
+		BAAFB2C82C15824700E722F3 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
 		BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkChevronDisclosureGroupStyle.swift; sourceTree = "<group>"; };
 		BAB92BB42C0FD8A4004B876B /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
@@ -455,6 +459,7 @@
 		BA78664C2BF3BA8A007BF0C4 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				BAAFB2C72C15823B00E722F3 /* Keychain */,
 				BAB92BB02C0EEBFB004B876B /* DisclosureGroup */,
 				BAA9ED732C0D8376002DBD82 /* UserDefaults */,
 				EA8C9FA92C099BBD00F02E3A /* CategoryTab */,
@@ -578,6 +583,15 @@
 				BAA9ED7E2C0D869C002DBD82 /* SearchUsecase.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		BAAFB2C72C15823B00E722F3 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				BAAFB2C82C15824700E722F3 /* KeychainManager.swift */,
+				BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		BAB92BB02C0EEBFB004B876B /* DisclosureGroup */ = {
@@ -888,6 +902,7 @@
 				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
+				BAAFB2CB2C1582D500E722F3 /* KeychainKey.swift in Sources */,
 				BA62C09F2C10A7BB007E692A /* LoginDto.swift in Sources */,
 				BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */,
 				BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */,
@@ -900,6 +915,7 @@
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
+				BAAFB2C92C15824700E722F3 /* KeychainManager.swift in Sources */,
 				BAA9ED6C2C0D50D8002DBD82 /* SearchView.swift in Sources */,
 				BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */,
 				BA62C0A12C10ACCB007E692A /* MainViewModel.swift in Sources */,

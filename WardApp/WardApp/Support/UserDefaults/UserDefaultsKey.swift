@@ -11,7 +11,5 @@ enum UserDefaultsKey {
     static let searchHistory = "searchHistory"
     static let loginProvider = "loginProvider"
     static let loginProviderId = "loginProviderId"
-    static let accessToken = "accessToken"
-    static let refreshToken = "refreshToken"
     static let email = "email"
 }
