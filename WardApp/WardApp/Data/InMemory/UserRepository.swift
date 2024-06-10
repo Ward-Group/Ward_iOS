@@ -20,7 +20,7 @@ class UserRepository {
     }
     
     func getLoginProvider() -> LoginProvider {
-        guard 
+        guard
             let providerString = UserDefaults.standard.string(forKey: UserDefaultsKey.loginProvider),
             let provider = LoginProvider(rawValue: providerString)
         else {
@@ -30,33 +30,46 @@ class UserRepository {
         return provider
     }
     
-    func getAccessToken() -> String {
-        guard let token = UserDefaults.standard.string(forKey: UserDefaultsKey.accessToken) else {
+    func getProviderId() -> String {
+        guard let providerId = UserDefaults.standard.string(forKey: UserDefaultsKey.loginProviderId) else {
             return ""
         }
+        return providerId
+    }
+    
+    func getAccessToken() -> String {
+        guard let token = KeychainManager.shared.read(key: KeychainKey.accessToken) else {
+            return ""
+        }
+        
         return token
     }
     
     func getRefreshToken() -> String {
-        guard let token = UserDefaults.standard.string(forKey: UserDefaultsKey.refreshToken) else {
+        guard let token = KeychainManager.shared.read(key: KeychainKey.refreshToken) else {
             return ""
         }
+        
         return token
     }
     
     func updateLoginProvider(_ provider: LoginProvider) {
-        UserDefaults.setValue(provider, forKey: UserDefaultsKey.loginProvider)
+        UserDefaults.standard.setValue(provider.rawValue, forKey: UserDefaultsKey.loginProvider)
     }
     
     func updateAcceesToken(_ token: String) {
-        UserDefaults.standard.setValue(token, forKey: UserDefaultsKey.accessToken)
+        _ = KeychainManager.shared.save(key: KeychainKey.accessToken, value: token)
     }
     
     func updateRefreshToken(_ token: String) {
-        UserDefaults.standard.setValue(token, forKey: UserDefaultsKey.refreshToken)
+        _ = KeychainManager.shared.save(key: KeychainKey.refreshToken, value: token)
     }
     
     func updateEmail(_ email: String) {
         UserDefaults.standard.setValue(email, forKey: UserDefaultsKey.email)
+    }
+        
+    func updateLoginProvicerId(_ providerId: String) {
+        UserDefaults.standard.setValue(providerId, forKey: UserDefaultsKey.loginProviderId)
     }
 }

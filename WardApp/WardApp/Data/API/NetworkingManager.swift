@@ -38,6 +38,7 @@ class NetworkingManager {
                 case .success(let value):
                     promise(.success(value))
                 case .failure(let error):
+                    Log.debug(#file, error)
                     promise(.failure(.networkingError(error: error)))
                 }
             }

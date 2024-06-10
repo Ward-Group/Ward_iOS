@@ -5,31 +5,23 @@
 //  Created by peppermint100 on 5/27/24.
 //
 
-import Foundation
+import SwiftUI
 
-protocol LoginAssembler {
-    func resolve() -> LoginView
-    func resolve() -> LoginViewModel
-    func resolve() -> AuthUseCase
-}
-
-class LoginAssemblerImpl: LoginAssembler {
-}
-
-extension LoginAssembler {
-    func resolve() -> LoginView {
-        return LoginView(vm: resolve())
+struct LoginAssembler {
+    
+    @ViewBuilder
+    func view() -> some View {
+        let router = LoginRouter()
+        let vm = LoginViewModel(authUsecase: resolve(), router: router)
+        LoginView(vm: vm)
+            .environmentObject(router)
     }
-}
 
-extension LoginAssembler {
-    func resolve() -> LoginViewModel {
-        return LoginViewModel(authUsecase: resolve())
+    private func resolve() -> AuthUseCase {
+        return AuthUseCase(repository: resolve())
     }
-}
-
-extension LoginAssembler {
-    func resolve() -> AuthUseCase {
-        return AuthUseCase()
+    
+    private func resolve() -> AuthRepository {
+        return AuthRepository()
     }
 }

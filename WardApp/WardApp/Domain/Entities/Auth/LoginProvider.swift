@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum LoginProvider {
-    case kakao, apple
+enum LoginProvider: String, Codable {
+    case kakao, apple, unknown
 }

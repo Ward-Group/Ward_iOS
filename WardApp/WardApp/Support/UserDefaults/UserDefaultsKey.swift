@@ -9,9 +9,7 @@ import Foundation
 
 enum UserDefaultsKey {
     static let searchHistory = "searchHistory"
-    
     static let loginProvider = "loginProvider"
-    static let accessToken = "accessToken"
-    static let refreshToken = "refreshToken"
+    static let loginProviderId = "loginProviderId"
     static let email = "email"
 }
