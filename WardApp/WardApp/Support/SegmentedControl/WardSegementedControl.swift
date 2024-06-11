@@ -14,9 +14,19 @@ struct WardSegementedControl: View {
     
     @State var tabIndicatorOffset: CGFloat = 0
     
-    init(tabs: [WardSegmentedControlTab], currentTab: Binding<WardSegmentedControlTab>) {
+    let active: Color
+    let inactive: Color
+    let font: SwiftUI.Font
+    
+    init(
+        tabs: [WardSegmentedControlTab], currentTab: Binding<WardSegmentedControlTab>,
+        active: Color = .mainBlue, inactive: Color = .black3, font: SwiftUI.Font = WardFonts.Pretendard.semiBold.swiftUIFont(size: 20)
+    ) {
         self.tabs = tabs
         self._selectedTab = currentTab
+        self.active = active
+        self.inactive = inactive
+        self.font = font
     }
     
     var body: some View {
@@ -30,9 +40,9 @@ struct WardSegementedControl: View {
                             VStack {
                                 Text(tab.title)
                                     .foregroundStyle(
-                                        selectedTab == tab ? Color.mainBlue : Color.black3
+                                        selectedTab == tab ? active : inactive
                                     )
-                                    .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 20))
+                                    .font(font)
                             }
                             .frame(width: tabWidth)
                             .onTapGesture {
@@ -57,5 +67,5 @@ struct WardSegementedControl: View {
 #Preview {
     let merchant = WardSegmentedControlTab(id: "merchant", title: "관심 상품")
     let brand = WardSegmentedControlTab(id: "brandm", title: "관심 브랜드")
-    return WardSegementedControl(tabs: [merchant, brand], currentTab: .constant(merchant))
+    return WardSegementedControl(tabs: [merchant, brand], currentTab: .constant(merchant), active: Color.mainBlue, inactive: Color.black3)
 }
