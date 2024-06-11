@@ -10,6 +10,7 @@ import Alamofire
 enum AuthEndpoint {
     case login(LoginDto)
     case signUp(SignUpDto)
+    case checkNickname(CheckNicknameDto)
 }
 
 extension AuthEndpoint: Endpoint {
@@ -19,6 +20,8 @@ extension AuthEndpoint: Endpoint {
             return "/auth/login"
         case .signUp:
             return "/auth"
+        case .checkNickname:
+            return "/auth/checkNickname"
         }
     }
     
@@ -34,27 +37,42 @@ extension AuthEndpoint: Endpoint {
         switch self {
         case .login(let dto):
             return [
-                "provider": dto.provider,
+                "provider": dto.provider.rawValue,
                 "providerId": dto.providerId,
                 "email": dto.email
             ]
         case .signUp(let dto):
+            Log.debug(#file, #function, dto)
             return [
-                "provider": dto.provider,
+                "provider": dto.provider.rawValue,
                 "providerId": dto.providerId,
                 "name": dto.name,
                 "email": dto.email,
                 "nickname": dto.nickname,
                 "appPushNotification": dto.appPushNotification,
+                "emailNotification": dto.emailNotification,
+                "snsNotification": dto.snsNotification
             ]
+        case .checkNickname(let dto):
+            return ["nickname": dto.nickname]
         }
     }
     
     var method: HTTPMethod {
-        return .post
+        switch self {
+        case .checkNickname:
+            return .get
+        case .login, .signUp:
+            return .post
+        }
     }
     
-    var encoding: URLEncoding {
-        return .default
+    var encoding: ParameterEncoding {
+        switch self {
+        case .login, .signUp:
+            return JSONEncoding.default
+        case .checkNickname:
+            return URLEncoding.queryString
+        }
     }
 }

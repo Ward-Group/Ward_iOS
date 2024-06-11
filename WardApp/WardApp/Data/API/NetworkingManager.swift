@@ -19,7 +19,7 @@ public enum MyNetworkError: Error {
 }
 
 class NetworkingManager {
-
+    
     static let shared = NetworkingManager()
     private init() {}
     
@@ -27,7 +27,6 @@ class NetworkingManager {
         let headersArray = endpoint.headers.map {
             HTTPHeader(name: $0, value: $1)
         }
-        
         let headers = HTTPHeaders(headersArray)
         
         return Future<T, APIError> { promise in
@@ -41,7 +40,7 @@ class NetworkingManager {
                 case .success(let value):
                     promise(.success(value))
                 case .failure(let error):
-                    Log.debug(#file, error)
+                    Log.error(#file, #function, error)
                     promise(.failure(.networkingError(error: error)))
                 }
             }

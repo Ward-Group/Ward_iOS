@@ -17,7 +17,7 @@ struct AuthRepository {
     func login(dto: LoginDto) -> AnyPublisher<AuthResponse, AuthError> {
         return NetworkingManager.shared.run(AuthEndpoint.login(dto), type: WardBaseResponse<AuthResponse>.self)
             .tryMap { response -> AuthResponse in
-                Log.debug(#file, response)
+                Log.debug(#file, #function, response)
                 let code = response.code
                 switch code {
                 case 200:
@@ -43,7 +43,7 @@ struct AuthRepository {
     func signUp(dto: SignUpDto) -> AnyPublisher<AuthResponse, AuthError> {
         return NetworkingManager.shared.run(AuthEndpoint.signUp(dto), type: WardBaseResponse<AuthResponse>.self)
             .tryMap { response in
-                Log.debug(#file, response)
+                Log.debug(#file, #function, response)
                 let code = response.code
                 switch code {
                 case 200:
@@ -61,6 +61,19 @@ struct AuthRepository {
                 default:
                     throw AuthError.unknown
                 }
+            }
+            .mapError { _ -> AuthError in
+                return .unknown
+            }
+            .eraseToAnyPublisher()
+    }
+    
+    func checkNickname(dto: CheckNicknameDto) -> AnyPublisher<Bool, AuthError> {
+        return NetworkingManager.shared.run(AuthEndpoint.checkNickname(dto), type: WardBaseResponse<Bool>.self)
+            .tryMap { response in
+                Log.debug(#file, #function, response)
+                guard let duplicated = response.data else { return true }
+                return duplicated
             }
             .mapError { _ -> AuthError in
                 return .unknown

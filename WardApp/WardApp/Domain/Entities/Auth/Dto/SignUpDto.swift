@@ -13,5 +13,7 @@ struct SignUpDto: Codable {
     let name: String
     let email: String
     let nickname: String
+    let emailNotification: Bool
+    let snsNotification: Bool
     let appPushNotification: Bool
 }
