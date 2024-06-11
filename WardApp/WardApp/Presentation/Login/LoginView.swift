@@ -108,11 +108,11 @@ extension LoginView {
                 let fullName = appleIDCredential.fullName
                 let name =  (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
                 if
-                    let identityTokenData = appleIDCredential.identityToken
-                {
+                    let identityTokenData = appleIDCredential.identityToken,
                     let email = appleIDCredential.email
+                {
                     let identityToken = String(data: identityTokenData, encoding: .utf8)!
-                    let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: "")
+                    let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: email)
                     userTrigger.send(newUser)
                 }
             default:
