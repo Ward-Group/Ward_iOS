@@ -147,7 +147,7 @@ extension LoginView {
     private func authenticateWithKakaoTalk() {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoTalk { _, error in
-                if let error = error {
+                if let error {
                     print("카카오 로그인 실패 \(error)")
                     return
                 }
@@ -155,7 +155,7 @@ extension LoginView {
             }
         } else {
             UserApi.shared.loginWithKakaoAccount { _, error in
-                if let error = error {
+                if let error {
                     print("카카오 로그인 실패 \(error)")
                     return
                 }
@@ -166,7 +166,7 @@ extension LoginView {
     
     private func loginWithKakaoTalk() {
         UserApi.shared.me { userMaybe, error in
-            if let error = error {
+            if let error {
                 print("카카오 유저 정보 가져오기 실패 \(error)")
                 return
             }
