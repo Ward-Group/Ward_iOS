@@ -19,12 +19,11 @@ struct WardAppApp: App {
     var body: some Scene {
         WindowGroup {
             MainViewAssembler().view()
-            //            LoginView(vm: loginAssembler.resolve())
-            //                .onOpenURL { url in
-            //                    if AuthApi.isKakaoTalkLoginUrl(url) {
-            //                        _ = AuthController.handleOpenUrl(url: url)
-            //                    }
-            //                }
+                .onOpenURL { url in
+                    if AuthApi.isKakaoTalkLoginUrl(url) {
+                        _ = AuthController.handleOpenUrl(url: url)
+                    }
+                }
         }
     }
 }

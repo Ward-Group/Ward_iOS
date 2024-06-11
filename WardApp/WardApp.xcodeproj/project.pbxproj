@@ -87,6 +87,8 @@
 		BAAFB2CD2C158B1700E722F3 /* SignUpDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */; };
 		BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */; };
 		BAB92BB52C0FD8A4004B876B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAB92BB42C0FD8A4004B876B /* Config.xcconfig */; };
+		BABFEEA02C15A05100FE9CAB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFEE9F2C15A05100FE9CAB /* SignUpViewModel.swift */; };
+		BABFEEA72C16964D00FE9CAB /* CheckNicknameDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFEEA62C16964D00FE9CAB /* CheckNicknameDto.swift */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
 		BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BACB69CC2BF33E1700C3E29A /* swiftgen.yml */; };
 		BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD016782BEB78670039ACDE /* SignUpView.swift */; };
@@ -211,6 +213,8 @@
 		BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDto.swift; sourceTree = "<group>"; };
 		BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkChevronDisclosureGroupStyle.swift; sourceTree = "<group>"; };
 		BAB92BB42C0FD8A4004B876B /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		BABFEE9F2C15A05100FE9CAB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BABFEEA62C16964D00FE9CAB /* CheckNicknameDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicknameDto.swift; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BACB69CC2BF33E1700C3E29A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BAD016782BEB78670039ACDE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -284,6 +288,7 @@
 				BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */,
 				BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */,
 				BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */,
+				BA04169D2C0855F6003CFFAC /* FilterOption.swift */,
 			);
 			path = Interested;
 			sourceTree = "<group>";
@@ -414,11 +419,10 @@
 		BA62C0A62C10C968007E692A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BAD016782BEB78670039ACDE /* SignUpView.swift */,
+				BABFEEA22C15A45100FE9CAB /* Signup */,
 				BA04166D2C042F55003CFFAC /* LoginAssembler.swift */,
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
 				BA04166B2C04285D003CFFAC /* LoginViewModel.swift */,
-				BA04169D2C0855F6003CFFAC /* FilterOption.swift */,
 				BA62C0A72C1147C2007E692A /* LoginRouter.swift */,
 			);
 			path = Login;
@@ -543,11 +547,10 @@
 		BA8AC52F2C10352600D019A6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BABFEEA82C1696AE00FE9CAB /* Response */,
+				BABFEEA52C16963C00FE9CAB /* Dto */,
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
-				BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */,
-				BA62C09E2C10A7BB007E692A /* LoginDto.swift */,
 				BAFDE6F72C131794006EE648 /* UserFromLoginProvider.swift */,
-				BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -611,6 +614,33 @@
 				BAB92BB42C0FD8A4004B876B /* Config.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		BABFEEA22C15A45100FE9CAB /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				BAD016782BEB78670039ACDE /* SignUpView.swift */,
+				BABFEE9F2C15A05100FE9CAB /* SignUpViewModel.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		BABFEEA52C16963C00FE9CAB /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				BA62C09E2C10A7BB007E692A /* LoginDto.swift */,
+				BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */,
+				BABFEEA62C16964D00FE9CAB /* CheckNicknameDto.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
+		BABFEEA82C1696AE00FE9CAB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		EA2421BA2BF4D9480070D1C9 /* Navigation */ = {
@@ -884,6 +914,7 @@
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				BAFDE6F82C131794006EE648 /* UserFromLoginProvider.swift in Sources */,
 				EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */,
+				BABFEEA02C15A05100FE9CAB /* SignUpViewModel.swift in Sources */,
 				BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */,
 				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
 				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
@@ -891,6 +922,7 @@
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
 				EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
+				BABFEEA72C16964D00FE9CAB /* CheckNicknameDto.swift in Sources */,
 				BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */,
 				BA4B168C2C0ECDC900E1C1F5 /* InlineNavBarView.swift in Sources */,
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,
