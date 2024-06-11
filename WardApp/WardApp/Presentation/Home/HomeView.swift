@@ -58,7 +58,9 @@ extension HomeView {
                 .scaledToFit()
                 .frame(height: 24)
             Spacer()
-            Button(action: {}, label: {
+            Button(action: {
+                router.present(fullScreen: .search)
+            }, label: {
                 WardAssets.Image.Icon.searching.swiftUIImage
                     .resizable()
                     .frame(width: 24, height: 24)
