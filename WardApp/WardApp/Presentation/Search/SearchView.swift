@@ -20,6 +20,7 @@ struct SearchView: View {
     private let removeAllTabTrigger = PassthroughSubject<Void, Never>()
     private let xMarkButtonTappedTrigger = PassthroughSubject<UUID, Never>()
     private let searchButtonTrigger = PassthroughSubject<Void, Never>()
+    private let clearSearchBarButtonTrigger = PassthroughSubject<Void, Never>()
     
     private let cancelBag = CancelBag()
     
@@ -29,7 +30,8 @@ struct SearchView: View {
             searchBarFocusTrigger: searchBarFocusTrigger.asDriver(),
             removeAllTabTrigger: removeAllTabTrigger.asDriver(),
             xMarkButtonTappedTrigger: xMarkButtonTappedTrigger.asDriver(),
-            searchButtonTrigger: searchButtonTrigger.asDriver()
+            searchButtonTrigger: searchButtonTrigger.asDriver(),
+            clearSearchBarButtonTrigger: clearSearchBarButtonTrigger.asDriver()
         )
         
         let output = vm.transform(input, cancelBag: cancelBag)
@@ -43,11 +45,15 @@ struct SearchView: View {
             
             GeometryReader { geo in
                 VStack {
-                    HeaderNavBarView(showSearching: false, showNotification: false)
                     HStack {
-                        searchBar
+                        if output.searchText.isEmpty {
+                            searchButton
+                        }
                         Spacer()
-                        searchButton
+                        searchBar
+                        if !output.searchText.isEmpty {
+                            clearSearchBarButton
+                        }
                     }
                     .padding(.horizontal)
                     .padding(.bottom, 4)
@@ -58,7 +64,17 @@ struct SearchView: View {
                         recentHistoryAndRemoveAllButton
                         searchHistory
                     } else {
-                        // TODO: 공통 Segmented Control 수정해서 추가
+                        
+                        Divider()
+                        
+                        WardSegementedControl(
+                            tabs: output.tabs, currentTab: $output.selectedTab,
+                            active: Color.black0, inactive: Color.black0,
+                            font: WardFonts.Pretendard.semiBold.swiftUIFont(size: 16)
+                        )
+                        .padding(.horizontal)
+                        .frame(height: 45)
+                        
                         HStack {
                             itemCount
                             Spacer()
@@ -79,7 +95,6 @@ struct SearchView: View {
 
 extension SearchView {
     
-    // TODO: SearchBar 기획 추가 후 수정 필요
     private var searchBar: some View {
         TextField("", text: $output.searchText)
             .background {
@@ -92,6 +107,8 @@ extension SearchView {
                 }
             }
             .focused($searchBarFocused)
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
             .onChange(of: searchBarFocused) {
                 searchBarFocusTrigger.send(searchBarFocused)
             }
@@ -102,6 +119,13 @@ extension SearchView {
                 searchButtonTrigger.send()
             }
             .submitLabel(.search)
+    }
+    
+    private var clearSearchBarButton: some View {
+        WardAssets.Image.Icon.xMarkFill.swiftUIImage
+            .onTapGesture {
+                clearSearchBarButtonTrigger.send()
+            }
     }
     
     private var searchButton: some View {
