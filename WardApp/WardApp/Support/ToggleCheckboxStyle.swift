@@ -13,9 +13,11 @@ struct ToggleCheckboxStyle: ToggleStyle {
         Button {
             configuration.isOn.toggle()
         } label: {
-            Symbols.checkmarkSquare
-                .symbolVariant(.fill)
-                .font(.system(size: 24))
+            if configuration.isOn {
+                WardAssets.Image.Icon.toggleOn.swiftUIImage
+            } else {
+                WardAssets.Image.Icon.toggleOff.swiftUIImage
+            }
         }
     }
 }

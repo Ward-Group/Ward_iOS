@@ -24,4 +24,8 @@ struct LoginAssembler {
     private func resolve() -> AuthRepository {
         return AuthRepository()
     }
+    
+    func resolve() -> SignUpViewModel {
+        return SignUpViewModel(authUsecase: resolve())
+    }
 }

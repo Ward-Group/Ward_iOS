@@ -9,17 +9,29 @@ import SwiftUI
 
 class LoginRouter: ObservableObject {
     
-    @Published var path = NavigationPath()
+    @Published var path = [Page]()
     
-    enum Page {
-        case signUp
+    enum Page: Hashable {
+        
+        case signUp(UserFromLoginProvider)
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(self.hashValue)
+        }
+        
+        static func == (lhs: Page, rhs: Page) -> Bool {
+            switch (lhs, rhs) {
+            case let (.signUp(user1), .signUp(user2)):
+                return user1.email == user2.email
+            }
+        }
     }
     
     @ViewBuilder
     func build(_ page: Page) -> some View {
         switch page {
         case .signUp:
-            SignUpView()
+            SignUpView(router: self)
         }
     }
     

@@ -42,34 +42,34 @@ extension LoginViewModel: ViewModel {
 extension LoginViewModel {
     
     private func handleLogin(user: UserFromLoginProvider, output: Output, cancelBag: CancelBag) {
-        authUsecase.login(provider: user.loginProvider, providerId: user.providerId, email: user.email)
+        authUsecase.login(user: user)
             .sink { completion in
-                handleLoginCompletion(completion: completion, output: output)
+                handleLoginCompletion(completion: completion, output: output, user: user)
             } receiveValue: { response in
                 handleLoginResponse(response: response, user: user, output: output)
             }
             .store(in: cancelBag)
     }
     
-    private func handleLoginResponse(response: LoginResponse, user: UserFromLoginProvider, output: Output) {
+    private func handleLoginResponse(response: AuthResponse, user: UserFromLoginProvider, output: Output) {
         authUsecase.updateToken(accessToken: response.accessToken, refreshToken: response.refreshToken)
         authUsecase.updateLoginDto(dto: LoginDto(provider: user.loginProvider, providerId: user.providerId, email: user.email))
         output.dismissTrigger.send()
     }
     
-    private func handleLoginCompletion(completion: Subscribers.Completion<AuthError>, output: Output) {
+    private func handleLoginCompletion(completion: Subscribers.Completion<AuthError>, output: Output, user: UserFromLoginProvider) {
         switch completion {
         case .finished:
             break
         case .failure(let error):
-            self.handleError(error: error)
+            self.handleError(error: error, user: user)
         }
     }
     
-    private func handleError(error: Error) {
+    private func handleError(error: Error, user: UserFromLoginProvider) {
         switch error as? AuthError {
         case .needSignUp, .unknown:
-            router.push(.signUp)
+            router.push(.signUp(user))
             return
         default:
             break

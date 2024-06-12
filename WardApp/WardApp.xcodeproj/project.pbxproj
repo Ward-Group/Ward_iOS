@@ -67,7 +67,7 @@
 		BA8AC5242C10253E00D019A6 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */; };
 		BA8AC52A2C102E5D00D019A6 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */; };
 		BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */; };
-		BA8AC52E2C102F7E00D019A6 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52D2C102F7E00D019A6 /* LoginResponse.swift */; };
+		BA8AC52E2C102F7E00D019A6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 		BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */; };
 		BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */; };
@@ -84,8 +84,11 @@
 		BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */; };
 		BAAFB2C92C15824700E722F3 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2C82C15824700E722F3 /* KeychainManager.swift */; };
 		BAAFB2CB2C1582D500E722F3 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */; };
+		BAAFB2CD2C158B1700E722F3 /* SignUpDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */; };
 		BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */; };
 		BAB92BB52C0FD8A4004B876B /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = BAB92BB42C0FD8A4004B876B /* Config.xcconfig */; };
+		BABFEEA02C15A05100FE9CAB /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFEE9F2C15A05100FE9CAB /* SignUpViewModel.swift */; };
+		BABFEEA72C16964D00FE9CAB /* CheckNicknameDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABFEEA62C16964D00FE9CAB /* CheckNicknameDto.swift */; };
 		BACB69CB2BF3372000C3E29A /* XCAssets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */; };
 		BACB69CD2BF33E1700C3E29A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = BACB69CC2BF33E1700C3E29A /* swiftgen.yml */; };
 		BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD016782BEB78670039ACDE /* SignUpView.swift */; };
@@ -190,7 +193,7 @@
 		BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBaseResponse.swift; sourceTree = "<group>"; };
-		BA8AC52D2C102F7E00D019A6 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemRowView.swift; sourceTree = "<group>"; };
 		BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
@@ -207,8 +210,11 @@
 		BAA9ED882C0DBFF7002DBD82 /* SearchHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistory.swift; sourceTree = "<group>"; };
 		BAAFB2C82C15824700E722F3 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		BAAFB2CA2C1582D500E722F3 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDto.swift; sourceTree = "<group>"; };
 		BAB92BB12C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkChevronDisclosureGroupStyle.swift; sourceTree = "<group>"; };
 		BAB92BB42C0FD8A4004B876B /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		BABFEE9F2C15A05100FE9CAB /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BABFEEA62C16964D00FE9CAB /* CheckNicknameDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNicknameDto.swift; sourceTree = "<group>"; };
 		BACB69CA2BF3372000C3E29A /* XCAssets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCAssets+Generated.swift"; sourceTree = "<group>"; };
 		BACB69CC2BF33E1700C3E29A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		BAD016782BEB78670039ACDE /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -282,6 +288,7 @@
 				BA04169B2C08432C003CFFAC /* InterestedAssembler.swift */,
 				BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */,
 				BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */,
+				BA04169D2C0855F6003CFFAC /* FilterOption.swift */,
 			);
 			path = Interested;
 			sourceTree = "<group>";
@@ -412,11 +419,10 @@
 		BA62C0A62C10C968007E692A /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				BAD016782BEB78670039ACDE /* SignUpView.swift */,
+				BABFEEA22C15A45100FE9CAB /* Signup */,
 				BA04166D2C042F55003CFFAC /* LoginAssembler.swift */,
 				BAD582F62BE6196D0072B308 /* LoginView.swift */,
 				BA04166B2C04285D003CFFAC /* LoginViewModel.swift */,
-				BA04169D2C0855F6003CFFAC /* FilterOption.swift */,
 				BA62C0A72C1147C2007E692A /* LoginRouter.swift */,
 			);
 			path = Login;
@@ -541,9 +547,9 @@
 		BA8AC52F2C10352600D019A6 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				BABFEEA82C1696AE00FE9CAB /* Response */,
+				BABFEEA52C16963C00FE9CAB /* Dto */,
 				BA0416602C0420EB003CFFAC /* LoginProvider.swift */,
-				BA8AC52D2C102F7E00D019A6 /* LoginResponse.swift */,
-				BA62C09E2C10A7BB007E692A /* LoginDto.swift */,
 				BAFDE6F72C131794006EE648 /* UserFromLoginProvider.swift */,
 			);
 			path = Auth;
@@ -608,6 +614,33 @@
 				BAB92BB42C0FD8A4004B876B /* Config.xcconfig */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		BABFEEA22C15A45100FE9CAB /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				BAD016782BEB78670039ACDE /* SignUpView.swift */,
+				BABFEE9F2C15A05100FE9CAB /* SignUpViewModel.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		BABFEEA52C16963C00FE9CAB /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				BA62C09E2C10A7BB007E692A /* LoginDto.swift */,
+				BAAFB2CC2C158B1700E722F3 /* SignUpDto.swift */,
+				BABFEEA62C16964D00FE9CAB /* CheckNicknameDto.swift */,
+			);
+			path = Dto;
+			sourceTree = "<group>";
+		};
+		BABFEEA82C1696AE00FE9CAB /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		EA2421BA2BF4D9480070D1C9 /* Navigation */ = {
@@ -854,7 +887,7 @@
 				BA4B16842C0EC8B900E1C1F5 /* NoticeBoardView.swift in Sources */,
 				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
-				BA8AC52E2C102F7E00D019A6 /* LoginResponse.swift in Sources */,
+				BA8AC52E2C102F7E00D019A6 /* AuthResponse.swift in Sources */,
 				BA62C0A52C10B61A007E692A /* MainRouter.swift in Sources */,
 				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
@@ -873,6 +906,7 @@
 				EA8C9FAD2C09A57000F02E3A /* Observable.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
+				BAAFB2CD2C158B1700E722F3 /* SignUpDto.swift in Sources */,
 				BAA9ED812C0D9817002DBD82 /* SearchResultItem.swift in Sources */,
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */,
@@ -880,6 +914,7 @@
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				BAFDE6F82C131794006EE648 /* UserFromLoginProvider.swift in Sources */,
 				EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */,
+				BABFEEA02C15A05100FE9CAB /* SignUpViewModel.swift in Sources */,
 				BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */,
 				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
 				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
@@ -887,6 +922,7 @@
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
 				EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
+				BABFEEA72C16964D00FE9CAB /* CheckNicknameDto.swift in Sources */,
 				BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */,
 				BA4B168C2C0ECDC900E1C1F5 /* InlineNavBarView.swift in Sources */,
 				BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */,

@@ -108,11 +108,11 @@ extension LoginView {
                 let fullName = appleIDCredential.fullName
                 let name =  (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
                 if
-                    let identityTokenData = appleIDCredential.identityToken
-                {
+                    let identityTokenData = appleIDCredential.identityToken,
                     let email = appleIDCredential.email
+                {
                     let identityToken = String(data: identityTokenData, encoding: .utf8)!
-                    let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: "")
+                    let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: email)
                     userTrigger.send(newUser)
                 }
             default:
@@ -147,7 +147,7 @@ extension LoginView {
     private func authenticateWithKakaoTalk() {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoTalk { _, error in
-                if let error = error {
+                if let error {
                     print("카카오 로그인 실패 \(error)")
                     return
                 }
@@ -155,7 +155,7 @@ extension LoginView {
             }
         } else {
             UserApi.shared.loginWithKakaoAccount { _, error in
-                if let error = error {
+                if let error {
                     print("카카오 로그인 실패 \(error)")
                     return
                 }
@@ -166,7 +166,7 @@ extension LoginView {
     
     private func loginWithKakaoTalk() {
         UserApi.shared.me { userMaybe, error in
-            if let error = error {
+            if let error {
                 print("카카오 유저 정보 가져오기 실패 \(error)")
                 return
             }

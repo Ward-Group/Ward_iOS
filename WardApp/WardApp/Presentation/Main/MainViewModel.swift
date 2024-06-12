@@ -56,7 +56,7 @@ extension MainViewModel {
     }
     
     /// 로그인 성공
-    private func handleLoginResponse(response: LoginResponse) {
+    private func handleLoginResponse(response: AuthResponse) {
         authUsecase.updateToken(accessToken: response.accessToken, refreshToken: response.refreshToken)
     }
     
@@ -70,7 +70,7 @@ extension MainViewModel {
             switch error {
             case .needSignUp, .unknown:
                 router.present(fullScreenSheet: .login)
-            case .invalidInput, .emptyData:
+            default:
                 // TODO: 이 후에 각자 에러 처리 해줄 것
                 break
             }

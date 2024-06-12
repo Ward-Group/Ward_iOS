@@ -10,16 +10,21 @@ import Combine
 
 struct AuthUseCase {
     let repository: AuthRepository
+}
+
+extension AuthUseCase {
     
-    func login() -> AnyPublisher<LoginResponse, AuthError> {
+    /// MainView에서 이미 로그인한 사용자인지 아닌지 확인, 즉 Defaults와 Keychain에 가지고 있는 정보로 로그인
+    func login() -> AnyPublisher<AuthResponse, AuthError> {
         let dto = loadLoginDto()
-        Log.debug("\(dto.provider) - \(dto.providerId) - \(String(describing: dto.email)) 으로 로그인합니다.")
+        Log.debug("\(dto.provider) - \(String(describing: dto.email)) 으로 로그인합니다.")
         return repository.login(dto: dto)
     }
     
-    func login(provider: LoginProvider, providerId: String, email: String) -> AnyPublisher<LoginResponse, AuthError> {
-        let dto = LoginDto(provider: provider, providerId: providerId, email: email)
-        Log.debug("\(dto.provider) - \(dto.providerId) - \(String(describing: dto.email)) 으로 로그인합니다.")
+    /// LoginView에서 새로 로그인. 가지고 있는 정보 없이 애플, 카카오에 요청해서 로그인하므로 로그인 dto를 받으면 Defaults와 Keychain에 저장
+    func login(user: UserFromLoginProvider) -> AnyPublisher<AuthResponse, AuthError> {
+        let dto = LoginDto(provider: user.loginProvider, providerId: user.providerId, email: user.email)
+        Log.debug(#file, #function, "\(dto.provider) - \(String(describing: dto.email)) 으로 로그인합니다.")
         updateLoginDto(dto: dto)
         return repository.login(dto: dto)
     }
@@ -41,5 +46,22 @@ struct AuthUseCase {
         UserRepository.shared.updateEmail(dto.email)
         UserRepository.shared.updateLoginProvider(dto.provider)
         UserRepository.shared.updateLoginProvicerId(dto.providerId)
+    }
+}
+
+extension AuthUseCase {
+    func signUp(name: String, nickname: String, emailNotification: Bool, smsNotification: Bool, appPushNotification: Bool) -> AnyPublisher<AuthResponse, AuthError> {
+        let loginDto = loadLoginDto()
+        let signUpDto = SignUpDto(
+            provider: loginDto.provider, providerId: loginDto.providerId, name: name,
+            email: loginDto.email, nickname: nickname, emailNotification: emailNotification, snsNotification: smsNotification, appPushNotification: appPushNotification)
+        
+        return repository.signUp(dto: signUpDto)
+    }
+}
+
+extension AuthUseCase {
+    func checkNickname(nickname: String) -> AnyPublisher<Bool, AuthError> {
+        return repository.checkNickname(dto: CheckNicknameDto(nickname: nickname))
     }
 }
