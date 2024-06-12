@@ -26,6 +26,7 @@ extension MainViewModel: ViewModel {
     final class Output: ObservableObject {
         @Published var selectedTab = 2
         @Published var isLoggingIn = true
+        @Published var isLoggedIn = false
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
@@ -60,7 +61,7 @@ extension MainViewModel {
         authUsecase.updateToken(accessToken: response.accessToken, refreshToken: response.refreshToken)
     }
     
-    // 로그인 완료 시 실행 실패 여부 확인
+    /// 로그인 완료 시 실행 실패 여부 확인
     private func handleLoginCompletion(completion: Subscribers.Completion<AuthError>, output: Output) {
         output.isLoggingIn = false
         switch completion {

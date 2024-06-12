@@ -20,7 +20,7 @@ struct WardSegementedControl: View {
     
     init(
         tabs: [WardSegmentedControlTab], currentTab: Binding<WardSegmentedControlTab>,
-        active: Color = .mainBlue, inactive: Color = .black3, font: SwiftUI.Font = WardFonts.Pretendard.semiBold.swiftUIFont(size: 20)
+        active: Color = .mainBlue, inactive: Color = .black3, font: SwiftUI.Font = WardFonts.Pretendard.semiBold.swiftUIFont(size: 18)
     ) {
         self.tabs = tabs
         self._selectedTab = currentTab

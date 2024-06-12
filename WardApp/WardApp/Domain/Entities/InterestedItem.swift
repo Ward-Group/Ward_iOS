@@ -12,9 +12,9 @@ struct InterestedItem: Identifiable, Hashable {
     let name: String
     let price: Int
     let isLiked: Bool
-    let code: String
+    let status: String
     
     var id: String {
-        code
+        brand + name
     }
 }

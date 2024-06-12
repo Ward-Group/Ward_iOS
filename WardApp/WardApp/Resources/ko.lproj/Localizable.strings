@@ -65,6 +65,7 @@
 "Months Before" = "달 전";
 "Years Before" = "년 전";
 "Notifications Do Not Exist" = "관심 상품과 연관된 알림이 없습니다.\n 관심 상품을 추가해보세요.";
+"Notifications" = "알림";
 
 // MARK: 탭 바
 "Home Tabbar" = "홈";

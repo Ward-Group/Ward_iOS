@@ -101,6 +101,7 @@ extension SearchView {
                 HStack(spacing: 5) {
                     if !output.searchBarFocused && output.searchText.isEmpty {
                         Text(WardStrings.typeProductCodeNames)
+                            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 16))
                             .foregroundStyle(Color.darkGray)
                     }
                     Spacer()
@@ -151,11 +152,11 @@ extension SearchView {
     private var recentHistoryAndRemoveAllButton: some View {
         HStack {
             Text(WardStrings.recentSearchTermHistory)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 12))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
                 .foregroundStyle(Color.black2)
             Spacer()
             Text(WardStrings.removeAll)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 12))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
                 .foregroundStyle(Color.black2)
                 .onTapGesture {
                     removeAllTabTrigger.send()
@@ -172,7 +173,7 @@ extension SearchView {
                 ForEach($output.searchHistory, id: \.id) { history in
                     HStack {
                         Text(history.wrappedValue.term)
-                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 16))
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 18))
                             .foregroundStyle(Color.black0)
                         
                         Spacer()
@@ -204,7 +205,7 @@ extension SearchView {
         Button(action: {
         }, label: {
             Text(WardStrings.showMore)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                 .foregroundStyle(Color.black2)
             WardAssets.Image.Icon.chevronRight.swiftUIImage
         })
