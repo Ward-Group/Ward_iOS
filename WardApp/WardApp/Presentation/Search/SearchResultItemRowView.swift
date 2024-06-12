@@ -22,21 +22,27 @@ struct SearchResultItemRowView: View {
                 // TODO: 디자인 나오면 폰트 지정 필요
                 VStack(alignment: .leading) {
                     Text(item.brand)
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                             .foregroundStyle(Color.black0)
                             .lineLimit(1)
                     Text(item.name)
                             .foregroundStyle(Color.black0)
+                            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 16))
                             .lineLimit(2)
                     HStack {
                         Text(WardStrings.retailer)
                             .foregroundStyle(Color.black2)
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                         Text(item.retailer)
                             .foregroundStyle(Color.black2)
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                             .lineLimit(1)
                         Text(WardStrings.hits)
                             .foregroundStyle(Color.black2)
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                         Text("\(item.hits)")
                             .foregroundStyle(Color.black2)
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                     }
                 }
             }

@@ -205,7 +205,7 @@ extension SearchView {
         Button(action: {
         }, label: {
             Text(WardStrings.showMore)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                 .foregroundStyle(Color.black2)
             WardAssets.Image.Icon.chevronRight.swiftUIImage
         })
