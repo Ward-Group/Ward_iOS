@@ -22,11 +22,14 @@ extension AuthUseCase {
     }
     
     /// LoginView에서 새로 로그인. 가지고 있는 정보 없이 애플, 카카오에 요청해서 로그인하므로 로그인 dto를 받으면 Defaults와 Keychain에 저장
-    func login(user: UserFromLoginProvider) -> AnyPublisher<AuthResponse, AuthError> {
-        let dto = LoginDto(provider: user.loginProvider, providerId: user.providerId, email: user.email)
+    func login(dto: LoginDto) -> AnyPublisher<AuthResponse, AuthError> {
         Log.debug(#file, #function, "\(dto.provider) - \(String(describing: dto.email)) 으로 로그인합니다.")
         updateLoginDto(dto: dto)
         return repository.login(dto: dto)
+    }
+    
+    func loadEmail() -> String {
+        return UserRepository.shared.getEmail()
     }
     
     private func loadLoginDto() -> LoginDto {

@@ -107,10 +107,8 @@ extension LoginView {
             case let appleIDCredential as ASAuthorizationAppleIDCredential:
                 let fullName = appleIDCredential.fullName
                 let name =  (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
-                if
-                    let identityTokenData = appleIDCredential.identityToken,
+                if let identityTokenData = appleIDCredential.identityToken {
                     let email = appleIDCredential.email
-                {
                     let identityToken = String(data: identityTokenData, encoding: .utf8)!
                     let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: email)
                     userTrigger.send(newUser)
