@@ -9,7 +9,7 @@ import SwiftUI
 
 struct InterestedRouterView: View {
     
-    @StateObject private var router: InterestedRouter = InterestedAssemblerImpl().resolve()
+    @StateObject private var router: InterestedRouter = InterestedAssembler().resolve()
     
     var body: some View {
         NavigationStack(path: $router.path) {

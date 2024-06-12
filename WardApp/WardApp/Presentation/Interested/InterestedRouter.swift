@@ -20,7 +20,7 @@ class InterestedRouter: ObservableObject {
     func build(page: Page) -> some View {
         switch page {
         case .root:
-            InterestedAssemblerImpl().resolve()
+            InterestedAssembler().view()
         case .detail(let item):
             Text(item.name)
         }
