@@ -31,7 +31,10 @@ struct NotificationView: View {
             GeometryReader { geo in
                 VStack {
                     HeaderNavBarView(showSearching: false, showNotification: false)
-                    WardSegementedControl(tabs: output.tabs, currentTab: $output.currentTab)
+                    WardSegementedControl(
+                        tabs: output.tabs, currentTab: $output.currentTab,
+                        active: Color.mainBlue, inactive: Color.black3
+                    )
                         .frame(width: geo.size.width, height: 45)
                     
                     if output.items.isEmpty {

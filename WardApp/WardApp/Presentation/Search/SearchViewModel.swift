@@ -19,13 +19,15 @@ extension SearchViewModel: ViewModel {
         let removeAllTabTrigger: Driver<Void>
         let xMarkButtonTappedTrigger: Driver<UUID>
         let searchButtonTrigger: Driver<Void>
+        let clearSearchBarButtonTrigger: Driver<Void>
         
-        init(searchTextTrigger: Driver<String>, searchBarFocusTrigger: Driver<Bool>, removeAllTabTrigger: Driver<Void>, xMarkButtonTappedTrigger: Driver<UUID>, searchButtonTrigger: Driver<Void>) {
+        init(searchTextTrigger: Driver<String>, searchBarFocusTrigger: Driver<Bool>, removeAllTabTrigger: Driver<Void>, xMarkButtonTappedTrigger: Driver<UUID>, searchButtonTrigger: Driver<Void>, clearSearchBarButtonTrigger: Driver<Void>) {
             self.searchTextTrigger = searchTextTrigger
             self.searchBarFocusTrigger = searchBarFocusTrigger
             self.removeAllTabTrigger = removeAllTabTrigger
             self.xMarkButtonTappedTrigger = xMarkButtonTappedTrigger
             self.searchButtonTrigger = searchButtonTrigger
+            self.clearSearchBarButtonTrigger = clearSearchBarButtonTrigger
         }
     }
     
@@ -34,6 +36,14 @@ extension SearchViewModel: ViewModel {
         @Published var searchBarFocused = false
         @Published var searchHistory: [SearchHistory] = []
         @Published var searchResultItems: [SearchResultItem] = []
+        
+        @Published var tabs = [
+            WardSegmentedControlTab(id: "general", title: WardStrings.generalSearch),
+            WardSegmentedControlTab(id: "items", title: WardStrings.items),
+            WardSegmentedControlTab(id: "releaseInfo", title: WardStrings.releaseInfo),
+            WardSegmentedControlTab(id: "brand", title: WardStrings.brand)
+        ]
+        @Published var selectedTab = WardSegmentedControlTab(id: "general", title: WardStrings.generalSearch)
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
@@ -42,6 +52,12 @@ extension SearchViewModel: ViewModel {
         useCase.service.$history
             .map { $0.sorted(by: { $0.createdAt > $1.createdAt })}
             .assign(to: \.searchHistory, on: output)
+            .store(in: cancelBag)
+        
+        input.clearSearchBarButtonTrigger
+            .sink {
+                output.searchText = ""
+            }
             .store(in: cancelBag)
         
         input.removeAllTabTrigger

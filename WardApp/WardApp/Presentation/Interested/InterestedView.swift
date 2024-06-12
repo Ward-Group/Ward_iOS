@@ -37,7 +37,10 @@ struct InterestedView: View {
             
             GeometryReader { geo in
                 VStack {
-                    WardSegementedControl(tabs: output.tabs, currentTab: $output.currentTab)
+                    WardSegementedControl(
+                        tabs: output.tabs, currentTab: $output.currentTab,
+                        active: Color.mainBlue, inactive: Color.black3
+                    )
                         .frame(height: geo.size.height * 0.07)
                     
                     HStack {
