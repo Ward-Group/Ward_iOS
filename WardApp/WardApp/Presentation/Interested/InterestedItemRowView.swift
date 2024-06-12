@@ -52,7 +52,7 @@ extension InterestedItemRowView {
     
     private var brand: some View {
         Text(item.brand)
-            .font(WardFonts.Pretendard.bold.swiftUIFont(size: 12))
+            .font(WardFonts.Pretendard.bold.swiftUIFont(size: 16))
             .foregroundStyle(Color.black0)
             .lineLimit(1)
     }
@@ -66,19 +66,14 @@ extension InterestedItemRowView {
         Text(item.name)
             .foregroundStyle(Color.black0)
             .lineLimit(2)
-            .font(WardFonts.Pretendard.regular.swiftUIFont(size: 12))
+            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
     }
     
     private var codeAndPrice: some View {
         HStack {
-            Text(item.code)
-                .foregroundStyle(Color.black0)
-                .font(WardFonts.Pretendard.bold.swiftUIFont(size: 12))
-                .lineLimit(1)
-            Spacer()
-            Text(item.price.formatPriceAsWon())
-                .foregroundStyle(Color.black0)
-                .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
+            Text(item.status)
+                .foregroundStyle(Color.mainBlue)
+                .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
                 .lineLimit(1)
         }
     }
@@ -89,7 +84,7 @@ extension InterestedItemRowView {
                             InterestedItem(
                                 brand: "나이키", name: "조던 로우 1",
                                 price: 139000, isLiked: true,
-                                code: "0000-0000"
+                                status: "응모상태"
                             ))
     .frame(width: 343, height: 85)
 }
