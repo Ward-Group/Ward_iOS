@@ -10,21 +10,20 @@ import Combine
 
 struct MainView: View {
     
-    @ObservedObject private var router: MainRouter
+    @EnvironmentObject private var router: MainRouter
     @ObservedObject private var input: MainViewModel.Input
     @ObservedObject private var output: MainViewModel.Output
     
     private let loadTrigger = PassthroughSubject<Void, Never>()
     private let cancelBag = CancelBag()
     
-    init(vm: MainViewModel, router: MainRouter) {
+    init(vm: MainViewModel) {
         let input = MainViewModel.Input(
             loadTrigger: loadTrigger.eraseToAnyPublisher()
         )
         let output = vm.transform(input, cancelBag: cancelBag)
         self.input = input
         self.output = output
-        self.router = router
         
         loadTrigger.send(())
     }
