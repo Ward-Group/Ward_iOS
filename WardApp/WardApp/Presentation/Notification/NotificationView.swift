@@ -30,7 +30,7 @@ struct NotificationView: View {
             Color.background
             GeometryReader { geo in
                 VStack {
-                    HeaderNavBarView(showSearching: false, showNotification: false)
+                    InlineNavBarView(title: WardStrings.notifications)
                     WardSegementedControl(
                         tabs: output.tabs, currentTab: $output.currentTab,
                         active: Color.mainBlue, inactive: Color.black3

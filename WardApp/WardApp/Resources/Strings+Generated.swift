@@ -94,6 +94,8 @@ public enum WardStrings {
   public static let nicknameIsTaken = WardStrings.tr("Localizable", "Nickname is Taken", fallback: "이미 사용중인 닉네임입니다.")
   /// 공지사항
   public static let noticeBoard = WardStrings.tr("Localizable", "Notice Board", fallback: "공지사항")
+  /// 알림
+  public static let notifications = WardStrings.tr("Localizable", "Notifications", fallback: "알림")
   /// 관심 상품과 연관된 알림이 없습니다.
   ///  관심 상품을 추가해보세요.
   public static let notificationsDoNotExist = WardStrings.tr("Localizable", "Notifications Do Not Exist", fallback: "관심 상품과 연관된 알림이 없습니다.\n 관심 상품을 추가해보세요.")
