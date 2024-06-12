@@ -45,8 +45,7 @@ class HomeRouter: ObservableObject {
             let view: NotificationView = NotificationAssemblerImpl().resolve()
             view
         case .search:
-            let view: SearchView = SearchViewAssemblerImpl().resolve()
-            view
+            SearchViewAssembler().view()
         }
     }
 
