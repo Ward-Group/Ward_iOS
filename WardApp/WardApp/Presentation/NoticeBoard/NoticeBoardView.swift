@@ -65,7 +65,7 @@ extension NoticeBoardView {
                             .lineLimit(1)
                         
                         Text(item.wrappedValue.createdAt.format(formatString: "yyyy-MM-dd"))
-                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 14))
+                            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
                             .foregroundStyle(Color.white3)
                     }
                 }
