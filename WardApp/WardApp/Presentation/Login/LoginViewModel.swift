@@ -42,18 +42,20 @@ extension LoginViewModel: ViewModel {
 extension LoginViewModel {
     
     private func handleLogin(user: UserFromLoginProvider, output: Output, cancelBag: CancelBag) {
-        authUsecase.login(user: user)
+        let email = user.email ?? authUsecase.loadEmail()
+        let dto = LoginDto(provider: user.loginProvider, providerId: user.providerId, email: email)
+        authUsecase.login(dto: dto)
             .sink { completion in
                 handleLoginCompletion(completion: completion, output: output, user: user)
             } receiveValue: { response in
-                handleLoginResponse(response: response, user: user, output: output)
+                handleLoginResponse(response: response, dto: dto, output: output)
             }
             .store(in: cancelBag)
     }
     
-    private func handleLoginResponse(response: AuthResponse, user: UserFromLoginProvider, output: Output) {
+    private func handleLoginResponse(response: AuthResponse, dto: LoginDto, output: Output) {
         authUsecase.updateToken(accessToken: response.accessToken, refreshToken: response.refreshToken)
-        authUsecase.updateLoginDto(dto: LoginDto(provider: user.loginProvider, providerId: user.providerId, email: user.email))
+        authUsecase.updateLoginDto(dto: dto)
         output.dismissTrigger.send()
     }
     

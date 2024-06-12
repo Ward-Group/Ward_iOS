@@ -36,6 +36,7 @@ class NetworkingManager {
                        encoding: endpoint.encoding,
                        headers: headers)
             .responseDecodable(of: T.self) { response in
+                Log.debug(#file, #function, response)
                 switch response.result {
                 case .success(let value):
                     promise(.success(value))
