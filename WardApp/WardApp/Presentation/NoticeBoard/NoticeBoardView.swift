@@ -42,7 +42,7 @@ struct NoticeBoardView: View {
 }
 
 #Preview {
-    NoticeBoardView(vm: NoticeBoardAssemblerImpl().resolve())
+    NoticeBoardAssembler().view()
 }
 
 extension NoticeBoardView {
