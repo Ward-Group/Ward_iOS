@@ -10,7 +10,6 @@ import SwiftUI
 class InterestedRouter: ObservableObject {
     
     enum Page: Hashable {
-        case root
         case detail(item: InterestedItem)
     }
     
@@ -19,8 +18,6 @@ class InterestedRouter: ObservableObject {
     @ViewBuilder
     func build(page: Page) -> some View {
         switch page {
-        case .root:
-            InterestedAssembler().view()
         case .detail(let item):
             Text(item.name)
         }

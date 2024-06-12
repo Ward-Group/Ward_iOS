@@ -12,7 +12,8 @@ class InterestedAssembler {
     @ViewBuilder
     func view() -> some View {
         let vm: InterestedViewModel = resolve()
-        InterestedView(vm: vm)
+        let router: InterestedRouter = resolve()
+        InterestedRouterView(vm: vm, router: router)
     }
     
     private func resolve() -> InterestedView {
