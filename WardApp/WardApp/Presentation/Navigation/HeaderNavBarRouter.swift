@@ -31,8 +31,7 @@ class HeaderNavBarRouter: ObservableObject {
     func build(fullScreenSheet: FullScreenSheet) -> some View {
         switch fullScreenSheet {
         case .notification:
-            let view: NotificationView = NotificationAssemblerImpl().resolve()
-            view
+            NotificationAssembler().view()
         }
     }
 }

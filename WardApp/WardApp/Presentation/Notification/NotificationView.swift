@@ -79,5 +79,5 @@ extension NotificationView {
 }
 
 #Preview {
-    NotificationView(vm: NotificationAssemblerImpl().resolve())
+    NotificationAssembler().view()
 }

@@ -220,5 +220,5 @@ extension SearchView {
 }
 
 #Preview {
-    SearchView(vm: SearchViewAssemblerImpl().resolve())
+    SearchViewAssembler().view()
 }

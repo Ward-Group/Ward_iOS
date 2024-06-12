@@ -144,7 +144,5 @@ extension InterestedView {
 }
 
 #Preview {
-    let router = InterestedAssemblerImpl()
-    return InterestedView(vm: router.resolve())
-        .environmentObject(InterestedRouter())
+    InterestedAssembler().view()
 }

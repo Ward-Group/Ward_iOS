@@ -13,7 +13,8 @@ class MainViewAssembler {
     func view() -> some View {
         let router: MainRouter = resolve()
         let vm: MainViewModel = MainViewModel(authUsecase: resolve(), router: router)
-        MainView(vm: vm, router: router)
+        MainView(vm: vm)
+            .environmentObject(router)
     }
     
     func resolve() -> MainRouter {
