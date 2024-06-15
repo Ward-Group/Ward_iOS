@@ -34,9 +34,7 @@ struct AuthRepository {
                     throw AuthError.unknown
                 }
             }
-            .mapError { _ -> AuthError in
-                return .unknown
-            }
+            .mapError(mapError)
             .eraseToAnyPublisher()
     }
     
@@ -62,9 +60,7 @@ struct AuthRepository {
                     throw AuthError.unknown
                 }
             }
-            .mapError { _ -> AuthError in
-                return .unknown
-            }
+            .mapError(mapError)
             .eraseToAnyPublisher()
     }
     
@@ -75,9 +71,15 @@ struct AuthRepository {
                 guard let duplicated = response.data else { return true }
                 return duplicated
             }
-            .mapError { _ -> AuthError in
-                return .unknown
-            }
+            .mapError(mapError)
             .eraseToAnyPublisher()
+    }
+    
+    private func mapError(error: Error) -> AuthError {
+        if let error = error as? AuthError {
+            return error
+        }
+        
+        return .unknown
     }
 }

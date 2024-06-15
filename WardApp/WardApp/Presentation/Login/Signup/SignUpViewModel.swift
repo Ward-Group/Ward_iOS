@@ -9,11 +9,8 @@ import Foundation
 import Combine
 
 struct SignUpViewModel {
+    let user: UserFromLoginProvider
     let authUsecase: AuthUseCase
-    
-    init(authUsecase: AuthUseCase) {
-        self.authUsecase = authUsecase
-    }
 }
 
 extension SignUpViewModel: ViewModel {
@@ -111,10 +108,12 @@ extension SignUpViewModel: ViewModel {
 
 extension SignUpViewModel {
     private func signUp(input: Input, output: Output, cancelBag: CancelBag) {
-        authUsecase.signUp(
-            name: output.nickname, nickname: output.nickname, emailNotification: output.emailNotificationToggle,
-            smsNotification: output.smsNotificationToggle, appPushNotification: output.appPushNotificationToggle
-        )
+        let dto = SignUpDto(
+            provider: user.loginProvider, providerId: user.providerId, name: user.name ?? output.nickname,
+            email: user.email, nickname: output.nickname, emailNotification: output.emailNotificationToggle,
+            snsNotification: output.smsNotificationToggle, appPushNotification: output.appPushNotificationToggle)
+        
+        authUsecase.signUp(dto: dto)
         .sink { completion in
             handleSignUpCompletion(completion: completion, output: output)
         } receiveValue: { value in

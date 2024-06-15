@@ -30,8 +30,9 @@ class LoginRouter: ObservableObject {
     @ViewBuilder
     func build(_ page: Page) -> some View {
         switch page {
-        case .signUp:
-            SignUpView(router: self)
+        case .signUp(let user):
+            let vm = LoginAssembler().resolve(user: user)
+            SignUpView(vm: vm)
         }
     }
     

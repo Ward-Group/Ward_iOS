@@ -42,8 +42,7 @@ extension LoginViewModel: ViewModel {
 extension LoginViewModel {
     
     private func handleLogin(user: UserFromLoginProvider, output: Output, cancelBag: CancelBag) {
-        let email = user.email ?? authUsecase.loadEmail()
-        let dto = LoginDto(provider: user.loginProvider, providerId: user.providerId, email: email)
+        let dto = LoginDto(provider: user.loginProvider, providerId: user.providerId)
         authUsecase.login(dto: dto)
             .sink { completion in
                 handleLoginCompletion(completion: completion, output: output, user: user)
