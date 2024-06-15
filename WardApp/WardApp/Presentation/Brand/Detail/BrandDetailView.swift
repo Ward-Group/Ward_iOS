@@ -15,6 +15,8 @@ struct BrandDetailView: View {
     
     private let currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
     private let isLikedTrigger = PassthroughSubject<Void, Never>()
+    private let backButtonTrigger = PassthroughSubject<Void, Never>()
+    private let searchButtonTrigger = PassthroughSubject<Void, Never>()
     
     private let cancelBag = CancelBag()
     
@@ -36,7 +38,11 @@ struct BrandDetailView: View {
             GeometryReader { geo in
                 let imageSize = geo.size.width * 0.15
                 VStack(alignment: .leading) {
-                    InlineNavBarView(title: WardStrings.brand)
+                    InlineNavBarView(
+                        title: WardStrings.brand,
+                        buttonsRight: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
+                        buttonsLeft: [NavigationBarButton(style: .search, trigger: searchButtonTrigger)]
+                    )
                     BrandItemHeaderView(item: $output.item, imageSize: imageSize) {
                         isLikedTrigger.send()
                     }

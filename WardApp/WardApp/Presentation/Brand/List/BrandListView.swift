@@ -13,6 +13,8 @@ struct BrandListView: View {
     private let loadTrigger = PassthroughSubject<Void, Never>()
     private let currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
     private let isLikedTrigger = PassthroughSubject<BrandListItem, Never>()
+    private let backButtonTrigger = PassthroughSubject<Void, Never>()
+    private let searchButtonTrigger = PassthroughSubject<Void, Never>()
     
     @ObservedObject private var input: BrandListViewModel.Input
     @ObservedObject private var output: BrandListViewModel.Output
@@ -34,7 +36,11 @@ struct BrandListView: View {
         ZStack {
             Color.background
             VStack {
-                InlineNavBarView(title: WardStrings.brand)
+                InlineNavBarView(
+                    title: WardStrings.brand,
+                    buttonsRight: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
+                    buttonsLeft: [NavigationBarButton(style: .search, trigger: searchButtonTrigger)]
+                )
                 HStack {
                     itemCount
                     Spacer()
