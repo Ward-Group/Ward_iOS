@@ -10,6 +10,7 @@ import Combine
 
 struct SearchView: View {
     
+    @Environment(\.dismiss) var dismiss
     @ObservedObject private var input: SearchViewModel.Input
     @ObservedObject private var output: SearchViewModel.Output
     
@@ -46,15 +47,16 @@ struct SearchView: View {
             GeometryReader { geo in
                 VStack {
                     HStack {
+                        backButton
+                        searchBar
+                        Spacer()
                         if output.searchText.isEmpty {
                             searchButton
-                        }
-                        Spacer()
-                        searchBar
-                        if !output.searchText.isEmpty {
+                        } else {
                             clearSearchBarButton
                         }
                     }
+                    
                     .padding(.horizontal)
                     .padding(.bottom, 4)
                     
@@ -94,6 +96,14 @@ struct SearchView: View {
 }
 
 extension SearchView {
+    
+    private var backButton: some View {
+        Button(action: {
+            dismiss()
+        }, label: {
+            WardAssets.Image.Icon.arrowLeft.swiftUIImage
+        })
+    }
     
     private var searchBar: some View {
         TextField("", text: $output.searchText)
