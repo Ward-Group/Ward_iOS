@@ -28,18 +28,23 @@ struct InlineNavBarView: View {
                 HStack {
                     HStack(spacing: 5) {
                         ForEach(buttonsRight) { button in
-                            button.icon
+                            Button(action: {
+                                button.trigger.send()
+                            }, label: {
+                                button.icon
+                            })
                         }
                     }
-  
+                    
                     Spacer()
                     
                     HStack(spacing: 10) {
                         ForEach(buttonsLeft) { button in
-                            button.icon
-                                .onTapGesture {
-                                    button.trigger.send()
-                                }
+                            Button(action: {
+                                button.trigger.send()
+                            }, label: {
+                                button.icon
+                            })
                         }
                     }
                 }

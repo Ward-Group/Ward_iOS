@@ -13,6 +13,7 @@ enum NavigationBarButtonStyle: String {
     case back
     case notification
     case like
+    case gear
 }
 
 struct NavigationBarButton: Identifiable {
@@ -33,6 +34,8 @@ struct NavigationBarButton: Identifiable {
             WardAssets.Image.Icon.notification.swiftUIImage
         case .like:
             WardAssets.Image.Icon.likeYes.swiftUIImage
+        case .gear:
+            WardAssets.Image.Icon.gear.swiftUIImage
         }
     }
 }
