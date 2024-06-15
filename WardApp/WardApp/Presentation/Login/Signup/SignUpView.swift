@@ -17,6 +17,7 @@ struct SignUpView: View {
     
     private let signUpButtonTrigger = PassthroughSubject<Void, Never>()
     private let signUpCompletionTrigger = PassthroughSubject<Void, Never>()
+    private let backButtonTrigger = PassthroughSubject<Void, Never>()
     
     init(vm: SignUpViewModel) {
         let input = SignUpViewModel.Input(
@@ -32,6 +33,14 @@ struct SignUpView: View {
             ZStack {
                 Color.background
                 VStack {
+                    
+                    InlineNavBarView(
+                        title: WardStrings.extraInformation,
+                        buttonsRight: [
+                            NavigationBarButton(style: .back, trigger: backButtonTrigger)
+                        ]
+                    )
+                    
                     nicknameHeader
                         .frame(maxWidth: geo.size.width * 0.8, alignment: .leading)
                         .padding(.top)
@@ -85,10 +94,17 @@ struct SignUpView: View {
         .onReceive(signUpCompletionTrigger, perform: { _ in
             router.pop()
         })
+        .onReceive(backButtonTrigger, perform: { _ in
+            router.pop()
+        })
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
     }
+}
+
+#Preview {
+    SignUpView(vm: LoginAssembler().resolve(user: UserFromLoginProvider(loginProvider: .apple, providerId: "123", name: "12", email: "pepper@gmail.com")))
 }
 
 private extension SignUpView {
