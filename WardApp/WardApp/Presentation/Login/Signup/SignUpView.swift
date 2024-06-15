@@ -10,7 +10,7 @@ import Combine
 
 struct SignUpView: View {
     
-    @ObservedObject var router: LoginRouter
+    @EnvironmentObject var router: LoginRouter
     @ObservedObject private var input: SignUpViewModel.Input
     @ObservedObject private var output: SignUpViewModel.Output
     private let cancelBag = CancelBag()
@@ -18,10 +18,7 @@ struct SignUpView: View {
     private let signUpButtonTrigger = PassthroughSubject<Void, Never>()
     private let signUpCompletionTrigger = PassthroughSubject<Void, Never>()
     
-    init(router: LoginRouter) {
-        self.router = router
-        let assembler = LoginAssembler()
-        let vm: SignUpViewModel = assembler.resolve()
+    init(vm: SignUpViewModel) {
         let input = SignUpViewModel.Input(
             signUpButtonTrigger: signUpButtonTrigger.asDriver(),
             signUpCompletionTrigger: signUpCompletionTrigger
@@ -88,11 +85,10 @@ struct SignUpView: View {
         .onReceive(signUpCompletionTrigger, perform: { _ in
             router.pop()
         })
+        .onTapGesture {
+            UIApplication.shared.endEditing()
+        }
     }
-}
-
-#Preview {
-    SignUpView(router: LoginRouter())
 }
 
 private extension SignUpView {
@@ -253,6 +249,6 @@ private extension SignUpView {
     }
     
     var backButton: some View {
-        Symbols.arrowLeft
+        WardAssets.Image.Icon.arrowLeft.swiftUIImage
     }
 }

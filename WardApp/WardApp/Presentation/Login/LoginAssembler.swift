@@ -16,7 +16,7 @@ struct LoginAssembler {
         LoginView(vm: vm)
             .environmentObject(router)
     }
-
+    
     private func resolve() -> AuthUseCase {
         return AuthUseCase(repository: resolve())
     }
@@ -25,7 +25,7 @@ struct LoginAssembler {
         return AuthRepository()
     }
     
-    func resolve() -> SignUpViewModel {
-        return SignUpViewModel(authUsecase: resolve())
+    func resolve(user: UserFromLoginProvider) -> SignUpViewModel {
+        return SignUpViewModel(user: user, authUsecase: resolve())
     }
 }
