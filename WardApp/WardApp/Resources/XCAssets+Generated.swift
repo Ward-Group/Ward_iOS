@@ -64,6 +64,7 @@ public enum WardAssets {
       public static let chevronRight = ImageAsset(name: "ChevronRight")
       public static let person = ImageAsset(name: "Person")
       public static let arrowLeft = ImageAsset(name: "arrowLeft")
+      public static let gear = ImageAsset(name: "gear")
       public static let likeNo = ImageAsset(name: "likeNo")
       public static let likeYes = ImageAsset(name: "likeYes")
       public static let likeYesBorderless = ImageAsset(name: "likeYesBorderless")
