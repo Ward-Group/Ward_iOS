@@ -11,6 +11,6 @@ struct UserFromLoginProvider {
     let loginProvider: LoginProvider
     let providerId: String
     let name: String?
-    let email: String?
+    let email: String
     let appPushNotification: Bool? = false
 }

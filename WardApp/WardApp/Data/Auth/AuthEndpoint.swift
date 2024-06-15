@@ -38,8 +38,7 @@ extension AuthEndpoint: Endpoint {
         case .login(let dto):
             return [
                 "provider": dto.provider.rawValue,
-                "providerId": dto.providerId,
-                "email": dto.email
+                "providerId": dto.providerId
             ]
         case .signUp(let dto):
             Log.debug(#file, #function, dto)

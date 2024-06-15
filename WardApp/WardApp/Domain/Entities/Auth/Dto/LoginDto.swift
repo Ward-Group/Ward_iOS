@@ -10,5 +10,4 @@ import Foundation
 struct LoginDto: Codable {
     let provider: LoginProvider
     let providerId: String
-    let email: String
 }
