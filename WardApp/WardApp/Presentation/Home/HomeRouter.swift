@@ -34,11 +34,6 @@ class HomeRouter: ObservableObject {
     
     // MARK: - ViewBuilder
     @ViewBuilder
-    func homeView() -> some View {
-        HomeView(viewModel: HomeViewModel())
-    }
-    
-    @ViewBuilder
     func build(_ navi: NaviType) -> some View {
         switch navi {
         case .notification: 
@@ -59,7 +54,7 @@ struct HomeRouterView: View {
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            router.homeView()
+            HomeAssembler().view()
                 .fullScreenCover(item: $router.presentedFullScreen) { naviType in
                     router.build(naviType)
                 }

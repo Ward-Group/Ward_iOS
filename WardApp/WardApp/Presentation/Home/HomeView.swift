@@ -9,17 +9,19 @@ import SwiftUI
 import Combine
 
 struct HomeView: View {
-    @ObservedObject var output: HomeViewModel.Output
     
     @EnvironmentObject var router: HomeRouter
+    @ObservedObject var output: HomeViewModel.Output
     
-    private let viewModel: HomeViewModel
     private let cancelBag = CancelBag()
+    
+    // Input Trigger
     private let loadTrigger = PassthroughSubject<Void, Never>()
         
-    init(viewModel: HomeViewModel) {
-        self.viewModel = viewModel
-        let input = HomeViewModel.Input(loadTrigger: loadTrigger.asDriver())
+    init(with viewModel: HomeViewModel) {
+        let input = HomeViewModel.Input(
+            loadTrigger: loadTrigger.asDriver()
+        )
         self.output = viewModel.transform(input, cancelBag: cancelBag)
         loadTrigger.send(())
     }
@@ -33,14 +35,15 @@ struct HomeView: View {
                         // --- 오늘 마감 --- //
                         HomeHeaderTitleView(title: WardStrings.dueToday, subTitle: WardStrings.enjoyTheLittleLuckYouHaveLeft)
                             .padding([.bottom], 12)
-                        BannerPageView(geo: geo, list: output.bannerPageList)
+                        BannerPageView(geo: geo, models: output.bannerPages)
                             .padding([.bottom], 36)
                         // -- 발매 상품 -- //
                         HomeHeaderTitleView(title: WardStrings.releasedProduct, moreButtonAction: {
                             Log.todo("발매 상품 더보기 버튼 액션")
                         })
                         .padding([.bottom], 14)
-                        CategoryTabView(list: output.releaseCategoryList)
+                        CategoryTabView(models: output.releaseCategoryTabs,
+                                        selectedModel: $output.selectedReleaseTabModel)
                     }
                 })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -82,6 +85,5 @@ extension HomeView {
 }
 
 #Preview {
-    HomeView(viewModel: HomeViewModel())
-        .environmentObject(HomeRouter())
+    HomeAssembler().view()
 }

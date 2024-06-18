@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct HomeListPageView: View {
     var body: some View {
         itemList

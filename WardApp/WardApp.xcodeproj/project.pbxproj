@@ -118,6 +118,8 @@
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
 		EA3967882BF91BE10087062B /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967872BF91BE10087062B /* Font.swift */; };
+		EA5695A82C218D6A000A192F /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5695A72C218D6A000A192F /* HomeAssembler.swift */; };
+		EA5695AB2C218DFA000A192F /* HomeUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5695AA2C218DFA000A192F /* HomeUsecase.swift */; };
 		EA6B5BB52C05CAF9008BD9B2 /* DS-DIGIT.TTF in Resources */ = {isa = PBXBuildFile; fileRef = EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */; };
 		EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81E0C02C0802A60076DA29 /* BannerPageView.swift */; };
 		EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA81E0C32C0804310076DA29 /* CategoryTabView.swift */; };
@@ -259,6 +261,8 @@
 		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		EA3967842BF915E20087062B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		EA3967872BF91BE10087062B /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		EA5695A72C218D6A000A192F /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
+		EA5695AA2C218DFA000A192F /* HomeUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUsecase.swift; sourceTree = "<group>"; };
 		EA6B5BB42C05CAF5008BD9B2 /* DS-DIGIT.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DS-DIGIT.TTF"; sourceTree = "<group>"; };
 		EA81E0C02C0802A60076DA29 /* BannerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerPageView.swift; sourceTree = "<group>"; };
 		EA81E0C32C0804310076DA29 /* CategoryTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTabView.swift; sourceTree = "<group>"; };
@@ -567,6 +571,7 @@
 		BA7866542BF3BC81007BF0C4 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				EA5695A92C218DE5000A192F /* Home */,
 				BAA9ED7D2C0D8693002DBD82 /* Search */,
 				BA7866582BF3BCB1007BF0C4 /* Release */,
 				BA7866572BF3BCA0007BF0C4 /* Item */,
@@ -578,6 +583,7 @@
 		BA7866552BF3BC89007BF0C4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				EA5695AD2C2197C0000A192F /* Home */,
 				BA3DC7222C1C1F8500AF7E64 /* Release */,
 				BA3DC70F2C1BE38D00AF7E64 /* Brand */,
 				BA8AC52F2C10352600D019A6 /* Auth */,
@@ -751,6 +757,7 @@
 				EA3967842BF915E20087062B /* HomeView.swift */,
 				EA8C9FA52C099AF900F02E3A /* HomeViewModel.swift */,
 				EA33F7562C0D48FD00893C35 /* HomeRouter.swift */,
+				EA5695A72C218D6A000A192F /* HomeAssembler.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -766,6 +773,21 @@
 				BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA5695A92C218DE5000A192F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				EA5695AA2C218DFA000A192F /* HomeUsecase.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EA5695AD2C2197C0000A192F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		EA81E0BF2C0802990076DA29 /* SubView */ = {
@@ -1043,8 +1065,10 @@
 				BA3DC71B2C1C09AF00AF7E64 /* BrandDetailViewModel.swift in Sources */,
 				BAAFB2C92C15824700E722F3 /* KeychainManager.swift in Sources */,
 				BA3DC71D2C1C1AAF00AF7E64 /* BrandDetailGridItemView.swift in Sources */,
+				EA5695A82C218D6A000A192F /* HomeAssembler.swift in Sources */,
 				BAA9ED6C2C0D50D8002DBD82 /* SearchView.swift in Sources */,
 				BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */,
+				EA5695AB2C218DFA000A192F /* HomeUsecase.swift in Sources */,
 				BA62C0A12C10ACCB007E692A /* MainViewModel.swift in Sources */,
 				BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */,
 				BA7FE8F82C1D52E600DD242C /* NavigationBarButton.swift in Sources */,
