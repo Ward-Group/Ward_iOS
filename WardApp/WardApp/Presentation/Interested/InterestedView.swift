@@ -37,7 +37,10 @@ struct InterestedView: View {
             
             GeometryReader { geo in
                 VStack {
-                    WardSegementedControl(tabs: output.tabs, currentTab: $output.currentTab)
+                    WardSegementedControl(
+                        tabs: output.tabs, currentTab: $output.currentTab,
+                        active: Color.mainBlue, inactive: Color.black3
+                    )
                         .frame(height: geo.size.height * 0.07)
                     
                     HStack {
@@ -78,7 +81,7 @@ extension InterestedView {
                         .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     
                     if option == output.currentFilterOption {
-                        WardAssets.Image.Icon.arrowDown.swiftUIImage
+                        WardAssets.Image.Icon.chevronDown.swiftUIImage
                             .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     }
                 })
@@ -90,7 +93,7 @@ extension InterestedView {
                     .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     .foregroundStyle(Color.black8)
                 
-                WardAssets.Image.Icon.arrowDown.swiftUIImage
+                WardAssets.Image.Icon.chevronDown.swiftUIImage
                     .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
             })
         }
@@ -141,7 +144,5 @@ extension InterestedView {
 }
 
 #Preview {
-    let router = InterestedAssemblerImpl()
-    return InterestedView(vm: router.resolve())
-        .environmentObject(InterestedRouter())
+    InterestedAssembler().view()
 }

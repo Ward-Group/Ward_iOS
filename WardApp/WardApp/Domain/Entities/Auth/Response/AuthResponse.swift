@@ -1,0 +1,13 @@
+//
+//  LoginResponse.swift
+//  WardApp
+//
+//  Created by peppermint100 on 6/5/24.
+//
+
+import Foundation
+
+struct AuthResponse: Codable {
+    let accessToken: String
+    let refreshToken: String
+}

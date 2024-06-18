@@ -20,6 +20,8 @@ public enum WardStrings {
   public static let agreementTermsOfService = WardStrings.tr("Localizable", "Agreement Terms Of Service", fallback: "약관 동의")
   /// 전체
   public static let all = WardStrings.tr("Localizable", "all", fallback: "전체")
+  /// 앱푸시
+  public static let appPush = WardStrings.tr("Localizable", "App Push", fallback: "앱푸시")
   /// 브랜드
   public static let brand = WardStrings.tr("Localizable", "Brand", fallback: "브랜드")
   /// 카테고리
@@ -38,6 +40,8 @@ public enum WardStrings {
   public static let dueToday = WardStrings.tr("Localizable", "Due Today", fallback: "오늘 마감")
   /// 중복 불가
   public static let duplicationNotAllowed = WardStrings.tr("Localizable", "Duplication Not Allowed", fallback: "중복 불가")
+  /// 이메일
+  public static let email = WardStrings.tr("Localizable", "Email", fallback: "이메일")
   /// 얼마 안남은 행운을 즐겨 보세요
   public static let enjoyTheLittleLuckYouHaveLeft = WardStrings.tr("Localizable", "Enjoy the little luck you have left", fallback: "얼마 안남은 행운을 즐겨 보세요")
   /// 이벤트, 발매 알림
@@ -86,6 +90,12 @@ public enum WardStrings {
   public static let new = WardStrings.tr("Localizable", "new", fallback: "NEW")
   /// 닉네임
   public static let nickname = WardStrings.tr("Localizable", "Nickname", fallback: "닉네임")
+  /// 이미 사용중인 닉네임입니다.
+  public static let nicknameIsTaken = WardStrings.tr("Localizable", "Nickname is Taken", fallback: "이미 사용중인 닉네임입니다.")
+  /// 공지사항
+  public static let noticeBoard = WardStrings.tr("Localizable", "Notice Board", fallback: "공지사항")
+  /// 알림
+  public static let notifications = WardStrings.tr("Localizable", "Notifications", fallback: "알림")
   /// 관심 상품과 연관된 알림이 없습니다.
   ///  관심 상품을 추가해보세요.
   public static let notificationsDoNotExist = WardStrings.tr("Localizable", "Notifications Do Not Exist", fallback: "관심 상품과 연관된 알림이 없습니다.\n 관심 상품을 추가해보세요.")
@@ -109,10 +119,14 @@ public enum WardStrings {
   public static let removeAll = WardStrings.tr("Localizable", "Remove All", fallback: "모두 삭제")
   /// 필수
   public static let `required` = WardStrings.tr("Localizable", "Required", fallback: "필수")
+  /// 필수 입력 사항입니다.
+  public static let requiredInput = WardStrings.tr("Localizable", "Required Input", fallback: "필수 입력 사항입니다.")
   /// 발매처
   public static let retailer = WardStrings.tr("Localizable", "Retailer", fallback: "발매처")
   /// 더보기
   public static let showMore = WardStrings.tr("Localizable", "Show More", fallback: "더보기")
+  /// SMS
+  public static let sms = WardStrings.tr("Localizable", "SMS", fallback: "SMS")
   /// 담은 순
   public static let sortedByPickedAt = WardStrings.tr("Localizable", "Sorted By PickedAt", fallback: "담은 순")
   /// 오래된 순
@@ -125,6 +139,8 @@ public enum WardStrings {
   public static let typeNickname = WardStrings.tr("Localizable", "Type Nickname", fallback: "사용할 닉네임을 입력해주세요.")
   /// 제품명, 브랜드명, 제품 코드 등 입력
   public static let typeProductCodeNames = WardStrings.tr("Localizable", "Type Product Code Names", fallback: "제품명, 브랜드명, 제품 코드 등 입력")
+  /// 사용 가능한 닉네임입니다.
+  public static let validNickname = WardStrings.tr("Localizable", "Valid Nickname", fallback: "사용 가능한 닉네임입니다.")
   /// 주 전
   public static let weeksBefore = WardStrings.tr("Localizable", "Weeks Before", fallback: "주 전")
   /// 년 전

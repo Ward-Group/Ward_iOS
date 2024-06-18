@@ -9,19 +9,16 @@ import SwiftUI
 
 struct InterestedRouterView: View {
     
-    @StateObject private var router: InterestedRouter = InterestedAssemblerImpl().resolve()
+    var vm: InterestedViewModel
+    @ObservedObject var router: InterestedRouter
     
     var body: some View {
         NavigationStack(path: $router.path) {
-            router.build(page: .root)
+            InterestedView(vm: vm)
                 .navigationDestination(for: InterestedRouter.Page.self) { page in
                     router.build(page: page)
                 }
         }
         .environmentObject(router)
     }
-}
-
-#Preview {
-    InterestedRouterView()
 }

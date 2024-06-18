@@ -55,52 +55,52 @@ struct InterestedViewModel: ViewModel {
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0000"
+                status: "0000-0000"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0001"
+                status: "0000-0001"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0002"
+                status: "0000-0002"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0003"
+                status: "0000-0003"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0004"
+                status: "0000-0004"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0005"
+                status: "0000-0005"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0006"
+                status: "0000-0006"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0007"
+                status: "0000-0007"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0008"
+                status: "0000-0008"
             ),
             InterestedItem(
                 brand: "나이키", name: "조던 로우 1",
                 price: 139000, isLiked: true,
-                code: "0000-0009"
+                status: "0000-0009"
             )
         ]
     }

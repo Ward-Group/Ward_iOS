@@ -5,31 +5,25 @@
 //  Created by peppermint100 on 5/30/24.
 //
 
-import Foundation
 import SwiftUI
 
-protocol InterestedAssembler {
-    func resolve() -> InterestedView
-    func resolve() -> InterestedViewModel
-    func resolve() -> InterestedRouter
-}
-
-class InterestedAssemblerImpl: InterestedAssembler {
-}
-
-extension InterestedAssembler {
-    func resolve() -> InterestedView {
+class InterestedAssembler {
+    
+    @ViewBuilder
+    func view() -> some View {
+        let vm: InterestedViewModel = resolve()
+        let router: InterestedRouter = resolve()
+        InterestedRouterView(vm: vm, router: router)
+    }
+    
+    private func resolve() -> InterestedView {
         return InterestedView(vm: resolve())
     }
-}
-
-extension InterestedAssembler {
-    func resolve() -> InterestedViewModel {
+    
+    private func resolve() -> InterestedViewModel {
         return InterestedViewModel()
     }
-}
-
-extension InterestedAssembler {
+    
     func resolve() -> InterestedRouter {
         return InterestedRouter()
     }

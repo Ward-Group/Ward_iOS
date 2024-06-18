@@ -38,7 +38,6 @@ extension NotificationItemRowView {
             .foregroundStyle(Color.gray2)
     }
     
-    // TODO: 디자이너가 폰트 지정해주면 변경
     private var subtitle: some View {
         Text(item.subtitle)
             .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
@@ -55,13 +54,13 @@ extension NotificationItemRowView {
     
     private var newIndicator: some View {
         Text(WardStrings.new)
-            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
+            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
             .foregroundStyle(Color.mainBlue)
     }
     
     private var createdAt: some View {
         Text(Date.now.formatDateDifference(from: item.createdAt))
-            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
+            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
             .foregroundStyle(Color.darkGray)
     }
 }

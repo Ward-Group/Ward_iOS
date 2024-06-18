@@ -5,25 +5,17 @@
 //  Created by peppermint100 on 6/3/24.
 //
 
-import Foundation
+import SwiftUI
 
-protocol SearchViewAssembler {
-    func resolve() -> SearchView
-    func resolve() -> SearchViewModel
-    func resolve() -> SearchUsecase
-    func resolve() -> SearchHistoryService
-}
 
-class SearchViewAssemblerImpl: NotificationAssembler {
-}
+class SearchViewAssembler {
 
-extension NotificationAssembler {
-    func resolve() -> SearchView {
-        return SearchView(vm: resolve())
+    @ViewBuilder
+    func view() -> some View {
+        let vm: SearchViewModel = resolve()
+        SearchView(vm: vm)
     }
-}
-
-extension NotificationAssembler {
+    
     func resolve() -> SearchViewModel {
         return SearchViewModel(useCase: resolve())
     }

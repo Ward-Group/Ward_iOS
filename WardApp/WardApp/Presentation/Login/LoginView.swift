@@ -14,8 +14,11 @@ import KakaoSDKUser
 
 struct LoginView: View {
     
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var router: LoginRouter
     @ObservedObject var input: LoginViewModel.Input
     @ObservedObject var output: LoginViewModel.Output
+    
     let cancelBag = CancelBag()
     
     let userTrigger = PassthroughSubject<UserFromLoginProvider, Never>()
@@ -29,28 +32,35 @@ struct LoginView: View {
     }
     
     var body: some View {
-        GeometryReader { geo in
-            ZStack {
-                Color.white
-                    .ignoresSafeArea()
-                VStack {
-                    logo
-                        .padding(.top, geo.size.height * 0.15)
-                        .padding(.bottom, geo.size.height * 0.5)
-                    kakaoLoginButton
-                        .frame(width: geo.size.width * 0.86, height: geo.size.height * 0.08)
-                    appleLoginButton
-                        .frame(width: geo.size.width * 0.86, height: geo.size.height * 0.08)
-                        .padding(.top, 5)
+        NavigationStack(path: $router.path) {
+            GeometryReader { geo in
+                ZStack {
+                    Color.white
+                        .ignoresSafeArea()
+                    VStack {
+                        logo
+                            .padding(.top, geo.size.height * 0.15)
+                            .padding(.bottom, geo.size.height * 0.5)
+                        kakaoLoginButton
+                            .frame(width: geo.size.width * 0.86, height: geo.size.height * 0.08)
+                        appleLoginButton
+                            .frame(width: geo.size.width * 0.86, height: geo.size.height * 0.08)
+                            .padding(.top, 5)
+                    }
                 }
             }
+            .navigationDestination(for: LoginRouter.Page.self) { page in
+                router.build(page)
+            }
+            .onReceive(output.dismissTrigger, perform: { _ in
+                dismiss()
+            })
         }
     }
 }
 
 #Preview {
-    let vm: LoginViewModel = LoginAssemblerImpl().resolve()
-    return LoginView(vm: vm)
+    LoginAssembler().view()
 }
 
 extension LoginView {
@@ -97,8 +107,8 @@ extension LoginView {
             case let appleIDCredential as ASAuthorizationAppleIDCredential:
                 let fullName = appleIDCredential.fullName
                 let name =  (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
-                let email = appleIDCredential.email
                 if let identityTokenData = appleIDCredential.identityToken {
+                    let email = appleIDCredential.email ?? ""
                     let identityToken = String(data: identityTokenData, encoding: .utf8)!
                     let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: email)
                     userTrigger.send(newUser)
@@ -135,7 +145,7 @@ extension LoginView {
     private func authenticateWithKakaoTalk() {
         if UserApi.isKakaoTalkLoginAvailable() {
             UserApi.shared.loginWithKakaoTalk { _, error in
-                if let error = error {
+                if let error {
                     print("카카오 로그인 실패 \(error)")
                     return
                 }
@@ -143,7 +153,7 @@ extension LoginView {
             }
         } else {
             UserApi.shared.loginWithKakaoAccount { _, error in
-                if let error = error {
+                if let error {
                     print("카카오 로그인 실패 \(error)")
                     return
                 }
@@ -154,22 +164,29 @@ extension LoginView {
     
     private func loginWithKakaoTalk() {
         UserApi.shared.me { userMaybe, error in
-            if let error = error {
+            if let error {
                 print("카카오 유저 정보 가져오기 실패 \(error)")
                 return
             }
             
             guard
                 let user = userMaybe,
-                let id = user.id else {
+                let id = user.id,
+                let account = user.kakaoAccount,
+                let profile = account.profile,
+                let email = account.email,
+                let nickname = profile.nickname
+            else {
                 print("유저 정보 존재하지 않음")
                 return
             }
             
-            let account = user.kakaoAccount
-            let profile = account?.profile
+            let newUser = UserFromLoginProvider(
+                loginProvider: .kakao,
+                providerId: String(id),
+                name: nickname,
+                email: email)
             
-            let newUser = UserFromLoginProvider(loginProvider: .kakao, providerId: String(id), name: profile?.nickname, email: account?.email)
             userTrigger.send(newUser)
         }
     }

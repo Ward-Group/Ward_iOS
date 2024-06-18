@@ -10,6 +10,7 @@ import Combine
 
 struct SearchView: View {
     
+    @Environment(\.dismiss) var dismiss
     @ObservedObject private var input: SearchViewModel.Input
     @ObservedObject private var output: SearchViewModel.Output
     
@@ -20,6 +21,7 @@ struct SearchView: View {
     private let removeAllTabTrigger = PassthroughSubject<Void, Never>()
     private let xMarkButtonTappedTrigger = PassthroughSubject<UUID, Never>()
     private let searchButtonTrigger = PassthroughSubject<Void, Never>()
+    private let clearSearchBarButtonTrigger = PassthroughSubject<Void, Never>()
     
     private let cancelBag = CancelBag()
     
@@ -29,7 +31,8 @@ struct SearchView: View {
             searchBarFocusTrigger: searchBarFocusTrigger.asDriver(),
             removeAllTabTrigger: removeAllTabTrigger.asDriver(),
             xMarkButtonTappedTrigger: xMarkButtonTappedTrigger.asDriver(),
-            searchButtonTrigger: searchButtonTrigger.asDriver()
+            searchButtonTrigger: searchButtonTrigger.asDriver(),
+            clearSearchBarButtonTrigger: clearSearchBarButtonTrigger.asDriver()
         )
         
         let output = vm.transform(input, cancelBag: cancelBag)
@@ -43,12 +46,17 @@ struct SearchView: View {
             
             GeometryReader { geo in
                 VStack {
-                    HeaderNavBarView(showSearching: false, showNotification: false)
                     HStack {
+                        backButton
                         searchBar
                         Spacer()
-                        searchButton
+                        if output.searchText.isEmpty {
+                            searchButton
+                        } else {
+                            clearSearchBarButton
+                        }
                     }
+                    
                     .padding(.horizontal)
                     .padding(.bottom, 4)
                     
@@ -58,7 +66,17 @@ struct SearchView: View {
                         recentHistoryAndRemoveAllButton
                         searchHistory
                     } else {
-                        // TODO: 공통 Segmented Control 수정해서 추가
+                        
+                        Divider()
+                        
+                        WardSegementedControl(
+                            tabs: output.tabs, currentTab: $output.selectedTab,
+                            active: Color.black0, inactive: Color.black0,
+                            font: WardFonts.Pretendard.semiBold.swiftUIFont(size: 16)
+                        )
+                        .padding(.horizontal)
+                        .frame(height: 45)
+                        
                         HStack {
                             itemCount
                             Spacer()
@@ -79,19 +97,29 @@ struct SearchView: View {
 
 extension SearchView {
     
-    // TODO: SearchBar 기획 추가 후 수정 필요
+    private var backButton: some View {
+        Button(action: {
+            dismiss()
+        }, label: {
+            WardAssets.Image.Icon.arrowLeft.swiftUIImage
+        })
+    }
+    
     private var searchBar: some View {
         TextField("", text: $output.searchText)
             .background {
                 HStack(spacing: 5) {
                     if !output.searchBarFocused && output.searchText.isEmpty {
                         Text(WardStrings.typeProductCodeNames)
+                            .font(WardFonts.Pretendard.medium.swiftUIFont(size: 16))
                             .foregroundStyle(Color.darkGray)
                     }
                     Spacer()
                 }
             }
             .focused($searchBarFocused)
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
             .onChange(of: searchBarFocused) {
                 searchBarFocusTrigger.send(searchBarFocused)
             }
@@ -102,6 +130,13 @@ extension SearchView {
                 searchButtonTrigger.send()
             }
             .submitLabel(.search)
+    }
+    
+    private var clearSearchBarButton: some View {
+        WardAssets.Image.Icon.xMarkFill.swiftUIImage
+            .onTapGesture {
+                clearSearchBarButtonTrigger.send()
+            }
     }
     
     private var searchButton: some View {
@@ -127,11 +162,11 @@ extension SearchView {
     private var recentHistoryAndRemoveAllButton: some View {
         HStack {
             Text(WardStrings.recentSearchTermHistory)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 12))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
                 .foregroundStyle(Color.black2)
             Spacer()
             Text(WardStrings.removeAll)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 12))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
                 .foregroundStyle(Color.black2)
                 .onTapGesture {
                     removeAllTabTrigger.send()
@@ -148,7 +183,7 @@ extension SearchView {
                 ForEach($output.searchHistory, id: \.id) { history in
                     HStack {
                         Text(history.wrappedValue.term)
-                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 16))
+                            .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 18))
                             .foregroundStyle(Color.black0)
                         
                         Spacer()
@@ -180,7 +215,7 @@ extension SearchView {
         Button(action: {
         }, label: {
             Text(WardStrings.showMore)
-                .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
+                .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                 .foregroundStyle(Color.black2)
             WardAssets.Image.Icon.chevronRight.swiftUIImage
         })
@@ -196,5 +231,5 @@ extension SearchView {
 }
 
 #Preview {
-    SearchView(vm: SearchViewAssemblerImpl().resolve())
+    SearchViewAssembler().view()
 }

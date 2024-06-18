@@ -40,4 +40,10 @@ extension Date {
             return "\(years)\(WardStrings.yearsBefore)"
         }
     }
+    
+    func format(formatString: String) -> String {
+        let dateFomatter = DateFormatter()
+        dateFomatter.dateFormat = formatString
+        return dateFomatter.string(from: self)
+    }
 }

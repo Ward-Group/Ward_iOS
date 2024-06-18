@@ -12,6 +12,7 @@ class HomeRouter: ObservableObject {
     // MARK: - enum
     enum NaviType: String, Identifiable {
         case notification
+        case search
         
         var id: String {
             self.rawValue
@@ -40,9 +41,10 @@ class HomeRouter: ObservableObject {
     @ViewBuilder
     func build(_ navi: NaviType) -> some View {
         switch navi {
-        case .notification:
-            let view: NotificationView = NotificationAssemblerImpl().resolve()
-            view
+        case .notification: 
+            NotificationAssembler().view()
+        case .search:
+            SearchViewAssembler().view()
         }
     }
 
@@ -63,6 +65,5 @@ struct HomeRouterView: View {
                 }
         }
         .environmentObject(router)
-        
     }
 }

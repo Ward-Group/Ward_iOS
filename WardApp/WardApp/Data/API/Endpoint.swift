@@ -16,16 +16,22 @@ protocol Endpoint {
     var query: [String: String] { get }
     var parameters: [String: Any] { get }
     var method: HTTPMethod { get }
-    var encoding: URLEncoding { get }
+    var encoding: ParameterEncoding { get }
 }
 
 extension Endpoint {
     var url: URL {
-      var components = URLComponents()
-      components.scheme = "https"
-      components.host = self.baseURL
-      components.path = self.path
-      components.queryItems = self.query.map { URLQueryItem(name: $0, value: $1) }
-      return components.url!
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = self.baseURL
+        components.path = self.path
+        return components.url!
+    }
+    
+    var baseURL: String {
+        guard let host = Bundle.main.object(forInfoDictionaryKey: "WARD_SERVICE_HOST") as? String else {
+            return ""
+        }
+        return host
     }
 }

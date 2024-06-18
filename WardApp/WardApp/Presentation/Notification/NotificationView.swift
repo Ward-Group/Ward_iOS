@@ -10,10 +10,13 @@ import Combine
 
 struct NotificationView: View {
     
+    @Environment(\.dismiss) var dismiss
     @ObservedObject var input: NotificationViewModel.Input
     @ObservedObject var output: NotificationViewModel.Output
     
     private var currentTabTrigger = PassthroughSubject<WardSegmentedControlTab, Never>()
+    private var backButtonTrigger = PassthroughSubject<Void, Never>()
+    private var settingButtonTrigger = PassthroughSubject<Void, Never>()
     
     private let cancelBag = CancelBag()
     
@@ -30,8 +33,15 @@ struct NotificationView: View {
             Color.background
             GeometryReader { geo in
                 VStack {
-                    HeaderNavBarView(showSearching: false, showNotification: false)
-                    WardSegementedControl(tabs: output.tabs, currentTab: $output.currentTab)
+                    InlineNavBarView(
+                        title: WardStrings.notifications,
+                        buttonsRight: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
+                        buttonsLeft: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)]
+                    )
+                    WardSegementedControl(
+                        tabs: output.tabs, currentTab: $output.currentTab,
+                        active: Color.mainBlue, inactive: Color.black3
+                    )
                         .frame(width: geo.size.width, height: 45)
                     
                     if output.items.isEmpty {
@@ -42,6 +52,9 @@ struct NotificationView: View {
                     
                 }
             }
+            .onReceive(backButtonTrigger, perform: { _ in
+                dismiss()
+            })
         }
     }
 }
@@ -76,5 +89,5 @@ extension NotificationView {
 }
 
 #Preview {
-    NotificationView(vm: NotificationAssemblerImpl().resolve())
+    NotificationAssembler().view()
 }
