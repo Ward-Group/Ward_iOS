@@ -92,3 +92,10 @@ struct ExpiringProduct: Identifiable {
     let id = UUID()
     let image: Image
 }
+
+struct ProgressProduct: Identifiable {
+    let id = UUID()
+    let site: String
+    let date: String
+    let time: String
+}

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3B72DD971C6104B7FCA2B62B /* Pods_WardApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19550401F0099975FA323F7F /* Pods_WardApp.framework */; };
+		A0E964D62C0F257B0019FC70 /* HomeListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E964D52C0F257B0019FC70 /* HomeListPageView.swift */; };
+		A0E964D82C0F26580019FC70 /* ProgressProductItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E964D72C0F26580019FC70 /* ProgressProductItemRowView.swift */; };
 		A0EAC1AF2C077D3200EAEB84 /* OSLog+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */; };
 		BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416602C0420EB003CFFAC /* LoginProvider.swift */; };
 		BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA04166B2C04285D003CFFAC /* LoginViewModel.swift */; };
@@ -143,6 +145,8 @@
 		037BC26265E16ED12724B363 /* Pods-WardApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WardApp.debug.xcconfig"; path = "Target Support Files/Pods-WardApp/Pods-WardApp.debug.xcconfig"; sourceTree = "<group>"; };
 		19550401F0099975FA323F7F /* Pods_WardApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WardApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0D2D7982C05F4EE00A4CBAF /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		A0E964D52C0F257B0019FC70 /* HomeListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListPageView.swift; sourceTree = "<group>"; };
+		A0E964D72C0F26580019FC70 /* ProgressProductItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressProductItemRowView.swift; sourceTree = "<group>"; };
 		A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+Extension.swift"; sourceTree = "<group>"; };
 		BA0416602C0420EB003CFFAC /* LoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProvider.swift; sourceTree = "<group>"; };
 		BA04166B2C04285D003CFFAC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -769,6 +773,8 @@
 			children = (
 				EA81E0C72C0848F60076DA29 /* HomeHeaderTitleView.swift */,
 				EA81E0C02C0802A60076DA29 /* BannerPageView.swift */,
+				A0E964D52C0F257B0019FC70 /* HomeListPageView.swift */,
+				A0E964D72C0F26580019FC70 /* ProgressProductItemRowView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -973,6 +979,7 @@
 				BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
+				A0E964D62C0F257B0019FC70 /* HomeListPageView.swift in Sources */,
 				BA62C0A82C1147C2007E692A /* LoginRouter.swift in Sources */,
 				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
 				BAA9ED6E2C0D50E1002DBD82 /* SearchViewModel.swift in Sources */,
@@ -999,6 +1006,7 @@
 				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
 				EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */,
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
+				A0E964D82C0F26580019FC70 /* ProgressProductItemRowView.swift in Sources */,
 				BA3DC70C2C1BE19E00AF7E64 /* BrandListView.swift in Sources */,
 				EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
