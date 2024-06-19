@@ -34,16 +34,18 @@ struct HomeView: View {
                     VStack(spacing: 0) {
                         // --- 오늘 마감 --- //
                         HomeHeaderTitleView(title: WardStrings.dueToday, subTitle: WardStrings.enjoyTheLittleLuckYouHaveLeft)
-                            .padding([.bottom], 12)
+                            .padding(.bottom, 12)
                         BannerPageView(geo: geo, models: output.bannerPages)
-                            .padding([.bottom], 36)
+                            .padding(.bottom, 36)
                         // -- 발매 상품 -- //
                         HomeHeaderTitleView(title: WardStrings.releasedProduct, moreButtonAction: {
                             Log.todo("발매 상품 더보기 버튼 액션")
                         })
-                        .padding([.bottom], 14)
+                        .padding(.bottom, 14)
                         CategoryTabView(models: output.releaseCategoryTabs,
                                         selectedModel: $output.selectedReleaseTabModel)
+                        .padding(.bottom, 20)
+                        HomeListPageView(geo: geo, models: output.releaseProducts)
                     }
                 })
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

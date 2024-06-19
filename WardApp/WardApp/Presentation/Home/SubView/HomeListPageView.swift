@@ -7,23 +7,44 @@
 
 import SwiftUI
 
+struct HomeListPageModel: Identifiable {
+    let id = UUID()
+    var products: [HomeProductHorizontalModel]
+}
+
 struct HomeListPageView: View {
+    
+    let geo: GeometryProxy
+    var models: [HomeListPageModel]
+    
     var body: some View {
-        itemList
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack(alignment: .top, spacing: 0) {
+                ForEach(models, id: \.id) { model in
+                    itemList(products: model.products)
+                        .frame(width: geo.size.width)
+                }
+            }
+            .scrollTargetLayout()
+        }
+        .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
     }
 }
 
 extension HomeListPageView {
-    private var itemList: some View {
-        ScrollView(.vertical) {
-            LazyVStack(spacing: 0) {
-                
+    private func itemList(products: [HomeProductHorizontalModel]) -> some View {
+        LazyVStack(alignment: .center) {
+            ForEach(Array(products.enumerated()), id: \.element.id) { index, product in
+                HomeProductHorizontalView(model: product)
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        // TODO: TAB
+                    }
+                if index < products.count - 1 {
+                    Divider()
+                        .padding()
+                }
             }
         }
-        
     }
-}
-
-#Preview {
-    HomeListPageView()
 }
