@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CategoryTabView: View {
     
-    let models: [CategoryTabModel]
+    @Binding var models: [CategoryTabModel]
     @Binding var selectedModel: CategoryTabModel?
     
     var body: some View {
@@ -36,11 +36,15 @@ struct CategoryTabView: View {
     }
 }
 
-#Preview {
-    CategoryTabView(models: [CategoryTabModel(title: "오늘 마감"),
-                             CategoryTabModel(title: "발매 중"),
-                             CategoryTabModel(title: "관심 상품"),
-                             CategoryTabModel(title: "발매 확장"),
-                             CategoryTabModel(title: "오늘 등록")],
-                    selectedModel: .constant(nil))
+struct CategoryTabView_Previews: PreviewProvider {
+    @State static var models: [CategoryTabModel] = [CategoryTabModel(title: "오늘 마감"),
+                                                    CategoryTabModel(title: "발매 중"),
+                                                    CategoryTabModel(title: "관심 상품"),
+                                                    CategoryTabModel(title: "발매 확장"),
+                                                    CategoryTabModel(title: "오늘 등록")]
+    @State static var selectedModel: CategoryTabModel? = CategoryTabModel(title: "오늘 마감")
+    
+    static var previews: some View {
+        CategoryTabView(models: $models, selectedModel: $selectedModel)
+    }
 }

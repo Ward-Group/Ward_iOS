@@ -15,19 +15,31 @@ struct HomeListPageModel: Identifiable {
 struct HomeListPageView: View {
     
     let geo: GeometryProxy
-    var models: [HomeListPageModel]
+    @State private var currentPage: Int? = 0
+    @State private var numberOfPage: Int = 0
+    @Binding var models: [HomeListPageModel]
     
     var body: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            LazyHStack(alignment: .top, spacing: 0) {
-                ForEach(models, id: \.id) { model in
-                    itemList(products: model.products)
-                        .frame(width: geo.size.width)
+        VStack() {
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(alignment: .top, spacing: 0) {
+                    ForEach(Array(models.enumerated()), id: \.element.id) { index, model in
+                        itemList(products: model.products)
+                            .frame(width: geo.size.width)
+                            .id(index)
+                    }
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
+            .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
+            .scrollPosition(id: $currentPage)
+            .padding(.bottom, 20)
+            PageControl(numberOfPage: $numberOfPage, currentPage: $currentPage)
+                .frame(height: 6)
+                .onAppear {
+                    numberOfPage = models.count
+                }
         }
-        .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
     }
 }
 

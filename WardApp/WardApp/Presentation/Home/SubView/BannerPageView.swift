@@ -15,7 +15,7 @@ struct BannerPageModel: Identifiable {
 struct BannerPageView: View {
     
     let geo: GeometryProxy
-    var models: [BannerPageModel]
+    @Binding var models: [BannerPageModel]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {

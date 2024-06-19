@@ -60,7 +60,7 @@ extension HomeViewModel: ViewModel {
         // -- Output -- //
         let output = Output()
         
-        // -- Data -- //
+        // --  Output Data Logic -- //
         let bannerProducts = PassthroughSubject<[BaseProductModel], Never>()
         bannerProducts
             .map { $0.map { $0.toModel() } }
@@ -94,7 +94,7 @@ extension HomeViewModel: ViewModel {
             .assign(to: \.releaseProducts, on: output)
             .store(in: cancelBag)
         
-        // -- Input -- //
+        // -- Input Logic -- //
         input.loadTrigger
             .sink(receiveValue: {
                 bannerProducts.send(getBannerProducts())
