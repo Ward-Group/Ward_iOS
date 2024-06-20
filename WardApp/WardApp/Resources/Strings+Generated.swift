@@ -28,8 +28,6 @@ public enum WardStrings {
   public static let categoryTabbar = WardStrings.tr("Localizable", "Category Tabbar", fallback: "카테고리")
   /// 회원가입 완료
   public static let confirmSignUp = WardStrings.tr("Localizable", "Confirm Sign Up", fallback: "회원가입 완료")
-  /// 발매 확정
-  public static let confirmedRelease = WardStrings.tr("Localizable", "Confirmed Release", fallback: "발매 확정")
   /// 개
   public static let countingUnitKorean = WardStrings.tr("Localizable", "Counting Unit Korean", fallback: "개")
   /// 발매 중
@@ -139,6 +137,8 @@ public enum WardStrings {
   public static let typeNickname = WardStrings.tr("Localizable", "Type Nickname", fallback: "사용할 닉네임을 입력해주세요.")
   /// 제품명, 브랜드명, 제품 코드 등 입력
   public static let typeProductCodeNames = WardStrings.tr("Localizable", "Type Product Code Names", fallback: "제품명, 브랜드명, 제품 코드 등 입력")
+  /// 발매 예정
+  public static let upcomingRelease = WardStrings.tr("Localizable", "Upcoming Release", fallback: "발매 예정")
   /// 사용 가능한 닉네임입니다.
   public static let validNickname = WardStrings.tr("Localizable", "Valid Nickname", fallback: "사용 가능한 닉네임입니다.")
   /// 주 전

@@ -9,34 +9,42 @@ import SwiftUI
 
 struct CategoryTabView: View {
     
-    let list: [CategoryTabModel]
+    @Binding var models: [CategoryTabModel]
+    @Binding var selectedModel: CategoryTabModel?
     
     var body: some View {
         return ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .top, spacing: 6) {
-                ForEach(list) { category in
-                    roundTextView(category.title, isSelect: category.isSelect)
+                ForEach(models, id: \.id) { model in
+                    // TODO: Id로 구분
+                    let isSelected = (model.title == selectedModel?.title)
+                    roundTextView(model.title, isSelected: isSelected)
                 }
             }
             .padding(.horizontal, 16)
         }
     }
     
-    private func roundTextView(_ text: String, isSelect: Bool) -> some View {
+    private func roundTextView(_ text: String, isSelected: Bool) -> some View {
         return Text(text)
             .font(WardFonts.Pretendard.regular.swiftUIFont(size: 14))
             .frame(height: 32)
             .padding(.horizontal, 10)
             .foregroundColor(Color.white)
-            .background(isSelect ? Color.mainBlue : Color.blue2)
+            .background(isSelected ? Color.mainBlue : Color.blue2)
             .cornerRadius(16)
     }
 }
 
-#Preview {
-    CategoryTabView(list: [CategoryTabModel(title: "오늘 마감", isSelect: true),
-                           CategoryTabModel(title: "발매 중", isSelect: false),
-                           CategoryTabModel(title: "관심 상품", isSelect: false),
-                           CategoryTabModel(title: "발매 확장", isSelect: false),
-                           CategoryTabModel(title: "오늘 등록", isSelect: false)])
+struct CategoryTabView_Previews: PreviewProvider {
+    @State static var models: [CategoryTabModel] = [CategoryTabModel(title: "오늘 마감"),
+                                                    CategoryTabModel(title: "발매 중"),
+                                                    CategoryTabModel(title: "관심 상품"),
+                                                    CategoryTabModel(title: "발매 확장"),
+                                                    CategoryTabModel(title: "오늘 등록")]
+    @State static var selectedModel: CategoryTabModel? = CategoryTabModel(title: "오늘 마감")
+    
+    static var previews: some View {
+        CategoryTabView(models: $models, selectedModel: $selectedModel)
+    }
 }

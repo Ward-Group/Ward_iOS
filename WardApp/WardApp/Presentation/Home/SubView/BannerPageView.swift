@@ -10,22 +10,17 @@ import SwiftUI
 struct BannerPageModel: Identifiable {
     var id: UUID
     var image: Image
-    
-    init(product: ExpiringProduct) {
-        self.id = product.id
-        self.image = product.image
-    }
 }
 
 struct BannerPageView: View {
     
     let geo: GeometryProxy
-    var list: [BannerPageModel]
+    @Binding var models: [BannerPageModel]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(alignment: .top, spacing: 10) {
-                ForEach(list) { model in
+                ForEach(models) { model in
                     model.image
                         .resizable()
                         .frame(width: geo.size.width - 32, height: (geo.size.width - 32) * 0.58)

@@ -10,15 +10,38 @@ import SwiftUI
 import Combine
 
 struct HomeViewModel {
-    // TODO: navigator, usecase 연결
-    //    let navigator:
-    //    let useCase:
+    enum ReleaseCategoryTabType {
+        case dueToday
+        case currentlyAvailable
+        case interestedItem
+        case upcomingRelease
+        case registeredToday
+        
+        var title: String {
+            switch self {
+            case .dueToday: // 오늘 마감
+                return WardStrings.dueToday
+            case .currentlyAvailable: // 발매 중
+                return WardStrings.currentlyAvailable
+            case .upcomingRelease:
+                return WardStrings.upcomingRelease
+            case .registeredToday: // 오늘 등록
+                return WardStrings.registeredToday
+            case .interestedItem: // 관심 상품
+                return WardStrings.interestedItem
+            }
+        }
+        
+        func tabModel() -> CategoryTabModel {
+            return CategoryTabModel(title: title)
+        }
+    }
     
-    let releaseCategoryTabList: [ReleaseCategoryTab] = [.dueToday,
-                                                        .currentlyAvailable,
-                                                        .interestedItem,
-                                                        .confirmedRelease,
-                                                        .registeredToday]
+    let releaseCategoryTabList: [ReleaseCategoryTabType] = [.dueToday,
+                                                            .currentlyAvailable,
+                                                            .interestedItem,
+                                                            .upcomingRelease,
+                                                            .registeredToday]
 }
 
 extension HomeViewModel: ViewModel {
@@ -27,34 +50,60 @@ extension HomeViewModel: ViewModel {
     }
     
     final class Output: ObservableObject {
-        @Published var bannerPageList: [BannerPageModel] = []
-        @Published var releaseCategoryList: [CategoryTabModel] = []
+        @Published var bannerPages: [BannerPageModel] = []
+        @Published var releaseCategoryTabs: [CategoryTabModel] = []
+        @Published var selectedReleaseTabModel: CategoryTabModel?
+        @Published var releaseProducts: [HomeListPageModel] = []
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         // -- Output -- //
         let output = Output()
         
-        // -- Data -- //
-        let expiringProducts = PassthroughSubject<[ExpiringProduct], Never>()
-        expiringProducts
-            .map { $0.map(BannerPageModel.init) }
-            .assign(to: \.bannerPageList, on: output)
+        // --  Output Data Logic -- //
+        let bannerProducts = PassthroughSubject<[BaseProductModel], Never>()
+        bannerProducts
+            .map { $0.map { $0.toModel() } }
+            .assign(to: \.bannerPages, on: output)
             .store(in: cancelBag)
         
-        var indexOfSelectedReleaseTab: Int = 0
+        let selectedReleaseTabModel = PassthroughSubject<CategoryTabModel?, Never>()
         let releaseCategoryTabs = PassthroughSubject<[CategoryTabModel], Never>()
+        selectedReleaseTabModel
+            .assign(to: \.selectedReleaseTabModel, on: output)
+            .store(in: cancelBag)
         releaseCategoryTabs
-            .assign(to: \.releaseCategoryList, on: output)
+            .assign(to: \.releaseCategoryTabs, on: output)
             .store(in: cancelBag)
         
-        // -- Input -- //
+        let releaseProducts = PassthroughSubject<[BaseProductModel], Never>()
+        releaseProducts
+            .map { $0.map { $0.toWithRemaingTimeModel() } }
+            .map { models in
+                var returnModels: [HomeListPageModel] = []
+                var tempModels: [HomeProductHorizontalModel] = []
+                for model in models {
+                    tempModels.append(model)
+                    if tempModels.count % 5 == 0 {
+                        returnModels.append(HomeListPageModel(products: tempModels))
+                        tempModels.removeAll()
+                    }
+                }
+                return returnModels
+            }
+            .assign(to: \.releaseProducts, on: output)
+            .store(in: cancelBag)
+        
+        // -- Input Logic -- //
         input.loadTrigger
             .sink(receiveValue: {
-                expiringProducts.send(getExpiringProducts())
+                bannerProducts.send(getBannerProducts())
                 
-                indexOfSelectedReleaseTab = 0
-                releaseCategoryTabs.send(getReleaseCategoryTabs(indexOfSelectedReleaseTab))
+                let getReleaseCategoryTabs = getReleaseCategoryTabs()
+                releaseCategoryTabs.send(getReleaseCategoryTabs)
+                selectedReleaseTabModel.send(getReleaseCategoryTabs[0])
+
+                releaseProducts.send(getReleaseProducts(with: .dueToday))
             })
             .store(in: cancelBag)
         
@@ -64,38 +113,66 @@ extension HomeViewModel: ViewModel {
 
 // MARK: - Logic
 extension HomeViewModel {
-    private func getReleaseCategoryTabs(_ indexOfSelectedTab: Int) -> [CategoryTabModel] {
+    private func getReleaseCategoryTabs() -> [CategoryTabModel] {
         return releaseCategoryTabList
             .enumerated()
-            .map { return $0.element.model(indexOfSelectedTab == $0.offset) }
+            .map { return $0.element.tabModel() }
+    }
+    
+    private func getReleaseProducts(with category: ReleaseCategoryTabType) -> [BaseProductModel] {
+        // TODO: 카테고리에 따라 데이터 가져오기
+        return getExpiringProducts()
     }
 }
 
 // MARK: - Networking
 extension HomeViewModel {
-    private func getExpiringProducts() -> [ExpiringProduct] {
-        return [ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage),
-                ExpiringProduct(image: WardAssets.Image.homeBanner.swiftUIImage)]
+    private func getBannerProducts() -> [BaseProductModel] {
+        return [BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel(),
+                BaseProductModel()]
+    }
+    
+    private func getExpiringProducts() -> [BaseProductModel] {
+        let dummy1 = BaseProductModel(site: "크림", product: "나이키 신발", time: "남은 시간")
+        let dummy2 = BaseProductModel(site: "크림", product: "아디다스 신발", time: "남은 시간")
+        let dummy3 = BaseProductModel(site: "슈프림", product: "슈프림 티셔츠", time: "남은 시간")
+        let dummy4 = BaseProductModel(site: "뉴발란스", product: "뉴발란스 티셔츠", time: "남은 시간")
+        let dummy5 = BaseProductModel(site: "뉴발란스", product: "뉴발란스 신발", time: "남은 시간")
+        let dummyList = [dummy1, dummy2, dummy3, dummy4, dummy5, dummy5, dummy1, dummy3, dummy4, dummy2]
+        return dummyList
     }
 }
 
-// MARK: - 임시 네트워크 모델
-struct ExpiringProduct: Identifiable {
+// MARK: - 임시 데이터 모델
+struct BaseProductModel: Identifiable {
     let id = UUID()
-    let image: Image
-}
-
-struct ProgressProduct: Identifiable {
-    let id = UUID()
-    let site: String
-    let date: String
-    let time: String
+    var site: String?
+    var product: String?
+    var brand: String?
+    var time: String?
+    var bigBannerImage: Image?
+    var thumbnailImage: Image?
+    
+    func toModel() -> BannerPageModel {
+        return BannerPageModel(id: id,
+                               image: bigBannerImage ?? WardAssets.Image.homeBanner.swiftUIImage)
+    }
+    
+    func toWithRemaingTimeModel() -> HomeProductHorizontalModel {
+        return HomeProductHorizontalModel(productType: .withRemainingTime,
+                                          id: id,
+                                          site: site ?? "",
+                                          product: product ?? "",
+                                          time: time ?? "")
+    }
 }
