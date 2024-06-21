@@ -42,6 +42,7 @@
 		BA2D64512C25AB7100F2AECE /* LogoNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */; };
 		BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */; };
 		BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64562C25B65400F2AECE /* MyPageRouter.swift */; };
+		BA2D64592C25C34900F2AECE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64582C25C34900F2AECE /* UINavigationController.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
 		BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */; };
@@ -188,6 +189,7 @@
 		BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoNavBarView.swift; sourceTree = "<group>"; };
 		BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageNavigatorView.swift; sourceTree = "<group>"; };
 		BA2D64562C25B65400F2AECE /* MyPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRouter.swift; sourceTree = "<group>"; };
+		BA2D64582C25C34900F2AECE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
 		BA365BB42BE23D5A00C332DF /* WardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -800,6 +802,7 @@
 				A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */,
 				BAA7C0C12C09C00C0042FE04 /* Date.swift */,
 				BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */,
+				BA2D64582C25C34900F2AECE /* UINavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1049,6 +1052,7 @@
 				BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */,
 				BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */,
 				EA8C9FAD2C09A57000F02E3A /* Observable.swift in Sources */,
+				BA2D64592C25C34900F2AECE /* UINavigationController.swift in Sources */,
 				BA3DC7112C1BE39400AF7E64 /* BrandListItem.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,

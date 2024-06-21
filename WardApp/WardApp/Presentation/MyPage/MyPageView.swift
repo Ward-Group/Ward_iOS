@@ -77,6 +77,7 @@ struct MyPageView: View {
     }
 }
 
+
 private extension MyPageView {
     
     var profileImage: some View {
