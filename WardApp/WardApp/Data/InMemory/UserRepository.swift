@@ -12,6 +12,13 @@ class UserRepository {
     static let shared = UserRepository()
     private init() {}
     
+    func getNickname() -> String {
+         guard let nickname = UserDefaults.standard.string(forKey: UserDefaultsKey.nickname) else {
+            return ""
+        }
+        return nickname
+    }
+    
     func getEmail() -> String {
         guard let email = UserDefaults.standard.string(forKey: UserDefaultsKey.email) else {
             return ""
@@ -71,5 +78,9 @@ class UserRepository {
         
     func updateLoginProvicerId(_ providerId: String) {
         UserDefaults.standard.setValue(providerId, forKey: UserDefaultsKey.loginProviderId)
+    }
+    
+    func updateNickname(_ nickname: String) {
+        UserDefaults.standard.setValue(nickname, forKey: UserDefaultsKey.nickname)
     }
 }
