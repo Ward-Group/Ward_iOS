@@ -11,15 +11,21 @@ import Combine
 struct MyPageView: View {
     
     @EnvironmentObject var router: MyPageRouter
+    @EnvironmentObject var mainRouter: MainRouter
     @ObservedObject private var input: MyPageViewModel.Input
     @ObservedObject private var output: MyPageViewModel.Output
     
     private let settingButtonTrigger = PassthroughSubject<Void, Never>()
+    private let logOutButtonTrigger = PassthroughSubject<Void, Never>()
+    private let logOutSuccessTrigger = PassthroughSubject<Void, Never>()
     
     private let cancelBag = CancelBag()
     
     init(vm: MyPageViewModel) {
-        let input = MyPageViewModel.Input()
+        let input = MyPageViewModel.Input(
+            logOutButtonTrigger: logOutButtonTrigger.asDriver(),
+            logOutSuccessTrigger: logOutSuccessTrigger
+        )
         let output = vm.transform(input, cancelBag: cancelBag)
         self.input = input
         self.output = output
@@ -63,6 +69,9 @@ struct MyPageView: View {
                 .navigationDestination(for: MyPageRouter.Page.self) { page in
                     router.build(page)
                 }
+                .onReceive(logOutSuccessTrigger, perform: { _ in
+                    mainRouter.present(fullScreenSheet: .login)
+                })
             }
         }
     }
@@ -181,7 +190,11 @@ private extension MyPageView {
                 }
             
             MyPageNavigatorView(title: WardStrings.oneOnOneInquries)
+            
             MyPageNavigatorView(title: WardStrings.logOut)
+                .onTapGesture {
+                    logOutButtonTrigger.send()
+                }
         }
     }
 }

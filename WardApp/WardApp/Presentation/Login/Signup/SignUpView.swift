@@ -36,7 +36,7 @@ struct SignUpView: View {
                     
                     InlineNavBarView(
                         title: WardStrings.extraInformation,
-                        buttonsRight: [
+                        buttonsLeft: [
                             NavigationBarButton(style: .back, trigger: backButtonTrigger)
                         ]
                     )

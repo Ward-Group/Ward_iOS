@@ -45,6 +45,9 @@ struct MainView: View {
         .fullScreenCover(item: $router.fullScreenSheet) { sheet in
             router.build(fullScreenSheet: sheet)
         }
+        .background {
+            Color.background
+        }
     }
 }
 

@@ -17,10 +17,18 @@ class MyPageAssembler {
     }
     
     func resolve() -> MyPageViewModel {
-        return MyPageViewModel()
+        return MyPageViewModel(authUseCase: resolve())
     }
     
     func resolve() -> MyPageRouter {
         return MyPageRouter()
+    }
+    
+    func resolve() -> AuthUseCase {
+        return AuthUseCase(repository: resolve())
+    }
+    
+    func resolve() -> AuthRepository {
+        return AuthRepository()
     }
 }

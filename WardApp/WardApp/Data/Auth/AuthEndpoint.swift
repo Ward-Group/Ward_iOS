@@ -11,6 +11,7 @@ enum AuthEndpoint {
     case login(LoginDto)
     case signUp(SignUpDto)
     case checkNickname(CheckNicknameDto)
+    case logOut(accessToken: String, refreshToken: String)
 }
 
 extension AuthEndpoint: Endpoint {
@@ -22,11 +23,22 @@ extension AuthEndpoint: Endpoint {
             return "/auth"
         case .checkNickname:
             return "/auth/checkNickname"
+        case .logOut:
+            return "/auth/logout"
         }
     }
     
     var headers: [String: String] {
-        return ["Content-Type": "application/json"]
+        switch self {
+        case .logOut(let accessToken, _):
+            return [
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Authorization": "Bearer \(accessToken)"
+            ]
+        default:
+            return ["Content-Type": "application/json"]
+        }
+        
     }
     
     var query: [String: String] {
@@ -54,6 +66,8 @@ extension AuthEndpoint: Endpoint {
             ]
         case .checkNickname(let dto):
             return ["nickname": dto.nickname]
+        case .logOut(_, let refreshToken):
+            return ["refreshToken": refreshToken]
         }
     }
     
@@ -61,7 +75,7 @@ extension AuthEndpoint: Endpoint {
         switch self {
         case .checkNickname:
             return .get
-        case .login, .signUp:
+        case .login, .signUp, .logOut:
             return .post
         }
     }
@@ -72,6 +86,8 @@ extension AuthEndpoint: Endpoint {
             return JSONEncoding.default
         case .checkNickname:
             return URLEncoding.queryString
+        case .logOut:
+            return URLEncoding.httpBody
         }
     }
 }
