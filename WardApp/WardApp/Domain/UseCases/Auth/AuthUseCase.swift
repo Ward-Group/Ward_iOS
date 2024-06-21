@@ -73,7 +73,6 @@ extension AuthUseCase {
     
     private func clearUserInformation() {
         UserRepository.shared.updateEmail("")
-        UserRepository.shared.updateNickname("")
         UserRepository.shared.updateAcceesToken("")
         UserRepository.shared.updateRefreshToken("")
         UserRepository.shared.updateLoginProvider(LoginProvider.unknown)

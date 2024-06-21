@@ -25,6 +25,7 @@ extension MyPageViewModel: ViewModel {
     }
     
     final class Output: ObservableObject {
+        @Published var nickname = "닉네임"
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {

@@ -86,7 +86,7 @@ private extension MyPageView {
                 .fill(Color.darkGray)
                 .frame(width: 83, height: 83)
             
-            Text("닉")
+            Text(String(output.nickname.first ?? Character("")))
                 .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 30))
             
         }
@@ -105,7 +105,7 @@ private extension MyPageView {
             action: {},
             label: {
                 HStack {
-                    Text("닉네임")
+                    Text(output.nickname)
                         .foregroundStyle(Color.black4)
                     
                     WardAssets.Image.Icon.chevronRight.swiftUIImage
