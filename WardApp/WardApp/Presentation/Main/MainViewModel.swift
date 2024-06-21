@@ -69,7 +69,7 @@ extension MainViewModel {
             break
         case .failure(let error):
             switch error {
-            case .needSignUp, .unknown:
+            case .needSignUp, .invalidInput:
                 router.present(fullScreenSheet: .login)
             default:
                 // TODO: 이 후에 각자 에러 처리 해줄 것

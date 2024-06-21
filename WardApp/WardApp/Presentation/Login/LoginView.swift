@@ -55,6 +55,7 @@ struct LoginView: View {
             .onReceive(output.dismissTrigger, perform: { _ in
                 dismiss()
             })
+            .toolbar(.hidden)
         }
     }
 }

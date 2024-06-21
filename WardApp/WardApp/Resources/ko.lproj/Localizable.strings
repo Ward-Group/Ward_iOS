@@ -87,3 +87,16 @@
 "Brand" = "브랜드";
 "Retailer" = "발매처";
 "Hits" = "조회수";
+
+// MARK: 마이페이지
+"My Entries" = "나의 진행내역";
+"Progress" = "진행";
+"Winner Announcement" = "당첨자 발표";
+"Deadline" = "마감";
+"My Activity" =  "나의 활동";
+"Interested List" = "관심 목록";
+"Submit Review" = "리뷰 남기기";
+"ETC" = "기타";
+"One on One Inquries" = "1:1 문의";
+"Log Out" = "로그아웃";
+

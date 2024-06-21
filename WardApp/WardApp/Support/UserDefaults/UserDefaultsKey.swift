@@ -12,4 +12,5 @@ enum UserDefaultsKey {
     static let loginProvider = "loginProvider"
     static let loginProviderId = "loginProviderId"
     static let email = "email"
+    static let nickname = "nickname"
 }

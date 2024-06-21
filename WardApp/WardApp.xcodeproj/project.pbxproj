@@ -36,6 +36,13 @@
 		BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */; };
 		BA12A7002C0C039100338EC0 /* HeaderNavBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
+		BA2D644B2C25A95E00F2AECE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644A2C25A95E00F2AECE /* MyPageView.swift */; };
+		BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */; };
+		BA2D644F2C25A96D00F2AECE /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */; };
+		BA2D64512C25AB7100F2AECE /* LogoNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */; };
+		BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */; };
+		BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64562C25B65400F2AECE /* MyPageRouter.swift */; };
+		BA2D64592C25C34900F2AECE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64582C25C34900F2AECE /* UINavigationController.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
 		BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */; };
@@ -176,6 +183,13 @@
 		BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouterView.swift; sourceTree = "<group>"; };
 		BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavBarRouter.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
+		BA2D644A2C25A95E00F2AECE /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
+		BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAssembler.swift; sourceTree = "<group>"; };
+		BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoNavBarView.swift; sourceTree = "<group>"; };
+		BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageNavigatorView.swift; sourceTree = "<group>"; };
+		BA2D64562C25B65400F2AECE /* MyPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRouter.swift; sourceTree = "<group>"; };
+		BA2D64582C25C34900F2AECE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
 		BA365BB42BE23D5A00C332DF /* WardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,6 +393,18 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		BA2D64492C25A95400F2AECE /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				BA2D644A2C25A95E00F2AECE /* MyPageView.swift */,
+				BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */,
+				BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */,
+				BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */,
+				BA2D64562C25B65400F2AECE /* MyPageRouter.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		BA365BAB2BE23D5A00C332DF = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +558,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA2D64492C25A95400F2AECE /* MyPage */,
 				BA3DC70A2C1BE18400AF7E64 /* Brand */,
 				BA4B16822C0EC8B000E1C1F5 /* NoticeBoard */,
 				BAA9ED682C0D50C2002DBD82 /* Search */,
@@ -738,6 +765,7 @@
 				BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */,
 				BA4B168B2C0ECDC900E1C1F5 /* InlineNavBarView.swift */,
 				BA7FE8F72C1D52E600DD242C /* NavigationBarButton.swift */,
+				BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -774,6 +802,7 @@
 				A0EAC1AE2C077D3200EAEB84 /* OSLog+Extension.swift */,
 				BAA7C0C12C09C00C0042FE04 /* Date.swift */,
 				BAA9ED862C0DAE7A002DBD82 /* UIApplication.swift */,
+				BA2D64582C25C34900F2AECE /* UINavigationController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1012,6 +1041,7 @@
 				BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
+				BA2D644F2C25A96D00F2AECE /* MyPageViewModel.swift in Sources */,
 				A0E964D62C0F257B0019FC70 /* HomeListPageView.swift in Sources */,
 				BA62C0A82C1147C2007E692A /* LoginRouter.swift in Sources */,
 				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
@@ -1019,8 +1049,10 @@
 				BA8AC52A2C102E5D00D019A6 /* AuthRepository.swift in Sources */,
 				BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */,
 				BA62C09D2C1052F4007E692A /* UserRepository.swift in Sources */,
+				BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */,
 				BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */,
 				EA8C9FAD2C09A57000F02E3A /* Observable.swift in Sources */,
+				BA2D64592C25C34900F2AECE /* UINavigationController.swift in Sources */,
 				BA3DC7112C1BE39400AF7E64 /* BrandListItem.swift in Sources */,
 				BAD0167B2BEB7A1E0039ACDE /* ToggleCheckboxStyle.swift in Sources */,
 				BA0416732C043782003CFFAC /* Publisher.swift in Sources */,
@@ -1051,6 +1083,7 @@
 				BA3DC71F2C1C1DF700AF7E64 /* BrandDetailItem.swift in Sources */,
 				EA3967882BF91BE10087062B /* Font.swift in Sources */,
 				BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */,
+				BA2D64512C25AB7100F2AECE /* LogoNavBarView.swift in Sources */,
 				EA81E0C82C0848F60076DA29 /* HomeHeaderTitleView.swift in Sources */,
 				BAA9ED872C0DAE7A002DBD82 /* UIApplication.swift in Sources */,
 				EA81E0C82C0848F60076DA29 /* HomeHeaderTitleView.swift in Sources */,
@@ -1076,6 +1109,7 @@
 				BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */,
 				BA3DC71B2C1C09AF00AF7E64 /* BrandDetailViewModel.swift in Sources */,
 				BAAFB2C92C15824700E722F3 /* KeychainManager.swift in Sources */,
+				BA2D644B2C25A95E00F2AECE /* MyPageView.swift in Sources */,
 				BA3DC71D2C1C1AAF00AF7E64 /* BrandDetailGridItemView.swift in Sources */,
 				EA5695A82C218D6A000A192F /* HomeAssembler.swift in Sources */,
 				BAA9ED6C2C0D50D8002DBD82 /* SearchView.swift in Sources */,
@@ -1083,6 +1117,7 @@
 				EA5695AB2C218DFA000A192F /* HomeUsecase.swift in Sources */,
 				BA62C0A12C10ACCB007E692A /* MainViewModel.swift in Sources */,
 				BA0416942C06C884003CFFAC /* InterestedItemRowView.swift in Sources */,
+				BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */,
 				BA7FE8F82C1D52E600DD242C /* NavigationBarButton.swift in Sources */,
 				BAA9ED7F2C0D869C002DBD82 /* SearchUsecase.swift in Sources */,
 				EA8C9FA62C099AF900F02E3A /* HomeViewModel.swift in Sources */,
@@ -1091,6 +1126,7 @@
 				BAA9ED852C0DA9B2002DBD82 /* SearchResultItemRowView.swift in Sources */,
 				BA0416962C0810EF003CFFAC /* Int.swift in Sources */,
 				BA3DC7152C1BF13E00AF7E64 /* BrandItemHeaderView.swift in Sources */,
+				BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */,
 				BA4B16862C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 				BA3DC7242C1C1F8E00AF7E64 /* ReleaseItem.swift in Sources */,

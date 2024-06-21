@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 enum AuthError: Error {
-    case needSignUp, invalidInput, unknown, emptyData, userAlreadyExists, duplicatedNickname
+    case needSignUp, invalidInput, unknown, emptyData, userAlreadyExists, duplicatedNickname, invalidRefreshToken, failToLogOut
 }
 
 struct AuthRepository {
@@ -70,6 +70,26 @@ struct AuthRepository {
                 Log.debug(#file, #function, response)
                 guard let duplicated = response.data else { return true }
                 return duplicated
+            }
+            .mapError(mapError)
+            .eraseToAnyPublisher()
+    }
+    
+    func logOut(accessToken: String, refreshToken: String) -> AnyPublisher<String?, AuthError> {
+        return NetworkingManager.shared.run(AuthEndpoint.logOut(accessToken: accessToken, refreshToken: refreshToken), type: WardBaseResponse<String?>.self)
+            .tryMap { response in
+                Log.debug(#file, #function, response)
+                let code = response.code
+                switch code {
+                case 200:
+                    return response.data ?? ""
+                case 5207:
+                    throw AuthError.invalidRefreshToken
+                case 5213:
+                    throw AuthError.failToLogOut
+                default:
+                    throw AuthError.unknown
+                }
             }
             .mapError(mapError)
             .eraseToAnyPublisher()

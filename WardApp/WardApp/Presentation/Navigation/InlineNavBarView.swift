@@ -14,10 +14,10 @@ struct InlineNavBarView: View {
     let buttonsRight: [NavigationBarButton]
     let buttonsLeft: [NavigationBarButton]
     
-    init(title: String, buttonsRight: [NavigationBarButton] = [], buttonsLeft: [NavigationBarButton] = []) {
+    init(title: String, buttonsLeft: [NavigationBarButton] = [], buttonsRight: [NavigationBarButton] = []) {
         self.title = title
-        self.buttonsRight = buttonsRight
         self.buttonsLeft = buttonsLeft
+        self.buttonsRight = buttonsRight
     }
     
     var body: some View {
@@ -27,7 +27,7 @@ struct InlineNavBarView: View {
                 
                 HStack {
                     HStack(spacing: 5) {
-                        ForEach(buttonsRight) { button in
+                        ForEach(buttonsLeft) { button in
                             Button(action: {
                                 button.trigger.send()
                             }, label: {
@@ -39,7 +39,7 @@ struct InlineNavBarView: View {
                     Spacer()
                     
                     HStack(spacing: 10) {
-                        ForEach(buttonsLeft) { button in
+                        ForEach(buttonsRight) { button in
                             Button(action: {
                                 button.trigger.send()
                             }, label: {
@@ -74,7 +74,7 @@ struct InlineNavBarView: View {
     
     return InlineNavBarView(
         title: "공지사항",
-        buttonsRight: right,
-        buttonsLeft: left
+        buttonsLeft: left,
+        buttonsRight: right
     )
 }

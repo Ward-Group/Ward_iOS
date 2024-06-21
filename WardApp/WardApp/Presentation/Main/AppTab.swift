@@ -48,7 +48,7 @@ extension AppTab {
         case .interested:
             InterestedAssembler().view()
         case .mypage:
-            NoticeBoardAssembler().view()
+            MyPageAssembler().view()
         }
     }
 }

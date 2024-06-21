@@ -62,3 +62,26 @@ extension AuthUseCase {
         return repository.checkNickname(dto: CheckNicknameDto(nickname: nickname))
     }
 }
+
+extension AuthUseCase {
+    
+    func logOut() -> AnyPublisher<String?, AuthError> {
+        let result = requestLogOut()
+        clearUserInformation()
+        return result
+    }
+    
+    private func clearUserInformation() {
+        UserRepository.shared.updateEmail("")
+        UserRepository.shared.updateAcceesToken("")
+        UserRepository.shared.updateRefreshToken("")
+        UserRepository.shared.updateLoginProvider(LoginProvider.unknown)
+        UserRepository.shared.updateLoginProvicerId("")
+    }
+    
+    private func requestLogOut() -> AnyPublisher<String?, AuthError> {
+        let accessToken = UserRepository.shared.getAccessToken()
+        let refreshToken = UserRepository.shared.getRefreshToken()
+        return repository.logOut(accessToken: accessToken, refreshToken: refreshToken)
+    }
+}
