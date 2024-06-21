@@ -100,6 +100,7 @@ struct SignUpView: View {
         .onTapGesture {
             UIApplication.shared.endEditing()
         }
+        .toolbar(.hidden)
     }
 }
 
