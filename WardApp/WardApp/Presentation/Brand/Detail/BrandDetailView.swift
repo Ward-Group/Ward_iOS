@@ -40,8 +40,8 @@ struct BrandDetailView: View {
                 VStack(alignment: .leading) {
                     InlineNavBarView(
                         title: WardStrings.brand,
-                        buttonsRight: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
-                        buttonsLeft: [NavigationBarButton(style: .search, trigger: searchButtonTrigger)]
+                        buttonsLeft: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
+                        buttonsRight: [NavigationBarButton(style: .search, trigger: searchButtonTrigger)]
                     )
                     BrandItemHeaderView(item: $output.item, imageSize: imageSize) {
                         isLikedTrigger.send()

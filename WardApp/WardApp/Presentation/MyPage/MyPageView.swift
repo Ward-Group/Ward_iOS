@@ -10,6 +10,7 @@ import Combine
 
 struct MyPageView: View {
     
+    @EnvironmentObject var router: MyPageRouter
     @ObservedObject private var input: MyPageViewModel.Input
     @ObservedObject private var output: MyPageViewModel.Output
     
@@ -28,34 +29,40 @@ struct MyPageView: View {
         ZStack {
             Color.background
             
-            GeometryReader { geo in
-                ScrollView {
-                    
-                    VStack {
-                        LogoNavBarView(buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)])
-                            .padding(.bottom, 50)
+            NavigationStack(path: $router.path) {
+                
+                GeometryReader { geo in
+                    ScrollView {
                         
-                        VStack(alignment: .center, spacing: 20) {
-                            VStack {
-                                profileImage
-                                nickname
+                        VStack {
+                            LogoNavBarView(buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)])
+                                .padding(.bottom, 50)
+                            
+                            VStack(alignment: .center, spacing: 20) {
+                                VStack {
+                                    profileImage
+                                    nickname
+                                }
+                                
+                                entry
+                                    .padding()
+                                    .frame(width: geo.size.width)
+                                
+                                myActivity
+                                    .padding()
+                                    .frame(width: geo.size.width)
+                                
+                                etc
+                                    .padding()
+                                    .frame(width: geo.size.width)
                             }
-                            
-                            entry
-                                .padding()
-                                .frame(width: geo.size.width)
-                            
-                            myActivity
-                                .padding()
-                                .frame(width: geo.size.width)
-                            
-                            etc
-                                .padding()
-                                .frame(width: geo.size.width)
                         }
                     }
                 }
-                
+                .toolbar(.hidden)
+                .navigationDestination(for: MyPageRouter.Page.self) { page in
+                    router.build(page)
+                }
             }
         }
     }
@@ -111,7 +118,7 @@ private extension MyPageView {
                 .overlay {
                     HStack {
                         Spacer()
-                        VStack {
+                        VStack(spacing: 4) {
                             Text("0")
                                 .font(WardFonts.Pretendard.bold.swiftUIFont(size: 16))
                                 .foregroundStyle(Color.black5)
@@ -122,7 +129,7 @@ private extension MyPageView {
                         }
                         
                         Spacer()
-                        VStack {
+                        VStack(spacing: 4) {
                             Text("0")
                                 .font(WardFonts.Pretendard.bold.swiftUIFont(size: 16))
                                 .foregroundStyle(Color.black5)
@@ -133,7 +140,7 @@ private extension MyPageView {
                         }
                         
                         Spacer()
-                        VStack {
+                        VStack(spacing: 4) {
                             Text("0")
                                 .font(WardFonts.Pretendard.bold.swiftUIFont(size: 16))
                                 .foregroundStyle(Color.black5)
@@ -159,7 +166,6 @@ private extension MyPageView {
             MyPageNavigatorView(title: WardStrings.interestedList)
             MyPageNavigatorView(title: WardStrings.submitReview)
         }
-        
     }
     
     var etc: some View {
@@ -170,6 +176,10 @@ private extension MyPageView {
                 .padding(.bottom, 15)
             
             MyPageNavigatorView(title: WardStrings.noticeBoard)
+                .onTapGesture {
+                    router.push(.noticeBoard)
+                }
+            
             MyPageNavigatorView(title: WardStrings.oneOnOneInquries)
             MyPageNavigatorView(title: WardStrings.logOut)
         }

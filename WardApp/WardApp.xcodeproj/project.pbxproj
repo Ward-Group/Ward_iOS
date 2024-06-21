@@ -41,6 +41,7 @@
 		BA2D644F2C25A96D00F2AECE /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */; };
 		BA2D64512C25AB7100F2AECE /* LogoNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */; };
 		BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */; };
+		BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64562C25B65400F2AECE /* MyPageRouter.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
 		BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA365BB72BE23D5A00C332DF /* WardAppApp.swift */; };
 		BA365BBF2BE23D6800C332DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA365BBE2BE23D6800C332DF /* Preview Assets.xcassets */; };
@@ -186,6 +187,7 @@
 		BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoNavBarView.swift; sourceTree = "<group>"; };
 		BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageNavigatorView.swift; sourceTree = "<group>"; };
+		BA2D64562C25B65400F2AECE /* MyPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRouter.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
 		BA302E5D2BE6789A00B57174 /* WardApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WardApp.entitlements; sourceTree = "<group>"; };
 		BA365BB42BE23D5A00C332DF /* WardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,6 +398,7 @@
 				BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */,
 				BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */,
 				BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */,
+				BA2D64562C25B65400F2AECE /* MyPageRouter.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -1119,6 +1122,7 @@
 				BAA9ED852C0DA9B2002DBD82 /* SearchResultItemRowView.swift in Sources */,
 				BA0416962C0810EF003CFFAC /* Int.swift in Sources */,
 				BA3DC7152C1BF13E00AF7E64 /* BrandItemHeaderView.swift in Sources */,
+				BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */,
 				BA4B16862C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
 				BA3DC7242C1C1F8E00AF7E64 /* ReleaseItem.swift in Sources */,

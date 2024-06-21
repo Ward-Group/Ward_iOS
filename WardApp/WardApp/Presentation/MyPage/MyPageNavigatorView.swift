@@ -26,6 +26,7 @@ struct MyPageNavigatorView: View {
             
             Divider()
         }
+        .contentShape(Rectangle())
         .padding(.bottom, 10)
     }
 }

@@ -35,8 +35,8 @@ struct NotificationView: View {
                 VStack {
                     InlineNavBarView(
                         title: WardStrings.notifications,
-                        buttonsRight: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
-                        buttonsLeft: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)]
+                        buttonsLeft: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
+                        buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)]
                     )
                     WardSegementedControl(
                         tabs: output.tabs, currentTab: $output.currentTab,

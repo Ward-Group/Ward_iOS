@@ -11,10 +11,16 @@ class MyPageAssembler {
     
     @ViewBuilder
     func view() -> some View {
+        let router: MyPageRouter = resolve()
         MyPageView(vm: resolve())
+            .environmentObject(router)
     }
     
     func resolve() -> MyPageViewModel {
         return MyPageViewModel()
+    }
+    
+    func resolve() -> MyPageRouter {
+        return MyPageRouter()
     }
 }

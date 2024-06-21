@@ -10,9 +10,11 @@ import Combine
 
 struct NoticeBoardView: View {
     
+    @EnvironmentObject var router: MyPageRouter
     @ObservedObject private var input: NoticeBoardViewModel.Input
     @ObservedObject private var output: NoticeBoardViewModel.Output
     
+    private let backButtonTrigger = PassthroughSubject<Void, Never>()
     private let openNoticeButtonTrigger = PassthroughSubject<UUID, Never>()
     
     private let cancelBag = CancelBag()
@@ -30,7 +32,7 @@ struct NoticeBoardView: View {
         ZStack {
             Color.background
             VStack {
-                InlineNavBarView(title: WardStrings.noticeBoard)
+                InlineNavBarView(title: WardStrings.noticeBoard, buttonsLeft: [NavigationBarButton(style: .back, trigger: backButtonTrigger)])
                 ScrollView {
                     LazyVStack(spacing: 15) {
                         noticeBoardList
@@ -38,6 +40,10 @@ struct NoticeBoardView: View {
                 }
             }
         }
+        .toolbar(.hidden)
+        .onReceive(backButtonTrigger, perform: { _ in
+            router.pop()
+        })
     }
 }
 
