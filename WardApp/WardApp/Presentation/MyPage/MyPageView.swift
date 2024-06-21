@@ -174,6 +174,9 @@ private extension MyPageView {
                 .padding(.bottom, 15)
             
             MyPageNavigatorView(title: WardStrings.interestedList)
+                .onTapGesture {
+                    mainRouter.changeTab(to: .interested)
+                }
             MyPageNavigatorView(title: WardStrings.submitReview)
         }
     }

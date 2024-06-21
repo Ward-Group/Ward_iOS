@@ -29,7 +29,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        TabView(selection: $output.selectedTab) {
+        TabView(selection: $router.selectedTab) {
             ForEach(AppTab.allCases) { tab in
                 tab.destination
                     .tabItem {

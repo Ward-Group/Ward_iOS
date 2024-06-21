@@ -24,7 +24,6 @@ extension MainViewModel: ViewModel {
     }
     
     final class Output: ObservableObject {
-        @Published var selectedTab = 2
         @Published var isLoggingIn = true
         @Published var isLoggedIn = false
     }
