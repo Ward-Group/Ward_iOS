@@ -40,7 +40,6 @@
 		BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */; };
 		BA2D644F2C25A96D00F2AECE /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */; };
 		BA2D64512C25AB7100F2AECE /* LogoNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */; };
-		BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */; };
 		BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64562C25B65400F2AECE /* MyPageRouter.swift */; };
 		BA2D64592C25C34900F2AECE /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D64582C25C34900F2AECE /* UINavigationController.swift */; };
 		BA302E5C2BE6366A00B57174 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */; };
@@ -192,7 +191,6 @@
 		BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAssembler.swift; sourceTree = "<group>"; };
 		BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoNavBarView.swift; sourceTree = "<group>"; };
-		BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageNavigatorView.swift; sourceTree = "<group>"; };
 		BA2D64562C25B65400F2AECE /* MyPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageRouter.swift; sourceTree = "<group>"; };
 		BA2D64582C25C34900F2AECE /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		BA302E5B2BE6366A00B57174 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = "<group>"; };
@@ -409,7 +407,6 @@
 				BA2D644A2C25A95E00F2AECE /* MyPageView.swift */,
 				BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */,
 				BA2D644E2C25A96D00F2AECE /* MyPageViewModel.swift */,
-				BA2D64542C25B37B00F2AECE /* MyPageNavigatorView.swift */,
 				BA2D64562C25B65400F2AECE /* MyPageRouter.swift */,
 			);
 			path = MyPage;
@@ -1084,7 +1081,6 @@
 				BA8AC52A2C102E5D00D019A6 /* AuthRepository.swift in Sources */,
 				BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */,
 				BA62C09D2C1052F4007E692A /* UserRepository.swift in Sources */,
-				BA2D64552C25B37B00F2AECE /* MyPageNavigatorView.swift in Sources */,
 				BA0416832C06B1FB003CFFAC /* WardSegementedControl.swift in Sources */,
 				EA8C9FAD2C09A57000F02E3A /* Observable.swift in Sources */,
 				BA2D64592C25C34900F2AECE /* UINavigationController.swift in Sources */,
