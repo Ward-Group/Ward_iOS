@@ -63,6 +63,8 @@ struct SettingView: View {
                 }
             }
         }
+        .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar)
         .onReceive(backButtonTrigger, perform: { _ in
             router.pop()
         })
