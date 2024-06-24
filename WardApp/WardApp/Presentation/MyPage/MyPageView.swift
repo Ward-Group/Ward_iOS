@@ -38,12 +38,12 @@ struct MyPageView: View {
             NavigationStack(path: $router.path) {
                 
                 GeometryReader { geo in
-                    ScrollView {
+                    
+                    VStack {
+                        LogoNavBarView(buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)])
+                            .padding(.bottom, 50)
                         
-                        VStack {
-                            LogoNavBarView(buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)])
-                                .padding(.bottom, 50)
-                            
+                        ScrollView {
                             VStack(alignment: .center, spacing: 20) {
                                 VStack {
                                     profileImage
@@ -72,11 +72,13 @@ struct MyPageView: View {
                 .onReceive(logOutSuccessTrigger, perform: { _ in
                     mainRouter.present(fullScreenSheet: .login)
                 })
+                .onReceive(settingButtonTrigger, perform: { _ in
+                    router.push(.setting)
+                })
             }
         }
     }
 }
-
 
 private extension MyPageView {
     

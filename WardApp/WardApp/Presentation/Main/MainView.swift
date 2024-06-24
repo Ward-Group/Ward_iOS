@@ -25,6 +25,8 @@ struct MainView: View {
         self.input = input
         self.output = output
         
+        UITabBar.appearance().backgroundColor = UIColor(Color.background)
+        
         loadTrigger.send(())
     }
     
@@ -44,9 +46,6 @@ struct MainView: View {
         .tint(Color.mainBlue)
         .fullScreenCover(item: $router.fullScreenSheet) { sheet in
             router.build(fullScreenSheet: sheet)
-        }
-        .background {
-            Color.background
         }
     }
 }
