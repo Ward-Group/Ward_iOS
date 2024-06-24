@@ -25,11 +25,13 @@ struct MainView: View {
         self.input = input
         self.output = output
         
+        UITabBar.appearance().backgroundColor = UIColor(Color.background)
+        
         loadTrigger.send(())
     }
     
     var body: some View {
-        TabView(selection: $output.selectedTab) {
+        TabView(selection: $router.selectedTab) {
             ForEach(AppTab.allCases) { tab in
                 tab.destination
                     .tabItem {
@@ -44,9 +46,6 @@ struct MainView: View {
         .tint(Color.mainBlue)
         .fullScreenCover(item: $router.fullScreenSheet) { sheet in
             router.build(fullScreenSheet: sheet)
-        }
-        .background {
-            Color.background
         }
     }
 }

@@ -13,6 +13,7 @@ class MyPageRouter: ObservableObject {
     
     enum Page {
         case noticeBoard
+        case setting
     }
     
     @ViewBuilder
@@ -20,6 +21,9 @@ class MyPageRouter: ObservableObject {
         switch page {
         case .noticeBoard:
             NoticeBoardAssembler().view()
+                .environmentObject(self)
+        case .setting:
+            SettingAssembler().view()
                 .environmentObject(self)
         }
     }

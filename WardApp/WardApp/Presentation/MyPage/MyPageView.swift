@@ -38,12 +38,12 @@ struct MyPageView: View {
             NavigationStack(path: $router.path) {
                 
                 GeometryReader { geo in
-                    ScrollView {
+                    
+                    VStack {
+                        LogoNavBarView(buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)])
+                            .padding(.bottom, 50)
                         
-                        VStack {
-                            LogoNavBarView(buttonsRight: [NavigationBarButton(style: .gear, trigger: settingButtonTrigger)])
-                                .padding(.bottom, 50)
-                            
+                        ScrollView {
                             VStack(alignment: .center, spacing: 20) {
                                 VStack {
                                     profileImage
@@ -72,11 +72,13 @@ struct MyPageView: View {
                 .onReceive(logOutSuccessTrigger, perform: { _ in
                     mainRouter.present(fullScreenSheet: .login)
                 })
+                .onReceive(settingButtonTrigger, perform: { _ in
+                    router.push(.setting)
+                })
             }
         }
     }
 }
-
 
 private extension MyPageView {
     
@@ -168,31 +170,28 @@ private extension MyPageView {
     
     var myActivity: some View {
         VStack(alignment: .leading) {
-            Text(WardStrings.myActivity)
-                .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
-                .foregroundStyle(Color.black1)
-                .padding(.bottom, 15)
+            SectionHeaderView(title: WardStrings.myActivity)
             
-            MyPageNavigatorView(title: WardStrings.interestedList)
-            MyPageNavigatorView(title: WardStrings.submitReview)
+            SectionListItemView(title: WardStrings.interestedList)
+                .onTapGesture {
+                    mainRouter.changeTab(to: .interested)
+                }
+            SectionListItemView(title: WardStrings.submitReview)
         }
     }
     
     var etc: some View {
         VStack(alignment: .leading) {
-            Text("기타")
-                .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
-                .foregroundStyle(Color.black1)
-                .padding(.bottom, 15)
+            SectionHeaderView(title: WardStrings.etc)
             
-            MyPageNavigatorView(title: WardStrings.noticeBoard)
+            SectionListItemView(title: WardStrings.noticeBoard)
                 .onTapGesture {
                     router.push(.noticeBoard)
                 }
             
-            MyPageNavigatorView(title: WardStrings.oneOnOneInquries)
+            SectionListItemView(title: WardStrings.oneOnOneInquries)
             
-            MyPageNavigatorView(title: WardStrings.logOut)
+            SectionListItemView(title: WardStrings.logOut)
                 .onTapGesture {
                     logOutButtonTrigger.send()
                 }

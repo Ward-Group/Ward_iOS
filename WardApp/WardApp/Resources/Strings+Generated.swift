@@ -50,6 +50,8 @@ public enum WardStrings {
   public static let eventReleaseNotification = WardStrings.tr("Localizable", "Event, Release Notification", fallback: "이벤트, 발매 알림")
   /// 추가 정보 입력
   public static let extraInformation = WardStrings.tr("Localizable", "Extra Information", fallback: "추가 정보 입력")
+  /// 일반
+  public static let general = WardStrings.tr("Localizable", "General", fallback: "일반")
   /// 통합 검색
   public static let generalSearch = WardStrings.tr("Localizable", "General Search", fallback: "통합 검색")
   /// 조회수
@@ -60,6 +62,8 @@ public enum WardStrings {
   public static let hoursBefore = WardStrings.tr("Localizable", "Hours Before", fallback: "시간 전")
   /// 선택 항목에 대한 동의 포함
   public static let includeOptionalTermsOfService = WardStrings.tr("Localizable", "Include Optional Terms Of Service", fallback: "선택 항목에 대한 동의 포함")
+  /// 정보
+  public static let information = WardStrings.tr("Localizable", "Information", fallback: "정보")
   /// 관심
   public static let interested = WardStrings.tr("Localizable", "Interested", fallback: "관심")
   /// 관심 브랜드
@@ -79,6 +83,8 @@ public enum WardStrings {
   public static let koreanCurrencyWon = WardStrings.tr("Localizable", "Korean Currency Won", fallback: "원")
   /// 로그아웃
   public static let logOut = WardStrings.tr("Localizable", "Log Out", fallback: "로그아웃")
+  /// 로그인 정보
+  public static let loginInformation = WardStrings.tr("Localizable", "Login Information", fallback: "로그인 정보")
   /// Apple로 계속하기
   public static let loginWithApple = WardStrings.tr("Localizable", "Login With Apple", fallback: "Apple로 계속하기")
   /// Localizable.strings
@@ -104,6 +110,8 @@ public enum WardStrings {
   public static let nicknameIsTaken = WardStrings.tr("Localizable", "Nickname is Taken", fallback: "이미 사용중인 닉네임입니다.")
   /// 공지사항
   public static let noticeBoard = WardStrings.tr("Localizable", "Notice Board", fallback: "공지사항")
+  /// 알림 설정
+  public static let notificationSetting = WardStrings.tr("Localizable", "Notification Setting", fallback: "알림 설정")
   /// 알림
   public static let notifications = WardStrings.tr("Localizable", "Notifications", fallback: "알림")
   /// 관심 상품과 연관된 알림이 없습니다.
@@ -115,6 +123,8 @@ public enum WardStrings {
   public static let oneOnOneInquries = WardStrings.tr("Localizable", "One on One Inquries", fallback: "1:1 문의")
   /// 선택
   public static let `optional` = WardStrings.tr("Localizable", "Optional", fallback: "선택")
+  /// 개인 정보 처리 방침
+  public static let personalInformationPolicy = WardStrings.tr("Localizable", "Personal Information Policy", fallback: "개인 정보 처리 방침")
   /// 진행
   public static let progress = WardStrings.tr("Localizable", "Progress", fallback: "진행")
   /// 최근 검색어
@@ -131,12 +141,18 @@ public enum WardStrings {
   public static let releasedProduct = WardStrings.tr("Localizable", "Released Product", fallback: "발매 상품")
   /// 모두 삭제
   public static let removeAll = WardStrings.tr("Localizable", "Remove All", fallback: "모두 삭제")
+  /// 캐시 데이터 삭제
+  public static let removeCache = WardStrings.tr("Localizable", "Remove Cache", fallback: "캐시 데이터 삭제")
   /// 필수
   public static let `required` = WardStrings.tr("Localizable", "Required", fallback: "필수")
   /// 필수 입력 사항입니다.
   public static let requiredInput = WardStrings.tr("Localizable", "Required Input", fallback: "필수 입력 사항입니다.")
   /// 발매처
   public static let retailer = WardStrings.tr("Localizable", "Retailer", fallback: "발매처")
+  /// 리뷰 및 별점
+  public static let reviewAndRatings = WardStrings.tr("Localizable", "Review And Ratings", fallback: "리뷰 및 별점")
+  /// 설정
+  public static let setting = WardStrings.tr("Localizable", "Setting", fallback: "설정")
   /// 더보기
   public static let showMore = WardStrings.tr("Localizable", "Show More", fallback: "더보기")
   /// SMS
@@ -145,6 +161,8 @@ public enum WardStrings {
   public static let sortedByPickedAt = WardStrings.tr("Localizable", "Sorted By PickedAt", fallback: "담은 순")
   /// 오래된 순
   public static let sortedByPickedAtReversed = WardStrings.tr("Localizable", "Sorted By PickedAt Reversed", fallback: "오래된 순")
+  /// 의견 보내기
+  public static let submitOpinion = WardStrings.tr("Localizable", "Submit Opinion", fallback: "의견 보내기")
   /// 리뷰 남기기
   public static let submitReview = WardStrings.tr("Localizable", "Submit Review", fallback: "리뷰 남기기")
   /// 서비스 이용약관

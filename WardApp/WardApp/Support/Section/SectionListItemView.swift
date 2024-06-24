@@ -1,13 +1,13 @@
 //
-//  MyPageNavigatorView.swift
+//  SectionListItemView.swift
 //  WardApp
 //
-//  Created by peppermint100 on 6/21/24.
+//  Created by peppermint100 on 6/24/24.
 //
 
 import SwiftUI
 
-struct MyPageNavigatorView: View {
+struct SectionListItemView: View {
     
     let title: String
     
@@ -15,7 +15,7 @@ struct MyPageNavigatorView: View {
         VStack(alignment: .leading) {
             HStack {
                 Text(title)
-                    .font(WardFonts.Pretendard.bold.swiftUIFont(size: 16))
+                    .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 16))
                     .foregroundStyle(Color.black5)
                 
                 Spacer()
@@ -32,7 +32,5 @@ struct MyPageNavigatorView: View {
 }
 
 #Preview {
-    MyPageNavigatorView(
-        title: "공지사항"
-    )
+    SectionListItemView(title: "공지사항")
 }
