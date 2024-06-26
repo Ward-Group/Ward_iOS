@@ -18,6 +18,9 @@ struct HomeView: View {
     // Input Trigger
     private let loadTrigger = PassthroughSubject<Void, Never>()
     
+    private let searchButtonTrigger = PassthroughSubject<Void, Never>()
+    private let notificationButtonTrigger = PassthroughSubject<Void, Never>()
+    
     init(with viewModel: HomeViewModel) {
         let input = HomeViewModel.Input(
             loadTrigger: loadTrigger.asDriver()
@@ -29,7 +32,11 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $router.path) {
             VStack(spacing: 0) {
-                naviBarView
+                LogoNavBarView(buttonsRight: [
+                    NavigationBarButton(style: .search, trigger: searchButtonTrigger),
+                    NavigationBarButton(style: .notification, trigger: notificationButtonTrigger)
+                ])
+                .padding(.bottom, 10)
                 GeometryReader { geo in
                     ScrollView(.vertical, showsIndicators: true, content: {
                         VStack(spacing: 0) {
@@ -57,38 +64,12 @@ struct HomeView: View {
                 router.build(naviType)
             }
         }
-    }
-}
-
-// MARK: - Sub View
-extension HomeView {
-    private var naviBarView: some View {
-        return HStack {
-            WardAssets.Image.wardLogo.swiftUIImage
-                .resizable()
-                .scaledToFit()
-                .frame(height: 24)
-            Spacer()
-            Button(action: {
-                router.present(fullScreen: .search)
-            }, label: {
-                WardAssets.Image.Icon.searching.swiftUIImage
-                    .resizable()
-                    .frame(width: 24, height: 24)
-            })
-            Spacer()
-                .frame(width: 8)
-            Button(action: {
-                router.present(fullScreen: .notification)
-            }, label: {
-                WardAssets.Image.Icon.notification.swiftUIImage
-                    .resizable()
-                    .frame(width: 24, height: 24)
-            })
-        }
-        .padding(.horizontal, 16)
-        .background(WardAssets.Color.backgroundColor.swiftUIColor)
-        .frame(height: 54)
+        .onReceive(searchButtonTrigger, perform: { _ in
+            router.present(fullScreen: .search)
+        })
+        .onReceive(notificationButtonTrigger, perform: { _ in
+            router.present(fullScreen: .notification)
+        })
     }
 }
 

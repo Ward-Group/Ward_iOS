@@ -34,7 +34,6 @@
 		BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */; };
 		BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */; };
 		BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */; };
-		BA12A7002C0C039100338EC0 /* HeaderNavBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA2D644B2C25A95E00F2AECE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644A2C25A95E00F2AECE /* MyPageView.swift */; };
 		BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */; };
@@ -124,7 +123,6 @@
 		BAD583022BE623890072B308 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = BAD583042BE623890072B308 /* Localizable.strings */; };
 		BAFDE6F82C131794006EE648 /* UserFromLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDE6F72C131794006EE648 /* UserFromLoginProvider.swift */; };
 		EA33F7572C0D48FD00893C35 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA33F7562C0D48FD00893C35 /* HomeRouter.swift */; };
-		EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967712BF8D8140087062B /* HeaderNavBarView.swift */; };
 		EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967742BF8DADD0087062B /* ViewModel.swift */; };
 		EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967762BF8DBE50087062B /* CancelBag.swift */; };
 		EA3967852BF915E20087062B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3967842BF915E20087062B /* HomeView.swift */; };
@@ -185,7 +183,6 @@
 		BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouter.swift; sourceTree = "<group>"; };
 		BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouterView.swift; sourceTree = "<group>"; };
-		BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavBarRouter.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA2D644A2C25A95E00F2AECE /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAssembler.swift; sourceTree = "<group>"; };
@@ -279,7 +276,6 @@
 		BAFDE6F72C131794006EE648 /* UserFromLoginProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFromLoginProvider.swift; sourceTree = "<group>"; };
 		CEE8A9E10765B9C3648B9E18 /* Pods-WardApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WardApp.release.xcconfig"; path = "Target Support Files/Pods-WardApp/Pods-WardApp.release.xcconfig"; sourceTree = "<group>"; };
 		EA33F7562C0D48FD00893C35 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		EA3967712BF8D8140087062B /* HeaderNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNavBarView.swift; sourceTree = "<group>"; };
 		EA3967742BF8DADD0087062B /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		EA3967762BF8DBE50087062B /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		EA3967842BF915E20087062B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -789,8 +785,6 @@
 		EA2421BA2BF4D9480070D1C9 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				EA3967712BF8D8140087062B /* HeaderNavBarView.swift */,
-				BA12A6FF2C0C039100338EC0 /* HeaderNavBarRouter.swift */,
 				BA4B168B2C0ECDC900E1C1F5 /* InlineNavBarView.swift */,
 				BA7FE8F72C1D52E600DD242C /* NavigationBarButton.swift */,
 				BA2D64502C25AB7100F2AECE /* LogoNavBarView.swift */,
@@ -1122,7 +1116,6 @@
 				BA4B16882C0EC8C800E1C1F5 /* NoticeBoardAssembler.swift in Sources */,
 				BAA9ED7C2C0D855E002DBD82 /* SearchHistoryService.swift in Sources */,
 				BAA9ED702C0D5112002DBD82 /* SearchViewAssembler.swift in Sources */,
-				EA3967722BF8D8140087062B /* HeaderNavBarView.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
 				BAAFB2CB2C1582D500E722F3 /* KeychainKey.swift in Sources */,
@@ -1133,7 +1126,6 @@
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
 				BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */,
 				BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */,
-				BA12A7002C0C039100338EC0 /* HeaderNavBarRouter.swift in Sources */,
 				BAA9ED752C0D8393002DBD82 /* UserDefaultsKey.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,
 				BA0416612C0420EB003CFFAC /* LoginProvider.swift in Sources */,
