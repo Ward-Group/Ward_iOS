@@ -48,18 +48,3 @@ class HomeRouter: ObservableObject {
         self.presentedFullScreen = fullScreen
     }
 }
-
-struct HomeRouterView: View {
-    @StateObject private var router: HomeRouter = HomeRouter()
-    
-    var body: some View {
-        NavigationStack(path: $router.path) {
-            // TODO: Notification, Search 안나옴 이부분 HomeView(with: HomeViewModel())로 하면 나옴 RouterView, Router 의존관계 문제로 보임
-            HomeAssembler().view()
-                .fullScreenCover(item: $router.presentedFullScreen) { naviType in
-                    router.build(naviType)
-                }
-        }
-        .environmentObject(router)
-    }
-}
