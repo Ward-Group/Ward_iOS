@@ -17,7 +17,7 @@ struct HomeView: View {
     
     // Input Trigger
     private let loadTrigger = PassthroughSubject<Void, Never>()
-        
+    
     init(with viewModel: HomeViewModel) {
         let input = HomeViewModel.Input(
             loadTrigger: loadTrigger.asDriver()
@@ -27,29 +27,34 @@ struct HomeView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            naviBarView
-            GeometryReader { geo in
-                ScrollView(.vertical, showsIndicators: true, content: {
-                    VStack(spacing: 0) {
-                        // --- 오늘 마감 --- //
-                        HomeHeaderTitleView(title: WardStrings.dueToday, subTitle: WardStrings.enjoyTheLittleLuckYouHaveLeft)
-                            .padding(.bottom, 12)
-                        BannerPageView(geo: geo, models: $output.bannerPages)
-                            .padding(.bottom, 36)
-                        // -- 발매 상품 -- //
-                        HomeHeaderTitleView(title: WardStrings.releasedProduct, moreButtonAction: {
-                            Log.todo("발매 상품 더보기 버튼 액션")
-                        })
-                        .padding(.bottom, 14)
-                        CategoryTabView(models: $output.releaseCategoryTabs,
-                                        selectedModel: $output.selectedReleaseTabModel)
-                        .padding(.bottom, 20)
-                        HomeListPageView(geo: geo, models: $output.releaseProducts)
-                            .padding(.bottom, 50)
-                    }
-                })
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+        NavigationStack(path: $router.path) {
+            VStack(spacing: 0) {
+                naviBarView
+                GeometryReader { geo in
+                    ScrollView(.vertical, showsIndicators: true, content: {
+                        VStack(spacing: 0) {
+                            // --- 오늘 마감 --- //
+                            HomeHeaderTitleView(title: WardStrings.dueToday, subTitle: WardStrings.enjoyTheLittleLuckYouHaveLeft)
+                                .padding(.bottom, 12)
+                            BannerPageView(geo: geo, models: $output.bannerPages)
+                                .padding(.bottom, 36)
+                            // -- 발매 상품 -- //
+                            HomeHeaderTitleView(title: WardStrings.releasedProduct, moreButtonAction: {
+                                Log.todo("발매 상품 더보기 버튼 액션")
+                            })
+                            .padding(.bottom, 14)
+                            CategoryTabView(models: $output.releaseCategoryTabs,
+                                            selectedModel: $output.selectedReleaseTabModel)
+                            .padding(.bottom, 20)
+                            HomeListPageView(geo: geo, models: $output.releaseProducts)
+                                .padding(.bottom, 50)
+                        }
+                    })
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            }
+            .fullScreenCover(item: $router.presentedFullScreen) { naviType in
+                router.build(naviType)
             }
         }
     }

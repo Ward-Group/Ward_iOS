@@ -44,7 +44,7 @@ extension AppTab {
         case .release:
             Text("발매")
         case .home:
-            HomeRouterView()
+            HomeAssembler().view()
         case .interested:
             InterestedAssembler().view()
         case .mypage:
