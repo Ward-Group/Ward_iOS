@@ -88,6 +88,9 @@
 		BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */; };
 		BA7866622BF3BFCB007BF0C4 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */; };
 		BA7FE8F82C1D52E600DD242C /* NavigationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7FE8F72C1D52E600DD242C /* NavigationBarButton.swift */; };
+		BA83527B2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83527A2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift */; };
+		BA83527D2C2BF0DF0032E9C4 /* ReleaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83527C2C2BF0DF0032E9C4 /* ReleaseRepository.swift */; };
+		BA83527F2C2BF1520032E9C4 /* ReleasedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83527E2C2BF1520032E9C4 /* ReleasedItem.swift */; };
 		BA8AC5242C10253E00D019A6 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */; };
 		BA8AC52A2C102E5D00D019A6 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */; };
 		BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */; };
@@ -240,6 +243,9 @@
 		BA78665F2BF3BFBD007BF0C4 /* ItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemUseCase.swift; sourceTree = "<group>"; };
 		BA7866612BF3BFCB007BF0C4 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		BA7FE8F72C1D52E600DD242C /* NavigationBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButton.swift; sourceTree = "<group>"; };
+		BA83527A2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseEndpoint.swift; sourceTree = "<group>"; };
+		BA83527C2C2BF0DF0032E9C4 /* ReleaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRepository.swift; sourceTree = "<group>"; };
+		BA83527E2C2BF1520032E9C4 /* ReleasedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasedItem.swift; sourceTree = "<group>"; };
 		BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBaseResponse.swift; sourceTree = "<group>"; };
@@ -513,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				BA3DC7232C1C1F8E00AF7E64 /* ReleaseItem.swift */,
+				BA83527E2C2BF1520032E9C4 /* ReleasedItem.swift */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -570,6 +577,7 @@
 		BA7866492BF3BA6E007BF0C4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BA8352792C2BEED30032E9C4 /* Release */,
 				BA8AC5222C10253200D019A6 /* Auth */,
 				BAA9ED7A2C0D8552002DBD82 /* InMemory */,
 				BA78664F2BF3BB37007BF0C4 /* API */,
@@ -670,6 +678,15 @@
 			isa = PBXGroup;
 			children = (
 				BA78665D2BF3BF93007BF0C4 /* ReleaseUseCase.swift */,
+			);
+			path = Release;
+			sourceTree = "<group>";
+		};
+		BA8352792C2BEED30032E9C4 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				BA83527A2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift */,
+				BA83527C2C2BF0DF0032E9C4 /* ReleaseRepository.swift */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -1053,6 +1070,7 @@
 				BA4B16842C0EC8B900E1C1F5 /* NoticeBoardView.swift in Sources */,
 				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,
+				BA83527D2C2BF0DF0032E9C4 /* ReleaseRepository.swift in Sources */,
 				BA8AC52E2C102F7E00D019A6 /* AuthResponse.swift in Sources */,
 				BA62C0A52C10B61A007E692A /* MainRouter.swift in Sources */,
 				BA3DC7132C1BE4F900AF7E64 /* BrandListItemRowView.swift in Sources */,
@@ -1086,6 +1104,7 @@
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				EA8B5C172C22CC46005E5D86 /* PageControl.swift in Sources */,
 				BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */,
+				BA83527F2C2BF1520032E9C4 /* ReleasedItem.swift in Sources */,
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
 				BAFDE6F82C131794006EE648 /* UserFromLoginProvider.swift in Sources */,
@@ -1144,6 +1163,7 @@
 				BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */,
 				BA7FE8F82C1D52E600DD242C /* NavigationBarButton.swift in Sources */,
 				BAA9ED7F2C0D869C002DBD82 /* SearchUsecase.swift in Sources */,
+				BA83527B2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift in Sources */,
 				EA8C9FA62C099AF900F02E3A /* HomeViewModel.swift in Sources */,
 				BA3DC7212C1C1F5600AF7E64 /* ReleaseListItemView.swift in Sources */,
 				BA365BB82BE23D5A00C332DF /* WardAppApp.swift in Sources */,

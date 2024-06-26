@@ -7,6 +7,7 @@
 
 import Foundation
 
+// TODO: ReleasedItem으로 대체 할 것
 struct ReleaseItem: Codable, Identifiable {
     var id = UUID()
     let siteName: String

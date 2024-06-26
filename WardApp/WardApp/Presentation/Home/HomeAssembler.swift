@@ -18,10 +18,18 @@ struct HomeAssembler {
     }
     
     func resolve() -> HomeViewModel {
-        return HomeViewModel()
+        return HomeViewModel(releaseUseCase: resolve())
     }
     
     func resolve() -> HomeRouter {
         return HomeRouter()
+    }
+    
+    func resolve() -> ReleaseUseCase {
+        return ReleaseUseCase(repository: resolve())
+    }
+    
+    func resolve() -> ReleaseRepository {
+        return ReleaseRepository()
     }
 }

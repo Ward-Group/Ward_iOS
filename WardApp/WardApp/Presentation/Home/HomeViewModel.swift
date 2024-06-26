@@ -10,6 +10,9 @@ import SwiftUI
 import Combine
 
 struct HomeViewModel {
+    
+    let releaseUseCase: ReleaseUseCase
+    
     enum ReleaseCategoryTabType {
         case dueToday
         case currentlyAvailable
@@ -97,6 +100,15 @@ extension HomeViewModel: ViewModel {
         // -- Input Logic -- //
         input.loadTrigger
             .sink(receiveValue: {
+                releaseUseCase.getReleasedDueToday()
+                    .sink { completion in
+                        print(completion)
+                    } receiveValue: { items in
+                        print(items)
+                    }
+                    .store(in: cancelBag)
+
+                
                 bannerProducts.send(getBannerProducts())
                 
                 let getReleaseCategoryTabs = getReleaseCategoryTabs()
