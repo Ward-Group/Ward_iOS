@@ -15,7 +15,6 @@ struct ReleaseUseCase {
 extension ReleaseUseCase {
     
     func getReleasedDueToday() -> AnyPublisher<[ReleaseItem], Error>{
-        let accessToken = UserRepository.shared.getAccessToken()
-        return repository.fetchReleasesDueToday(accessToken: accessToken)
+        return repository.fetchReleasesDueToday()
     }
 }
