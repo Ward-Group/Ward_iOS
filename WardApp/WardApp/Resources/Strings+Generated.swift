@@ -125,6 +125,8 @@ public enum WardStrings {
   public static let `optional` = WardStrings.tr("Localizable", "Optional", fallback: "선택")
   /// 개인 정보 처리 방침
   public static let personalInformationPolicy = WardStrings.tr("Localizable", "Personal Information Policy", fallback: "개인 정보 처리 방침")
+  /// 플랫폼
+  public static let platform = WardStrings.tr("Localizable", "Platform", fallback: "플랫폼")
   /// 진행
   public static let progress = WardStrings.tr("Localizable", "Progress", fallback: "진행")
   /// 최근 검색어
@@ -167,6 +169,8 @@ public enum WardStrings {
   public static let submitReview = WardStrings.tr("Localizable", "Submit Review", fallback: "리뷰 남기기")
   /// 서비스 이용약관
   public static let termsOfService = WardStrings.tr("Localizable", "Terms Of Service", fallback: "서비스 이용약관")
+  /// 실시간 TOP50
+  public static let top50Now = WardStrings.tr("Localizable", "Top 50 Now", fallback: "실시간 TOP50")
   /// 전체
   public static let total = WardStrings.tr("Localizable", "Total", fallback: "전체")
   /// 사용할 닉네임을 입력해주세요.
