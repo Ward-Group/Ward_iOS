@@ -8,7 +8,7 @@
 import Alamofire
 
 enum ReleaseEndpoint {
-    case dueToday(accessToken: String)
+    case dueToday
 }
 
 extension ReleaseEndpoint: Endpoint {
@@ -19,12 +19,11 @@ extension ReleaseEndpoint: Endpoint {
         }
     }
     
-    var headers: [String: String] {
+    var headers: HTTPHeaders {
         switch self {
-        case .dueToday(let accessToken):
-            [
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Bearer \(accessToken)"
+        case .dueToday:
+            return [
+                "Accept": "application/json"
             ]
         }
     }
@@ -50,7 +49,7 @@ extension ReleaseEndpoint: Endpoint {
     var encoding: ParameterEncoding {
         switch self {
         case .dueToday:
-            return URLEncoding.queryString
+            return URLEncoding.default
         }
     }
 }
