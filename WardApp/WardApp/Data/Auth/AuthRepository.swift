@@ -95,6 +95,21 @@ struct AuthRepository {
             .eraseToAnyPublisher()
     }
     
+    func refreshToken(refreshToken: String) -> AnyPublisher<AuthResponse?, AuthError> {
+        return NetworkingManager.shared.run(AuthEndpoint.refreshToken(refreshToken: refreshToken), type: WardBaseResponse<AuthResponse>.self)
+            .tryMap { response in
+                switch response.code {
+                case 200:
+                    return response.data
+                default:
+                    Log.debug(#file, #function, "토큰을 재발급 받는데 실패했습니다.")
+                    return nil
+                }
+            }
+            .mapError(mapError)
+            .eraseToAnyPublisher()
+    }
+    
     private func mapError(error: Error) -> AuthError {
         if let error = error as? AuthError {
             return error

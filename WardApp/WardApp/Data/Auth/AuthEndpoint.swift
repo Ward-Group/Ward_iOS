@@ -12,6 +12,7 @@ enum AuthEndpoint {
     case signUp(SignUpDto)
     case checkNickname(CheckNicknameDto)
     case logOut(accessToken: String, refreshToken: String)
+    case refreshToken(refreshToken: String)
 }
 
 extension AuthEndpoint: Endpoint {
@@ -25,20 +26,26 @@ extension AuthEndpoint: Endpoint {
             return "/auth/checkNickname"
         case .logOut:
             return "/auth/logout"
+        case .refreshToken:
+            return "/auth/refresh"
         }
     }
     
-    var headers: [String: String] {
+    var headers: HTTPHeaders {
         switch self {
         case .logOut(let accessToken, _):
-            return [
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Bearer \(accessToken)"
-            ]
+            return HTTPHeaders([
+                .contentType("application/x-www-form-urlencoded")
+            ])
+        case .refreshToken:
+             return HTTPHeaders([
+                .contentType("application/x-www-form-urlencoded")
+            ])           
         default:
-            return ["Content-Type": "application/json"]
+            return HTTPHeaders([
+                .contentType("application/json")
+            ])
         }
-        
     }
     
     var query: [String: String] {
@@ -68,6 +75,8 @@ extension AuthEndpoint: Endpoint {
             return ["nickname": dto.nickname]
         case .logOut(_, let refreshToken):
             return ["refreshToken": refreshToken]
+        case .refreshToken(let refreshToken):
+            return ["refreshToken": refreshToken]
         }
     }
     
@@ -75,7 +84,7 @@ extension AuthEndpoint: Endpoint {
         switch self {
         case .checkNickname:
             return .get
-        case .login, .signUp, .logOut:
+        case .login, .signUp, .logOut, .refreshToken:
             return .post
         }
     }
@@ -86,7 +95,7 @@ extension AuthEndpoint: Endpoint {
             return JSONEncoding.default
         case .checkNickname:
             return URLEncoding.queryString
-        case .logOut:
+        case .logOut, .refreshToken:
             return URLEncoding.httpBody
         }
     }
