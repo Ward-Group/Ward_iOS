@@ -26,10 +26,11 @@ extension BrandListViewModel: ViewModel {
     
     final class Output: ObservableObject {
         let filterOptions = [
-            FilterOption(id: "sortByDate", title: WardStrings.sortedByPickedAt),
-            FilterOption(id: "sortByDateReversed", title: WardStrings.sortedByPickedAtReversed)
+            FilterOption(id: "orderByRanking", title: WardStrings.orderByRanking),
+            FilterOption(id: "orderByKoreanAlphabet", title: WardStrings.orderByKoreanAlphabet),
+            FilterOption(id: "orderByAlphabet", title: WardStrings.orderByAlphabet)
         ]
-        @Published var currentFilterOption = FilterOption(id: "sortByDate", title: WardStrings.sortedByPickedAt)
+        @Published var currentFilterOption = FilterOption(id: "orderByRanking", title: WardStrings.orderByRanking)
         @Published var items: [BrandListItem] = []
     }
     

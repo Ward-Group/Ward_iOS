@@ -123,6 +123,12 @@ public enum WardStrings {
   public static let oneOnOneInquries = WardStrings.tr("Localizable", "One on One Inquries", fallback: "1:1 문의")
   /// 선택
   public static let `optional` = WardStrings.tr("Localizable", "Optional", fallback: "선택")
+  /// ABC순
+  public static let orderByAlphabet = WardStrings.tr("Localizable", "Order By Alphabet", fallback: "ABC순")
+  /// 가나다순
+  public static let orderByKoreanAlphabet = WardStrings.tr("Localizable", "Order By Korean Alphabet", fallback: "가나다순")
+  /// 랭킹순
+  public static let orderByRanking = WardStrings.tr("Localizable", "Order By Ranking", fallback: "랭킹순")
   /// 개인 정보 처리 방침
   public static let personalInformationPolicy = WardStrings.tr("Localizable", "Personal Information Policy", fallback: "개인 정보 처리 방침")
   /// 플랫폼
