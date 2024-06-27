@@ -91,10 +91,14 @@
 		BA83527B2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83527A2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift */; };
 		BA83527D2C2BF0DF0032E9C4 /* ReleaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83527C2C2BF0DF0032E9C4 /* ReleaseRepository.swift */; };
 		BA83527F2C2BF1520032E9C4 /* ReleasedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA83527E2C2BF1520032E9C4 /* ReleasedItem.swift */; };
+		BA8352812C2C03330032E9C4 /* TokenInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8352802C2C03330032E9C4 /* TokenInterceptor.swift */; };
 		BA8AC5242C10253E00D019A6 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */; };
 		BA8AC52A2C102E5D00D019A6 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */; };
 		BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */; };
 		BA8AC52E2C102F7E00D019A6 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */; };
+		BA9611332C2D341B002BCB8F /* ItemEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9611322C2D341B002BCB8F /* ItemEndpoint.swift */; };
+		BA9611352C2D350C002BCB8F /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9611342C2D350C002BCB8F /* ItemRepository.swift */; };
+		BA9611382C2D354D002BCB8F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9611372C2D354D002BCB8F /* Item.swift */; };
 		BA9F3CF52BE27203004F75E9 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */; };
 		BAA7C0BE2C0998310042FE04 /* NotificationItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */; };
 		BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */; };
@@ -246,10 +250,14 @@
 		BA83527A2C2BEEDF0032E9C4 /* ReleaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseEndpoint.swift; sourceTree = "<group>"; };
 		BA83527C2C2BF0DF0032E9C4 /* ReleaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRepository.swift; sourceTree = "<group>"; };
 		BA83527E2C2BF1520032E9C4 /* ReleasedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasedItem.swift; sourceTree = "<group>"; };
+		BA8352802C2C03330032E9C4 /* TokenInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenInterceptor.swift; sourceTree = "<group>"; };
 		BA8AC5232C10253E00D019A6 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		BA8AC5292C102E5D00D019A6 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 		BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardBaseResponse.swift; sourceTree = "<group>"; };
 		BA8AC52D2C102F7E00D019A6 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		BA9611322C2D341B002BCB8F /* ItemEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemEndpoint.swift; sourceTree = "<group>"; };
+		BA9611342C2D350C002BCB8F /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		BA9611372C2D354D002BCB8F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		BA9F3CF42BE27203004F75E9 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		BAA7C0BD2C0998310042FE04 /* NotificationItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItemRowView.swift; sourceTree = "<group>"; };
 		BAA7C0BF2C0998510042FE04 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
@@ -577,10 +585,11 @@
 		BA7866492BF3BA6E007BF0C4 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				BA9611312C2D3410002BCB8F /* Item */,
 				BA8352792C2BEED30032E9C4 /* Release */,
 				BA8AC5222C10253200D019A6 /* Auth */,
 				BAA9ED7A2C0D8552002DBD82 /* InMemory */,
-				BA78664F2BF3BB37007BF0C4 /* API */,
+				BA78664F2BF3BB37007BF0C4 /* Network */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -620,14 +629,15 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		BA78664F2BF3BB37007BF0C4 /* API */ = {
+		BA78664F2BF3BB37007BF0C4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				BA04167B2C05D9D5003CFFAC /* Endpoint.swift */,
 				BA04167D2C05DA1F003CFFAC /* NetworkingManager.swift */,
 				BA8AC52B2C102F4700D019A6 /* WardBaseResponse.swift */,
+				BA8352802C2C03330032E9C4 /* TokenInterceptor.swift */,
 			);
-			path = API;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		BA7866542BF3BC81007BF0C4 /* UseCases */ = {
@@ -645,6 +655,7 @@
 		BA7866552BF3BC89007BF0C4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BA9611362C2D353E002BCB8F /* Items */,
 				EA5695AD2C2197C0000A192F /* Home */,
 				BA3DC7222C1C1F8500AF7E64 /* Release */,
 				BA3DC70F2C1BE38D00AF7E64 /* Brand */,
@@ -709,6 +720,23 @@
 				BAFDE6F72C131794006EE648 /* UserFromLoginProvider.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		BA9611312C2D3410002BCB8F /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				BA9611322C2D341B002BCB8F /* ItemEndpoint.swift */,
+				BA9611342C2D350C002BCB8F /* ItemRepository.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
+		BA9611362C2D353E002BCB8F /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				BA9611372C2D354D002BCB8F /* Item.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		BAA9ED682C0D50C2002DBD82 /* Search */ = {
@@ -1080,6 +1108,7 @@
 				BA5BA1172C294B6900B8B96F /* SettingAssembler.swift in Sources */,
 				BA8AC5242C10253E00D019A6 /* AuthEndpoint.swift in Sources */,
 				BA0416982C0814CB003CFFAC /* InterestedView.swift in Sources */,
+				BA9611332C2D341B002BCB8F /* ItemEndpoint.swift in Sources */,
 				BAA7C0C02C0998510042FE04 /* NotificationItem.swift in Sources */,
 				BA5BA11D2C294D5100B8B96F /* SectionListItemView.swift in Sources */,
 				BA04166C2C04285D003CFFAC /* LoginViewModel.swift in Sources */,
@@ -1107,6 +1136,7 @@
 				BA83527F2C2BF1520032E9C4 /* ReleasedItem.swift in Sources */,
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
 				BAD016792BEB78670039ACDE /* SignUpView.swift in Sources */,
+				BA9611352C2D350C002BCB8F /* ItemRepository.swift in Sources */,
 				BAFDE6F82C131794006EE648 /* UserFromLoginProvider.swift in Sources */,
 				EA81E0C42C0804310076DA29 /* CategoryTabView.swift in Sources */,
 				BABFEEA02C15A05100FE9CAB /* SignUpViewModel.swift in Sources */,
@@ -1117,6 +1147,7 @@
 				EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */,
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
 				A0E964D82C0F26580019FC70 /* HomeProductHorizontalView.swift in Sources */,
+				BA9611382C2D354D002BCB8F /* Item.swift in Sources */,
 				BA3DC70C2C1BE19E00AF7E64 /* BrandListView.swift in Sources */,
 				EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */,
 				BAD582F72BE6196D0072B308 /* LoginView.swift in Sources */,
@@ -1155,6 +1186,7 @@
 				BA3DC71D2C1C1AAF00AF7E64 /* BrandDetailGridItemView.swift in Sources */,
 				EA5695A82C218D6A000A192F /* HomeAssembler.swift in Sources */,
 				BA5BA11B2C294D0100B8B96F /* SectionHeaderView.swift in Sources */,
+				BA8352812C2C03330032E9C4 /* TokenInterceptor.swift in Sources */,
 				BAA9ED6C2C0D50D8002DBD82 /* SearchView.swift in Sources */,
 				BAA9ED892C0DBFF7002DBD82 /* SearchHistory.swift in Sources */,
 				EA5695AB2C218DFA000A192F /* HomeUsecase.swift in Sources */,

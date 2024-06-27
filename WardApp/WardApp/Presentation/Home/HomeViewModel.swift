@@ -12,6 +12,7 @@ import Combine
 struct HomeViewModel {
     
     let releaseUseCase: ReleaseUseCase
+    let itemUseCase: ItemUseCase
     
     enum ReleaseCategoryTabType {
         case dueToday
@@ -100,14 +101,14 @@ extension HomeViewModel: ViewModel {
         // -- Input Logic -- //
         input.loadTrigger
             .sink(receiveValue: {
-                releaseUseCase.getReleasedDueToday()
+                
+                itemUseCase.getItemsReleaseNow()
                     .sink { completion in
                         print(completion)
                     } receiveValue: { items in
                         print(items)
                     }
                     .store(in: cancelBag)
-
                 
                 bannerProducts.send(getBannerProducts())
                 

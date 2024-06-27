@@ -18,7 +18,7 @@ struct HomeAssembler {
     }
     
     func resolve() -> HomeViewModel {
-        return HomeViewModel(releaseUseCase: resolve())
+        return HomeViewModel(releaseUseCase: resolve(), itemUseCase: resolve())
     }
     
     func resolve() -> HomeRouter {
@@ -31,5 +31,13 @@ struct HomeAssembler {
     
     func resolve() -> ReleaseRepository {
         return ReleaseRepository()
+    }
+    
+    func resolve() -> ItemUseCase {
+        return ItemUseCase(repository: resolve())
+    }
+    
+    func resolve() -> ItemRepository {
+        return ItemRepository()
     }
 }
