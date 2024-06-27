@@ -10,13 +10,18 @@ import SwiftUI
 class CategoryRouter: ObservableObject {
     
     @Published var path = NavigationPath()
+    private let brandAssembler = BrandAssembler()
     
     enum Page: Hashable {
+        case brand
     }
     
     @ViewBuilder
     func build(_ page: Page) -> some View {
-        Text("Page")
+        switch page {
+        case .brand:
+            brandAssembler.view()
+        }
     }
     
     func push(_ page: Page) {

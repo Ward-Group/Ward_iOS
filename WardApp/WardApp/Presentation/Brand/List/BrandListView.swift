@@ -62,6 +62,7 @@ struct BrandListView: View {
                 .padding()
             }
         }
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
