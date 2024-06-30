@@ -14,8 +14,10 @@ struct BrandDetailView: View {
     @ObservedObject private var input: BrandDetailViewModel.Input
     @ObservedObject private var output: BrandDetailViewModel.Output
     
+    private let loadTrigger = PassthroughSubject<Void, Never>()
     private let currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
     private let isLikedTrigger = PassthroughSubject<Void, Never>()
+    
     private let backButtonTrigger = PassthroughSubject<Void, Never>()
     private let searchButtonTrigger = PassthroughSubject<Void, Never>()
     
@@ -23,11 +25,14 @@ struct BrandDetailView: View {
     
     init(vm: BrandDetailViewModel) {
         let input = BrandDetailViewModel.Input(
+            loadTrigger: loadTrigger.asDriver(),
             currentFilterOptionTrigger: currentFilterOptionTrigger.asDriver(),
             isLikedTrigger: isLikedTrigger.asDriver()
         )
         self.input = input
         self.output = vm.transform(input, cancelBag: cancelBag)
+        
+        loadTrigger.send()
     }
     
     var body: some View {
@@ -104,7 +109,7 @@ struct BrandDetailView: View {
 }
 
 #Preview {
-    BrandDetailView(vm: BrandDetailViewModel(brand: PreviewMockData.brands.first!))
+    BrandAssembler().detailView(brand: PreviewMockData.brands.first!)
 }
 
 extension BrandDetailView {

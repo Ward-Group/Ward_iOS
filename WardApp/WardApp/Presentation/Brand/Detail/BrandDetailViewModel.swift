@@ -8,16 +8,19 @@
 import Foundation
 
 struct BrandDetailViewModel {
+    let brandUseCase: BrandUseCase
     let brand: Brand
 }
 
 extension BrandDetailViewModel: ViewModel {
     
     final class Input: ObservableObject {
+        let loadTrigger: Driver<Void>
         let currentFilterOptionTrigger: Driver<FilterOption>
         let isLikedTrigger: Driver<Void>
         
-        init(currentFilterOptionTrigger: Driver<FilterOption>, isLikedTrigger: Driver<Void>) {
+        init(loadTrigger: Driver<Void>, currentFilterOptionTrigger: Driver<FilterOption>, isLikedTrigger: Driver<Void>) {
+            self.loadTrigger = loadTrigger
             self.currentFilterOptionTrigger = currentFilterOptionTrigger
             self.isLikedTrigger = isLikedTrigger
         }
@@ -66,6 +69,12 @@ extension BrandDetailViewModel: ViewModel {
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output(brand: brand)
+        
+        input.loadTrigger
+            .sink {
+                brandUseCase.increaseViewCount(brandId: brand.brandId)
+            }
+            .store(in: cancelBag)
         
         input.isLikedTrigger.sink {
         }

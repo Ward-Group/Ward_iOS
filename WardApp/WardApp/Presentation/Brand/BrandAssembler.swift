@@ -20,7 +20,7 @@ class BrandAssembler {
     }
     
     func resolve(brand: Brand) -> BrandDetailViewModel {
-        return BrandDetailViewModel(brand: brand)
+        return BrandDetailViewModel(brandUseCase: resolve(), brand: brand)
     }
     
     func resolve() -> BrandListViewModel {

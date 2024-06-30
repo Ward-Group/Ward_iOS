@@ -22,4 +22,12 @@ extension BrandUseCase {
             return repository.getBrandListOrderByAlphabet(page: page)
         }
     }
+    
+    func increaseViewCount(brandId: Int) {
+        repository.increaseBrandViewCount(brandId: brandId)
+    }
+    
+    func removeBrandFromWishList(brandId: Int) -> AnyPublisher<Bool, Never> {
+        return repository.removeBrandFromWishList(brandId: brandId)
+    }
 }

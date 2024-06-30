@@ -48,4 +48,22 @@ struct BrandRepository {
             }
             .eraseToAnyPublisher()
     }
+    
+    func increaseBrandViewCount(brandId: Int) {
+        _ = NetworkingManager.shared.run(BrandEndpoint.increaseBrandViewCount(brandId: "\(brandId)"), type: WardBaseResponse<Int>.self)
+    }
+    
+    func removeBrandFromWishList(brandId: Int) -> AnyPublisher<Bool, Never> {
+        return NetworkingManager.shared.run(BrandEndpoint.removeBrandFromWishList(brandId: "\(brandId)"), type: WardBaseResponse<String?>.self)
+            .tryMap { response in
+                switch response.code {
+                case 200:
+                    return true
+                default:
+                    return false
+                }
+            }
+            .catch { _ in Just(false) }
+            .eraseToAnyPublisher()
+    }
 }
