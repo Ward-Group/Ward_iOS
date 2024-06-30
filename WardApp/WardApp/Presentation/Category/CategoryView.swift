@@ -33,6 +33,9 @@ struct CategoryView: View {
                         CategoryRowView(title: WardStrings.items)
                         CategoryRowView(title: WardStrings.releaseInfo)
                         CategoryRowView(title: WardStrings.brand)
+                            .onTapGesture {
+                                router.push(.brand)
+                            }
                         CategoryRowView(title: WardStrings.top50Now)
                         CategoryRowView(title: WardStrings.platform)
                     }

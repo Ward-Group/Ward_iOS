@@ -10,11 +10,14 @@ import Combine
 
 struct BrandDetailView: View {
     
+    @EnvironmentObject var router: CategoryRouter
     @ObservedObject private var input: BrandDetailViewModel.Input
     @ObservedObject private var output: BrandDetailViewModel.Output
     
+    private let loadTrigger = PassthroughSubject<Void, Never>()
     private let currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
     private let isLikedTrigger = PassthroughSubject<Void, Never>()
+    
     private let backButtonTrigger = PassthroughSubject<Void, Never>()
     private let searchButtonTrigger = PassthroughSubject<Void, Never>()
     
@@ -22,11 +25,14 @@ struct BrandDetailView: View {
     
     init(vm: BrandDetailViewModel) {
         let input = BrandDetailViewModel.Input(
+            loadTrigger: loadTrigger.asDriver(),
             currentFilterOptionTrigger: currentFilterOptionTrigger.asDriver(),
             isLikedTrigger: isLikedTrigger.asDriver()
         )
         self.input = input
         self.output = vm.transform(input, cancelBag: cancelBag)
+        
+        loadTrigger.send()
     }
     
     var body: some View {
@@ -43,10 +49,22 @@ struct BrandDetailView: View {
                         buttonsLeft: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
                         buttonsRight: [NavigationBarButton(style: .search, trigger: searchButtonTrigger)]
                     )
-                    BrandItemHeaderView(item: $output.item, imageSize: imageSize) {
-                        isLikedTrigger.send()
+                    
+                    Divider()
+                    
+                    HStack {
+                        BrandItemHeaderView(brand: $output.brand, imageSize: imageSize)
+                        .frame(height: imageSize)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            WardAssets.Image.Icon.likeNo.swiftUIImage
+                            Text("\(output.brand.brandWishCount)")
+                                .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 12))
+                                .foregroundStyle(Color.white3)
+                        }
                     }
-                    .frame(height: imageSize)
                     .padding()
                     
                     Divider()
@@ -58,7 +76,7 @@ struct BrandDetailView: View {
                     )
                     .frame(width: geo.size.width * 0.5, height: 45)
                     .padding(.horizontal)
-                    .padding(.vertical, 4)
+                    .padding(.vertical, 10)
                     
                     HStack {
                         if output.currentTab.isEqual(to: "item") {
@@ -94,11 +112,15 @@ struct BrandDetailView: View {
                 }
             }
         }
+        .onReceive(backButtonTrigger, perform: { _ in
+            router.pop()
+        })
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
-    BrandDetailView(vm: BrandDetailViewModel())
+    BrandAssembler().detailView(brand: PreviewMockData.brands.first!)
 }
 
 extension BrandDetailView {

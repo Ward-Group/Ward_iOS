@@ -8,29 +8,33 @@
 import Foundation
 
 struct BrandListViewModel {
+    let brandUseCase: BrandUseCase
 }
 
 extension BrandListViewModel: ViewModel {
     
     final class Input: ObservableObject {
         let loadTrigger: Driver<Void>
-        let currentFilterOptionTrigger: Driver<FilterOption>
-        let isLikedTrigger: Driver<BrandListItem>
+        let currentFilterOptionTrigger: Driver<BrandFilterOption>
+        let loadMoreBrandsTrigger: Driver<Int>
         
-        init(loadTrigger: Driver<Void>, currentFilterOptionTrigger: Driver<FilterOption>, isLikedTrigger: Driver<BrandListItem>) {
+        init(loadTrigger: Driver<Void>, currentFilterOptionTrigger: Driver<BrandFilterOption>, loadMoreBrandsTrigger: Driver<Int>) {
             self.loadTrigger = loadTrigger
             self.currentFilterOptionTrigger = currentFilterOptionTrigger
-            self.isLikedTrigger = isLikedTrigger
+            self.loadMoreBrandsTrigger = loadMoreBrandsTrigger
         }
     }
     
     final class Output: ObservableObject {
         let filterOptions = [
-            FilterOption(id: "sortByDate", title: WardStrings.sortedByPickedAt),
-            FilterOption(id: "sortByDateReversed", title: WardStrings.sortedByPickedAtReversed)
+            BrandFilterOption.ranking,
+            BrandFilterOption.koreanAlphabet,
+            BrandFilterOption.alphabet
         ]
-        @Published var currentFilterOption = FilterOption(id: "sortByDate", title: WardStrings.sortedByPickedAt)
-        @Published var items: [BrandListItem] = []
+        @Published var currentFilterOption = BrandFilterOption.ranking
+        @Published var brands: [Brand] = []
+        @Published var isLoadingMoreBrands = false
+        @Published var pageInfo = PageInfo()
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
@@ -38,21 +42,22 @@ extension BrandListViewModel: ViewModel {
         
         input.loadTrigger
             .sink {
-                output.items = getItems()
+                getBrands(output: output, cancelBag: cancelBag)
             }
             .store(in: cancelBag)
         
         input.currentFilterOptionTrigger
             .sink { option in
                 output.currentFilterOption = option
+                getBrands(output: output, cancelBag: cancelBag)
             }
             .store(in: cancelBag)
         
-        input.isLikedTrigger
-            .map { $0.nameEn }
-            .sink { itemName in
-                if let index = output.items.firstIndex(where: { $0.nameEn == itemName }) {
-                    output.items[index].isLiked.toggle()
+        input.loadMoreBrandsTrigger
+            .sink { idx in
+                if idx == output.brands.count && output.brands.count < output.pageInfo.totalElements {
+                    output.isLoadingMoreBrands = true
+                    loadMoreBrands(output: output, cancelBag: cancelBag)
                 }
             }
             .store(in: cancelBag)
@@ -60,14 +65,40 @@ extension BrandListViewModel: ViewModel {
         return output
     }
     
-    func getItems() -> [BrandListItem] {
-        return [
-            BrandListItem(nameKo: "나이키", nameEn: "Nike1", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now),
-            BrandListItem(nameKo: "나이키", nameEn: "Nike2", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now),
-            BrandListItem(nameKo: "나이키", nameEn: "Nike3", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now),
-            BrandListItem(nameKo: "나이키", nameEn: "Nike4", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now),
-            BrandListItem(nameKo: "나이키", nameEn: "Nike5", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now),
-            BrandListItem(nameKo: "나이키", nameEn: "Nike6", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now)
-        ]
+    func loadMoreBrands(output: Output, cancelBag: CancelBag) {
+        brandUseCase.getBrandList(by: output.currentFilterOption, page: output.pageInfo.page + 1)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    output.isLoadingMoreBrands = false
+                case .failure:
+                    output.isLoadingMoreBrands = false
+                }
+            } receiveValue: { pagableData in
+                Log.debug(#file, #function, "brands", pagableData)
+                if let pagableData {
+                    output.brands.append(contentsOf: pagableData.data)
+                    output.pageInfo = pagableData.pageInfo
+                }
+            }
+            .store(in: cancelBag)
+    }
+    
+    func getBrands(output: Output, cancelBag: CancelBag) {
+        brandUseCase.getBrandList(by: output.currentFilterOption, page: 1)
+            .sink { completion in
+                switch completion {
+                case .finished:
+                    break
+                case .failure:
+                    break
+                }
+            } receiveValue: { pagableData in
+                if let pagableData {
+                    output.brands = pagableData.data
+                    output.pageInfo = pagableData.pageInfo
+                }
+            }
+            .store(in: cancelBag)
     }
 }

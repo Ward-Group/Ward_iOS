@@ -21,6 +21,7 @@ struct CategoryRowView: View {
             
             WardAssets.Image.Icon.chevronRight.swiftUIImage
         }
+        .contentShape(Rectangle())
         .frame(height: 70)
     }
 }

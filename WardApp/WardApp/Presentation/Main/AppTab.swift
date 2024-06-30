@@ -40,7 +40,7 @@ extension AppTab {
     var destination: some View {
         switch self {
         case .category:
-            Text("카테고리")
+            CategoryAssembler().view()
         case .release:
             Text("발매")
         case .home:

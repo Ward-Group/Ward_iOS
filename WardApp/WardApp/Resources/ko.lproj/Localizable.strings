@@ -49,8 +49,6 @@
 "Counting Unit Korean" = "개";
 "Interested Items Do Not Exist" = "관심 있는 상품이 없습니다. \n 상품을 추가해보세요.";
 "Redirect To Release Menu" = "발매 메뉴 바로가기";
-
-
 "Show More" = "더보기";
 "Released Product" = "발매 상품";
 
@@ -112,3 +110,8 @@
 // MARK: 카테고리
 "Top 50 Now" = "실시간 TOP50";
 "Platform" = "플랫폼";
+
+// MARK: 브랜드
+"Order By Ranking" = "랭킹순";
+"Order By Korean Alphabet" = "가나다순";
+"Order By Alphabet" = "ABC순";

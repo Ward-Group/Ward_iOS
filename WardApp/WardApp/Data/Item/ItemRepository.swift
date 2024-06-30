@@ -12,7 +12,6 @@ struct ItemRepository {
     func fetchItemsReleaseNow() -> AnyPublisher<[Item], Error> {
         return NetworkingManager.shared.run(ItemEndpoint.releaseNow, type: WardBaseResponse<[Item]>.self)
             .tryMap { response in
-                Log.debug(#file, #function, "response = \(response)")
                 switch response.code {
                 case 200:
                     return response.data ?? []

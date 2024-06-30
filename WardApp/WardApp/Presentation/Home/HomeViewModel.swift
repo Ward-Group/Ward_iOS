@@ -101,15 +101,6 @@ extension HomeViewModel: ViewModel {
         // -- Input Logic -- //
         input.loadTrigger
             .sink(receiveValue: {
-                
-                itemUseCase.getItemsReleaseNow()
-                    .sink { completion in
-                        print(completion)
-                    } receiveValue: { items in
-                        print(items)
-                    }
-                    .store(in: cancelBag)
-                
                 bannerProducts.send(getBannerProducts())
                 
                 let getReleaseCategoryTabs = getReleaseCategoryTabs()

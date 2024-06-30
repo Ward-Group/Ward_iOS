@@ -8,23 +8,26 @@
 import Foundation
 
 struct BrandDetailViewModel {
-    
+    let brandUseCase: BrandUseCase
+    let brand: Brand
 }
 
 extension BrandDetailViewModel: ViewModel {
     
     final class Input: ObservableObject {
+        let loadTrigger: Driver<Void>
         let currentFilterOptionTrigger: Driver<FilterOption>
         let isLikedTrigger: Driver<Void>
         
-        init(currentFilterOptionTrigger: Driver<FilterOption>, isLikedTrigger: Driver<Void>) {
+        init(loadTrigger: Driver<Void>, currentFilterOptionTrigger: Driver<FilterOption>, isLikedTrigger: Driver<Void>) {
+            self.loadTrigger = loadTrigger
             self.currentFilterOptionTrigger = currentFilterOptionTrigger
             self.isLikedTrigger = isLikedTrigger
         }
     }
     
     final class Output: ObservableObject {
-        @Published var item =  BrandListItem(nameKo: "나이키", nameEn: "Nike1", imageUrls: ["0", "1", "2", "3", "4"], isLiked: true, createdAt: Date.now)
+        @Published var brand: Brand
         
         var tabs = [
             WardSegmentedControlTab(id: "item", title: WardStrings.items),
@@ -58,13 +61,22 @@ extension BrandDetailViewModel: ViewModel {
             ReleaseItem(siteName: "ABC 마트", name: "아식스 젤 카야노", timeLeft: 7200),
             ReleaseItem(siteName: "ABC 마트", name: "아식스 젤 카야노", timeLeft: 7200)
         ]
+        
+        init(brand: Brand) {
+            self.brand = brand
+        }
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
-        let output = Output()
+        let output = Output(brand: brand)
+        
+        input.loadTrigger
+            .sink {
+                brandUseCase.increaseViewCount(brandId: brand.brandId)
+            }
+            .store(in: cancelBag)
         
         input.isLikedTrigger.sink {
-            output.item.isLiked.toggle()
         }
         .store(in: cancelBag)
         

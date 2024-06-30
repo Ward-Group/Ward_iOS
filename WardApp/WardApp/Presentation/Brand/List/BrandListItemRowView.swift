@@ -9,8 +9,7 @@ import SwiftUI
 
 struct BrandListItemRowView: View {
     
-    @Binding var item: BrandListItem
-    var buttonTapped: () -> Void
+    @Binding var brand: Brand
     
     var body: some View {
         ZStack {
@@ -22,14 +21,25 @@ struct BrandListItemRowView: View {
                 let rectangleImageSize = geo.size.width / 2.5 - rectangleImagePadding * 2
                 
                 VStack(spacing: 10) {
-                    BrandItemHeaderView(item: $item, imageSize: circleImageSize, buttonTapped: buttonTapped)
+                    BrandItemHeaderView(brand: $brand, imageSize: circleImageSize)
                         .frame(height: circleImageSize)
                     ScrollView(.horizontal) {
                         LazyHStack {
-                            ForEach(item.imageUrls, id: \.self) { _ in
-                                Rectangle()
-                                    .frame(width: rectangleImageSize, height: rectangleImageSize)
-                                    .foregroundStyle(Color.gray2)
+                            ForEach(brand.itemList) { brandItem in
+                                AsyncImage(
+                                    url: URL(string: brandItem.itemMainImage ?? ""),
+                                    content: { image in
+                                        image
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: rectangleImageSize, height: rectangleImageSize)
+                                    }, placeholder: {
+                                        Rectangle()
+                                            .frame(width: rectangleImageSize, height: rectangleImageSize)
+                                            .foregroundStyle(Color.gray2)
+                                    }
+                                )
+                                
                             }
                         }
                     }
@@ -42,11 +52,7 @@ struct BrandListItemRowView: View {
 
 #Preview {
     BrandListItemRowView(
-        item: .constant(BrandListItem(
-            nameKo: "나이키", nameEn: "Nike",
-            imageUrls: ["0", "1", "2", "3", "4"], isLiked: true,
-            createdAt: Date.now)),
-        buttonTapped: {}
+        brand: .constant(PreviewMockData.brands.first!)
     )
     .frame(height: 250)
 }
