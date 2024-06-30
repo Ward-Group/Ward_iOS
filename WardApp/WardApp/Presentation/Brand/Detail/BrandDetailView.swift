@@ -10,6 +10,7 @@ import Combine
 
 struct BrandDetailView: View {
     
+    @EnvironmentObject var router: CategoryRouter
     @ObservedObject private var input: BrandDetailViewModel.Input
     @ObservedObject private var output: BrandDetailViewModel.Output
     
@@ -43,9 +44,10 @@ struct BrandDetailView: View {
                         buttonsLeft: [NavigationBarButton(style: .back, trigger: backButtonTrigger)],
                         buttonsRight: [NavigationBarButton(style: .search, trigger: searchButtonTrigger)]
                     )
-                    BrandItemHeaderView(item: $output.item, imageSize: imageSize) {
-                        isLikedTrigger.send()
-                    }
+                    
+                    Divider()
+                    
+                    BrandItemHeaderView(brand: $output.brand, imageSize: imageSize)
                     .frame(height: imageSize)
                     .padding()
                     
@@ -58,7 +60,7 @@ struct BrandDetailView: View {
                     )
                     .frame(width: geo.size.width * 0.5, height: 45)
                     .padding(.horizontal)
-                    .padding(.vertical, 4)
+                    .padding(.vertical, 10)
                     
                     HStack {
                         if output.currentTab.isEqual(to: "item") {
@@ -94,11 +96,15 @@ struct BrandDetailView: View {
                 }
             }
         }
+        .onReceive(backButtonTrigger, perform: { _ in
+            router.pop()
+        })
+        .toolbar(.hidden, for: .navigationBar)
     }
 }
 
 #Preview {
-    BrandDetailView(vm: BrandDetailViewModel())
+    BrandDetailView(vm: BrandDetailViewModel(brand: PreviewMockData.brands.first!))
 }
 
 extension BrandDetailView {
