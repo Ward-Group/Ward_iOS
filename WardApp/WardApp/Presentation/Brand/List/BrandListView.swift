@@ -10,11 +10,13 @@ import Combine
 
 struct BrandListView: View {
     
+    @EnvironmentObject var router: CategoryRouter
+    
     private let loadTrigger = PassthroughSubject<Void, Never>()
-    private let currentFilterOptionTrigger = PassthroughSubject<FilterOption, Never>()
-    private let isLikedTrigger = PassthroughSubject<BrandListItem, Never>()
+    private let currentFilterOptionTrigger = PassthroughSubject<BrandFilterOption, Never>()
     private let backButtonTrigger = PassthroughSubject<Void, Never>()
     private let searchButtonTrigger = PassthroughSubject<Void, Never>()
+    private let loadMoreBrandsTrigger = PassthroughSubject<Int, Never>()
     
     @ObservedObject private var input: BrandListViewModel.Input
     @ObservedObject private var output: BrandListViewModel.Output
@@ -24,7 +26,7 @@ struct BrandListView: View {
         let input = BrandListViewModel.Input(
             loadTrigger: loadTrigger.asDriver(),
             currentFilterOptionTrigger: currentFilterOptionTrigger.asDriver(),
-            isLikedTrigger: isLikedTrigger.asDriver()
+            loadMoreBrandsTrigger: loadMoreBrandsTrigger.asDriver()
         )
         self.input = input
         self.output = vm.transform(input, cancelBag: cancelBag)
@@ -50,12 +52,22 @@ struct BrandListView: View {
                 
                 ScrollView {
                     LazyVStack(spacing: 20) {
-                        ForEach($output.items, id: \.nameEn) { item in
-                            BrandListItemRowView(item: item) {
-                                isLikedTrigger.send(item.wrappedValue)
-                            }
+                        ForEach(0..<output.brands.count, id: \.self) { idx in
+                            let brand = $output.brands[idx]
+                            BrandListItemRowView(brand: brand)
+                                .onTapGesture {
+                                    router.push(.brandDetail(brand.wrappedValue))
+                                }
+                                .onAppear {
+                                    loadMoreBrandsTrigger.send(idx + 1)
+                                }
                         }
                         .frame(minHeight: 180)
+                    }
+                    
+                    if output.isLoadingMoreBrands {
+                        ProgressView()
+                            .padding()
                     }
                 }
                 .scrollIndicators(.hidden)
@@ -67,13 +79,13 @@ struct BrandListView: View {
 }
 
 #Preview {
-    BrandListView(vm: BrandListViewModel())
+    BrandAssembler().view()
 }
 
 extension BrandListView {
     private var itemCount: some View {
         VStack {
-            Text("\(WardStrings.total) \(output.items.count) \(WardStrings.countingUnitKorean)")
+            Text("\(WardStrings.total) \(output.pageInfo.totalElements) \(WardStrings.countingUnitKorean)")
                 .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                 .foregroundStyle(Color.black8)
         }
@@ -85,7 +97,7 @@ extension BrandListView {
                 Button(action: {
                     currentFilterOptionTrigger.send(option)
                 }, label: {
-                    Text(option.title)
+                    Text(option.filterOption.title)
                         .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     
                     if option == output.currentFilterOption {
@@ -97,7 +109,7 @@ extension BrandListView {
         } label: {
             Button(action: {
             }, label: {
-                Text(output.currentFilterOption.title)
+                Text(output.currentFilterOption.filterOption.title)
                     .font(WardFonts.Pretendard.bold.swiftUIFont(size: 14))
                     .foregroundStyle(Color.black8)
                 

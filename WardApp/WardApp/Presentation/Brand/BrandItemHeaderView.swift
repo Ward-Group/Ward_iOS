@@ -9,40 +9,38 @@ import SwiftUI
 
 struct BrandItemHeaderView: View {
     
-    @Binding var item: BrandListItem
+    @Binding var brand: Brand
     let imageSize: CGFloat
-    let buttonTapped: () -> Void
     
     var body: some View {
         ZStack {
             Color.background
-            
             GeometryReader { geo in
                 HStack {
-                    Circle()
-                        .foregroundStyle(Color.gray2)
-                        .frame(width: imageSize, height: imageSize)
+                    AsyncImage(
+                        url: URL(string: brand.brandLogoImage ?? ""),
+                        content: { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: imageSize, height: imageSize)
+                        }, placeholder: {
+                            Circle()
+                                .foregroundStyle(Color.gray2)
+                                .frame(width: imageSize, height: imageSize)
+                        }
+                    )
                     
                     VStack(alignment: .leading) {
-                        Text(item.nameKo)
+                        Text(brand.brandKoreanName)
                             .font(WardFonts.Pretendard.medium.swiftUIFont(size: 16))
                             .foregroundStyle(Color.black0)
-                        Text(item.nameEn)
+                        Text(brand.brandEnglishName)
                             .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                             .foregroundStyle(Color.darkGray)
                     }
                     
                     Spacer()
-                    
-                    Button(action: {
-                        buttonTapped()
-                    }, label: {
-                        if item.isLiked {
-                            WardAssets.Image.Icon.likeYes.swiftUIImage
-                        } else {
-                            WardAssets.Image.Icon.likeNo.swiftUIImage
-                        }
-                    })
                 }
             }
         }
@@ -51,11 +49,7 @@ struct BrandItemHeaderView: View {
 
 #Preview {
     BrandItemHeaderView(
-        item: .constant(BrandListItem(
-            nameKo: "나이키", nameEn: "Nike",
-            imageUrls: ["0", "1", "2", "3", "4"], isLiked: true,
-            createdAt: Date.now)),
-        imageSize: 200,
-        buttonTapped: {}
+        brand: .constant(PreviewMockData.brands.first!),
+        imageSize: 70
     )
 }

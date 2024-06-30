@@ -10,10 +10,24 @@ import SwiftUI
 class CategoryRouter: ObservableObject {
     
     @Published var path = NavigationPath()
-    private let brandAssembler = BrandAssembler()
+    let brandAssembler = BrandAssembler()
     
     enum Page: Hashable {
         case brand
+        case brandDetail(Brand)
+        
+        func hash(into hasher: inout Hasher) {
+            hasher.combine(self.hashValue)
+        }
+        
+        static func == (lhs: Page, rhs: Page) -> Bool {
+            switch (lhs, rhs) {
+            case let (.brandDetail(lhsItem), .brandDetail(rhsItem)):
+                return lhsItem.brandId == rhsItem.brandId
+            default:
+                return true
+            }
+        }
     }
     
     @ViewBuilder
@@ -21,6 +35,10 @@ class CategoryRouter: ObservableObject {
         switch page {
         case .brand:
             brandAssembler.view()
+                .environmentObject(self)
+        case .brandDetail(let brand):
+            brandAssembler.detailView(brand: brand)
+                .environmentObject(self)
         }
     }
     

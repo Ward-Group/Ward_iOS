@@ -14,7 +14,24 @@ class BrandAssembler {
         BrandListView(vm: resolve())
     }
     
+    @ViewBuilder
+    func detailView(brand: Brand) -> some View {
+        BrandDetailView(vm: resolve(brand: brand))
+    }
+    
+    func resolve(brand: Brand) -> BrandDetailViewModel {
+        return BrandDetailViewModel(brand: brand)
+    }
+    
     func resolve() -> BrandListViewModel {
-        return BrandListViewModel()
+        return BrandListViewModel(brandUseCase: resolve())
+    }
+    
+    func resolve() -> BrandUseCase {
+        return BrandUseCase(repository: resolve())
+    }
+    
+    func resolve() -> BrandRepository {
+        return BrandRepository()
     }
 }
