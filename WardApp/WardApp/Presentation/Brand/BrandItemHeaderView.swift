@@ -39,8 +39,6 @@ struct BrandItemHeaderView: View {
                             .font(WardFonts.Pretendard.medium.swiftUIFont(size: 14))
                             .foregroundStyle(Color.darkGray)
                     }
-                    
-                    Spacer()
                 }
             }
         }

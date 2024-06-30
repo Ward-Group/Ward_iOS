@@ -52,8 +52,19 @@ struct BrandDetailView: View {
                     
                     Divider()
                     
-                    BrandItemHeaderView(brand: $output.brand, imageSize: imageSize)
-                    .frame(height: imageSize)
+                    HStack {
+                        BrandItemHeaderView(brand: $output.brand, imageSize: imageSize)
+                        .frame(height: imageSize)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            WardAssets.Image.Icon.likeNo.swiftUIImage
+                            Text("\(output.brand.brandWishCount)")
+                                .font(WardFonts.Pretendard.semiBold.swiftUIFont(size: 12))
+                                .foregroundStyle(Color.white3)
+                        }
+                    }
                     .padding()
                     
                     Divider()
