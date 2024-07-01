@@ -10,13 +10,13 @@ import SwiftUI
 class BrandAssembler {
     
     @ViewBuilder
-    func view() -> some View {
-        BrandListView(vm: resolve())
+    func view(router: BrandRouterType) -> some View {
+        BrandListView(vm: resolve(), router: router)
     }
     
     @ViewBuilder
-    func detailView(brand: Brand) -> some View {
-        BrandDetailView(vm: resolve(brand: brand))
+    func detailView(brand: Brand, router: BrandRouterType) -> some View {
+        BrandDetailView(vm: resolve(brand: brand), router: router)
     }
     
     func resolve(brand: Brand) -> BrandDetailViewModel {
