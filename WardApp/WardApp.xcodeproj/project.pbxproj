@@ -35,6 +35,10 @@
 		BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */; };
 		BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */; };
 		BA1E8E902C327CFF00895EA8 /* BrandRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E8F2C327CFF00895EA8 /* BrandRouterType.swift */; };
+		BA1E8E942C327E8300895EA8 /* ReleaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E932C327E8300895EA8 /* ReleaseView.swift */; };
+		BA1E8E962C327E9500895EA8 /* ReleaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E952C327E9500895EA8 /* ReleaseViewModel.swift */; };
+		BA1E8E982C327E9C00895EA8 /* ReleaseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E972C327E9C00895EA8 /* ReleaseAssembler.swift */; };
+		BA1E8E9A2C3282DD00895EA8 /* ReleaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E992C3282DD00895EA8 /* ReleaseRouter.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA2D644B2C25A95E00F2AECE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644A2C25A95E00F2AECE /* MyPageView.swift */; };
 		BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */; };
@@ -206,6 +210,10 @@
 		BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouter.swift; sourceTree = "<group>"; };
 		BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouterView.swift; sourceTree = "<group>"; };
 		BA1E8E8F2C327CFF00895EA8 /* BrandRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandRouterType.swift; sourceTree = "<group>"; };
+		BA1E8E932C327E8300895EA8 /* ReleaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseView.swift; sourceTree = "<group>"; };
+		BA1E8E952C327E9500895EA8 /* ReleaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewModel.swift; sourceTree = "<group>"; };
+		BA1E8E972C327E9C00895EA8 /* ReleaseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseAssembler.swift; sourceTree = "<group>"; };
+		BA1E8E992C3282DD00895EA8 /* ReleaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRouter.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA2D644A2C25A95E00F2AECE /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAssembler.swift; sourceTree = "<group>"; };
@@ -419,6 +427,17 @@
 				BA62C0A42C10B61A007E692A /* MainRouter.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		BA1E8E922C327E7B00895EA8 /* Release */ = {
+			isa = PBXGroup;
+			children = (
+				BA1E8E932C327E8300895EA8 /* ReleaseView.swift */,
+				BA1E8E952C327E9500895EA8 /* ReleaseViewModel.swift */,
+				BA1E8E972C327E9C00895EA8 /* ReleaseAssembler.swift */,
+				BA1E8E992C3282DD00895EA8 /* ReleaseRouter.swift */,
+			);
+			path = Release;
 			sourceTree = "<group>";
 		};
 		BA291BFF2BE26B6200E8C041 /* Fonts */ = {
@@ -686,6 +705,7 @@
 		BA78664A2BF3BA72007BF0C4 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				BA1E8E922C327E7B00895EA8 /* Release */,
 				BA62AE242C2D659C008E5F46 /* Category */,
 				BA5BA1112C294AC300B8B96F /* Setting */,
 				BA2D64492C25A95400F2AECE /* MyPage */,
@@ -1242,10 +1262,13 @@
 				BA62AE282C2D65C4008E5F46 /* CategoryViewModel.swift in Sources */,
 				BA04167C2C05D9D5003CFFAC /* Endpoint.swift in Sources */,
 				BAA7C0C22C09C00C0042FE04 /* Date.swift in Sources */,
+				BA1E8E9A2C3282DD00895EA8 /* ReleaseRouter.swift in Sources */,
 				EA81E0C12C0802A60076DA29 /* BannerPageView.swift in Sources */,
 				EA3967772BF8DBE50087062B /* CancelBag.swift in Sources */,
+				BA1E8E942C327E8300895EA8 /* ReleaseView.swift in Sources */,
 				A0E964D82C0F26580019FC70 /* HomeProductHorizontalView.swift in Sources */,
 				BA9611382C2D354D002BCB8F /* Item.swift in Sources */,
+				BA1E8E962C327E9500895EA8 /* ReleaseViewModel.swift in Sources */,
 				BA62AE302C2DA3B5008E5F46 /* BrandAssembler.swift in Sources */,
 				BA3DC70C2C1BE19E00AF7E64 /* BrandListView.swift in Sources */,
 				EA8C9FAB2C099F8C00F02E3A /* Driver.swift in Sources */,
@@ -1278,6 +1301,7 @@
 				BA04167E2C05DA1F003CFFAC /* NetworkingManager.swift in Sources */,
 				BA0416A62C09643A003CFFAC /* NotificationView.swift in Sources */,
 				BA62AE452C2E5D42008E5F46 /* WardPagableResponse.swift in Sources */,
+				BA1E8E982C327E9C00895EA8 /* ReleaseAssembler.swift in Sources */,
 				BA04169A2C084322003CFFAC /* InterestedViewModel.swift in Sources */,
 				BAA9ED752C0D8393002DBD82 /* UserDefaultsKey.swift in Sources */,
 				BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */,

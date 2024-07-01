@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CategoryView: View {
     
+    @EnvironmentObject var mainRouter: MainRouter
     @EnvironmentObject var router: CategoryRouter
     private var output: CategoryViewModel.Output
     private let cancelBag = CancelBag()
@@ -32,6 +33,9 @@ struct CategoryView: View {
                     VStack {
                         CategoryRowView(title: WardStrings.items)
                         CategoryRowView(title: WardStrings.releaseInfo)
+                            .onTapGesture {
+                                mainRouter.changeTab(to: .release)
+                            }
                         CategoryRowView(title: WardStrings.brand)
                             .onTapGesture {
                                 router.push(.brand)
