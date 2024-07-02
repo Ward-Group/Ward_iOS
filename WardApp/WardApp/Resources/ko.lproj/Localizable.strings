@@ -115,3 +115,11 @@
 "Order By Ranking" = "랭킹순";
 "Order By Korean Alphabet" = "가나다순";
 "Order By Alphabet" = "ABC순";
+
+// MARK: 발매
+"Footwear" = "신발";
+"Clothing" = "의류";
+"Release Now" = "발매중";
+"Release Scheduled" = "발매예정";
+"FCFS" = "선착순";
+"Entry" = "응모";
