@@ -15,6 +15,22 @@ class ReleaseAssembler {
     }
     
     func resolve() -> ReleaseViewModel {
-        return ReleaseViewModel()
+        return ReleaseViewModel(releaseUseCase: resolve(), itemUseCase: resolve())
+    }
+    
+    func resolve() -> ReleaseUseCase {
+        return ReleaseUseCase(repository: resolve())
+    }
+    
+    func resolve() -> ReleaseRepository {
+        return ReleaseRepository()
+    }
+    
+    func resolve() -> ItemUseCase {
+        return ItemUseCase(repository: resolve())
+    }
+    
+    func resolve() -> ItemRepository {
+        return ItemRepository()
     }
 }
