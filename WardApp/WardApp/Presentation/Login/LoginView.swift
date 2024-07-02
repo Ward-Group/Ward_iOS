@@ -107,13 +107,11 @@ extension LoginView {
             switch authResults.credential {
             case let appleIDCredential as ASAuthorizationAppleIDCredential:
                 let fullName = appleIDCredential.fullName
+                let identifier = appleIDCredential.user
                 let name =  (fullName?.familyName ?? "") + (fullName?.givenName ?? "")
-                if let identityTokenData = appleIDCredential.identityToken {
-                    let email = appleIDCredential.email ?? ""
-                    let identityToken = String(data: identityTokenData, encoding: .utf8)!
-                    let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identityToken, name: name, email: email)
-                    userTrigger.send(newUser)
-                }
+                let email = appleIDCredential.email ?? ""
+                let newUser = UserFromLoginProvider(loginProvider: .apple, providerId: identifier, name: name, email: email)
+                userTrigger.send(newUser)
             default:
                 break
             }

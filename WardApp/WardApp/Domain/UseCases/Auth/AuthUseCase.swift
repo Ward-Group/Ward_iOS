@@ -35,7 +35,6 @@ extension AuthUseCase {
     private func loadLoginDto() -> LoginDto {
         let provider = UserRepository.shared.getLoginProvider()
         let providerId = UserRepository.shared.getProviderId()
-        let email = UserRepository.shared.getEmail()
         
         return LoginDto(provider: provider, providerId: providerId)
     }
