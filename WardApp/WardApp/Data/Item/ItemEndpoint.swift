@@ -8,20 +8,20 @@
 import Alamofire
 
 enum ItemEndpoint {
-    case releaseNow
+    case items(category: ItemCategory, sort: ItemSortOption, page: Int)
 }
 
 extension ItemEndpoint: Endpoint {
     var path: String {
         switch self {
-        case .releaseNow:
+        case .items:
             return "/items"
         }
     }
     
     var headers: HTTPHeaders {
         switch self {
-        case .releaseNow:
+        case .items:
             return [
                 "Accept": "application/json"
             ]
@@ -34,21 +34,25 @@ extension ItemEndpoint: Endpoint {
     
     var parameters: [String: Any] {
         switch self {
-        case .releaseNow:
-            ["sort":"release-now"]
+        case .items(let category, let sort, let page):
+            [
+                "category": category.rawValue,
+                "sort": sort.rawValue,
+                "page": "\(page)"
+            ]
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .releaseNow:
+        case .items:
             return .get
         }
     }
     
     var encoding: ParameterEncoding {
         switch self {
-        case .releaseNow:
+        case .items:
             return URLEncoding.queryString
         }
     }

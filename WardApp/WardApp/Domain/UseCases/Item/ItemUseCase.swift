@@ -13,7 +13,7 @@ struct ItemUseCase {
 
 extension ItemUseCase {
     
-    func getItemsReleaseNow() -> AnyPublisher<[Item], Error> {
-        return repository.fetchItemsReleaseNow()
+    func getItems(category: ItemCategory, sort: ItemSortOption, page: Int) -> AnyPublisher<[Item], Never> {
+        return repository.fetchItems(category: category, sort: sort, page: page)
     }
 }
