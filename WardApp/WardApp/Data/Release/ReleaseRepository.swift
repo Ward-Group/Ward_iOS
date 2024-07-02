@@ -10,8 +10,8 @@ import Combine
 
 struct ReleaseRepository {
     
-    func fetchReleasesDueToday() -> AnyPublisher<[ReleaseItem], Error> {
-        return NetworkingManager.shared.run(ReleaseEndpoint.dueToday, type: WardBaseResponse<[ReleaseItem]>.self)
+    func fetchReleaseInfos(category: ItemCategory, sort: ItemSortOption, page: Int) -> AnyPublisher<[ReleasedItem], Never> {
+        return NetworkingManager.shared.run(ReleaseEndpoint.releaseInfos(category: category, sort: sort, page: page), type: WardBaseResponse<[ReleasedItem]>.self)
             .tryMap { response in
                 Log.debug(#file, #function, "response = \(response)")
                 let code = response.code
@@ -22,6 +22,7 @@ struct ReleaseRepository {
                     return []
                 }
             }
+            .catch { _ in Just([]) }
             .eraseToAnyPublisher()
     }
 }

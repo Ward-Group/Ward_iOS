@@ -14,8 +14,8 @@ struct ReleasedItem: Codable, Identifiable {
     let itemId: String
     let itemMainImage: String
     let itemKoreanName: String
-    let itemEnlishName: String
-    let releaseMethod: String
+    let itemEnglishName: String
+    let releaseMethod: ReleaseMethod
     let dueDate: String
     
     var id: Int {

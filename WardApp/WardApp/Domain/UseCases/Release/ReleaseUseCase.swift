@@ -14,7 +14,7 @@ struct ReleaseUseCase {
 
 extension ReleaseUseCase {
     
-    func getReleasedDueToday() -> AnyPublisher<[ReleaseItem], Error>{
-        return repository.fetchReleasesDueToday()
+    func getReleaseInfos(category: ItemCategory, sort: ItemSortOption, page: Int) -> AnyPublisher<[ReleasedItem], Never> {
+        return repository.fetchReleaseInfos(category: category, sort: sort, page: page)
     }
 }
