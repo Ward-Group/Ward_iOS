@@ -109,7 +109,7 @@ extension SignUpViewModel: ViewModel {
 extension SignUpViewModel {
     private func signUp(input: Input, output: Output, cancelBag: CancelBag) {
         let dto = SignUpDto(
-            provider: user.loginProvider, providerId: user.providerId, name: user.name ?? output.nickname,
+            provider: user.loginProvider, providerId: user.providerId, name: output.nickname,
             email: user.email, nickname: output.nickname, emailNotification: output.emailNotificationToggle,
             snsNotification: output.smsNotificationToggle, appPushNotification: output.appPushNotificationToggle)
         
