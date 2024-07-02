@@ -39,6 +39,12 @@
 		BA1E8E962C327E9500895EA8 /* ReleaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E952C327E9500895EA8 /* ReleaseViewModel.swift */; };
 		BA1E8E982C327E9C00895EA8 /* ReleaseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E972C327E9C00895EA8 /* ReleaseAssembler.swift */; };
 		BA1E8E9A2C3282DD00895EA8 /* ReleaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E992C3282DD00895EA8 /* ReleaseRouter.swift */; };
+		BA1E8E9C2C328D9A00895EA8 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E9B2C328D9A00895EA8 /* ItemCategory.swift */; };
+		BA1E8E9E2C328DA900895EA8 /* ItemSortOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E9D2C328DA900895EA8 /* ItemSortOption.swift */; };
+		BA1E8EA02C328F5700895EA8 /* ReleaseMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8E9F2C328F5700895EA8 /* ReleaseMethod.swift */; };
+		BA1E8EA22C32B1AD00895EA8 /* WardCircularSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8EA12C32B1AD00895EA8 /* WardCircularSegmentedControl.swift */; };
+		BA1E8EA82C32CEDF00895EA8 /* ReleasedItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8EA72C32CEDF00895EA8 /* ReleasedItemListView.swift */; };
+		BA1E8EAA2C32DC9C00895EA8 /* ReleasedItemGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1E8EA92C32DC9C00895EA8 /* ReleasedItemGridView.swift */; };
 		BA22326F2BEB90B4001F2395 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA22326E2BEB90B4001F2395 /* Symbols.swift */; };
 		BA2D644B2C25A95E00F2AECE /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644A2C25A95E00F2AECE /* MyPageView.swift */; };
 		BA2D644D2C25A96600F2AECE /* MyPageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */; };
@@ -214,6 +220,12 @@
 		BA1E8E952C327E9500895EA8 /* ReleaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseViewModel.swift; sourceTree = "<group>"; };
 		BA1E8E972C327E9C00895EA8 /* ReleaseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseAssembler.swift; sourceTree = "<group>"; };
 		BA1E8E992C3282DD00895EA8 /* ReleaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseRouter.swift; sourceTree = "<group>"; };
+		BA1E8E9B2C328D9A00895EA8 /* ItemCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategory.swift; sourceTree = "<group>"; };
+		BA1E8E9D2C328DA900895EA8 /* ItemSortOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSortOption.swift; sourceTree = "<group>"; };
+		BA1E8E9F2C328F5700895EA8 /* ReleaseMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseMethod.swift; sourceTree = "<group>"; };
+		BA1E8EA12C32B1AD00895EA8 /* WardCircularSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WardCircularSegmentedControl.swift; sourceTree = "<group>"; };
+		BA1E8EA72C32CEDF00895EA8 /* ReleasedItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasedItemListView.swift; sourceTree = "<group>"; };
+		BA1E8EA92C32DC9C00895EA8 /* ReleasedItemGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleasedItemGridView.swift; sourceTree = "<group>"; };
 		BA22326E2BEB90B4001F2395 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		BA2D644A2C25A95E00F2AECE /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 		BA2D644C2C25A96600F2AECE /* MyPageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAssembler.swift; sourceTree = "<group>"; };
@@ -379,6 +391,7 @@
 			children = (
 				BA0416822C06B1FB003CFFAC /* WardSegementedControl.swift */,
 				BA0416842C06B937003CFFAC /* WardSegmentedControlTab.swift */,
+				BA1E8EA12C32B1AD00895EA8 /* WardCircularSegmentedControl.swift */,
 			);
 			path = SegmentedControl;
 			sourceTree = "<group>";
@@ -436,6 +449,8 @@
 				BA1E8E952C327E9500895EA8 /* ReleaseViewModel.swift */,
 				BA1E8E972C327E9C00895EA8 /* ReleaseAssembler.swift */,
 				BA1E8E992C3282DD00895EA8 /* ReleaseRouter.swift */,
+				BA1E8EA72C32CEDF00895EA8 /* ReleasedItemListView.swift */,
+				BA1E8EA92C32DC9C00895EA8 /* ReleasedItemGridView.swift */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -581,6 +596,7 @@
 			children = (
 				BA3DC7232C1C1F8E00AF7E64 /* ReleaseItem.swift */,
 				BA83527E2C2BF1520032E9C4 /* ReleasedItem.swift */,
+				BA1E8E9F2C328F5700895EA8 /* ReleaseMethod.swift */,
 			);
 			path = Release;
 			sourceTree = "<group>";
@@ -848,6 +864,8 @@
 			isa = PBXGroup;
 			children = (
 				BA9611372C2D354D002BCB8F /* Item.swift */,
+				BA1E8E9B2C328D9A00895EA8 /* ItemCategory.swift */,
+				BA1E8E9D2C328DA900895EA8 /* ItemSortOption.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -1219,6 +1237,7 @@
 				BA62C0A52C10B61A007E692A /* MainRouter.swift in Sources */,
 				BA3DC7132C1BE4F900AF7E64 /* BrandListItemRowView.swift in Sources */,
 				BA5BA1152C294B3A00B8B96F /* SettingViewModel.swift in Sources */,
+				BA1E8E9C2C328D9A00895EA8 /* ItemCategory.swift in Sources */,
 				BA04169C2C08432C003CFFAC /* InterestedAssembler.swift in Sources */,
 				BA78665E2BF3BF93007BF0C4 /* ReleaseUseCase.swift in Sources */,
 				BA5BA1172C294B6900B8B96F /* SettingAssembler.swift in Sources */,
@@ -1231,6 +1250,7 @@
 				BA3AD0272BE391CD00083347 /* Fonts+Generated.swift in Sources */,
 				BA2D644F2C25A96D00F2AECE /* MyPageViewModel.swift in Sources */,
 				A0E964D62C0F257B0019FC70 /* HomeListPageView.swift in Sources */,
+				BA1E8E9E2C328DA900895EA8 /* ItemSortOption.swift in Sources */,
 				BA62C0A82C1147C2007E692A /* LoginRouter.swift in Sources */,
 				BA0416852C06B937003CFFAC /* WardSegmentedControlTab.swift in Sources */,
 				BA5BA1132C294ACE00B8B96F /* SettingView.swift in Sources */,
@@ -1249,6 +1269,7 @@
 				BA7866602BF3BFBD007BF0C4 /* ItemUseCase.swift in Sources */,
 				EA8B5C172C22CC46005E5D86 /* PageControl.swift in Sources */,
 				BA62AE2C2C2D75BD008E5F46 /* CategoryRouter.swift in Sources */,
+				BA1E8EA82C32CEDF00895EA8 /* ReleasedItemListView.swift in Sources */,
 				BA8AC52C2C102F4700D019A6 /* WardBaseResponse.swift in Sources */,
 				BA83527F2C2BF1520032E9C4 /* ReleasedItem.swift in Sources */,
 				EA3967752BF8DADD0087062B /* ViewModel.swift in Sources */,
@@ -1289,11 +1310,13 @@
 				BAA9ED7C2C0D855E002DBD82 /* SearchHistoryService.swift in Sources */,
 				BA62AE2A2C2D65FF008E5F46 /* CategoryAssembler.swift in Sources */,
 				BAA9ED702C0D5112002DBD82 /* SearchViewAssembler.swift in Sources */,
+				BA1E8EA22C32B1AD00895EA8 /* WardCircularSegmentedControl.swift in Sources */,
 				BA04166E2C042F55003CFFAC /* LoginAssembler.swift in Sources */,
 				BA04169E2C0855F6003CFFAC /* FilterOption.swift in Sources */,
 				BAAFB2CB2C1582D500E722F3 /* KeychainKey.swift in Sources */,
 				BA62AE332C2DA7E6008E5F46 /* BrandEndpoint.swift in Sources */,
 				BA62AE492C2E836F008E5F46 /* PreviewMockData.swift in Sources */,
+				BA1E8EA02C328F5700895EA8 /* ReleaseMethod.swift in Sources */,
 				BA62C09F2C10A7BB007E692A /* LoginDto.swift in Sources */,
 				BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */,
 				BAB92BB22C0EEC20004B876B /* DarkChevronDisclosureGroupStyle.swift in Sources */,
@@ -1334,6 +1357,7 @@
 				BAA9ED852C0DA9B2002DBD82 /* SearchResultItemRowView.swift in Sources */,
 				BA0416962C0810EF003CFFAC /* Int.swift in Sources */,
 				BA3DC7152C1BF13E00AF7E64 /* BrandItemHeaderView.swift in Sources */,
+				BA1E8EAA2C32DC9C00895EA8 /* ReleasedItemGridView.swift in Sources */,
 				BA2D64572C25B65400F2AECE /* MyPageRouter.swift in Sources */,
 				BA4B16862C0EC8C100E1C1F5 /* NoticeBoardViewModel.swift in Sources */,
 				EA3967852BF915E20087062B /* HomeView.swift in Sources */,
