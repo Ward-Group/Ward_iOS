@@ -33,7 +33,6 @@ struct SignUpView: View {
             ZStack {
                 Color.background
                 VStack {
-                    
                     InlineNavBarView(
                         title: WardStrings.extraInformation,
                         buttonsLeft: [
@@ -89,6 +88,7 @@ struct SignUpView: View {
                     signUpButton
                         .frame(width: geo.size.width * 0.85, height: 60)
                 }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
             }
         }
         .onReceive(signUpCompletionTrigger, perform: { _ in
