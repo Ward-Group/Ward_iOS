@@ -55,6 +55,7 @@ public enum WardAssets {
     public static let white2 = ColorAsset(name: "White2")
     public static let white3 = ColorAsset(name: "White3")
     public static let white4 = ColorAsset(name: "White4")
+    public static let mainGray2 = ColorAsset(name: "mainGray2")
   }
   public enum Image {
     public static let appleLoginLogo = ImageAsset(name: "AppleLoginLogo")

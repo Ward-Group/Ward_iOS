@@ -10,7 +10,7 @@ import Combine
 
 struct BrandDetailView: View {
     
-    @EnvironmentObject var router: CategoryRouter
+    let router: BrandRouterType
     @ObservedObject private var input: BrandDetailViewModel.Input
     @ObservedObject private var output: BrandDetailViewModel.Output
     
@@ -23,7 +23,7 @@ struct BrandDetailView: View {
     
     private let cancelBag = CancelBag()
     
-    init(vm: BrandDetailViewModel) {
+    init(vm: BrandDetailViewModel, router: BrandRouterType) {
         let input = BrandDetailViewModel.Input(
             loadTrigger: loadTrigger.asDriver(),
             currentFilterOptionTrigger: currentFilterOptionTrigger.asDriver(),
@@ -31,6 +31,7 @@ struct BrandDetailView: View {
         )
         self.input = input
         self.output = vm.transform(input, cancelBag: cancelBag)
+        self.router = router
         
         loadTrigger.send()
     }
@@ -120,7 +121,7 @@ struct BrandDetailView: View {
 }
 
 #Preview {
-    BrandAssembler().detailView(brand: PreviewMockData.brands.first!)
+    BrandAssembler().detailView(brand: PreviewMockData.brands.first!, router: CategoryRouter())
 }
 
 extension BrandDetailView {

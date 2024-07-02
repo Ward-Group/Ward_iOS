@@ -42,7 +42,7 @@ extension AppTab {
         case .category:
             CategoryAssembler().view()
         case .release:
-            Text("발매")
+            ReleaseAssembler().view()
         case .home:
             HomeAssembler().view()
         case .interested:

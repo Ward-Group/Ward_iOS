@@ -26,6 +26,8 @@ public enum WardStrings {
   public static let brand = WardStrings.tr("Localizable", "Brand", fallback: "브랜드")
   /// 카테고리
   public static let categoryTabbar = WardStrings.tr("Localizable", "Category Tabbar", fallback: "카테고리")
+  /// 의류
+  public static let clothing = WardStrings.tr("Localizable", "Clothing", fallback: "의류")
   /// 회원가입 완료
   public static let confirmSignUp = WardStrings.tr("Localizable", "Confirm Sign Up", fallback: "회원가입 완료")
   /// 개
@@ -44,12 +46,18 @@ public enum WardStrings {
   public static let email = WardStrings.tr("Localizable", "Email", fallback: "이메일")
   /// 얼마 안남은 행운을 즐겨 보세요
   public static let enjoyTheLittleLuckYouHaveLeft = WardStrings.tr("Localizable", "Enjoy the little luck you have left", fallback: "얼마 안남은 행운을 즐겨 보세요")
+  /// 응모
+  public static let entry = WardStrings.tr("Localizable", "Entry", fallback: "응모")
   /// 기타
   public static let etc = WardStrings.tr("Localizable", "ETC", fallback: "기타")
   /// 이벤트, 발매 알림
   public static let eventReleaseNotification = WardStrings.tr("Localizable", "Event, Release Notification", fallback: "이벤트, 발매 알림")
   /// 추가 정보 입력
   public static let extraInformation = WardStrings.tr("Localizable", "Extra Information", fallback: "추가 정보 입력")
+  /// 선착순
+  public static let fcfs = WardStrings.tr("Localizable", "FCFS", fallback: "선착순")
+  /// 신발
+  public static let footwear = WardStrings.tr("Localizable", "Footwear", fallback: "신발")
   /// 일반
   public static let general = WardStrings.tr("Localizable", "General", fallback: "일반")
   /// 통합 검색
@@ -143,6 +151,10 @@ public enum WardStrings {
   public static let registeredToday = WardStrings.tr("Localizable", "Registered Today", fallback: "오늘 등록")
   /// 발매 정보
   public static let releaseInfo = WardStrings.tr("Localizable", "Release Info", fallback: "발매 정보")
+  /// 발매중
+  public static let releaseNow = WardStrings.tr("Localizable", "Release Now", fallback: "발매중")
+  /// 발매예정
+  public static let releaseScheduled = WardStrings.tr("Localizable", "Release Scheduled", fallback: "발매예정")
   /// 발매
   public static let releaseTabbar = WardStrings.tr("Localizable", "Release Tabbar", fallback: "발매")
   /// 발매 상품

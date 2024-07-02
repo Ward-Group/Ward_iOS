@@ -10,7 +10,7 @@ import Combine
 
 struct BrandListView: View {
     
-    @EnvironmentObject var router: CategoryRouter
+    var router: BrandRouterType
     
     private let loadTrigger = PassthroughSubject<Void, Never>()
     private let currentFilterOptionTrigger = PassthroughSubject<BrandFilterOption, Never>()
@@ -22,7 +22,7 @@ struct BrandListView: View {
     @ObservedObject private var output: BrandListViewModel.Output
     private let cancelBag = CancelBag()
     
-    init(vm: BrandListViewModel) {
+    init(vm: BrandListViewModel, router: BrandRouterType) {
         let input = BrandListViewModel.Input(
             loadTrigger: loadTrigger.asDriver(),
             currentFilterOptionTrigger: currentFilterOptionTrigger.asDriver(),
@@ -30,6 +30,7 @@ struct BrandListView: View {
         )
         self.input = input
         self.output = vm.transform(input, cancelBag: cancelBag)
+        self.router = router
         
         loadTrigger.send()
     }
@@ -56,7 +57,7 @@ struct BrandListView: View {
                             let brand = $output.brands[idx]
                             BrandListItemRowView(brand: brand)
                                 .onTapGesture {
-                                    router.push(.brandDetail(brand.wrappedValue))
+                                    router.pushToDetail(brand: brand.wrappedValue)
                                 }
                                 .onAppear {
                                     loadMoreBrandsTrigger.send(idx + 1)
@@ -79,7 +80,7 @@ struct BrandListView: View {
 }
 
 #Preview {
-    BrandAssembler().view()
+    BrandAssembler().view(router: CategoryRouter())
 }
 
 extension BrandListView {

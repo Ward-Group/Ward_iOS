@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class CategoryRouter: ObservableObject {
+class CategoryRouter: ObservableObject, BrandRouterType {
     
     @Published var path = NavigationPath()
     let brandAssembler = BrandAssembler()
@@ -34,10 +34,10 @@ class CategoryRouter: ObservableObject {
     func build(_ page: Page) -> some View {
         switch page {
         case .brand:
-            brandAssembler.view()
+            brandAssembler.view(router: self)
                 .environmentObject(self)
         case .brandDetail(let brand):
-            brandAssembler.detailView(brand: brand)
+            brandAssembler.detailView(brand: brand, router: self)
                 .environmentObject(self)
         }
     }
@@ -48,5 +48,9 @@ class CategoryRouter: ObservableObject {
     
     func pop() {
         path.removeLast()
+    }
+    
+    func pushToDetail(brand: Brand) {
+        push(.brandDetail(brand))
     }
 }
