@@ -86,6 +86,9 @@ struct ReleaseView: View {
                 }
             }
         }
+        .onAppear {
+            loadTrigger.send()
+        }
     }
 }
 
