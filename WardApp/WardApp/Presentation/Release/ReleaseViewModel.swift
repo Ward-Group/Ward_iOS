@@ -42,9 +42,39 @@ extension ReleaseViewModel: ViewModel {
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output()
         
-        releaseUseCase.getReleaseInfos(category: output.category, sort: output.sortOption, page: 1)
-            .sink { values in
-                output.releasedItems = values
+        input.loadTrigger
+            .sink {
+                addSubscribers(input, output, cancelBag: cancelBag)
+            }
+            .store(in: cancelBag)
+        
+        return output
+    }
+    
+    func addSubscribers(_ input: Input, _ output: Output, cancelBag: CancelBag) {
+        output.$category.combineLatest(output.$sortOption)
+            .sink { _, _ in
+                output.isFetching = true
+            }
+            .store(in: cancelBag)
+        
+        output.$category.combineLatest(output.$sortOption)
+            .debounce(for: 1, scheduler: DispatchQueue.main)
+            .sink { category, sort in
+                switch sort {
+                case .dueToday, .releaseNow:
+                    releaseUseCase.getReleaseInfos(category: category, sort: sort, page: 1)
+                        .sink { releasedItems in
+                            output.releasedItems = releasedItems
+                        }
+                        .store(in: cancelBag)
+                case .releaseConfirm, .registerToday:
+                    itemUseCase.getItems(category: category, sort: sort, page: 1)
+                        .sink { items in
+                            output.items = items
+                        }
+                        .store(in: cancelBag)
+                }
                 output.isFetching = false
             }
             .store(in: cancelBag)
@@ -58,36 +88,5 @@ extension ReleaseViewModel: ViewModel {
             output.sortOption = ItemSortOption(rawValue: $0.id) ?? .dueToday
         }
         .store(in: cancelBag)
-        
-        output.$category.combineLatest(output.$sortOption)
-            .sink { _, _ in
-                output.isFetching = true
-            }
-        .store(in: cancelBag)
-        
-        output.$category.combineLatest(output.$sortOption)
-            .debounce(for: 1, scheduler: DispatchQueue.main)
-            .sink { category, sort in
-                switch sort {
-                case .dueToday, .releaseNow:
-                    releaseUseCase.getReleaseInfos(category: category, sort: sort, page: 1)
-                        .sink { releasedItems in
-//                            output.releasedItems = releasedItems
-                            output.releasedItems = PreviewMockData.releasedItems
-                        }
-                        .store(in: cancelBag)
-                case .releaseConfirm, .registerToday:
-                    itemUseCase.getItems(category: category, sort: sort, page: 1)
-                        .sink { items in
-//                            output.items = items
-                            output.items = PreviewMockData.items
-                        }
-                        .store(in: cancelBag)
-                }
-                output.isFetching = false
-            }
-        .store(in: cancelBag)
-        
-        return output
     }
 }
