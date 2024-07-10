@@ -82,10 +82,9 @@ extension HomeViewModel: ViewModel {
         
         let releaseProducts = PassthroughSubject<[BaseProductModel], Never>()
         releaseProducts
-            .map { $0.map { $0.toWithRemaingTimeModel() } }
             .map { models in
                 var returnModels: [HomeListPageModel] = []
-                var tempModels: [HomeProductHorizontalModel] = []
+                var tempModels: [BaseProductModel] = []
                 for model in models {
                     tempModels.append(model)
                     if tempModels.count % 5 == 0 {
@@ -160,23 +159,16 @@ extension HomeViewModel {
 // MARK: - 임시 데이터 모델
 struct BaseProductModel: Identifiable {
     let id = UUID()
-    var site: String?
-    var product: String?
-    var brand: String?
-    var time: String?
+    var site: String = ""
+    var rank: String = ""
+    var product: String = ""
+    var brand: String = ""
+    var time: String = ""
     var bigBannerImage: Image?
     var thumbnailImage: Image?
     
     func toModel() -> BannerPageModel {
         return BannerPageModel(id: id,
                                image: bigBannerImage ?? WardAssets.Image.homeBanner.swiftUIImage)
-    }
-    
-    func toWithRemaingTimeModel() -> HomeProductHorizontalModel {
-        return HomeProductHorizontalModel(productType: .withRemainingTime,
-                                          id: id,
-                                          site: site ?? "",
-                                          product: product ?? "",
-                                          time: time ?? "")
     }
 }
