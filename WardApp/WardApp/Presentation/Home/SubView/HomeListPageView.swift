@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeListPageModel: Identifiable {
     let id = UUID()
-    var products: [HomeProductHorizontalModel]
+    var products: [BaseProductModel]
 }
 
 struct HomeListPageView: View {
@@ -20,7 +20,7 @@ struct HomeListPageView: View {
     @Binding var models: [HomeListPageModel]
     
     var body: some View {
-        VStack() {
+        VStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 0) {
                     ForEach(Array(models.enumerated()), id: \.element.id) { index, model in
@@ -44,7 +44,7 @@ struct HomeListPageView: View {
 }
 
 extension HomeListPageView {
-    private func itemList(products: [HomeProductHorizontalModel]) -> some View {
+    private func itemList(products: [BaseProductModel]) -> some View {
         LazyVStack(alignment: .center) {
             ForEach(Array(products.enumerated()), id: \.element.id) { index, product in
                 HomeProductHorizontalView(model: product)
