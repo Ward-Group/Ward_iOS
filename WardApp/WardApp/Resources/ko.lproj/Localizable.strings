@@ -33,11 +33,14 @@
 "App Push" = "앱푸시";
 
 // MARK: 홈 화면
-"Due Today" = "오늘 마감";
 "Enjoy the little luck you have left" = "얼마 안남은 행운을 즐겨 보세요";
 "Currently Available" = "발매 중";
-"Upcoming Release" = "발매 예정";
-"Registered Today" = "오늘 등록";
+"Due Today" = "오늘 마감";
+"Release Now" = "발매중";
+"Release Wish" = "관심 상품";
+"Release Schedule" = "발매 예정";
+"Release Today" = "오늘 등록";
+"Closed" = "종료";
 
 // MARK: 관심 상품
 "Korean Currency Won" = "원";

@@ -13,7 +13,7 @@ struct HomeUseCase {
 }
 
 extension HomeUseCase {
-    func getReleaseInfos(section: String) -> AnyPublisher<[ReleasedItem], Never> {
+    func getReleaseInfos(section: ReleaseSection) -> AnyPublisher<[HomeReleaseItem], Never> {
         return repository.fetchReleaseInfos(section: section)
     }
 }

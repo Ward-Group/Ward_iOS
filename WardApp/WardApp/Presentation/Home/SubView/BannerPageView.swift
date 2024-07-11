@@ -7,23 +7,39 @@
 
 import SwiftUI
 
-struct BannerPageModel: Identifiable {
-    var id: UUID
-    var image: Image
+struct BannerPageViewModel: Identifiable {
+    var id: Int
+    var imageUrl: String?
 }
 
 struct BannerPageView: View {
     
     let geo: GeometryProxy
-    @Binding var models: [BannerPageModel]
+    @Binding var models: [BannerPageViewModel]
     
     var body: some View {
+        let bannerFrame: CGSize = CGSize(width: geo.size.width - 32, height: (geo.size.width - 32) * 0.58)
+        
         ScrollView(.horizontal, showsIndicators: false) {
             LazyHStack(alignment: .top, spacing: 10) {
                 ForEach(models) { model in
-                    model.image
-                        .resizable()
-                        .frame(width: geo.size.width - 32, height: (geo.size.width - 32) * 0.58)
+                    if let imageUrl = model.imageUrl {
+                        AsyncImage(
+                            url: URL(string: imageUrl),
+                            content: { image in
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: bannerFrame.width, height: bannerFrame.height)
+                            }, placeholder: {
+                                Image(systemName: "photo")
+                                    .frame(width: bannerFrame.width, height: bannerFrame.height)
+                            }
+                        )
+                    } else {
+                        Image(systemName: "photo")
+                            .frame(width: bannerFrame.width, height: bannerFrame.height)
+                    }
                 }
             }
             .scrollTargetLayout()
