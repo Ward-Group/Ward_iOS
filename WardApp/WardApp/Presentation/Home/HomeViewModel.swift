@@ -27,6 +27,7 @@ extension HomeViewModel: ViewModel {
         @Published var releaseListPages: [HomeListPageViewModel] = []
     }
     
+    // swiftlint:disable function_body_length
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output()
         
@@ -59,7 +60,7 @@ extension HomeViewModel: ViewModel {
         
         // Release products transformation
         let releaseItems = PassthroughSubject<[HomeReleaseItem], Never>()
-        let items = PassthroughSubject<[Item], Never>()
+        let items = PassthroughSubject<[HomeItem], Never>()
         releaseItems
             .map { items -> [HomeListPageViewModel] in
                 stride(from: 0, to: items.count, by: 5).map {
@@ -85,9 +86,16 @@ extension HomeViewModel: ViewModel {
                     .sink { items  in
                         bannerItems.send(items)
                     }.store(in: cancelBag)
+                
+                // Fetch Release Items
+                homeUseCase.getReleaseInfos(section: selectedReleaseSection.value)
+                    .sink { items  in
+                        releaseItems.send(items)
+                    }.store(in: cancelBag)
             })
             .store(in: cancelBag)
         
         return output
     }
+    // swiftlint:enable function_body_length
 }

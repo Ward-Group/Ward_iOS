@@ -7,7 +7,7 @@
 
 import Foundation
 
-// TODO: - 발매 상품 Entity 병합 필요
+// TODO: - 발매 정보 Entity 병합 필요
 
 struct HomeReleaseItem: Codable, Identifiable {
     let releaseInfoId: Int
@@ -25,4 +25,3 @@ struct HomeReleaseItem: Codable, Identifiable {
         releaseInfoId
     }
 }
-

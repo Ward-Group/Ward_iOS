@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeListPageViewModel: Identifiable {
     let id = UUID()
     var releaseItems: [HomeReleaseItem] = []
-    var items: [Item] = []
+    var items: [HomeItem] = []
 }
 
 struct HomeListPageView: View {
@@ -53,6 +53,22 @@ extension HomeListPageView {
         LazyVStack(alignment: .center) {
             ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
                 ReleaseItemHorizontalView(model: item)
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        // TODO: TAB
+                    }
+                if index < items.count - 1 {
+                    Divider()
+                        .padding()
+                }
+            }
+        }
+    }
+    
+    private func itemList(items: [HomeItem]) -> some View {
+        LazyVStack(alignment: .center) {
+            ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                ItemHorizontalView(rank: "\(index+1)", model: item)
                     .frame(maxWidth: .infinity)
                     .onTapGesture {
                         // TODO: TAB
