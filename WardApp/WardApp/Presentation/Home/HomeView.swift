@@ -48,13 +48,13 @@ struct HomeView: View {
                                     .padding(.bottom, 36)
                             }
                             // -- 발매 상품 -- //
-//                            HomeHeaderTitleView(title: WardStrings.releasedProduct, moreButtonAction: {
-//                                Log.todo("발매 상품 더보기 버튼 액션")
-//                            })
-//                            .padding(.bottom, 14)
-//                            SectionTabView(models: $output.releaseCategoryTabs,
-//                                            selectedModel: $output.selectedReleaseTabModel)
-//                            .padding(.bottom, 20)
+                            HomeHeaderTitleView(title: WardStrings.releasedProduct, moreButtonAction: {
+                                Log.todo("발매 상품 더보기 버튼 액션")
+                            })
+                            .padding(.bottom, 14)
+                            SectionTabView(models: $output.releaseSectionTabs,
+                                            selectedModel: $output.selectedReleaseSectionTab)
+                            .padding(.bottom, 20)
 //                            HomeListPageView(geo: geo, models: $output.releaseProducts)
 //                                .padding(.bottom, 50)
                         }

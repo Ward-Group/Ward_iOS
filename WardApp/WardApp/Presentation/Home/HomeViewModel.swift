@@ -22,8 +22,8 @@ extension HomeViewModel: ViewModel {
     
     final class Output: ObservableObject {
         @Published var bannerPages: [BannerPageViewModel] = []
-//        @Published var releaseSections: [ReleaseSection] = [.dueToday, .releaseNow, .releaseWish, .releaseSchedule, .releaseToday, .closed]
-//        @Published var selectedReleaseSection: ReleaseSection = .dueToday
+        @Published var releaseSectionTabs: [SectionTabViewModel] = []
+        @Published var selectedReleaseSectionTab: SectionTabViewModel?
 //        @Published var releaseItems: [HomeListPageModel] = []
     }
     
@@ -37,15 +37,17 @@ extension HomeViewModel: ViewModel {
             .assign(to: \.bannerPages, on: output)
             .store(in: cancelBag)
         
-        // Release category tabs transformation
-//        let selectedReleaseTabModel = PassthroughSubject<CategoryTabModel?, Never>()
-//        let releaseCategoryTabs = PassthroughSubject<[CategoryTabModel], Never>()
-//        selectedReleaseTabModel
-//            .assign(to: \.selectedReleaseTabModel, on: output)
-//            .store(in: cancelBag)
-//        releaseCategoryTabs
-//            .assign(to: \.releaseCategoryTabs, on: output)
-//            .store(in: cancelBag)
+        // Release section tabs transformation
+        let releaseSections = CurrentValueSubject<[ReleaseSection], Never>([.dueToday, .releaseNow, .releaseWish, .releaseSchedule, .releaseToday, .closed])
+        releaseSections
+            .map { $0.map { SectionTabViewModel(id: $0.apiKey, title: $0.title) }}
+            .assign(to: \.releaseSectionTabs, on: output)
+            .store(in: cancelBag)
+        let selectedReleaseSection = CurrentValueSubject<ReleaseSection, Never>(.dueToday)
+        selectedReleaseSection
+            .map { SectionTabViewModel(id: $0.apiKey, title: $0.title) }
+            .assign(to: \.selectedReleaseSectionTab, on: output)
+            .store(in: cancelBag)
         
         // Release products transformation
 //        let releaseProducts = PassthroughSubject<[BaseProductModel], Never>()
