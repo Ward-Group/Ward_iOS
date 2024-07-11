@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct HomeListPageModel: Identifiable {
+struct HomeListPageViewModel: Identifiable {
     let id = UUID()
-    var products: [BaseProductModel]
+    var releaseItems: [HomeReleaseItem] = []
+    var items: [HomeItem] = []
 }
 
 struct HomeListPageView: View {
@@ -17,16 +18,20 @@ struct HomeListPageView: View {
     let geo: GeometryProxy
     @State private var currentPage: Int? = 0
     @State private var numberOfPage: Int = 0
-    @Binding var models: [HomeListPageModel]
+    @Binding var models: [HomeListPageViewModel]
     
     var body: some View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 0) {
                     ForEach(Array(models.enumerated()), id: \.element.id) { index, model in
-                        itemList(products: model.products)
-                            .frame(width: geo.size.width)
-                            .id(index)
+                        if !model.releaseItems.isEmpty {
+                            releaseItemList(items: model.releaseItems)
+                                .frame(width: geo.size.width)
+                                .id(index)
+                        } else if !model.items.isEmpty {
+                            
+                        }
                     }
                 }
                 .scrollTargetLayout()
@@ -44,15 +49,31 @@ struct HomeListPageView: View {
 }
 
 extension HomeListPageView {
-    private func itemList(products: [BaseProductModel]) -> some View {
+    private func releaseItemList(items: [HomeReleaseItem]) -> some View {
         LazyVStack(alignment: .center) {
-            ForEach(Array(products.enumerated()), id: \.element.id) { index, product in
-                HomeProductHorizontalView(model: product)
+            ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                ReleaseItemHorizontalView(model: item)
                     .frame(maxWidth: .infinity)
                     .onTapGesture {
                         // TODO: TAB
                     }
-                if index < products.count - 1 {
+                if index < items.count - 1 {
+                    Divider()
+                        .padding()
+                }
+            }
+        }
+    }
+    
+    private func itemList(items: [HomeItem]) -> some View {
+        LazyVStack(alignment: .center) {
+            ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                ItemHorizontalView(rank: "\(index+1)", model: item)
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        // TODO: TAB
+                    }
+                if index < items.count - 1 {
                     Divider()
                         .padding()
                 }

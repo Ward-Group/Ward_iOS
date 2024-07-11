@@ -10,42 +10,9 @@ import SwiftUI
 import Combine
 
 struct HomeViewModel {
-    
     let releaseUseCase: ReleaseUseCase
     let itemUseCase: ItemUseCase
-    
-    enum ReleaseCategoryTabType {
-        case dueToday
-        case currentlyAvailable
-        case interestedItem
-        case upcomingRelease
-        case registeredToday
-        
-        var title: String {
-            switch self {
-            case .dueToday: // 오늘 마감
-                return WardStrings.dueToday
-            case .currentlyAvailable: // 발매 중
-                return WardStrings.currentlyAvailable
-            case .upcomingRelease:
-                return WardStrings.upcomingRelease
-            case .registeredToday: // 오늘 등록
-                return WardStrings.registeredToday
-            case .interestedItem: // 관심 상품
-                return WardStrings.interestedItem
-            }
-        }
-        
-        func tabModel() -> CategoryTabModel {
-            return CategoryTabModel(title: title)
-        }
-    }
-    
-    let releaseCategoryTabList: [ReleaseCategoryTabType] = [.dueToday,
-                                                            .currentlyAvailable,
-                                                            .interestedItem,
-                                                            .upcomingRelease,
-                                                            .registeredToday]
+    let homeUseCase: HomeUseCase
 }
 
 extension HomeViewModel: ViewModel {
@@ -54,121 +21,81 @@ extension HomeViewModel: ViewModel {
     }
     
     final class Output: ObservableObject {
-        @Published var bannerPages: [BannerPageModel] = []
-        @Published var releaseCategoryTabs: [CategoryTabModel] = []
-        @Published var selectedReleaseTabModel: CategoryTabModel?
-        @Published var releaseProducts: [HomeListPageModel] = []
+        @Published var bannerPages: [BannerPageViewModel] = []
+        @Published var releaseSectionTabs: [SectionTabViewModel] = []
+        @Published var selectedReleaseSectionTab: SectionTabViewModel?
+        @Published var releaseListPages: [HomeListPageViewModel] = []
     }
     
+    // swiftlint:disable function_body_length
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
-        // -- Output -- //
         let output = Output()
         
-        // --  Output Data Logic -- //
-        let bannerProducts = PassthroughSubject<[BaseProductModel], Never>()
-        bannerProducts
-            .map { $0.map { $0.toModel() } }
+        // Banner Items transformation
+        let bannerItems = PassthroughSubject<[HomeReleaseItem], Never>()
+        bannerItems
+            .map { $0.map { BannerPageViewModel(id: $0.id, imageUrl: $0.itemMainImage )}}
             .assign(to: \.bannerPages, on: output)
             .store(in: cancelBag)
         
-        let selectedReleaseTabModel = PassthroughSubject<CategoryTabModel?, Never>()
-        let releaseCategoryTabs = PassthroughSubject<[CategoryTabModel], Never>()
-        selectedReleaseTabModel
-            .assign(to: \.selectedReleaseTabModel, on: output)
+        // Release section tabs transformation
+        let releaseSections = CurrentValueSubject<[ReleaseSection], Never>(
+            [.dueToday,
+             .releaseNow,
+             .releaseWish,
+             .releaseSchedule,
+             .releaseToday,
+             .closed
+            ]
+        )
+        releaseSections
+            .map { $0.map { SectionTabViewModel(id: $0.apiKey, title: $0.title) }}
+            .assign(to: \.releaseSectionTabs, on: output)
             .store(in: cancelBag)
-        releaseCategoryTabs
-            .assign(to: \.releaseCategoryTabs, on: output)
+        let selectedReleaseSection = CurrentValueSubject<ReleaseSection, Never>(.dueToday)
+        selectedReleaseSection
+            .map { SectionTabViewModel(id: $0.apiKey, title: $0.title) }
+            .assign(to: \.selectedReleaseSectionTab, on: output)
             .store(in: cancelBag)
         
-        let releaseProducts = PassthroughSubject<[BaseProductModel], Never>()
-        releaseProducts
-            .map { models in
-                var returnModels: [HomeListPageModel] = []
-                var tempModels: [BaseProductModel] = []
-                for model in models {
-                    tempModels.append(model)
-                    if tempModels.count % 5 == 0 {
-                        returnModels.append(HomeListPageModel(products: tempModels))
-                        tempModels.removeAll()
-                    }
+        // Release products transformation
+        let releaseItems = PassthroughSubject<[HomeReleaseItem], Never>()
+        let items = PassthroughSubject<[HomeItem], Never>()
+        releaseItems
+            .map { items -> [HomeListPageViewModel] in
+                stride(from: 0, to: items.count, by: 5).map {
+                    HomeListPageViewModel(releaseItems: Array(items[$0..<min($0 + 5, items.count)]))
                 }
-                return returnModels
             }
-            .assign(to: \.releaseProducts, on: output)
+            .assign(to: \.releaseListPages, on: output)
+            .store(in: cancelBag)
+        items
+            .map { items -> [HomeListPageViewModel] in
+                stride(from: 0, to: items.count, by: 5).map {
+                    HomeListPageViewModel(items: Array(items[$0..<min($0 + 5, items.count)]))
+                }
+            }
+            .assign(to: \.releaseListPages, on: output)
             .store(in: cancelBag)
         
-        // -- Input Logic -- //
+        // Input logic
         input.loadTrigger
             .sink(receiveValue: {
-                bannerProducts.send(getBannerProducts())
+                // Fetch Banner Items
+                homeUseCase.getReleaseInfos(section: .dueToday)
+                    .sink { items  in
+                        bannerItems.send(items)
+                    }.store(in: cancelBag)
                 
-                let getReleaseCategoryTabs = getReleaseCategoryTabs()
-                releaseCategoryTabs.send(getReleaseCategoryTabs)
-                selectedReleaseTabModel.send(getReleaseCategoryTabs[0])
-
-                releaseProducts.send(getReleaseProducts(with: .dueToday))
+                // Fetch Release Items
+                homeUseCase.getReleaseInfos(section: selectedReleaseSection.value)
+                    .sink { items  in
+                        releaseItems.send(items)
+                    }.store(in: cancelBag)
             })
             .store(in: cancelBag)
         
         return output
     }
-}
-
-// MARK: - Logic
-extension HomeViewModel {
-    private func getReleaseCategoryTabs() -> [CategoryTabModel] {
-        return releaseCategoryTabList
-            .enumerated()
-            .map { return $0.element.tabModel() }
-    }
-    
-    private func getReleaseProducts(with category: ReleaseCategoryTabType) -> [BaseProductModel] {
-        // TODO: 카테고리에 따라 데이터 가져오기
-        return getExpiringProducts()
-    }
-}
-
-// MARK: - Networking
-extension HomeViewModel {
-    private func getBannerProducts() -> [BaseProductModel] {
-        return [BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel(),
-                BaseProductModel()]
-    }
-    
-    private func getExpiringProducts() -> [BaseProductModel] {
-        let dummy1 = BaseProductModel(site: "크림", product: "나이키 신발", time: "남은 시간")
-        let dummy2 = BaseProductModel(site: "크림", product: "아디다스 신발", time: "남은 시간")
-        let dummy3 = BaseProductModel(site: "슈프림", product: "슈프림 티셔츠", time: "남은 시간")
-        let dummy4 = BaseProductModel(site: "뉴발란스", product: "뉴발란스 티셔츠", time: "남은 시간")
-        let dummy5 = BaseProductModel(site: "뉴발란스", product: "뉴발란스 신발", time: "남은 시간")
-        let dummyList = [dummy1, dummy2, dummy3, dummy4, dummy5, dummy5, dummy1, dummy3, dummy4, dummy2]
-        return dummyList
-    }
-}
-
-// MARK: - 임시 데이터 모델
-struct BaseProductModel: Identifiable {
-    let id = UUID()
-    var site: String = ""
-    var rank: String = ""
-    var product: String = ""
-    var brand: String = ""
-    var time: String = ""
-    var bigBannerImage: Image?
-    var thumbnailImage: Image?
-    
-    func toModel() -> BannerPageModel {
-        return BannerPageModel(id: id,
-                               image: bigBannerImage ?? WardAssets.Image.homeBanner.swiftUIImage)
-    }
+    // swiftlint:enable function_body_length
 }

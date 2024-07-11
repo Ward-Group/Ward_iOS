@@ -26,6 +26,8 @@ public enum WardStrings {
   public static let brand = WardStrings.tr("Localizable", "Brand", fallback: "브랜드")
   /// 카테고리
   public static let categoryTabbar = WardStrings.tr("Localizable", "Category Tabbar", fallback: "카테고리")
+  /// 종료
+  public static let closed = WardStrings.tr("Localizable", "Closed", fallback: "종료")
   /// 의류
   public static let clothing = WardStrings.tr("Localizable", "Clothing", fallback: "의류")
   /// 회원가입 완료
@@ -147,16 +149,20 @@ public enum WardStrings {
   public static let recentSearchTermHistory = WardStrings.tr("Localizable", "Recent Search Term History", fallback: "최근 검색어")
   /// 발매 메뉴 바로가기
   public static let redirectToReleaseMenu = WardStrings.tr("Localizable", "Redirect To Release Menu", fallback: "발매 메뉴 바로가기")
-  /// 오늘 등록
-  public static let registeredToday = WardStrings.tr("Localizable", "Registered Today", fallback: "오늘 등록")
   /// 발매 정보
   public static let releaseInfo = WardStrings.tr("Localizable", "Release Info", fallback: "발매 정보")
   /// 발매중
   public static let releaseNow = WardStrings.tr("Localizable", "Release Now", fallback: "발매중")
+  /// 발매 예정
+  public static let releaseSchedule = WardStrings.tr("Localizable", "Release Schedule", fallback: "발매 예정")
   /// 발매예정
   public static let releaseScheduled = WardStrings.tr("Localizable", "Release Scheduled", fallback: "발매예정")
   /// 발매
   public static let releaseTabbar = WardStrings.tr("Localizable", "Release Tabbar", fallback: "발매")
+  /// 오늘 등록
+  public static let releaseToday = WardStrings.tr("Localizable", "Release Today", fallback: "오늘 등록")
+  /// 관심 상품
+  public static let releaseWish = WardStrings.tr("Localizable", "Release Wish", fallback: "관심 상품")
   /// 발매 상품
   public static let releasedProduct = WardStrings.tr("Localizable", "Released Product", fallback: "발매 상품")
   /// 모두 삭제
@@ -195,8 +201,6 @@ public enum WardStrings {
   public static let typeNickname = WardStrings.tr("Localizable", "Type Nickname", fallback: "사용할 닉네임을 입력해주세요.")
   /// 제품명, 브랜드명, 제품 코드 등 입력
   public static let typeProductCodeNames = WardStrings.tr("Localizable", "Type Product Code Names", fallback: "제품명, 브랜드명, 제품 코드 등 입력")
-  /// 발매 예정
-  public static let upcomingRelease = WardStrings.tr("Localizable", "Upcoming Release", fallback: "발매 예정")
   /// 사용 가능한 닉네임입니다.
   public static let validNickname = WardStrings.tr("Localizable", "Valid Nickname", fallback: "사용 가능한 닉네임입니다.")
   /// 주 전
