@@ -18,6 +18,7 @@ struct HomeReleaseItem: Codable, Identifiable {
     let itemKoreanName: String
     let itemEnglishName: String
     let releaseMethod: ReleaseMethod
+    let releaseDate: String
     let dueDate: String
     
     var id: Int {

@@ -24,7 +24,7 @@ extension HomeViewModel: ViewModel {
         @Published var bannerPages: [BannerPageViewModel] = []
         @Published var releaseSectionTabs: [SectionTabViewModel] = []
         @Published var selectedReleaseSectionTab: SectionTabViewModel?
-//        @Published var releaseItems: [HomeListPageModel] = []
+        @Published var releaseListPages: [HomeListPageViewModel] = []
     }
     
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
@@ -38,7 +38,15 @@ extension HomeViewModel: ViewModel {
             .store(in: cancelBag)
         
         // Release section tabs transformation
-        let releaseSections = CurrentValueSubject<[ReleaseSection], Never>([.dueToday, .releaseNow, .releaseWish, .releaseSchedule, .releaseToday, .closed])
+        let releaseSections = CurrentValueSubject<[ReleaseSection], Never>(
+            [.dueToday,
+             .releaseNow,
+             .releaseWish,
+             .releaseSchedule,
+             .releaseToday,
+             .closed
+            ]
+        )
         releaseSections
             .map { $0.map { SectionTabViewModel(id: $0.apiKey, title: $0.title) }}
             .assign(to: \.releaseSectionTabs, on: output)
@@ -50,15 +58,24 @@ extension HomeViewModel: ViewModel {
             .store(in: cancelBag)
         
         // Release products transformation
-//        let releaseProducts = PassthroughSubject<[BaseProductModel], Never>()
-//        releaseProducts
-//            .map { models -> [HomeListPageModel] in
-//                stride(from: 0, to: models.count, by: 5).map {
-//                    HomeListPageModel(products: Array(models[$0..<min($0 + 5, models.count)]))
-//                }
-//            }
-//            .assign(to: \.releaseProducts, on: output)
-//            .store(in: cancelBag)
+        let releaseItems = PassthroughSubject<[HomeReleaseItem], Never>()
+        let items = PassthroughSubject<[Item], Never>()
+        releaseItems
+            .map { items -> [HomeListPageViewModel] in
+                stride(from: 0, to: items.count, by: 5).map {
+                    HomeListPageViewModel(releaseItems: Array(items[$0..<min($0 + 5, items.count)]))
+                }
+            }
+            .assign(to: \.releaseListPages, on: output)
+            .store(in: cancelBag)
+        items
+            .map { items -> [HomeListPageViewModel] in
+                stride(from: 0, to: items.count, by: 5).map {
+                    HomeListPageViewModel(items: Array(items[$0..<min($0 + 5, items.count)]))
+                }
+            }
+            .assign(to: \.releaseListPages, on: output)
+            .store(in: cancelBag)
         
         // Input logic
         input.loadTrigger
