@@ -100,7 +100,7 @@ struct Log {
             // MARK: - OSLog 보기
             /// (1) Edit Scheme -> Environment Variables -> OS_ACTIVITY_MODE 체크 해제
             /// (2) print문 주석
-            print("\(level.category) \(logMessage)")
+//            print("\(level.category) \(logMessage)")
             switch level {
             case .debug:
                 logger.debug("\(logMessage, privacy: .public)")
@@ -179,4 +179,3 @@ extension Log {
         log(message, arguments, level: .todo)
     }
 }
-

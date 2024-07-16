@@ -12,7 +12,6 @@ struct HomeRepository {
     func fetchReleaseInfos(section: ReleaseSection) -> AnyPublisher<[HomeReleaseItem], Never> {
         return NetworkingManager.shared.run(HomeEndPoint.releaseInfos(section: section.apiKey), type: WardBaseResponse<[HomeReleaseItem]>.self)
             .tryMap { response in
-                Log.debug(#file, #function, "response = \(response)")
                 let code = response.code
                 switch code {
                 case 200:
