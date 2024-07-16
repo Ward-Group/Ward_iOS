@@ -27,7 +27,6 @@ extension HomeViewModel: ViewModel {
         @Published var releaseListPage: HomeListPageViewModel = HomeListPageViewModel(viewType: .item)
     }
     
-    // swiftlint:disable function_body_length
     func transform(_ input: Input, cancelBag: CancelBag) -> Output {
         let output = Output()
         
@@ -73,15 +72,11 @@ extension HomeViewModel: ViewModel {
         // Input logic
         input.loadTrigger
             .sink(receiveValue: {
-                // Fetch Banner Items
+                
+                // Fetch Banner Items & Release Items
                 homeUseCase.getReleaseInfos(section: .dueToday)
                     .sink { items  in
                         bannerItems.send(items)
-                    }.store(in: cancelBag)
-                
-                // Fetch Release Items
-                homeUseCase.getReleaseInfos(section: selectedReleaseSection.value)
-                    .sink { items  in
                         releaseItems.send(items)
                     }.store(in: cancelBag)
             })
@@ -89,5 +84,4 @@ extension HomeViewModel: ViewModel {
         
         return output
     }
-    // swiftlint:enable function_body_length
 }

@@ -26,7 +26,6 @@ struct HomeView: View {
             loadTrigger: loadTrigger.asDriver()
         )
         self.output = viewModel.transform(input, cancelBag: cancelBag)
-        loadTrigger.send(())
     }
     
     var body: some View {
@@ -65,6 +64,9 @@ struct HomeView: View {
             .fullScreenCover(item: $router.presentedFullScreen) { naviType in
                 router.build(naviType)
             }
+        }
+        .onAppear {
+            loadTrigger.send()
         }
         .onReceive(searchButtonTrigger, perform: { _ in
             router.present(fullScreen: .search)
