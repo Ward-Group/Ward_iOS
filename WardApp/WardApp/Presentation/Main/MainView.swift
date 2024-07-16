@@ -35,12 +35,12 @@ struct MainView: View {
             ForEach(AppTab.allCases) { tab in
                 tab.destination
                     .tabItem {
-                        Text(tab.item.label)
+                        Text(tab.title)
                             .font(WardFonts.Pretendard.medium.swiftUIFont(size: 12))
-                        tab.item.icon
+                        tab.icon
                             .renderingMode(.template)
                     }
-                    .tag(tab.id)
+                    .tag(tab)
             }
         }
         .tint(Color.mainBlue)
