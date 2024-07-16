@@ -53,16 +53,6 @@ extension ItemHorizontalView {
 #Preview {
     ItemHorizontalView(
         rank: "01",
-        model: HomeItem(
-            itemId: 0,
-            itemKoreanName: "상품명",
-            itemEnglishName: "product name",
-            price: "10,000",
-            itemMainImage: "",
-            brandId: 0,
-            brandKoreanName: "브랜드명",
-            brandEnglishName: "brand name",
-            isWished: false
-        )
+        model: HomePreviewMockData.items[0]
     )
 }

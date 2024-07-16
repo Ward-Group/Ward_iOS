@@ -48,3 +48,13 @@ struct BannerPageView: View {
         .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
     }
 }
+struct BannerPageView_Previews: PreviewProvider {
+    static var items = HomePreviewMockData.releaseItems
+    @State static var models = items.map { BannerPageViewModel(id: $0.id, imageUrl: $0.itemMainImage )}
+    static var previews: some View {
+        GeometryReader { geo in
+            BannerPageView(geo: geo,
+                           models: $models)
+        }
+    }
+}

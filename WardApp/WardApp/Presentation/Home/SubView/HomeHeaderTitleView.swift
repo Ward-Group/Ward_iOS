@@ -57,7 +57,5 @@ extension HomeHeaderTitleView {
 }
 
 #Preview {
-    HomeHeaderTitleView(title: "실시간 Top 10", subTitle: "오늘 19:00 기준", moreButtonAction: {
-        print("HomeHeaderView 더보기 버튼 액션")
-    })
+    HomePreviewMockData.header
 }
