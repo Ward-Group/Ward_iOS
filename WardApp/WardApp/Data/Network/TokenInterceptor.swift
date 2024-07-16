@@ -24,13 +24,12 @@ final class TokenInterceptor: RequestInterceptor {
             bodyString = String(bytes: body, encoding: .utf8) ?? "nil"
         }
         let message: String = """
-                                
         📡 HTTP REQUEST (\(Date().debugDescription) 📡
         method: \(method)
         url: \(urlStr)
         headers: \(headers)
         body: \(bodyString)
-        
+        --------------------------------
         """
         Log.network(message)
         

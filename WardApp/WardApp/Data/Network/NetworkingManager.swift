@@ -50,7 +50,6 @@ class NetworkingManager {
                     responseString = responseStr
                 }
                 let message: String = """
-                
                 📡 HTTP RESPONSE (\(Date().debugDescription))📡
                 method : \(method)
                 statusCode: \(statusCode)
