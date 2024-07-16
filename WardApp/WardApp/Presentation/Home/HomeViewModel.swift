@@ -24,7 +24,7 @@ extension HomeViewModel: ViewModel {
         @Published var bannerPages: [BannerPageViewModel] = []
         @Published var releaseSectionTabs: [SectionTabViewModel] = []
         @Published var selectedReleaseSectionTab: SectionTabViewModel?
-        @Published var releaseListPages: [HomeListPageViewModel] = []
+        @Published var releaseListPage: HomeListPageViewModel = HomeListPageViewModel(viewType: .item)
     }
     
     // swiftlint:disable function_body_length
@@ -62,20 +62,12 @@ extension HomeViewModel: ViewModel {
         let releaseItems = PassthroughSubject<[HomeReleaseItem], Never>()
         let items = PassthroughSubject<[HomeItem], Never>()
         releaseItems
-            .map { items -> [HomeListPageViewModel] in
-                stride(from: 0, to: items.count, by: 5).map {
-                    HomeListPageViewModel(releaseItems: Array(items[$0..<min($0 + 5, items.count)]))
-                }
-            }
-            .assign(to: \.releaseListPages, on: output)
+            .map { HomeListPageViewModel(viewType: .release, releaseItems: $0) }
+            .assign(to: \.releaseListPage, on: output)
             .store(in: cancelBag)
         items
-            .map { items -> [HomeListPageViewModel] in
-                stride(from: 0, to: items.count, by: 5).map {
-                    HomeListPageViewModel(items: Array(items[$0..<min($0 + 5, items.count)]))
-                }
-            }
-            .assign(to: \.releaseListPages, on: output)
+            .map { HomeListPageViewModel(viewType: .item, items: $0) }
+            .assign(to: \.releaseListPage, on: output)
             .store(in: cancelBag)
         
         // Input logic

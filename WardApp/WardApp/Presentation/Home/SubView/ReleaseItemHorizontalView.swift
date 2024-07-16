@@ -58,17 +58,6 @@ extension ReleaseItemHorizontalView {
 
 #Preview {
     ReleaseItemHorizontalView(
-        model: HomeReleaseItem(
-            releaseInfoId: 0,
-            platformKoreanName: "사이트명",
-            platformEnglishName: "site name",
-            itemId: 0,
-            itemMainImage: "",
-            itemKoreanName: "상품명",
-            itemEnglishName: "product name",
-            releaseMethod: .entry, 
-            releaseDate: "발매 날짜",
-            dueDate: "마감날짜"
-        )
+        model: HomePreviewMockData.releaseItems[0]
     )
 }

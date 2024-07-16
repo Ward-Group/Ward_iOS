@@ -55,7 +55,7 @@ struct HomeView: View {
                             SectionTabView(models: $output.releaseSectionTabs,
                                            selectedModel: $output.selectedReleaseSectionTab)
                             .padding(.bottom, 20)
-                            HomeListPageView(geo: geo, models: $output.releaseListPages)
+                            HomeListPageView(geo: geo, model: $output.releaseListPage)
                                 .padding(.bottom, 50)
                         }
                     })
