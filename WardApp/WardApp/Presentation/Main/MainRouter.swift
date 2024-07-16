@@ -9,7 +9,7 @@ import SwiftUI
 
 class MainRouter: ObservableObject {
     
-    @Published var selectedTab = 2
+    @Published var selectedTab: AppTab = .home
     @Published var path = NavigationPath()
     @Published var fullScreenSheet: FullScreenSheet?
     
@@ -34,6 +34,6 @@ class MainRouter: ObservableObject {
     }
     
     func changeTab(to tab: AppTab) {
-        selectedTab = tab.rawValue
+        selectedTab = tab
     }
 }

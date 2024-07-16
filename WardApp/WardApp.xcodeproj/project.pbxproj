@@ -29,7 +29,6 @@
 		BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A72C096444003CFFAC /* NotificationViewModel.swift */; };
 		BA0416AA2C096490003CFFAC /* NotificationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0416A92C096490003CFFAC /* NotificationAssembler.swift */; };
 		BA12A6E12C0ABB9D00338EC0 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E02C0ABB9D00338EC0 /* MainView.swift */; };
-		BA12A6E32C0AC5C500338EC0 /* TabbarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */; };
 		BA12A6E52C0AC5CD00338EC0 /* AppTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */; };
 		BA12A6F72C0B24CC00338EC0 /* InterestedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */; };
 		BA12A6FE2C0BFEC800338EC0 /* InterestedRouterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */; };
@@ -216,7 +215,6 @@
 		BA0416A72C096444003CFFAC /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		BA0416A92C096490003CFFAC /* NotificationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationAssembler.swift; sourceTree = "<group>"; };
 		BA12A6E02C0ABB9D00338EC0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarItem.swift; sourceTree = "<group>"; };
 		BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTab.swift; sourceTree = "<group>"; };
 		BA12A6F62C0B24CC00338EC0 /* InterestedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouter.swift; sourceTree = "<group>"; };
 		BA12A6FD2C0BFEC800338EC0 /* InterestedRouterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestedRouterView.swift; sourceTree = "<group>"; };
@@ -444,7 +442,6 @@
 		BA12A6DF2C0ABB8900338EC0 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				BA12A6E22C0AC5C500338EC0 /* TabbarItem.swift */,
 				BA12A6E42C0AC5CD00338EC0 /* AppTab.swift */,
 				BA62C0A02C10ACCB007E692A /* MainViewModel.swift */,
 				BA12A6E02C0ABB9D00338EC0 /* MainView.swift */,
@@ -1256,7 +1253,6 @@
 				EAAD304D2C3FBEB40095E73F /* HomeReleaseItem.swift in Sources */,
 				EAAD304F2C3FD61C0095E73F /* ReleaseItemHorizontalView.swift in Sources */,
 				BA4B168A2C0ECA9600E1C1F5 /* NoticeBoardItem.swift in Sources */,
-				BA12A6E32C0AC5C500338EC0 /* TabbarItem.swift in Sources */,
 				BA4B16842C0EC8B900E1C1F5 /* NoticeBoardView.swift in Sources */,
 				BA0416A82C096444003CFFAC /* NotificationViewModel.swift in Sources */,
 				BA0416912C06C840003CFFAC /* InterestedItem.swift in Sources */,

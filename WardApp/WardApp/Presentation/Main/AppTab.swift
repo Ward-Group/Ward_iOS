@@ -21,18 +21,33 @@ enum AppTab: Int, CaseIterable, Identifiable {
 
 extension AppTab {
     
-    var item: TabbarItem {
+    var title: String {
         switch self {
         case .category:
-            TabbarItem(label: WardStrings.categoryTabbar, icon: WardAssets.Image.Tab.category.swiftUIImage)
+            return  WardStrings.categoryTabbar
         case .release:
-            TabbarItem(label: WardStrings.releaseTabbar, icon: WardAssets.Image.Tab.release.swiftUIImage)
+            return  WardStrings.releaseTabbar
         case .home:
-            TabbarItem(label: WardStrings.homeTabbar, icon: WardAssets.Image.Tab.home.swiftUIImage)
+            return  WardStrings.homeTabbar
         case .interested:
-            TabbarItem(label: WardStrings.interestedTabbar, icon: WardAssets.Image.Tab.interested.swiftUIImage)
+            return  WardStrings.interestedTabbar
         case .mypage:
-            TabbarItem(label: WardStrings.myPageTabbar, icon: WardAssets.Image.Tab.mypage.swiftUIImage)
+            return  WardStrings.myPageTabbar
+        }
+    }
+    
+    var icon: Image {
+        switch self {
+        case .category:
+            return WardAssets.Image.Tab.category.swiftUIImage
+        case .release:
+            return WardAssets.Image.Tab.release.swiftUIImage
+        case .home:
+            return WardAssets.Image.Tab.home.swiftUIImage
+        case .interested:
+            return WardAssets.Image.Tab.interested.swiftUIImage
+        case .mypage:
+            return WardAssets.Image.Tab.mypage.swiftUIImage
         }
     }
     
