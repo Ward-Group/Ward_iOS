@@ -35,7 +35,31 @@ class NetworkingManager {
                        interceptor: TokenInterceptor()
             )
             .responseData { response in
-                Log.debug(#file, #function, "statusCode = \(response.response?.statusCode), url = \(response.request?.url)")
+                let request = response.request
+                let urlStr = request?.url?.absoluteString ?? "nil"
+                let method = request?.httpMethod ?? "nil"
+                let statusCode = response.response?.statusCode ?? -99
+                var bodyString = "nil"
+                if let data = request?.httpBody,
+                   let string = String(bytes: data, encoding: .utf8) {
+                    bodyString = string
+                }
+                var responseString = "nil"
+                let data = response.data
+                if let responseStr = data?.toPrettyPrintedString {
+                    responseString = responseStr
+                }
+                let message: String = """
+                📡 HTTP RESPONSE (\(Date().debugDescription))📡
+                method : \(method)
+                statusCode: \(statusCode)
+                url: \(urlStr)
+                body: \(bodyString)
+                response: \(responseString)
+                --------------------------------
+                """
+                Log.network(message)
+                
                 switch response.result {
                 case .success(let data):
                     if let statusCode = response.response?.statusCode {

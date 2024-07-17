@@ -15,6 +15,24 @@ final class TokenInterceptor: RequestInterceptor {
         let accessToken = UserRepository.shared.getAccessToken()
         var urlRequest = urlRequest
         urlRequest.setValue("Bearer " + accessToken, forHTTPHeaderField: "Authorization")
+        
+        let headers = urlRequest.allHTTPHeaderFields ?? [:]
+        let urlStr = urlRequest.url?.absoluteString ?? "nil"
+        let method = urlRequest.httpMethod ?? "nil"
+        var bodyString = "nil"
+        if let body = urlRequest.httpBody {
+            bodyString = String(bytes: body, encoding: .utf8) ?? "nil"
+        }
+        let message: String = """
+        📡 HTTP REQUEST (\(Date().debugDescription) 📡
+        method: \(method)
+        url: \(urlStr)
+        headers: \(headers)
+        body: \(bodyString)
+        --------------------------------
+        """
+        Log.network(message)
+        
         completion(.success(urlRequest))
     }
     
